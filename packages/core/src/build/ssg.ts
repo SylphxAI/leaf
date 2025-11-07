@@ -12,6 +12,8 @@ import { type Route, generateRoutes } from "../utils/routes.js";
 import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
 import { remarkContainers } from "../plugins/remark-containers.js";
+import { remarkCodeMeta } from "../plugins/remark-code-meta.js";
+import { rehypeLineHighlight } from "../plugins/rehype-line-highlight.js";
 import matter from "gray-matter";
 import { generateSearchIndex } from "./search.js";
 
@@ -93,10 +95,12 @@ async function generatePageHTML(
 		.use(remarkParse)
 		.use(remarkGfm)
 		.use(remarkContainers)
+		.use(remarkCodeMeta)
 		.use(extractToc)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)
 		.use(rehypeHighlight)
+		.use(rehypeLineHighlight)
 		.use(rehypeStringify, { allowDangerousHtml: true });
 
 	const vfile = await processor.process(markdownContent);

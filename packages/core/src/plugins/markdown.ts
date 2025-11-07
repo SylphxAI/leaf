@@ -11,6 +11,8 @@ import type { ReactPressConfig } from "../types.js";
 import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
 import { remarkContainers } from "./remark-containers.js";
+import { remarkCodeMeta } from "./remark-code-meta.js";
+import { rehypeLineHighlight } from "./rehype-line-highlight.js";
 
 interface TocItem {
 	text: string;
@@ -66,11 +68,13 @@ export function markdownPlugin(config: ReactPressConfig): Plugin {
 				.use(remarkParse)
 				.use(remarkGfm)
 				.use(remarkContainers)
+				.use(remarkCodeMeta)
 				.use(extractToc)
 				.use(...(config.markdown?.remarkPlugins || []))
 				.use(remarkRehype, { allowDangerousHtml: true })
 				.use(rehypeSlug)
 				.use(rehypeHighlight)
+				.use(rehypeLineHighlight)
 				.use(...(config.markdown?.rehypePlugins || []))
 				.use(rehypeStringify, { allowDangerousHtml: true });
 

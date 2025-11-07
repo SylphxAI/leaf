@@ -50,6 +50,20 @@ const store = zen({ count: 0 });
 store.set({ count: store.get().count + 1 });
 ```
 
+## Code Line Highlighting
+
+Highlight specific lines in your code blocks using `{line-numbers}` syntax:
+
+```typescript {2,4-6}
+import { zen } from '@sylphx/zen';
+const store = zen({ count: 0 }); // This line is highlighted
+
+function increment() {
+  store.set({ count: store.get().count + 1 }); // Lines 4-6 highlighted
+  console.log('Count updated!');
+}
+```
+
 ```bash
 # Install packages
 bun add @sylphx/zen @sylphx/craft @sylphx/silk
