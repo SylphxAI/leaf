@@ -16,6 +16,7 @@
 - ✅ Code line highlighting (`{1,3-5}` syntax)
 - ✅ Code groups with tabs (multi-language examples)
 - ✅ One-click code copy buttons
+- ✅ Math equations with KaTeX (LaTeX syntax)
 
 ### 🎨 **UI & Navigation**
 - ✅ Beautiful default theme with dark mode
@@ -144,7 +145,7 @@ export default defineConfig({
 | **Mobile Responsive** | ✅ Hamburger menu | ✅ Hamburger menu | 🟢 **Parity** |
 | **Last Updated** | ✅ Git-based | ✅ Git-based | 🟢 **Parity** |
 | **SSG Build** | ✅ Full pre-render | ✅ Full pre-render | 🟢 **Parity** |
-| **Math Equations** | ⏳ Coming soon | ✅ KaTeX | 🟡 **Planned** |
+| **Math Equations** | ✅ KaTeX | ✅ KaTeX | 🟢 **Parity** |
 | **Mermaid Diagrams** | ⏳ Coming soon | ✅ Native | 🟡 **Planned** |
 
 ### Tech Stack
@@ -261,9 +262,10 @@ All core features completed:
 
 Build stats:
 - 📦 Bundle: 237KB (gzip: 73KB)
-- 🔍 Search index: 57 documents (11KB)
+- 🔍 Search index: 58 documents (11KB)
 - ⚡ Build time: ~400ms
 - 🏗️ 8 static pages generated
+- 🧮 Math: KaTeX rendering
 
 ## 🎯 Roadmap
 
@@ -273,12 +275,13 @@ Build stats:
 - ✅ Custom containers
 - ✅ Search functionality
 - ✅ SSG build
+- ✅ Math equations (KaTeX)
 
 ### Phase 2: Enhanced Features (🚧 In Progress)
-- [ ] Math equations (KaTeX/MathJax)
 - [ ] Mermaid diagrams
 - [ ] Edit link integration
 - [ ] Prev/Next auto-generation from sidebar
+- [ ] Image lazy loading & optimization
 
 ### Phase 3: Developer Experience
 - [ ] I18n support
