@@ -1,0 +1,325 @@
+---
+title: Code Highlighting
+description: Syntax highlighting and code features in ReactPress
+---
+
+# Code Highlighting
+
+ReactPress provides beautiful syntax highlighting for code blocks with advanced features like line highlighting, line numbers, and code groups.
+
+## Basic Syntax Highlighting
+
+Use fenced code blocks with language identifiers:
+
+````markdown
+```typescript
+function hello(name: string): string {
+  return `Hello, ${name}!`;
+}
+```
+````
+
+**Result:**
+
+```typescript
+function hello(name: string): string {
+  return `Hello, ${name}!`;
+}
+```
+
+## Supported Languages
+
+ReactPress supports 100+ programming languages including:
+
+- **JavaScript/TypeScript** - `js`, `jsx`, `ts`, `tsx`
+- **Web** - `html`, `css`, `scss`, `vue`, `svelte`
+- **Backend** - `python`, `java`, `go`, `rust`, `php`, `ruby`
+- **Shell** - `bash`, `sh`, `powershell`, `zsh`
+- **Config** - `json`, `yaml`, `toml`, `xml`
+- **Database** - `sql`, `graphql`
+- **And many more!**
+
+## Line Highlighting
+
+Highlight specific lines using the `{line-numbers}` syntax after the language:
+
+````markdown
+```typescript {2,4-6}
+function calculateTotal(items: Item[]): number {
+  const subtotal = items.reduce((sum, item) => sum + item.price, 0);
+  const tax = subtotal * 0.1;
+  const shipping = subtotal > 50 ? 0 : 5;
+  const total = subtotal + tax + shipping;
+  return total;
+}
+```
+````
+
+**Result:**
+
+```typescript {2,4-6}
+function calculateTotal(items: Item[]): number {
+  const subtotal = items.reduce((sum, item) => sum + item.price, 0);
+  const tax = subtotal * 0.1;
+  const shipping = subtotal > 50 ? 0 : 5;
+  const total = subtotal + tax + shipping;
+  return total;
+}
+```
+
+Lines 2, 4, 5, and 6 are highlighted!
+
+## Line Numbers
+
+Enable line numbers by adding line numbers to the meta:
+
+````markdown
+```python {1,3-4} showLineNumbers
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+```
+````
+
+## Code Groups
+
+Group related code snippets with tabs using the `::: code-group` container:
+
+````markdown
+::: code-group
+
+```typescript [TypeScript]
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Alice",
+  age: 25
+};
+```
+
+```javascript [JavaScript]
+const user = {
+  name: "Alice",
+  age: 25
+};
+```
+
+```python [Python]
+user = {
+  "name": "Alice",
+  "age": 25
+}
+```
+
+:::
+````
+
+**Result:**
+
+::: code-group
+
+```typescript [TypeScript]
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Alice",
+  age: 25
+};
+```
+
+```javascript [JavaScript]
+const user = {
+  name: "Alice",
+  age: 25
+};
+```
+
+```python [Python]
+user = {
+  "name": "Alice",
+  "age": 25
+}
+```
+
+:::
+
+Perfect for showing implementations in different languages!
+
+## File Names
+
+Add file names to code blocks:
+
+````markdown
+```typescript [src/utils/helpers.ts]
+export function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+```
+````
+
+**Result:**
+
+```typescript [src/utils/helpers.ts]
+export function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+```
+
+## Diff Highlighting
+
+Show additions and removals:
+
+````markdown
+```typescript
+function greet(name: string) {
+- return "Hello " + name;
++ return `Hello, ${name}!`;
+}
+```
+````
+
+**Result:**
+
+```typescript
+function greet(name: string) {
+- return "Hello " + name;
++ return `Hello, ${name}!`;
+}
+```
+
+## Focus Highlighting
+
+Focus attention on specific parts:
+
+````markdown
+```typescript {2-3}
+function processData(data: any[]) {
+  // Focus on these lines
+  const filtered = data.filter(item => item.active);
+  const mapped = filtered.map(item => item.value);
+  return mapped;
+}
+```
+````
+
+## Inline Code
+
+Use backticks for inline code: `const x = 42`
+
+Inline code automatically inherits syntax highlighting in context:
+
+- Use `console.log()` for debugging
+- Install with `npm install package-name`
+- The `useState` hook manages state
+
+## Custom Themes
+
+ReactPress uses custom syntax themes optimized for readability:
+
+- **Light Theme** - Soft colors with good contrast
+- **Dark Theme** - Vibrant colors that pop
+
+Themes automatically switch with the site theme.
+
+## Advanced Features
+
+### Copy Button
+
+Every code block includes a copy button in the top-right corner. Click to copy the code to clipboard!
+
+### Syntax Validation
+
+Invalid syntax is gracefully handled:
+
+```javascript
+// This won't crash the highlighter
+const incomplete = {
+  // Missing closing brace
+```
+
+### Language Aliases
+
+Use common aliases:
+
+- `js` → JavaScript
+- `ts` → TypeScript
+- `py` → Python
+- `sh` → Shell
+- `yml` → YAML
+- `md` → Markdown
+
+### Escaping
+
+Escape backticks in code by using more backticks:
+
+`````markdown
+````markdown
+```typescript
+// This is displayed as text
+```
+````
+`````
+
+## Performance
+
+- **Fast Rendering** - Syntax highlighting happens at build time
+- **Small Bundle** - Only necessary language grammars are included
+- **Progressive Enhancement** - Works without JavaScript
+
+## Configuration
+
+Customize code highlighting in your config:
+
+```typescript
+export default defineConfig({
+  markdown: {
+    highlight: {
+      theme: "nord",  // Use different theme
+      lineNumbers: true  // Enable line numbers by default
+    }
+  }
+});
+```
+
+## Best Practices
+
+1. **Always specify language** - Enables proper syntax highlighting
+2. **Use line highlighting sparingly** - Too much highlighting is distracting
+3. **Keep code blocks focused** - Show only relevant code
+4. **Use code groups** - Great for multi-language examples
+5. **Add comments** - Explain complex code inline
+
+## Troubleshooting
+
+### Language not highlighting?
+
+Make sure you're using the correct language identifier:
+
+```markdown
+<!-- ❌ Wrong -->
+```ts-lang
+code here
+```
+
+<!-- ✅ Correct -->
+```typescript
+code here
+```
+```
+
+### Line highlighting not working?
+
+Ensure proper syntax: `{1,3-5}` not `{1, 3-5}` (no spaces after commas)
+
+## Next Steps
+
+- [Learn about code groups in detail](/guide/markdown#code-groups)
+- [Customize syntax themes](/guide/theming)
+- [API reference](/api/markdown-plugins)

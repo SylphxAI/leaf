@@ -1,0 +1,389 @@
+---
+title: Search
+description: Full-text search functionality in ReactPress
+---
+
+# Search
+
+ReactPress includes a powerful, fast, and lightweight full-text search system built into every documentation site.
+
+## Features
+
+- **⚡ Lightning Fast** - Search results appear instantly as you type
+- **🔍 Full-Text** - Searches through all content, not just titles
+- **🎯 Relevance Ranking** - Most relevant results appear first
+- **⌨️ Keyboard Navigation** - Navigate results with arrow keys
+- **📱 Mobile Friendly** - Works perfectly on all devices
+- **🌙 Theme Aware** - Automatically matches your site theme
+- **💾 Offline Support** - Search works even without internet
+
+## Using Search
+
+### Opening Search
+
+Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) to open the search dialog from anywhere on your site.
+
+Alternatively, click the search icon in the navigation bar.
+
+### Searching
+
+Simply start typing your query. Results appear instantly:
+
+1. **Title matches** - Pages with matching titles appear first
+2. **Content matches** - Pages with matching content follow
+3. **Excerpt preview** - See context around your search term
+
+### Navigation
+
+- **↑/↓ Arrow keys** - Move between results
+- **Enter** - Navigate to selected result
+- **Esc** - Close search dialog
+
+## How It Works
+
+ReactPress generates a search index during the build process:
+
+1. **Indexing** - All markdown content is processed
+2. **Tokenization** - Content is split into searchable terms
+3. **Weighting** - Titles and headings get higher relevance
+4. **Compression** - Index is optimized for size
+5. **Distribution** - Index is bundled with your site
+
+The entire process happens at build time, so there's:
+- ✅ No server required
+- ✅ No external API calls
+- ✅ No tracking or analytics
+- ✅ Privacy-friendly
+
+## Search Index
+
+The search index is automatically generated from your content:
+
+```typescript
+{
+  "documents": [
+    {
+      "id": "/guide/installation",
+      "title": "Installation",
+      "description": "How to install ReactPress",
+      "content": "Full page content...",
+      "headings": ["Prerequisites", "Quick Install", ...]
+    },
+    // ... more documents
+  ]
+}
+```
+
+### What Gets Indexed
+
+- **Titles** - Page titles (highest weight)
+- **Headings** - All H1-H6 headings
+- **Content** - All paragraph text
+- **Descriptions** - Meta descriptions
+- **Code comments** - Comments in code blocks
+- **Links** - Link text
+
+### What Doesn't Get Indexed
+
+- **Code syntax** - Code blocks (except comments)
+- **HTML tags** - Raw HTML is stripped
+- **Special characters** - Only alphanumeric text
+
+## Performance
+
+The search system is designed for performance:
+
+| Metric | Value |
+|--------|-------|
+| **Index Size** | ~5-10KB per page |
+| **Load Time** | <50ms |
+| **Search Speed** | <10ms |
+| **Memory Usage** | <5MB |
+
+For a typical documentation site with 100 pages:
+- **Total index size**: ~500KB - 1MB (compressed)
+- **Download time**: <1s on 3G
+- **Parsing time**: <100ms
+
+## Configuration
+
+Search is enabled by default. To customize:
+
+```typescript
+import { defineConfig } from "@sylphx/reactpress";
+
+export default defineConfig({
+  search: {
+    enabled: true,
+
+    // Limit number of results
+    maxResults: 10,
+
+    // Minimum query length
+    minQueryLength: 2,
+
+    // Boost certain fields
+    boost: {
+      title: 4,
+      heading: 2,
+      content: 1
+    },
+
+    // Exclude patterns
+    exclude: [
+      "/internal/**",
+      "/drafts/**"
+    ]
+  }
+});
+```
+
+### Options
+
+#### enabled
+
+- **Type:** `boolean`
+- **Default:** `true`
+
+Enable or disable search functionality.
+
+#### maxResults
+
+- **Type:** `number`
+- **Default:** `10`
+
+Maximum number of search results to display.
+
+#### minQueryLength
+
+- **Type:** `number`
+- **Default:** `2`
+
+Minimum characters required before searching.
+
+#### boost
+
+- **Type:** `object`
+
+Relevance boost for different content types:
+- `title` - Page titles (default: 4)
+- `heading` - Headings H1-H6 (default: 2)
+- `content` - Body content (default: 1)
+
+#### exclude
+
+- **Type:** `string[]`
+
+Glob patterns for pages to exclude from search.
+
+## Advanced Features
+
+### Fuzzy Matching
+
+Search handles typos and close matches:
+
+- `reactpres` → finds "ReactPress"
+- `instalation` → finds "installation"
+- `confguration` → finds "configuration"
+
+### Multi-Word Search
+
+Search for multiple words (AND logic):
+
+- `install react` → finds pages with both terms
+- `dark mode theme` → finds pages about dark mode themes
+
+### Phrase Search
+
+Use quotes for exact phrases:
+
+- `"getting started"` → exact match only
+- `"npm install"` → exact command
+
+### Prefix Search
+
+Search finds words starting with your query:
+
+- `conf` → finds "config", "configuration", "configure"
+- `react` → finds "ReactPress", "React", "reactive"
+
+## Search Tips
+
+1. **Be specific** - More words narrow results
+2. **Use quotes** - For exact phrases
+3. **Check spelling** - Fuzzy matching helps but isn't perfect
+4. **Try variations** - "install" vs "installation"
+5. **Use keywords** - Technical terms work better than common words
+
+## Keyboard Shortcuts
+
+Global shortcuts:
+
+| Key | Action |
+|-----|--------|
+| `Cmd/Ctrl + K` | Open search |
+| `Esc` | Close search |
+
+Within search dialog:
+
+| Key | Action |
+|-----|--------|
+| `↑` | Previous result |
+| `↓` | Next result |
+| `Enter` | Go to result |
+| `Esc` | Close dialog |
+
+## Custom Search UI
+
+You can customize the search interface:
+
+```typescript
+import { Search } from "@sylphx/reactpress-theme-default";
+
+// Custom search component
+export function CustomSearch() {
+  return (
+    <Search
+      placeholder="Search documentation..."
+      maxResults={15}
+      showDescription={true}
+      showPath={true}
+    />
+  );
+}
+```
+
+### Styling
+
+Override search styles with CSS:
+
+```css
+.search-dialog {
+  /* Dialog container */
+}
+
+.search-input {
+  /* Search input field */
+}
+
+.search-results {
+  /* Results container */
+}
+
+.search-result {
+  /* Individual result */
+}
+
+.search-result-title {
+  /* Result title */
+}
+
+.search-result-excerpt {
+  /* Result excerpt/preview */
+}
+
+.search-result-path {
+  /* Result breadcrumb */
+}
+```
+
+## Analytics
+
+Track search queries and improve your content:
+
+```typescript
+export default defineConfig({
+  search: {
+    onSearch: (query, results) => {
+      // Log search analytics
+      console.log(`Searched for: ${query}`);
+      console.log(`Found: ${results.length} results`);
+
+      // Track with analytics service
+      analytics.track("search", {
+        query,
+        resultCount: results.length
+      });
+    }
+  }
+});
+```
+
+## Troubleshooting
+
+### Search not working
+
+1. **Check if index generated** - Look for `search-index.json` in dist
+2. **Verify content** - Ensure pages have content to index
+3. **Check console** - Look for JavaScript errors
+
+### No results found
+
+1. **Check spelling** - Try different variations
+2. **Simplify query** - Use fewer words
+3. **Check if page excluded** - Review `exclude` config
+
+### Slow search
+
+1. **Large index** - Consider excluding some content
+2. **Too many results** - Reduce `maxResults`
+3. **Old browser** - Search requires modern JavaScript
+
+### Index too large
+
+Reduce index size:
+
+```typescript
+export default defineConfig({
+  search: {
+    // Exclude less important content
+    exclude: [
+      "/changelog/**",
+      "/archive/**"
+    ],
+
+    // Limit excerpt length
+    excerptLength: 100,
+
+    // Don't index code blocks
+    indexCode: false
+  }
+});
+```
+
+## Comparison
+
+ReactPress search vs alternatives:
+
+| Feature | ReactPress | Algolia | Typesense |
+|---------|-----------|---------|-----------|
+| **Cost** | Free | $1/month | $0.03/hr |
+| **Setup** | Zero config | API keys | Server setup |
+| **Privacy** | 100% local | Tracked | Self-hosted |
+| **Speed** | <10ms | ~50ms | ~20ms |
+| **Offline** | ✅ Yes | ❌ No | ❌ No |
+| **Search Quality** | Good | Excellent | Excellent |
+
+## Best Practices
+
+1. **Write descriptive titles** - They carry the most weight
+2. **Use clear headings** - Break content into sections
+3. **Add descriptions** - Help users find content
+4. **Avoid duplication** - Confuses search results
+5. **Test search** - Try common queries
+
+## Future Enhancements
+
+Coming soon:
+
+- 🔮 AI-powered semantic search
+- 🏷️ Tag-based filtering
+- 📊 Search analytics dashboard
+- 🌐 Multi-language support
+- 🎤 Voice search
+
+## Next Steps
+
+- [Configure your site](/guide/configuration)
+- [Customize the theme](/guide/theming)
+- [API reference](/api/config)

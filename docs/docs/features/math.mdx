@@ -1,0 +1,434 @@
+---
+title: Math Equations
+description: Render beautiful mathematical equations with KaTeX
+---
+
+# Math Equations
+
+ReactPress supports LaTeX math equations using [KaTeX](https://katex.org/), a fast math typesetting library.
+
+## Inline Math
+
+Use single dollar signs `$` for inline math expressions:
+
+```markdown
+The quadratic formula is $ax^2 + bx + c = 0$ where $a \ne 0$.
+```
+
+**Result:**
+
+The quadratic formula is $ax^2 + bx + c = 0$ where $a \ne 0$.
+
+## Block Math
+
+Use double dollar signs `$$` for display-mode (centered) equations:
+
+```markdown
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+```
+
+**Result:**
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+## Common Notation
+
+### Greek Letters
+
+```markdown
+$\alpha, \beta, \gamma, \delta, \epsilon, \theta, \lambda, \pi, \sigma, \omega$
+
+$\Alpha, \Beta, \Gamma, \Delta, \Theta, \Lambda, \Pi, \Sigma, \Omega$
+```
+
+**Result:**
+
+$\alpha, \beta, \gamma, \delta, \epsilon, \theta, \lambda, \pi, \sigma, \omega$
+
+$\Alpha, \Beta, \Gamma, \Delta, \Theta, \Lambda, \Pi, \Sigma, \Omega$
+
+### Superscripts and Subscripts
+
+```markdown
+$x^2, x^{2y}, x_i, x_{i,j}$
+```
+
+**Result:**
+
+$x^2, x^{2y}, x_i, x_{i,j}$
+
+### Fractions
+
+```markdown
+$\frac{1}{2}, \frac{a}{b}, \frac{x^2 + 1}{x^2 - 1}$
+```
+
+**Result:**
+
+$\frac{1}{2}, \frac{a}{b}, \frac{x^2 + 1}{x^2 - 1}$
+
+### Square Roots
+
+```markdown
+$\sqrt{2}, \sqrt{x^2 + y^2}, \sqrt[3]{8}$
+```
+
+**Result:**
+
+$\sqrt{2}, \sqrt{x^2 + y^2}, \sqrt[3]{8}$
+
+### Sums and Products
+
+```markdown
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+$$
+\prod_{i=1}^{n} i = n!
+$$
+```
+
+**Result:**
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+$$
+\prod_{i=1}^{n} i = n!
+$$
+
+### Integrals
+
+```markdown
+$$
+\int_{a}^{b} f(x) \, dx
+$$
+
+$$
+\iint_D f(x,y) \, dx \, dy
+$$
+```
+
+**Result:**
+
+$$
+\int_{a}^{b} f(x) \, dx
+$$
+
+$$
+\iint_D f(x,y) \, dx \, dy
+$$
+
+### Limits
+
+```markdown
+$$
+\lim_{x \to \infty} \frac{1}{x} = 0
+$$
+```
+
+**Result:**
+
+$$
+\lim_{x \to \infty} \frac{1}{x} = 0
+$$
+
+## Matrix Notation
+
+### Basic Matrix
+
+```markdown
+$$
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+$$
+```
+
+**Result:**
+
+$$
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+$$
+
+### Matrix with Brackets
+
+```markdown
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+```
+
+**Result:**
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+### Matrix with Parentheses
+
+```markdown
+$$
+\begin{pmatrix}
+x & y \\
+z & w
+\end{pmatrix}
+$$
+```
+
+**Result:**
+
+$$
+\begin{pmatrix}
+x & y \\
+z & w
+\end{pmatrix}
+$$
+
+## Equations
+
+### Aligned Equations
+
+```markdown
+$$
+\begin{aligned}
+f(x) &= x^2 + 2x + 1 \\
+     &= (x + 1)^2
+\end{aligned}
+$$
+```
+
+**Result:**
+
+$$
+\begin{aligned}
+f(x) &= x^2 + 2x + 1 \\
+     &= (x + 1)^2
+\end{aligned}
+$$
+
+### System of Equations
+
+```markdown
+$$
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+$$
+```
+
+**Result:**
+
+$$
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+$$
+
+## Advanced Examples
+
+### Euler's Identity
+
+One of the most beautiful equations in mathematics:
+
+$$
+e^{i\pi} + 1 = 0
+$$
+
+### Maxwell's Equations
+
+$$
+\begin{aligned}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0\mathbf{J} + \mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{aligned}
+$$
+
+### Schrödinger Equation
+
+$$
+i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)
+$$
+
+### Binomial Theorem
+
+$$
+(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k
+$$
+
+## Special Symbols
+
+### Logic and Set Theory
+
+```markdown
+$\forall, \exists, \in, \notin, \subset, \subseteq, \cap, \cup, \emptyset$
+```
+
+**Result:**
+
+$\forall, \exists, \in, \notin, \subset, \subseteq, \cap, \cup, \emptyset$
+
+### Relations
+
+```markdown
+$<, >, \leq, \geq, \neq, \approx, \equiv, \sim$
+```
+
+**Result:**
+
+$<, >, \leq, \geq, \neq, \approx, \equiv, \sim$
+
+### Arrows
+
+```markdown
+$\leftarrow, \rightarrow, \leftrightarrow, \Leftarrow, \Rightarrow, \Leftrightarrow$
+```
+
+**Result:**
+
+$\leftarrow, \rightarrow, \leftrightarrow, \Leftarrow, \Rightarrow, \Leftrightarrow$
+
+### Operators
+
+```markdown
+$\pm, \mp, \times, \div, \cdot, \circ, \oplus, \otimes$
+```
+
+**Result:**
+
+$\pm, \mp, \times, \div, \cdot, \circ, \oplus, \otimes$
+
+## Text in Math
+
+Use `\text{}` for regular text in equations:
+
+```markdown
+$$
+P(\text{success}) = \frac{\text{favorable outcomes}}{\text{total outcomes}}
+$$
+```
+
+**Result:**
+
+$$
+P(\text{success}) = \frac{\text{favorable outcomes}}{\text{total outcomes}}
+$$
+
+## Colors
+
+Add color to emphasize parts of equations:
+
+```markdown
+$$
+\textcolor{red}{a}x^2 + \textcolor{blue}{b}x + \textcolor{green}{c} = 0
+$$
+```
+
+## Escaping
+
+To display dollar signs literally, escape them:
+
+```markdown
+The price is \$50.
+```
+
+**Result:** The price is \$50.
+
+## Performance
+
+KaTeX is extremely fast:
+
+- **Renders on page load** - No flash of unstyled content
+- **No JavaScript dependencies** - Pure CSS after render
+- **Small bundle size** - Only ~150KB gzipped
+- **Server-side rendering** - Pre-rendered during build
+
+## Configuration
+
+Math support is enabled by default. To customize:
+
+```typescript
+import { defineConfig } from "@sylphx/reactpress";
+
+export default defineConfig({
+  markdown: {
+    math: {
+      // KaTeX options
+      strict: false,
+      throwOnError: false
+    }
+  }
+});
+```
+
+## Best Practices
+
+1. **Use display mode for complex equations** - Easier to read
+2. **Keep inline math simple** - Too complex breaks flow
+3. **Add context** - Explain what equations mean
+4. **Test rendering** - Some LaTeX features aren't supported
+5. **Consider accessibility** - Provide text descriptions for screen readers
+
+## Common Issues
+
+### Dollar signs not rendering as math
+
+Make sure there's no space after opening or before closing `$`:
+
+```markdown
+<!-- ❌ Wrong -->
+$ x = 5 $
+
+<!-- ✅ Correct -->
+$x = 5$
+```
+
+### Complex expressions breaking
+
+Use proper grouping with `{}`:
+
+```markdown
+<!-- ❌ Wrong -->
+$x^2n$
+
+<!-- ✅ Correct -->
+$x^{2n}$
+```
+
+### Unsupported LaTeX command
+
+KaTeX supports most but not all LaTeX commands. Check the [KaTeX support table](https://katex.org/docs/support_table.html).
+
+## Resources
+
+- [KaTeX Documentation](https://katex.org/docs/supported.html)
+- [LaTeX Math Symbols](https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols)
+- [Math Mode in LaTeX](https://www.overleaf.com/learn/latex/Mathematical_expressions)
+
+## Next Steps
+
+- [Learn about Mermaid diagrams](/features/mermaid)
+- [Full Markdown guide](/guide/markdown)
+- [API reference](/api/markdown-plugins)

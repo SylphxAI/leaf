@@ -1,0 +1,191 @@
+---
+title: Getting Started
+order: 2
+---
+
+# Getting Started
+
+Get up and running with ReactPress in minutes.
+
+## Prerequisites
+
+You need **Bun** installed on your system. If you don't have it:
+
+```bash
+# Install Bun
+curl -fsSL https://bun.sh/install | bash
+```
+
+## Installation
+
+### Option 1: Clone the Repository
+
+```bash
+# Clone the repo
+git clone https://github.com/sylphxltd/reactpress.git
+cd reactpress
+
+# Install dependencies
+bun install
+
+# Start development server
+cd examples/docs
+bun dev
+```
+
+### Option 2: Create New Project (Coming Soon)
+
+```bash
+# Using create-reactpress CLI
+bunx create-reactpress my-docs
+cd my-docs
+bun dev
+```
+
+## Project Structure
+
+A typical ReactPress project looks like this:
+
+```
+my-docs/
+├── docs/                    # Your markdown files
+│   ├── index.mdx           # Homepage
+│   ├── getting-started.mdx
+│   └── guide/
+│       └── installation.mdx
+├── reactpress.config.ts    # Configuration
+└── package.json
+```
+
+## Configuration
+
+Create a `reactpress.config.ts` file:
+
+::: code-group
+
+```ts [reactpress.config.ts]
+import { defineConfig } from '@sylphx/reactpress';
+
+export default defineConfig({
+  title: 'My Documentation',
+  description: 'My awesome documentation site',
+  theme: {
+    nav: [
+      { text: 'Guide', link: '/guide' },
+      { text: 'API', link: '/api' }
+    ],
+    sidebar: [
+      {
+        text: 'Introduction',
+        items: [
+          { text: 'What is it?', link: '/' },
+          { text: 'Getting Started', link: '/getting-started' }
+        ]
+      }
+    ]
+  }
+});
+```
+
+```js [reactpress.config.js]
+export default {
+  title: 'My Documentation',
+  description: 'My awesome documentation site',
+  theme: {
+    nav: [
+      { text: 'Guide', link: '/guide' },
+      { text: 'API', link: '/api' }
+    ]
+  }
+};
+```
+
+:::
+
+## Writing Content
+
+Create your first documentation page:
+
+```markdown
+---
+title: My First Page
+order: 1
+---
+
+# My First Page
+
+Welcome to my documentation!
+
+## Features
+
+::: tip
+This is a helpful tip!
+:::
+
+\`\`\`typescript
+// Your code here
+const hello = "world";
+\`\`\`
+```
+
+## Development
+
+Start the development server:
+
+```bash
+bun dev
+```
+
+Your site will be available at `http://localhost:5173`
+
+## Building for Production
+
+Build your documentation:
+
+```bash
+bun run build
+```
+
+This generates static HTML in the `dist` directory.
+
+## Preview Production Build
+
+Preview the production build locally:
+
+```bash
+bun preview
+```
+
+## What's Next?
+
+- Learn about [Markdown features](/guide/markdown)
+- Explore [Configuration options](/guide/configuration)
+- See all [Features](/features/code-highlighting)
+
+## Troubleshooting
+
+### Port Already in Use
+
+If port 5173 is already in use:
+
+```bash
+# Use a different port
+bun dev --port 3000
+```
+
+### Build Errors
+
+If you encounter build errors:
+
+```bash
+# Clear cache and rebuild
+rm -rf node_modules dist
+bun install
+bun run build
+```
+
+## Getting Help
+
+- 📖 [Documentation](/)
+- 🐛 [Report Issues](https://github.com/sylphxltd/reactpress/issues)
+- 💬 [GitHub Discussions](https://github.com/sylphxltd/reactpress/discussions)

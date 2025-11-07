@@ -1,0 +1,536 @@
+---
+title: Mermaid Diagrams
+description: Create beautiful diagrams and visualizations with Mermaid
+---
+
+# Mermaid Diagrams
+
+ReactPress supports [Mermaid](https://mermaid.js.org/), a powerful diagramming and charting tool that uses text-based syntax.
+
+## Flowcharts
+
+Create flowcharts to visualize processes and workflows:
+
+````markdown
+```mermaid
+flowchart TD
+    Start([Start]) --> Check{Is it working?}
+    Check -->|Yes| Success[Great!]
+    Check -->|No| Debug[Debug the code]
+    Debug --> Test[Run tests]
+    Test --> Check
+    Success --> End([End])
+```
+````
+
+**Result:**
+
+```mermaid
+flowchart TD
+    Start([Start]) --> Check{Is it working?}
+    Check -->|Yes| Success[Great!]
+    Check -->|No| Debug[Debug the code]
+    Debug --> Test[Run tests]
+    Test --> Check
+    Success --> End([End])
+```
+
+### Flowchart Directions
+
+- `TD` or `TB` - Top to bottom
+- `BT` - Bottom to top
+- `LR` - Left to right
+- `RL` - Right to left
+
+## Sequence Diagrams
+
+Show interactions between different actors:
+
+````markdown
+```mermaid
+sequenceDiagram
+    actor User
+    participant Frontend
+    participant API
+    participant Database
+
+    User->>Frontend: Click login button
+    Frontend->>API: POST /auth/login
+    API->>Database: Query user
+    Database-->>API: User data
+    API-->>Frontend: JWT token
+    Frontend-->>User: Show dashboard
+```
+````
+
+**Result:**
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Frontend
+    participant API
+    participant Database
+
+    User->>Frontend: Click login button
+    Frontend->>API: POST /auth/login
+    API->>Database: Query user
+    Database-->>API: User data
+    API-->>Frontend: JWT token
+    Frontend-->>User: Show dashboard
+```
+
+## Class Diagrams
+
+Model object-oriented systems:
+
+````markdown
+```mermaid
+classDiagram
+    class User {
+        +String name
+        +String email
+        +login()
+        +logout()
+    }
+
+    class Post {
+        +String title
+        +String content
+        +Date createdAt
+        +publish()
+    }
+
+    class Comment {
+        +String text
+        +Date createdAt
+    }
+
+    User "1" --> "*" Post : creates
+    Post "1" --> "*" Comment : has
+    User "1" --> "*" Comment : writes
+```
+````
+
+**Result:**
+
+```mermaid
+classDiagram
+    class User {
+        +String name
+        +String email
+        +login()
+        +logout()
+    }
+
+    class Post {
+        +String title
+        +String content
+        +Date createdAt
+        +publish()
+    }
+
+    class Comment {
+        +String text
+        +Date createdAt
+    }
+
+    User "1" --> "*" Post : creates
+    Post "1" --> "*" Comment : has
+    User "1" --> "*" Comment : writes
+```
+
+## State Diagrams
+
+Represent state machines:
+
+````markdown
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Review : Submit
+    Review --> Draft : Request changes
+    Review --> Approved : Approve
+    Approved --> Published : Publish
+    Published --> Archived : Archive
+    Archived --> [*]
+```
+````
+
+**Result:**
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Review : Submit
+    Review --> Draft : Request changes
+    Review --> Approved : Approve
+    Approved --> Published : Publish
+    Published --> Archived : Archive
+    Archived --> [*]
+```
+
+## Entity Relationship Diagrams
+
+Model database relationships:
+
+````markdown
+```mermaid
+erDiagram
+    USER ||--o{ POST : creates
+    USER ||--o{ COMMENT : writes
+    POST ||--o{ COMMENT : has
+    POST }o--|| CATEGORY : belongs_to
+
+    USER {
+        int id PK
+        string name
+        string email
+        datetime created_at
+    }
+
+    POST {
+        int id PK
+        int user_id FK
+        int category_id FK
+        string title
+        text content
+        datetime created_at
+    }
+
+    COMMENT {
+        int id PK
+        int user_id FK
+        int post_id FK
+        text content
+        datetime created_at
+    }
+
+    CATEGORY {
+        int id PK
+        string name
+        string slug
+    }
+```
+````
+
+**Result:**
+
+```mermaid
+erDiagram
+    USER ||--o{ POST : creates
+    USER ||--o{ COMMENT : writes
+    POST ||--o{ COMMENT : has
+    POST }o--|| CATEGORY : belongs_to
+
+    USER {
+        int id PK
+        string name
+        string email
+        datetime created_at
+    }
+
+    POST {
+        int id PK
+        int user_id FK
+        int category_id FK
+        string title
+        text content
+        datetime created_at
+    }
+
+    COMMENT {
+        int id PK
+        int user_id FK
+        int post_id FK
+        text content
+        datetime created_at
+    }
+
+    CATEGORY {
+        int id PK
+        string name
+        string slug
+    }
+```
+
+## Gantt Charts
+
+Plan and track project timelines:
+
+````markdown
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat YYYY-MM-DD
+    section Planning
+        Requirements gathering : 2024-01-01, 14d
+        Design mockups        : 2024-01-15, 7d
+    section Development
+        Frontend setup        : 2024-01-22, 3d
+        API development       : 2024-01-25, 14d
+        Frontend development  : 2024-01-28, 21d
+    section Testing
+        QA testing           : 2024-02-18, 7d
+        Bug fixes            : 2024-02-25, 5d
+    section Deployment
+        Production deploy    : 2024-03-01, 1d
+```
+````
+
+**Result:**
+
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat YYYY-MM-DD
+    section Planning
+        Requirements gathering : 2024-01-01, 14d
+        Design mockups        : 2024-01-15, 7d
+    section Development
+        Frontend setup        : 2024-01-22, 3d
+        API development       : 2024-01-25, 14d
+        Frontend development  : 2024-01-28, 21d
+    section Testing
+        QA testing           : 2024-02-18, 7d
+        Bug fixes            : 2024-02-25, 5d
+    section Deployment
+        Production deploy    : 2024-03-01, 1d
+```
+
+## Pie Charts
+
+Show data distributions:
+
+````markdown
+```mermaid
+pie title Technology Stack
+    "TypeScript" : 45
+    "React" : 30
+    "CSS" : 15
+    "Other" : 10
+```
+````
+
+**Result:**
+
+```mermaid
+pie title Technology Stack
+    "TypeScript" : 45
+    "React" : 30
+    "CSS" : 15
+    "Other" : 10
+```
+
+## Git Graphs
+
+Visualize Git workflows:
+
+````markdown
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add feature A"
+    branch develop
+    checkout develop
+    commit id: "Start feature B"
+    checkout main
+    commit id: "Hotfix"
+    checkout develop
+    commit id: "Complete feature B"
+    checkout main
+    merge develop tag: "v1.0.0"
+```
+````
+
+**Result:**
+
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add feature A"
+    branch develop
+    checkout develop
+    commit id: "Start feature B"
+    checkout main
+    commit id: "Hotfix"
+    checkout develop
+    commit id: "Complete feature B"
+    checkout main
+    merge develop tag: "v1.0.0"
+```
+
+## Mindmaps
+
+Organize ideas and concepts:
+
+````markdown
+```mermaid
+mindmap
+  root((ReactPress))
+    Features
+      Markdown
+      Code Highlighting
+      Math Equations
+      Mermaid Diagrams
+    Performance
+      SSG
+      Fast Builds
+      Small Bundle
+    Developer Experience
+      TypeScript
+      Hot Reload
+      Easy Config
+```
+````
+
+## Journey Diagrams
+
+Map user experiences:
+
+````markdown
+```mermaid
+journey
+    title User Documentation Journey
+    section Discovery
+      Search for docs: 5: User
+      Find ReactPress: 5: User
+    section Getting Started
+      Read introduction: 4: User
+      Follow tutorial: 3: User
+      Install package: 4: User
+    section Building
+      Write content: 5: User
+      Customize theme: 4: User
+      Deploy site: 5: User
+```
+````
+
+## Styling
+
+Mermaid automatically adapts to your site's theme:
+
+- **Light mode** - Clean, professional colors
+- **Dark mode** - Vibrant, high-contrast colors
+
+## Configuration
+
+Mermaid support is enabled by default. To customize:
+
+```typescript
+import { defineConfig } from "@sylphx/reactpress";
+
+export default defineConfig({
+  markdown: {
+    mermaid: {
+      theme: "default",  // or "dark", "forest", "neutral"
+      startOnLoad: true
+    }
+  }
+});
+```
+
+## Performance
+
+Mermaid diagrams are optimized for performance:
+
+- **Lazy loading** - Only loads when diagrams are present
+- **CDN delivery** - Fast, cached distribution
+- **Lightweight** - ~200KB for the library
+- **No build-time rendering** - Renders client-side
+
+## Best Practices
+
+1. **Keep diagrams simple** - Complex diagrams are hard to read
+2. **Use meaningful names** - Clear labels improve understanding
+3. **Add titles** - Context helps interpretation
+4. **Consider mobile** - Some diagrams don't fit small screens
+5. **Use color sparingly** - Too much color is distracting
+
+## Common Patterns
+
+### Architecture Diagram
+
+```mermaid
+flowchart LR
+    User([User]) --> CDN[CDN / Edge]
+    CDN --> LB[Load Balancer]
+    LB --> API1[API Server 1]
+    LB --> API2[API Server 2]
+    API1 --> Cache[(Redis Cache)]
+    API2 --> Cache
+    API1 --> DB[(Database)]
+    API2 --> DB
+```
+
+### State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Loading : fetch()
+    Loading --> Success : data received
+    Loading --> Error : request failed
+    Success --> Idle : reset()
+    Error --> Idle : retry()
+    Error --> [*] : give up
+```
+
+### API Flow
+
+```mermaid
+sequenceDiagram
+    Client->>+API: GET /api/users
+    API->>+Auth: Verify token
+    Auth-->>-API: Token valid
+    API->>+Cache: Check cache
+    Cache-->>-API: Cache miss
+    API->>+DB: Query users
+    DB-->>-API: User data
+    API->>+Cache: Store in cache
+    Cache-->>-API: Cached
+    API-->>-Client: 200 OK + data
+```
+
+## Troubleshooting
+
+### Diagram not rendering
+
+1. Check syntax - Mermaid is sensitive to syntax errors
+2. Ensure language is `mermaid` (not `mer` or `mmd`)
+3. Check browser console for errors
+
+### Diagram cut off
+
+Adjust the diagram width in your CSS:
+
+```css
+.mermaid {
+  max-width: 100%;
+  overflow-x: auto;
+}
+```
+
+### Arrows not connecting
+
+Ensure proper node IDs and arrow syntax:
+
+```mermaid
+<!-- ❌ Wrong -->
+A -> B
+
+<!-- ✅ Correct -->
+A --> B
+```
+
+## Resources
+
+- [Mermaid Documentation](https://mermaid.js.org/)
+- [Live Editor](https://mermaid.live/)
+- [Examples](https://mermaid.js.org/ecosystem/integrations.html)
+
+## Next Steps
+
+- [Learn about Math Equations](/features/math)
+- [Full Markdown guide](/guide/markdown)
+- [API reference](/api/markdown-plugins)

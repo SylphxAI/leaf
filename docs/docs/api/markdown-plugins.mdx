@@ -1,0 +1,592 @@
+---
+title: Markdown Plugins API
+description: API reference for creating custom markdown plugins
+---
+
+# Markdown Plugins API
+
+Learn how to create custom markdown plugins for ReactPress using the unified/remark/rehype ecosystem.
+
+## Overview
+
+ReactPress uses the [unified](https://unifiedjs.com/) processor with:
+
+- **[remark](https://github.com/remarkjs/remark)** - Markdown processor
+- **[rehype](https://github.com/rehypejs/rehype)** - HTML processor
+
+You can add custom plugins at either stage of the pipeline:
+
+```
+Markdown → remark plugins → HTML → rehype plugins → Final HTML
+```
+
+## Plugin Types
+
+### Remark Plugins
+
+Process markdown AST before conversion to HTML.
+
+**Use cases:**
+- Transform markdown syntax
+- Add custom markdown elements
+- Extract metadata
+- Modify content structure
+
+### Rehype Plugins
+
+Process HTML AST after markdown conversion.
+
+**Use cases:**
+- Modify HTML output
+- Add attributes to elements
+- Wrap content in containers
+- Post-process code blocks
+
+## Creating Remark Plugins
+
+### Basic Structure
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root } from "mdast";
+
+export const myRemarkPlugin: Plugin<[], Root> = () => {
+  return (tree) => {
+    // Transform the tree
+  };
+};
+```
+
+### Example: Custom Callout
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Paragraph, Text } from "mdast";
+
+export const remarkCallout: Plugin<[], Root> = () => {
+  return (tree) => {
+    visit(tree, "paragraph", (node: Paragraph, index, parent) => {
+      if (!parent || index === undefined) return;
+
+      const firstChild = node.children[0] as Text;
+      if (firstChild?.type !== "text") return;
+
+      // Check for [!NOTE] syntax
+      const match = firstChild.value.match(/^\[!(NOTE|TIP|WARNING|DANGER)\]\s*/);
+      if (!match) return;
+
+      const type = match[1].toLowerCase();
+      firstChild.value = firstChild.value.slice(match[0].length);
+
+      // Transform to HTML container
+      parent.children[index] = {
+        type: "html",
+        value: `<div class="callout callout-${type}">
+          <div class="callout-content">${serializeChildren(node.children)}</div>
+        </div>`
+      };
+    });
+  };
+};
+```
+
+**Usage:**
+
+```markdown
+[!NOTE] This is a note callout
+```
+
+### Example: Reading Time
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Text } from "mdast";
+
+export const remarkReadingTime: Plugin<[], Root> = () => {
+  return (tree, file) => {
+    let wordCount = 0;
+
+    visit(tree, "text", (node: Text) => {
+      wordCount += node.value.split(/\s+/).length;
+    });
+
+    const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+
+    // Attach to file data
+    file.data.readingTime = readingTime;
+  };
+};
+```
+
+### Example: Auto-Linking Headers
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Heading } from "mdast";
+
+export const remarkAutoLinkHeadings: Plugin<[], Root> = () => {
+  return (tree) => {
+    visit(tree, "heading", (node: Heading) => {
+      const text = node.children
+        .filter((child): child is Text => child.type === "text")
+        .map((child) => child.value)
+        .join("");
+
+      const id = text.toLowerCase().replace(/\s+/g, "-");
+
+      // Add link icon
+      node.children.push({
+        type: "link",
+        url: `#${id}`,
+        children: [
+          {
+            type: "html",
+            value: '<span class="header-link-icon">#</span>'
+          }
+        ]
+      });
+    });
+  };
+};
+```
+
+## Creating Rehype Plugins
+
+### Basic Structure
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Element } from "hast";
+
+export const myRehypePlugin: Plugin<[], Root> = () => {
+  return (tree) => {
+    // Transform the tree
+  };
+};
+```
+
+### Example: Image Lazy Loading
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Element } from "hast";
+
+export const rehypeLazyImages: Plugin<[], Root> = () => {
+  return (tree) => {
+    visit(tree, "element", (node: Element) => {
+      if (node.tagName !== "img") return;
+
+      // Add loading="lazy"
+      node.properties = {
+        ...node.properties,
+        loading: "lazy"
+      };
+    });
+  };
+};
+```
+
+### Example: External Link Icons
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Element } from "hast";
+
+export const rehypeExternalLinks: Plugin<[], Root> = () => {
+  return (tree) => {
+    visit(tree, "element", (node: Element) => {
+      if (node.tagName !== "a") return;
+
+      const href = node.properties?.href as string;
+      if (!href?.startsWith("http")) return;
+
+      // Mark as external
+      node.properties = {
+        ...node.properties,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        className: ["external-link"]
+      };
+
+      // Add icon
+      node.children.push({
+        type: "element",
+        tagName: "svg",
+        properties: {
+          className: ["external-link-icon"],
+          viewBox: "0 0 24 24"
+        },
+        children: [
+          {
+            type: "element",
+            tagName: "path",
+            properties: {
+              d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            },
+            children: []
+          }
+        ]
+      });
+    });
+  };
+};
+```
+
+### Example: Code Block Enhancement
+
+```typescript
+import { visit } from "unist-util-visit";
+import type { Plugin } from "unified";
+import type { Root, Element } from "hast";
+
+export const rehypeCodeMeta: Plugin<[], Root> = () => {
+  return (tree) => {
+    visit(tree, "element", (node: Element) => {
+      if (node.tagName !== "pre") return;
+
+      const codeElement = node.children.find(
+        (child): child is Element =>
+          child.type === "element" && child.tagName === "code"
+      );
+
+      if (!codeElement) return;
+
+      // Extract language from class
+      const className = codeElement.properties?.className as string[];
+      const language = className
+        ?.find((c) => c.startsWith("language-"))
+        ?.replace("language-", "");
+
+      if (!language) return;
+
+      // Add language label
+      node.children.unshift({
+        type: "element",
+        tagName: "div",
+        properties: { className: ["code-language"] },
+        children: [{ type: "text", value: language }]
+      });
+
+      // Add copy button
+      node.children.push({
+        type: "element",
+        tagName: "button",
+        properties: { className: ["code-copy-button"] },
+        children: [{ type: "text", value: "Copy" }]
+      });
+    });
+  };
+};
+```
+
+## Plugin Configuration
+
+### With Options
+
+```typescript
+interface MyPluginOptions {
+  prefix?: string;
+  enabled?: boolean;
+}
+
+export const myPlugin: Plugin<[MyPluginOptions?], Root> = (options = {}) => {
+  const { prefix = "", enabled = true } = options;
+
+  return (tree) => {
+    if (!enabled) return;
+
+    visit(tree, "text", (node: Text) => {
+      node.value = prefix + node.value;
+    });
+  };
+};
+```
+
+**Usage:**
+
+```typescript
+export default defineConfig({
+  markdown: {
+    remarkPlugins: [
+      [myPlugin, { prefix: ">> ", enabled: true }]
+    ]
+  }
+});
+```
+
+## Utilities
+
+### unist-util-visit
+
+Visit nodes in the tree:
+
+```typescript
+import { visit } from "unist-util-visit";
+
+visit(tree, "element", (node, index, parent) => {
+  // node: current node
+  // index: position in parent
+  // parent: parent node
+});
+
+// Visit specific elements
+visit(tree, "element", (node: Element) => {
+  if (node.tagName === "img") {
+    // Process images
+  }
+});
+```
+
+### unist-util-filter
+
+Filter nodes:
+
+```typescript
+import { filter } from "unist-util-filter";
+
+const filtered = filter(tree, (node) => {
+  return node.type !== "html";
+});
+```
+
+### hast-util-to-string
+
+Extract text from nodes:
+
+```typescript
+import { toString } from "hast-util-to-string";
+
+const text = toString(node);
+```
+
+### mdast-util-to-string
+
+Extract text from markdown nodes:
+
+```typescript
+import { toString } from "mdast-util-to-string";
+
+const heading = toString(headingNode);
+```
+
+## AST Node Types
+
+### Markdown (mdast) Nodes
+
+```typescript
+interface Root {
+  type: "root";
+  children: Content[];
+}
+
+interface Heading {
+  type: "heading";
+  depth: 1 | 2 | 3 | 4 | 5 | 6;
+  children: PhrasingContent[];
+}
+
+interface Paragraph {
+  type: "paragraph";
+  children: PhrasingContent[];
+}
+
+interface Text {
+  type: "text";
+  value: string;
+}
+
+interface Code {
+  type: "code";
+  lang?: string;
+  meta?: string;
+  value: string;
+}
+
+interface Link {
+  type: "link";
+  url: string;
+  title?: string;
+  children: PhrasingContent[];
+}
+```
+
+### HTML (hast) Nodes
+
+```typescript
+interface Element {
+  type: "element";
+  tagName: string;
+  properties?: Properties;
+  children: Node[];
+}
+
+interface Text {
+  type: "text";
+  value: string;
+}
+
+interface Properties {
+  [key: string]: string | string[] | number | boolean | null | undefined;
+}
+```
+
+## Built-in Plugins
+
+ReactPress includes these plugins by default:
+
+### Remark Plugins
+
+- **remarkGfm** - GitHub Flavored Markdown
+- **remarkMath** - Math equations
+- **remarkBadge** - Badge components
+- **remarkCodeGroups** - Code group tabs
+- **remarkContainers** - Custom containers
+- **remarkCodeMeta** - Code block metadata
+
+### Rehype Plugins
+
+- **rehypeSlug** - Add IDs to headings
+- **rehypeKatex** - Render math equations
+- **rehypeMermaid** - Mark mermaid diagrams
+- **rehypeHighlight** - Syntax highlighting
+- **rehypeLineHighlight** - Line highlighting
+- **rehypeExternalLinks** - External link icons
+
+## Advanced Patterns
+
+### Accessing File Data
+
+```typescript
+export const myPlugin: Plugin<[], Root> = () => {
+  return (tree, file) => {
+    // Read file path
+    const filePath = file.history[0];
+
+    // Read/write file data
+    file.data.myCustomData = "value";
+
+    // Access frontmatter
+    const frontmatter = file.data.frontmatter;
+  };
+};
+```
+
+### Async Transformations
+
+```typescript
+export const myAsyncPlugin: Plugin<[], Root> = () => {
+  return async (tree) => {
+    const promises: Promise<void>[] = [];
+
+    visit(tree, "element", (node: Element) => {
+      promises.push(
+        async () => {
+          // Async operations
+          const data = await fetchData();
+          node.properties.data = data;
+        }
+      );
+    });
+
+    await Promise.all(promises);
+  };
+};
+```
+
+### Creating Containers
+
+```typescript
+export const remarkCustomContainer: Plugin<[], Root> = () => {
+  return (tree) => {
+    const newChildren: Content[] = [];
+    let i = 0;
+
+    while (i < tree.children.length) {
+      const node = tree.children[i];
+
+      if (node.type === "paragraph") {
+        const text = (node.children[0] as Text)?.value;
+
+        if (text?.startsWith(":::")) {
+          const type = text.slice(3).trim();
+          const content: Content[] = [];
+          i++;
+
+          // Collect content until closing :::
+          while (i < tree.children.length) {
+            const child = tree.children[i];
+            const childText = (child as any).children?.[0]?.value;
+
+            if (childText === ":::") break;
+
+            content.push(child);
+            i++;
+          }
+
+          // Create container
+          newChildren.push({
+            type: "html",
+            value: `<div class="container container-${type}">`
+          });
+          newChildren.push(...content);
+          newChildren.push({
+            type: "html",
+            value: "</div>"
+          });
+
+          i++; // Skip closing :::
+          continue;
+        }
+      }
+
+      newChildren.push(node);
+      i++;
+    }
+
+    tree.children = newChildren;
+  };
+};
+```
+
+## Testing Plugins
+
+```typescript
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import { myPlugin } from "./my-plugin";
+
+describe("myPlugin", () => {
+  it("transforms content", async () => {
+    const processor = unified()
+      .use(remarkParse)
+      .use(myPlugin)
+      .use(remarkRehype)
+      .use(rehypeStringify);
+
+    const result = await processor.process("# Hello");
+    expect(result.toString()).toContain("transformed");
+  });
+});
+```
+
+## Resources
+
+- [unified documentation](https://unifiedjs.com/)
+- [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)
+- [rehype plugins](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md)
+- [unist utilities](https://github.com/syntax-tree/unist#utilities)
+
+## Next Steps
+
+- [Config API](/api/config)
+- [Theming API](/api/theming)
+- [Markdown Guide](/guide/markdown)

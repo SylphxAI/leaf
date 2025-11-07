@@ -1,0 +1,54 @@
+import { defineConfig } from "@sylphx/reactpress";
+
+export default defineConfig({
+	title: "ReactPress",
+	description:
+		"A modern React-based documentation framework with VitePress parity",
+	theme: {
+		nav: [
+			{ text: "Guide", link: "/guide" },
+			{ text: "API", link: "/api" },
+			{ text: "Examples", link: "/examples" },
+			{
+				text: "GitHub",
+				link: "https://github.com/sylphxltd/reactpress",
+			},
+		],
+		sidebar: [
+			{
+				text: "Introduction",
+				items: [
+					{ text: "What is ReactPress?", link: "/" },
+					{ text: "Why ReactPress?", link: "/why" },
+					{ text: "Getting Started", link: "/getting-started" },
+				],
+			},
+			{
+				text: "Guide",
+				items: [
+					{ text: "Installation", link: "/guide/installation" },
+					{ text: "Configuration", link: "/guide/configuration" },
+					{ text: "Markdown", link: "/guide/markdown" },
+					{ text: "Theming", link: "/guide/theming" },
+				],
+			},
+			{
+				text: "Features",
+				items: [
+					{ text: "Code Highlighting", link: "/features/code-highlighting" },
+					{ text: "Math Equations", link: "/features/math" },
+					{ text: "Mermaid Diagrams", link: "/features/mermaid" },
+					{ text: "Search", link: "/features/search" },
+				],
+			},
+			{
+				text: "API Reference",
+				items: [
+					{ text: "Config", link: "/api/config" },
+					{ text: "Markdown Plugins", link: "/api/markdown-plugins" },
+					{ text: "Theming API", link: "/api/theming" },
+				],
+			},
+		],
+	},
+});
