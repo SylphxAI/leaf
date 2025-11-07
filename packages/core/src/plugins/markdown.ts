@@ -11,6 +11,7 @@ import type { ReactPressConfig } from "../types.js";
 import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
 import { remarkContainers } from "./remark-containers.js";
+import { remarkCodeGroups } from "./remark-code-groups.js";
 import { remarkCodeMeta } from "./remark-code-meta.js";
 import { rehypeLineHighlight } from "./rehype-line-highlight.js";
 
@@ -67,6 +68,7 @@ export function markdownPlugin(config: ReactPressConfig): Plugin {
 			const processor = unified()
 				.use(remarkParse)
 				.use(remarkGfm)
+				.use(remarkCodeGroups) // Must run before remarkContainers
 				.use(remarkContainers)
 				.use(remarkCodeMeta)
 				.use(extractToc)

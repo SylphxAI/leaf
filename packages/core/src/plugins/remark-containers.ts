@@ -21,6 +21,13 @@ export const remarkContainers: Plugin<[], Root> = () => {
 			) {
 				const text = node.children[0].value;
 
+				// Skip code-group entirely - handled by remarkCodeGroups plugin
+				if (text.trim().startsWith("::: code-group")) {
+					newChildren.push(node);
+					i++;
+					continue;
+				}
+
 				// Check if the entire paragraph contains a container (multiline case)
 				const fullMatch = text.match(
 					/^:::\s*(\w+)(?:\s+([^\n]+))?\n([\s\S]*?)\n:::$/,
@@ -28,6 +35,14 @@ export const remarkContainers: Plugin<[], Root> = () => {
 
 				if (fullMatch) {
 					const type = fullMatch[1]; // tip, warning, danger, details
+
+					// Skip code-group - handled by remarkCodeGroups plugin
+					if (type === "code-group") {
+						newChildren.push(node);
+						i++;
+						continue;
+					}
+
 					const title = fullMatch[2]?.trim();
 					const content = fullMatch[3];
 
@@ -49,6 +64,33 @@ export const remarkContainers: Plugin<[], Root> = () => {
 
 				if (openMatch) {
 					const type = openMatch[1]; // tip, warning, danger, details
+
+					// Skip code-group - handled by remarkCodeGroups plugin
+					if (type === "code-group") {
+						// Find the closing ::: and preserve entire section
+						let endIndex = i + 1;
+						while (endIndex < tree.children.length) {
+							const child = tree.children[endIndex];
+							if (
+								child.type === "paragraph" &&
+								child.children.length === 1 &&
+								child.children[0].type === "text" &&
+								child.children[0].value.trim() === ":::"
+							) {
+								break;
+							}
+							endIndex++;
+						}
+
+						// Push all nodes from opening to closing (inclusive)
+						for (let j = i; j <= endIndex && j < tree.children.length; j++) {
+							newChildren.push(tree.children[j]);
+						}
+
+						i = endIndex + 1;
+						continue;
+					}
+
 					const title = openMatch[2]?.trim();
 
 					// Extract any content after the opening line in this paragraph
