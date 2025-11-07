@@ -1,5 +1,5 @@
 {
-	"buildCommand": "bash build-vercel.sh",
+	"buildCommand": "pwd && ls -la && bash ./build-vercel.sh",
 	"outputDirectory": "docs/dist",
 	"installCommand": "bun install",
 	"framework": null

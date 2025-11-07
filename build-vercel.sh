@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
 
-# Save project root
-PROJECT_ROOT=$(pwd)
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Save project root (where this script is)
+PROJECT_ROOT="$SCRIPT_DIR"
 
 echo "Building packages..."
 
