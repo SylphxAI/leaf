@@ -13,7 +13,7 @@
 	},
 	"files": ["dist"],
 	"scripts": {
-		"build": "bunup 'src/**/*.{ts,tsx}' && cp src/styles/index.css dist/style.css",
+		"build": "bunup 'src/**/*.{ts,tsx}' && cp src/styles/index.css dist/style.css && node ../../scripts/fix-exports.js",
 		"dev": "bunup 'src/**/*.{ts,tsx}' --watch"
 	},
 	"dependencies": {

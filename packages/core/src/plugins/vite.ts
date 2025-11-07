@@ -27,8 +27,8 @@ export function createReactPressPlugin(config: ReactPressConfig): Plugin[] {
 					rehypeHighlight,
 					...(config.markdown?.rehypePlugins || []),
 				],
-			}) as any,
+			}),
 		} as Plugin,
-		...react({ include: /\.(jsx|js|tsx|ts)$/ }),
+		...react(),
 	];
 }
