@@ -5,6 +5,7 @@ import { Sidebar } from "../components/Sidebar";
 import { TableOfContents, type TocItem } from "../components/TableOfContents";
 import { SidebarToggle } from "../components/SidebarToggle";
 import { DocFooter, type DocFooterProps } from "../components/DocFooter";
+import { Search } from "../components/Search";
 
 interface LayoutProps {
 	config?: any;
@@ -39,6 +40,7 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 			<Header title={config?.title} nav={config?.theme?.nav}>
 				<SidebarToggle open={sidebarOpen} onClick={() => setSidebarOpen(!sidebarOpen)} />
 			</Header>
+			<Search />
 			<div className="layout-content">
 				<Sidebar
 					items={config?.theme?.sidebar}

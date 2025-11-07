@@ -13,6 +13,7 @@ import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
 import { remarkContainers } from "../plugins/remark-containers.js";
 import matter from "gray-matter";
+import { generateSearchIndex } from "./search.js";
 
 interface TocItem {
 	text: string;
@@ -41,6 +42,9 @@ export async function generateStaticSite(options: SSGOptions): Promise<void> {
 	}
 
 	console.log(`✓ Generated ${routes.length} static pages`);
+
+	// Generate search index
+	await generateSearchIndex(routes, outDir);
 }
 
 async function generatePageHTML(

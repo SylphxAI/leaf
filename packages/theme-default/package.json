@@ -19,6 +19,7 @@
 	"dependencies": {
 		"@sylphx/silk": "^1.1.0",
 		"@sylphx/zen": "^1.2.1",
+		"minisearch": "^7.2.0",
 		"react-router-dom": "^7.0.1"
 	},
 	"devDependencies": {
