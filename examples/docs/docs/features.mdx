@@ -1,0 +1,71 @@
+---
+title: Features & Examples
+order: 3
+---
+
+# Features & Examples
+
+This page demonstrates all the powerful features available in ReactPress.
+
+## Custom Containers
+
+ReactPress supports VitePress-style custom containers for highlighting important information.
+
+::: tip
+This is a tip container. Use it for helpful suggestions and best practices.
+:::
+
+::: warning
+This is a warning container. Use it to alert users about potential issues or important considerations.
+:::
+
+::: danger STOP
+This is a danger container. Use it for critical warnings about breaking changes or destructive actions.
+:::
+
+::: details Click to expand
+This is a details container. Use it for optional content that users can expand when needed.
+
+You can put any markdown content inside:
+
+- Lists
+- **Bold text**
+- `Code snippets`
+
+```typescript
+const example = "code blocks work too!";
+```
+:::
+
+## Code Blocks with Copy Button
+
+All code blocks automatically get a copy button on hover:
+
+```typescript
+import { zen } from '@sylphx/zen';
+
+const store = zen({ count: 0 });
+
+// Hover over this code block to see the copy button!
+store.set({ count: store.get().count + 1 });
+```
+
+```bash
+# Install packages
+bun add @sylphx/zen @sylphx/craft @sylphx/silk
+
+# Run development server
+bun run dev
+```
+
+## Table of Contents
+
+Every page automatically generates a table of contents from your headings, displayed in the right sidebar.
+
+## Auto-Generated Sidebar
+
+The sidebar is automatically generated from your file structure. No manual configuration needed!
+
+## What's Next?
+
+Check out the [Getting Started Guide](/guide/) to learn how to use these features in your own documentation.

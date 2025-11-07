@@ -11,6 +11,7 @@ import { unified } from "unified";
 import { type Route, generateRoutes } from "../utils/routes.js";
 import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
+import { remarkContainers } from "../plugins/remark-containers.js";
 
 interface TocItem {
 	text: string;
@@ -83,6 +84,7 @@ async function generatePageHTML(
 	const processor = unified()
 		.use(remarkParse)
 		.use(remarkGfm)
+		.use(remarkContainers)
 		.use(extractToc)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)

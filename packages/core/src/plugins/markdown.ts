@@ -10,6 +10,7 @@ import type { Plugin } from "vite";
 import type { ReactPressConfig } from "../types.js";
 import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
+import { remarkContainers } from "./remark-containers.js";
 
 interface TocItem {
 	text: string;
@@ -64,6 +65,7 @@ export function markdownPlugin(config: ReactPressConfig): Plugin {
 			const processor = unified()
 				.use(remarkParse)
 				.use(remarkGfm)
+				.use(remarkContainers)
 				.use(extractToc)
 				.use(...(config.markdown?.remarkPlugins || []))
 				.use(remarkRehype, { allowDangerousHtml: true })
