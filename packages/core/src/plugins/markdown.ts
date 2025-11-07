@@ -8,6 +8,14 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import type { Plugin } from "vite";
 import type { ReactPressConfig } from "../types.js";
+import type { Root } from "mdast";
+import { visit } from "unist-util-visit";
+
+interface TocItem {
+	text: string;
+	id: string;
+	level: number;
+}
 
 export function markdownPlugin(config: ReactPressConfig): Plugin {
 	return {
@@ -23,10 +31,40 @@ export function markdownPlugin(config: ReactPressConfig): Plugin {
 			// Read the markdown file
 			const code = await readFile(id, "utf-8");
 
+			// Extract TOC
+			const toc: TocItem[] = [];
+
+			// Plugin to extract headings for TOC
+			function extractToc() {
+				return (tree: Root) => {
+					visit(tree, "heading", (node) => {
+						if (node.depth >= 2 && node.depth <= 3) {
+							const text = node.children
+								.filter((child) => child.type === "text")
+								.map((child: any) => child.value)
+								.join("");
+
+							// Generate ID from text (same logic as rehype-slug)
+							const id = text
+								.toLowerCase()
+								.replace(/\s+/g, "-")
+								.replace(/[^\w-]/g, "");
+
+							toc.push({
+								text,
+								id,
+								level: node.depth,
+							});
+						}
+					});
+				};
+			}
+
 			// Process markdown with unified
 			const processor = unified()
 				.use(remarkParse)
 				.use(remarkGfm)
+				.use(extractToc)
 				.use(...(config.markdown?.remarkPlugins || []))
 				.use(remarkRehype, { allowDangerousHtml: true })
 				.use(rehypeSlug)
@@ -37,10 +75,12 @@ export function markdownPlugin(config: ReactPressConfig): Plugin {
 			const vfile = await processor.process(code);
 			const html = String(vfile);
 
-			// Generate React component that renders the HTML
+			// Generate React component that renders the HTML and exports TOC
 			// Use React.createElement to avoid JSX parsing issues
 			const component = `
 import React from 'react';
+
+export const toc = ${JSON.stringify(toc)};
 
 export default function MarkdownContent() {
   return React.createElement('div', {

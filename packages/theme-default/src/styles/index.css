@@ -253,3 +253,97 @@ code {
 	font-style: italic;
 	opacity: 0.9;
 }
+
+/* Table of Contents */
+.toc-aside {
+	width: 250px;
+	padding: 2rem 1.5rem;
+	position: sticky;
+	top: 73px;
+	height: calc(100vh - 73px);
+	overflow-y: auto;
+	border-left: 1px solid var(--color-border);
+}
+
+.toc {
+	position: relative;
+}
+
+.toc-title {
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 1rem;
+	color: var(--color-text);
+	opacity: 0.8;
+}
+
+.toc-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.toc-item {
+	margin: 0;
+}
+
+.toc-level-2 {
+	margin-bottom: 0.5rem;
+}
+
+.toc-level-3 {
+	margin-left: 1rem;
+	margin-bottom: 0.375rem;
+}
+
+.toc-link {
+	display: block;
+	color: var(--color-text);
+	text-decoration: none;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	transition: all 0.2s;
+	opacity: 0.7;
+}
+
+.toc-link:hover {
+	opacity: 1;
+	background-color: var(--color-border);
+}
+
+.toc-item.active > .toc-link {
+	opacity: 1;
+	color: var(--color-accent);
+	font-weight: 500;
+	background-color: rgba(0, 112, 243, 0.1);
+}
+
+:root[data-theme="dark"] .toc-item.active > .toc-link {
+	background-color: rgba(50, 145, 255, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 90px;
+}
+
+@media (max-width: 1200px) {
+	.toc-aside {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.sidebar {
+		display: none;
+	}
+
+	.main-content {
+		max-width: 100%;
+	}
+}
