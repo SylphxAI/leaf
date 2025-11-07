@@ -1,3 +1,6 @@
+/* KaTeX Math Rendering */
+@import "katex/dist/katex.min.css";
+
 *,
 *::before,
 *::after {

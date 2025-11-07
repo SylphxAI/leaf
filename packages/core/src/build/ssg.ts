@@ -2,9 +2,11 @@ import { readFile } from "node:fs/promises";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
@@ -104,6 +106,7 @@ async function generatePageHTML(
 	const processor = unified()
 		.use(remarkParse)
 		.use(remarkGfm)
+		.use(remarkMath) // Process math equations
 		.use(remarkBadge) // Process badges in markdown text
 		.use(remarkCodeGroups) // Must run before remarkContainers
 		.use(remarkContainers)
@@ -111,6 +114,7 @@ async function generatePageHTML(
 		.use(extractToc)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)
+		.use(rehypeKatex) // Render math equations with KaTeX
 		.use(rehypeHighlight)
 		.use(rehypeLineHighlight)
 		.use(rehypeExternalLinks) // Add external link icons
