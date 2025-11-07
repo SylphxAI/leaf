@@ -1,0 +1,57 @@
+{
+  "title": "Sylphx Documentation",
+  "description": "Documentation for Sylphx tools",
+  "base": "/",
+  "theme": {
+    "nav": [
+      {
+        "text": "Guide",
+        "link": "/guide/"
+      },
+      {
+        "text": "Zen",
+        "link": "/zen"
+      },
+      {
+        "text": "Craft",
+        "link": "/craft"
+      },
+      {
+        "text": "Silk",
+        "link": "/silk"
+      }
+    ],
+    "sidebar": [
+      {
+        "text": "Getting Started",
+        "items": [
+          {
+            "text": "Installation Guide",
+            "link": "/guide/installation"
+          }
+        ],
+        "link": "/guide"
+      },
+      {
+        "text": "Craft",
+        "link": "/craft"
+      },
+      {
+        "text": "Introduction",
+        "link": "/"
+      },
+      {
+        "text": "Silk",
+        "link": "/silk"
+      },
+      {
+        "text": "Test Simple",
+        "link": "/test-simple"
+      },
+      {
+        "text": "Zen",
+        "link": "/zen"
+      }
+    ]
+  }
+}

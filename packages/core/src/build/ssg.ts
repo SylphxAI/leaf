@@ -108,7 +108,9 @@ async function generatePageHTML(
 			: "";
 
 	// Inline TOC script (lightweight, no dependencies)
-	const tocScript = toc.length > 0 ? `
+	const tocScript =
+		toc.length > 0
+			? `
 		<script>
 		(function() {
 			if (typeof window === "undefined") return;
@@ -145,9 +147,65 @@ async function generatePageHTML(
 			});
 		})();
 		</script>
-	` : "";
+	`
+			: "";
 
-	// Inject the rendered content, TOC, and script into the template
+	// Code copy script
+	const codeCopyScript = `
+		<script>
+		(function() {
+			if (typeof window === "undefined") return;
+
+			const codeBlocks = document.querySelectorAll("pre code");
+
+			codeBlocks.forEach((codeBlock) => {
+				const pre = codeBlock.parentElement;
+				if (!pre) return;
+				if (pre.querySelector(".code-copy-btn")) return;
+
+				const wrapper = document.createElement("div");
+				wrapper.className = "code-block-wrapper";
+
+				pre.parentNode.insertBefore(wrapper, pre);
+				wrapper.appendChild(pre);
+
+				const languageClass = Array.from(codeBlock.classList).find((cls) =>
+					cls.startsWith("language-")
+				);
+				const language = languageClass
+					? languageClass.replace("language-", "")
+					: "text";
+
+				const langLabel = document.createElement("span");
+				langLabel.className = "code-lang";
+				langLabel.textContent = language;
+				wrapper.appendChild(langLabel);
+
+				const button = document.createElement("button");
+				button.className = "code-copy-btn";
+				button.innerHTML = '<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+				button.setAttribute("aria-label", "Copy code");
+
+				button.addEventListener("click", async () => {
+					const code = codeBlock.textContent || "";
+					try {
+						await navigator.clipboard.writeText(code);
+						button.classList.add("copied");
+						setTimeout(() => {
+							button.classList.remove("copied");
+						}, 2000);
+					} catch (err) {
+						console.error("Failed to copy code:", err);
+					}
+				});
+
+				wrapper.appendChild(button);
+			});
+		})();
+		</script>
+	`;
+
+	// Inject the rendered content, TOC, and scripts into the template
 	// Replace <div id="root"></div> with pre-rendered content
 	const html = template.replace(
 		'<div id="root"></div>',
@@ -160,7 +218,7 @@ async function generatePageHTML(
 				</main>
 				${tocHtml}
 			</div>
-		</div>${tocScript}`,
+		</div>${tocScript}${codeCopyScript}`,
 	);
 
 	// Ensure directory exists
