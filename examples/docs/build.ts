@@ -15,16 +15,12 @@ const outDir = resolve(root, "dist");
 console.log("Building client bundle...");
 
 // Build the client-side bundle
-// NOTE: Using mode: 'development' as workaround for MDX v3 strict ESM validation
-// See KNOWN_ISSUES.md for details
 await viteBuild({
 	root,
-	mode: "development",
 	plugins: [routesPlugin(resolve(root, "docs")), ...createReactPressPlugin(config)],
 	build: {
 		outDir,
 		emptyOutDir: true,
-		minify: false, // Disable minification in development mode
 	},
 });
 
