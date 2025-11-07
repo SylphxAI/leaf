@@ -21,6 +21,7 @@ export function createReactPressPlugin(config: ReactPressConfig): Plugin[] {
 		{
 			enforce: "pre",
 			...mdx({
+				development: true,
 				remarkPlugins: [remarkGfm, ...(config.markdown?.remarkPlugins || [])],
 				rehypePlugins: [
 					rehypeSlug,
