@@ -1,14 +1,13 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"module": "Preserve",
+		"module": "ESNext",
 		"lib": ["ESNext"],
 		"outDir": "./dist",
 		"rootDir": "./src",
 		"composite": true,
 		"declaration": true,
 		"declarationMap": true,
-		"noEmit": false,
 		"moduleResolution": "bundler",
 		"skipLibCheck": true,
 		"strict": true,

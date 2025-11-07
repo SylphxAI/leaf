@@ -3,6 +3,13 @@
 	"compilerOptions": {
 		"outDir": "./dist",
 		"rootDir": "./src",
+		"module": "ESNext",
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noEmit": false,
+		"allowImportingTsExtensions": false,
+		"verbatimModuleSyntax": false,
 		"moduleResolution": "bundler",
 		"skipLibCheck": true
 	},
