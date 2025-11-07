@@ -1,6 +1,6 @@
 import { preview as vitePreview } from "vite";
 
-export async function preview(root: string = process.cwd()) {
+export async function preview(root: string = process.cwd()): Promise<void> {
 	const server = await vitePreview({
 		root,
 		preview: {

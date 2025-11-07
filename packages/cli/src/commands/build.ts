@@ -1,5 +1,5 @@
 import {
-	createReactPressPlugin,
+	createLeafPlugin,
 	generateStaticSite,
 	loadConfig,
 	routesPlugin,
@@ -8,7 +8,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { build as viteBuild } from "vite";
 
-export async function build(root: string = process.cwd()) {
+export async function build(root: string = process.cwd()): Promise<void> {
 	const config = await loadConfig(root);
 	const outDir = resolve(root, "dist");
 
@@ -19,7 +19,7 @@ export async function build(root: string = process.cwd()) {
 		root,
 		plugins: [
 			routesPlugin(resolve(root, "docs")),
-			...createReactPressPlugin(config),
+			...createLeafPlugin(config),
 		],
 		build: {
 			outDir,

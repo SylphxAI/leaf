@@ -1,13 +1,13 @@
 import { resolve } from "node:path";
-import { createReactPressPlugin, loadConfig } from "@sylphx/leaf";
+import { createLeafPlugin, loadConfig } from "@sylphx/leaf";
 import { createServer } from "vite";
 
-export async function dev(root: string = process.cwd()) {
+export async function dev(root: string = process.cwd()): Promise<void> {
 	const config = await loadConfig(root);
 
 	const server = await createServer({
 		root,
-		plugins: createReactPressPlugin(config),
+		plugins: createLeafPlugin(config),
 		server: {
 			port: 5173,
 			open: true,
