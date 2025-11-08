@@ -18,6 +18,13 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 					},
 					resolve: {
 						conditions: isProduction ? ["production", "default"] : ["development", "default"],
+						alias: {
+							react: "preact/compat",
+							"react-dom": "preact/compat",
+						},
+					},
+					optimizeDeps: {
+						include: ["preact/compat", "preact/hooks"],
 					},
 				};
 			},
