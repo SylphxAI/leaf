@@ -52,26 +52,29 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 					onClose={() => setSidebarOpen(false)}
 				/>
 
+				{/* VitePress-style layout: fixed sidebar + centered content container */}
 				<div className="lg:pl-64">
-					<div className="flex px-8 py-8 gap-8 lg:gap-10 xl:gap-12">
-						<main className="flex-1 min-w-0">
-							<article className="mx-auto" style={{ maxWidth: '48rem' }}>
-								<div className="prose prose-slate dark:prose-invert max-w-none">
-									<Outlet />
-								</div>
-								{docFooter && (
-									<div className="mt-16 pt-8 border-t border-border/40">
-										<DocFooter {...docFooter} />
+					<div className="mx-auto px-6 py-8" style={{ maxWidth: '1440px' }}>
+						<div className="flex gap-8 xl:gap-12">
+							{/* Main content - fixed width for stability */}
+							<main className="flex-1 min-w-0" style={{ maxWidth: toc && toc.length > 0 ? 'calc(100% - 16rem)' : '100%' }}>
+								<article className="mx-auto" style={{ maxWidth: '48rem' }}>
+									<div className="prose prose-slate dark:prose-invert max-w-none">
+										<Outlet />
 									</div>
-								)}
-							</article>
-						</main>
+									{docFooter && (
+										<div className="mt-16 pt-8 border-t border-border/40">
+											<DocFooter {...docFooter} />
+										</div>
+									)}
+								</article>
+							</main>
 
-						{toc && toc.length > 0 && (
-							<aside className="hidden xl:block w-64 flex-shrink-0">
-								<TableOfContents items={toc} />
+							{/* TOC - fixed width, always reserves space */}
+							<aside className="hidden xl:block flex-shrink-0" style={{ width: '14rem' }}>
+								{toc && toc.length > 0 && <TableOfContents items={toc} />}
 							</aside>
-						)}
+						</div>
 					</div>
 				</div>
 			</div>
