@@ -11,7 +11,7 @@ interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
  * Link component that works with zen-router
  * Intercepts clicks and uses zen-router's open() for SPA navigation
  */
-export function Link({ to, children, ...props }: LinkProps) {
+export function Link({ to, children, ...props }: LinkProps): JSX.Element {
 	const handleClick = (e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
 		// Allow default behavior for:
 		// - External links

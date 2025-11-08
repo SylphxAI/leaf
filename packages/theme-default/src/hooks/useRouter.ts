@@ -3,7 +3,7 @@ import { $router, open as zenOpen } from "@sylphx/zen-router";
 import { subscribe, get } from "@sylphx/zen";
 
 // Hook to get current location
-export function useLocation() {
+export function useLocation(): { pathname: string; search: string; hash: string } {
 	const [routerState, setRouterState] = useState(() => get($router));
 
 	useEffect(() => {
@@ -12,16 +12,16 @@ export function useLocation() {
 	}, []);
 
 	return {
-		pathname: routerState.path,
-		search: Object.keys(routerState.search).length > 0
+		pathname: routerState.path as string,
+		search: (Object.keys(routerState.search).length > 0
 			? "?" + new URLSearchParams(routerState.search as Record<string, string>).toString()
-			: "",
-		hash: "",
+			: "") as string,
+		hash: "" as string,
 	};
 }
 
 // Hook to navigate
-export function useNavigate() {
+export function useNavigate(): (to: string) => void {
 	return useCallback((to: string) => {
 		zenOpen(to);
 	}, []);
