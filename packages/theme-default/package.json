@@ -14,7 +14,8 @@
 	"files": ["dist"],
 	"scripts": {
 		"build": "NODE_ENV=production bunup 'src/**/*.{ts,tsx}' && cp src/styles/index.css dist/style.css && node ../../scripts/fix-exports.js",
-		"dev": "bunup 'src/**/*.{ts,tsx}' --watch"
+		"dev": "bunup 'src/**/*.{ts,tsx}' --watch",
+		"dev:fix": "bunup 'src/**/*.{ts,tsx}' --watch --on-success 'cp src/styles/index.css dist/style.css && cd ../.. && node scripts/fix-exports.js packages/theme-default/dist'"
 	},
 	"dependencies": {
 		"@iconify/react": "^6.0.2",

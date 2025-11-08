@@ -35,7 +35,27 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 	const [results, setResults] = useState<SearchResult[]>([]);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [searchIndex, setSearchIndex] = useState<MiniSearch | null>(null);
+	const [isVisible, setIsVisible] = useState(false);
+	const [shouldRender, setShouldRender] = useState(false);
 	const navigate = useNavigate();
+
+	// Handle animation on open/close
+	useEffect(() => {
+		if (open) {
+			setShouldRender(true);
+			// Use setTimeout with longer delay to ensure DOM is rendered and browser applies initial state
+			const timer = setTimeout(() => {
+				setIsVisible(true);
+			}, 50);
+			return () => clearTimeout(timer);
+		} else {
+			setIsVisible(false);
+			const timer = setTimeout(() => {
+				setShouldRender(false);
+			}, 300);
+			return () => clearTimeout(timer);
+		}
+	}, [open]);
 
 	// Load search index
 	useEffect(() => {
@@ -124,138 +144,145 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 		setResults([]);
 	};
 
+	if (!shouldRender) return null;
+
 	return (
-		<Dialog.Root open={open} onOpenChange={setOpen}>
-			<Dialog.Portal>
-				<Dialog.Overlay className="fixed inset-0 z-[100] bg-background/70 backdrop-blur-lg data-[state=open]:animate-fade-in" />
-				<Dialog.Content className="fixed left-[50%] top-[15%] z-[101] w-full max-w-2xl translate-x-[-50%] animate-slide-in-from-top" style={{ transform: 'translate(-50%, 0)' }}>
-					<div
-						className="mx-4 overflow-hidden rounded-2xl border border-border/50 bg-popover/95 backdrop-blur-xl shadow-2xl"
-					>
-						{/* Search Input with gradient accent */}
-						<div className="relative flex items-center border-b border-border/50 px-5 py-4">
+		<>
+			{/* Overlay */}
+			<div
+				className={`fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${
+					isVisible ? "opacity-100" : "opacity-0"
+				}`}
+				onClick={() => setOpen(false)}
+			/>
+
+			{/* Search Dialog */}
+			<div
+				className={`fixed left-1/2 top-1/2 z-50 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+					isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+				}`}
+			>
+				<div className="mx-6 overflow-hidden rounded-3xl border border-border/60 bg-background/98 backdrop-blur-2xl shadow-2xl">
+					{/* Search Input - Much Larger */}
+					<div className="relative flex items-center border-b border-border/60 px-8 py-6">
+						<div
+							className="mr-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-white shadow-lg"
+							style={{
+								background:
+									"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
+							}}
+						>
+							<Icon icon="lucide:search" className="h-7 w-7" />
+						</div>
+						<input
+							type="text"
+							placeholder="Search documentation..."
+							value={query}
+							onChange={(e) => setQuery(e.target.value)}
+							className="flex-1 bg-transparent text-xl font-medium placeholder:text-muted-foreground focus:outline-none"
+							autoFocus
+						/>
+						<kbd className="hidden sm:inline-flex h-8 select-none items-center gap-1.5 rounded-lg border border-border/60 bg-muted/60 px-3 font-mono text-sm font-medium transition-all hover:border-border hover:bg-muted">
+							ESC
+						</kbd>
+					</div>
+
+					{/* Empty State - Larger */}
+					{query && results.length === 0 ? (
+						<div className="py-32 px-8 text-center">
 							<div
-								className="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-white"
+								className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-3xl bg-muted/50"
 								style={{
 									background:
-										"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
+										"linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted) / 0.5) 100%)",
 								}}
 							>
-								<Icon icon="lucide:search" className="h-4 w-4" />
+								<Icon icon="lucide:search-x" className="h-12 w-12 text-muted-foreground/60" />
 							</div>
-							<input
-								type="text"
-								placeholder="Search documentation..."
-								value={query}
-								onChange={(e) => setQuery(e.target.value)}
-								className="flex-1 bg-transparent text-base font-medium placeholder:text-muted-foreground focus:outline-none"
-								autoFocus
-							/>
-							<kbd className="hidden sm:inline-flex h-6 select-none items-center gap-1 rounded-md border border-border/50 bg-muted/50 px-2 font-mono text-xs font-medium transition-all hover:border-border hover:bg-muted">
-								ESC
-							</kbd>
+							<p className="text-lg font-semibold text-muted-foreground">
+								No results for "{query}"
+							</p>
+							<p className="mt-3 text-sm text-muted-foreground/70">
+								Try different keywords or check the spelling
+							</p>
 						</div>
-
-						{/* Results with refined design */}
-						{query && results.length === 0 ? (
-							<div className="py-20 px-6 text-center">
-								<div
-									className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-muted/50"
-									style={{
-										background:
-											"linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted) / 0.5) 100%)",
-									}}
+					) : results.length > 0 ? (
+						<div className="max-h-[600px] overflow-y-auto p-4 space-y-2">
+							{results.map((result, idx) => (
+								<button
+									key={result.id}
+									onClick={() => handleSelectResult(result)}
+									onMouseEnter={() => setSelectedIndex(idx)}
+									className={cn(
+										"group w-full rounded-2xl p-6 text-left transition-all duration-200 cursor-pointer",
+										idx === selectedIndex
+											? "bg-primary/10 shadow-md ring-2 ring-primary/20"
+											: "hover:bg-accent/60 active:scale-[0.99]"
+									)}
 								>
-									<Icon icon="lucide:search-x" className="h-8 w-8 text-muted-foreground/60" />
-								</div>
-								<p className="text-sm font-medium text-muted-foreground">
-									No results for "{query}"
-								</p>
-								<p className="mt-2 text-xs text-muted-foreground/70">
-									Try different keywords or check the spelling
-								</p>
-							</div>
-						) : results.length > 0 ? (
-							<div className="max-h-[420px] overflow-y-auto p-3 space-y-1">
-								{results.map((result, idx) => (
-									<button
-										key={result.id}
-										onClick={() => handleSelectResult(result)}
-										onMouseEnter={() => setSelectedIndex(idx)}
-										className={cn(
-											"group w-full rounded-xl p-4 text-left transition-all duration-200 cursor-pointer",
-											idx === selectedIndex
-												? "bg-primary/10 shadow-sm"
-												: "hover:bg-accent/50 active:scale-[0.98]"
-										)}
-									>
-										<div className="flex items-center gap-2.5 mb-2">
-											<div
-												className={cn(
-													"flex h-6 w-6 items-center justify-center rounded-lg transition-all duration-200",
-													idx === selectedIndex ? "text-white" : "text-primary"
-												)}
-												style={
-													idx === selectedIndex
-														? {
-																background:
-																	"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
-														  }
-														: {}
-												}
-											>
-												<Icon icon="lucide:file-text" className="h-3.5 w-3.5" />
-											</div>
-											<div
-												className={cn(
-													"font-semibold text-sm transition-colors",
-													idx === selectedIndex ? "text-primary" : "text-foreground"
-												)}
-											>
-												{result.title}
-											</div>
+									<div className="flex items-center gap-4 mb-3">
+										<div
+											className={cn(
+												"flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-200 shadow-sm",
+												idx === selectedIndex ? "text-white scale-110" : "text-primary"
+											)}
+											style={
+												idx === selectedIndex
+													? {
+															background:
+																"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
+													  }
+													: { background: "hsl(var(--muted))" }
+											}
+										>
+											<Icon icon="lucide:file-text" className="h-5 w-5" />
 										</div>
-										{result.text && (
-											<p className="text-sm text-muted-foreground line-clamp-2 pl-8">
-												{result.text.slice(0, 120)}
-												{result.text.length > 120 ? "..." : ""}
-											</p>
-										)}
-									</button>
-								))}
-							</div>
-						) : null}
-
-						{/* Footer with refined keyboard shortcuts */}
-						{!query && (
-							<div className="border-t border-border/50 bg-muted/20 px-5 py-3.5 backdrop-blur-sm">
-								<div className="flex items-center justify-between text-xs font-medium text-muted-foreground">
-									<div className="flex items-center gap-5">
-										<div className="flex items-center gap-2">
-											<kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-border/50 bg-background/50 px-1.5 font-mono text-[10px] font-medium">
-												↑↓
-											</kbd>
-											<span>Navigate</span>
-										</div>
-										<div className="flex items-center gap-2">
-											<kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-border/50 bg-background/50 px-1.5 font-mono text-[10px] font-medium">
-												↵
-											</kbd>
-											<span>Select</span>
+										<div
+											className={cn(
+												"font-bold text-lg transition-colors",
+												idx === selectedIndex ? "text-primary" : "text-foreground"
+											)}
+										>
+											{result.title}
 										</div>
 									</div>
-									<div className="flex items-center gap-2">
-										<kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-border/50 bg-background/50 px-1.5 font-mono text-[10px] font-medium">
-											ESC
+									{result.text && (
+										<p className="text-base text-muted-foreground line-clamp-2 pl-14 leading-relaxed">
+											{result.text.slice(0, 150)}
+											{result.text.length > 150 ? "..." : ""}
+										</p>
+									)}
+								</button>
+							))}
+						</div>
+					) : (
+						<div className="border-t border-border/60 bg-muted/30 px-8 py-5 backdrop-blur-sm">
+							<div className="flex items-center justify-between text-sm font-medium text-muted-foreground">
+								<div className="flex items-center gap-8">
+									<div className="flex items-center gap-3">
+										<kbd className="inline-flex h-7 select-none items-center gap-1 rounded-md border border-border/60 bg-background/60 px-2.5 font-mono text-xs font-semibold">
+											↑↓
 										</kbd>
-										<span>Close</span>
+										<span>Navigate</span>
+									</div>
+									<div className="flex items-center gap-3">
+										<kbd className="inline-flex h-7 select-none items-center gap-1 rounded-md border border-border/60 bg-background/60 px-2.5 font-mono text-xs font-semibold">
+											↵
+										</kbd>
+										<span>Select</span>
 									</div>
 								</div>
+								<div className="flex items-center gap-3">
+									<kbd className="inline-flex h-7 select-none items-center gap-1 rounded-md border border-border/60 bg-background/60 px-2.5 font-mono text-xs font-semibold">
+										ESC
+									</kbd>
+									<span>Close</span>
+								</div>
 							</div>
-						)}
-					</div>
-				</Dialog.Content>
-			</Dialog.Portal>
-		</Dialog.Root>
+						</div>
+					)}
+				</div>
+			</div>
+		</>
 	);
 }

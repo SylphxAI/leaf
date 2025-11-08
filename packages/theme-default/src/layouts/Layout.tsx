@@ -22,6 +22,9 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 	const toc = handle.toc || [];
 	const docFooter = handle.docFooter;
 
+	const hasSidebar = config?.theme?.sidebar && config.theme.sidebar.length > 0;
+	const hasToc = toc && toc.length > 0;
+
 	useEffect(() => {
 		setSidebarOpen(false);
 	}, [location.pathname]);
@@ -54,13 +57,22 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 					onClose={() => setSidebarOpen(false)}
 				/>
 
-				{/* VitePress-style layout: full width content */}
-				<div className="lg:pl-64">
+				{/* VitePress-style layout: responsive centering */}
+				<div className={cn("lg:pl-64", !hasSidebar && "lg:pl-0")}>
 					<div className="px-6 py-8">
-						<div className="flex gap-8 xl:gap-12">
-							{/* Main content - fixed width for stability */}
-							<main className="flex-1 min-w-0" style={{ maxWidth: toc && toc.length > 0 ? 'calc(100% - 16rem)' : '100%' }}>
-								<article className="mx-auto" style={{ maxWidth: '48rem' }}>
+						<div className={cn(
+							"flex gap-8 xl:gap-12",
+							!hasSidebar && !hasToc && "justify-center"
+						)}>
+							{/* Main content - centered when TOC is missing */}
+							<main className={cn(
+								"flex-1 min-w-0",
+								!hasToc && "mx-auto"
+							)} style={{ maxWidth: hasToc ? 'calc(100% - 16rem)' : '48rem' }}>
+								<article className={cn(
+									"mx-auto",
+									!hasSidebar && !hasToc && "max-w-4xl"
+								)} style={{ maxWidth: hasToc ? '48rem' : undefined }}>
 									<div className="prose prose-slate dark:prose-invert max-w-none">
 										<Outlet />
 									</div>
@@ -72,10 +84,12 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 								</article>
 							</main>
 
-							{/* TOC - fixed width, always reserves space */}
-							<aside className="hidden xl:block flex-shrink-0" style={{ width: '14rem' }}>
-								{toc && toc.length > 0 && <TableOfContents items={toc} />}
-							</aside>
+							{/* TOC - only render when items exist */}
+							{hasToc && (
+								<aside className="hidden xl:block flex-shrink-0" style={{ width: '14rem' }}>
+									<TableOfContents items={toc} />
+								</aside>
+							)}
 						</div>
 					</div>
 				</div>

@@ -43,7 +43,7 @@ export function Header({
 								"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
 						}}
 					>
-						<Icon icon="lucide:layers" className="h-5 w-5" />
+						<Icon icon="lucide:leaf" className="h-5 w-5" />
 					</div>
 					<span
 						className="hidden text-lg font-bold sm:inline-block bg-clip-text text-transparent"

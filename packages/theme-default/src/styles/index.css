@@ -19,11 +19,11 @@
 		--popover: 0 0% 100%;
 		--popover-foreground: 224 15% 12%;
 
-		/* Primary - Gradient Blue-Purple (#3451B2 → #6366F1) */
-		--primary: 227 60% 49%;
+		/* Primary - Gradient Green (Leaf theme #10b981 → #14b8a6) */
+		--primary: 160 84% 39%;
 		--primary-foreground: 0 0% 100%;
-		--primary-gradient-start: 227 60% 49%;
-		--primary-gradient-end: 239 84% 67%;
+		--primary-gradient-start: 160 84% 39%;
+		--primary-gradient-end: 173 80% 40%;
 
 		/* Secondary - Very Light Gray */
 		--secondary: 240 9% 96%;
@@ -33,11 +33,11 @@
 		--muted: 240 9% 96%;
 		--muted-foreground: 224 10% 45%;
 
-		/* Accent - Gradient Cyan (#06B6D4 → #3B82F6) */
-		--accent: 189 95% 42%;
+		/* Accent - Gradient Green-Teal (matching primary) */
+		--accent: 160 84% 39%;
 		--accent-foreground: 0 0% 100%;
-		--accent-gradient-start: 189 95% 42%;
-		--accent-gradient-end: 217 91% 60%;
+		--accent-gradient-start: 160 84% 39%;
+		--accent-gradient-end: 173 80% 40%;
 
 		/* Semantic Colors */
 		--destructive: 0 84% 60%;
@@ -50,7 +50,7 @@
 		/* Borders - Subtle and refined */
 		--border: 240 9% 92%;
 		--input: 240 9% 92%;
-		--ring: 227 60% 49%;
+		--ring: 160 84% 39%;
 
 		/* Radius - Smooth modern curves */
 		--radius: 0.75rem;
@@ -75,11 +75,11 @@
 		--popover: 240 6% 12%;
 		--popover-foreground: 0 0% 98%;
 
-		/* Primary - Gradient Bright Blue (#60A5FA → #A78BFA) */
-		--primary: 213 94% 68%;
+		/* Primary - Gradient Bright Green (Leaf theme #34d399 → #2dd4bf) */
+		--primary: 158 64% 52%;
 		--primary-foreground: 0 0% 10%;
-		--primary-gradient-start: 213 94% 68%;
-		--primary-gradient-end: 258 90% 76%;
+		--primary-gradient-start: 158 64% 52%;
+		--primary-gradient-end: 172 66% 50%;
 
 		/* Secondary - Deep Gray */
 		--secondary: 240 6% 9%;
@@ -89,11 +89,11 @@
 		--muted: 240 6% 9%;
 		--muted-foreground: 240 5% 60%;
 
-		/* Accent - Gradient Cyan (#22D3EE → #818CF8) */
-		--accent: 187 85% 53%;
+		/* Accent - Gradient Bright Green (matching primary) */
+		--accent: 158 64% 52%;
 		--accent-foreground: 0 0% 10%;
-		--accent-gradient-start: 187 85% 53%;
-		--accent-gradient-end: 237 89% 74%;
+		--accent-gradient-start: 158 64% 52%;
+		--accent-gradient-end: 172 66% 50%;
 
 		/* Semantic Colors - Adjusted for dark mode */
 		--destructive: 0 84% 60%;
@@ -106,14 +106,14 @@
 		/* Borders - Glowing subtle borders */
 		--border: 240 6% 18%;
 		--input: 240 6% 18%;
-		--ring: 213 94% 68%;
+		--ring: 158 64% 52%;
 
 		/* Shadows - Dark mode depth with glow */
 		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
 		--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
 		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
 		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-		--glow: 0 0 20px rgb(96 165 250 / 0.15);
+		--glow: 0 0 20px rgb(52 211 153 / 0.15);
 	}
 
 	* {
@@ -176,12 +176,13 @@
 	}
 
 	.prose pre {
-		@apply my-5 overflow-x-auto rounded-xl border border-border/50 bg-card p-5;
+		@apply my-5 overflow-x-auto rounded-xl border border-border/50 bg-muted/30 p-5;
 		box-shadow: var(--shadow-md);
 	}
 
 	.prose pre code {
-		@apply text-sm leading-relaxed bg-transparent p-0 text-foreground;
+		@apply text-sm leading-relaxed bg-transparent p-0 text-foreground font-mono;
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	}
 
 	.prose ul,
