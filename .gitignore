@@ -8,6 +8,7 @@ dist
 
 # Leaf temporary files
 .leaf-temp-*
+.leaf-client.tsx
 
 # code coverage
 coverage
