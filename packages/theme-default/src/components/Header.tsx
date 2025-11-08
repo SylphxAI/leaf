@@ -18,8 +18,8 @@ export function Header({
 	const location = useLocation();
 
 	return (
-		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/60 transition-all duration-300">
-			<div className="flex h-14 items-center px-4 sm:px-6 md:px-8">
+		<header className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-border/40 bg-background/80 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/60">
+			<div className="mx-auto flex h-full items-center px-4 lg:px-8" style={{ maxWidth: '90rem' }}>
 				{/* Mobile Menu Button */}
 				<button
 					onClick={onMenuClick}

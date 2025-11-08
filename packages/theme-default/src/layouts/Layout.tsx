@@ -37,43 +37,43 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 	}, [sidebarOpen]);
 
 	return (
-		<div className="flex min-h-screen flex-col bg-background">
-			<div className="mx-auto w-full" style={{ maxWidth: '1376px' }}>
-				<Header
-					title={config?.title}
-					nav={config?.theme?.nav}
-					onMenuClick={() => setSidebarOpen(!sidebarOpen)}
-				/>
-			</div>
+		<div className="min-h-screen bg-background">
+			<Header
+				title={config?.title}
+				nav={config?.theme?.nav}
+				onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+			/>
 			<Search />
 
-			<div className="mx-auto w-full flex flex-1" style={{ maxWidth: '1376px' }}>
+			<div className="pt-16">
 				<Sidebar
 					items={config?.theme?.sidebar}
 					open={sidebarOpen}
 					onClose={() => setSidebarOpen(false)}
 				/>
 
-				<div className="flex flex-1 flex-col lg:ml-60">
-					<div className="flex flex-1 gap-8 px-8 lg:px-12">
-						<main className="flex-1 min-w-0 py-8">
-							<article className="mx-auto w-full" style={{ maxWidth: '688px' }}>
-								<div className="prose">
-									<Outlet />
-								</div>
-								{docFooter && (
-									<div className="mt-12 pt-6 border-t border-border/40">
-										<DocFooter {...docFooter} />
+				<div className="lg:pl-64">
+					<div className="mx-auto max-w-8xl">
+						<div className="flex gap-6 px-4 py-8 md:gap-8 md:px-6 lg:gap-12 lg:px-8">
+							<main className="flex-1 min-w-0">
+								<article className="mx-auto" style={{ maxWidth: '48rem' }}>
+									<div className="prose prose-slate dark:prose-invert max-w-none">
+										<Outlet />
 									</div>
-								)}
-							</article>
-						</main>
+									{docFooter && (
+										<div className="mt-16 pt-8 border-t border-border/40">
+											<DocFooter {...docFooter} />
+										</div>
+									)}
+								</article>
+							</main>
 
-						{toc && toc.length > 0 && (
-							<aside className="hidden xl:block shrink-0">
-								<TableOfContents items={toc} />
-							</aside>
-						)}
+							{toc && toc.length > 0 && (
+								<aside className="hidden xl:block w-64 flex-shrink-0">
+									<TableOfContents items={toc} />
+								</aside>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
