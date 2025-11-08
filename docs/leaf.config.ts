@@ -3,7 +3,7 @@ import { defineConfig } from "@sylphx/leaf";
 export default defineConfig({
 	title: "Leaf",
 	description:
-		"A modern React-based documentation framework with VitePress parity",
+		"A modern Preact-based documentation framework with VitePress parity",
 	theme: {
 		nav: [
 			{ text: "Guide", link: "/guide" },

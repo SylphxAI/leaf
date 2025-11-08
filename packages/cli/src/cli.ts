@@ -5,7 +5,7 @@ import { build } from "./commands/build";
 import { dev } from "./commands/dev";
 import { preview } from "./commands/preview";
 
-const cli = cac("reactpress");
+const cli = cac("leaf");
 
 cli
 	.command("dev [root]", "Start development server")
