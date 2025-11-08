@@ -55,14 +55,14 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 				/>
 
 				<div className="flex flex-1 flex-col lg:ml-60">
-					<div className="flex flex-1 gap-6 px-6 md:px-8 lg:gap-8 xl:px-12">
-						<main className="flex-1 min-w-0 py-6 md:py-8 lg:py-10">
+					<div className="flex flex-1 gap-8 px-8 lg:px-12">
+						<main className="flex-1 min-w-0 py-8">
 							<article className="mx-auto w-full" style={{ maxWidth: '688px' }}>
 								<div className="prose">
 									<Outlet />
 								</div>
 								{docFooter && (
-									<div className="mt-10 pt-5 border-t border-border/40">
+									<div className="mt-12 pt-6 border-t border-border/40">
 										<DocFooter {...docFooter} />
 									</div>
 								)}
@@ -70,7 +70,7 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 						</main>
 
 						{toc && toc.length > 0 && (
-							<aside className="hidden lg:block shrink-0">
+							<aside className="hidden xl:block shrink-0">
 								<TableOfContents items={toc} />
 							</aside>
 						)}
