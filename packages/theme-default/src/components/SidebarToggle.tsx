@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 
 export interface SidebarToggleProps {
 	open: boolean;
@@ -11,16 +12,12 @@ export function SidebarToggle({
 }: SidebarToggleProps): JSX.Element {
 	return (
 		<button
-			className="sidebar-toggle"
+			className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors lg:hidden"
 			onClick={onClick}
 			aria-label="Toggle sidebar"
 			aria-expanded={open}
 		>
-			<span className="sidebar-toggle-icon">
-				<span className="line" />
-				<span className="line" />
-				<span className="line" />
-			</span>
+			<Icon icon={open ? "lucide:x" : "lucide:menu"} className="h-6 w-6" />
 		</button>
 	);
 }

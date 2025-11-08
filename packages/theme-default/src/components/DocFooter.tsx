@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 export interface DocFooterProps {
 	prev?: {
@@ -23,59 +25,62 @@ export function DocFooter({
 	lastUpdated,
 }: DocFooterProps): JSX.Element {
 	return (
-		<footer className="doc-footer">
+		<footer className="mt-12 border-t pt-8">
 			{(editLink || lastUpdated) && (
-				<div className="doc-footer-meta">
+				<div className="mb-8 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
 					{editLink && (
-						<div className="edit-link">
-							<a
-								href={editLink.pattern}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								>
-									<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-									<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-								</svg>
-								{editLink.text || "Edit this page"}
-							</a>
-						</div>
+						<a
+							href={editLink.pattern}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
+						>
+							<Icon icon="lucide:edit" className="h-4 w-4" />
+							<span>{editLink.text || "Edit this page"}</span>
+						</a>
 					)}
 					{lastUpdated && (
-						<div className="last-updated">
-							<span className="last-updated-text">Last updated: </span>
-							<time id="last-updated-time" />
+						<div className="flex items-center gap-2">
+							<Icon icon="lucide:clock" className="h-4 w-4" />
+							<span>Last updated: </span>
+							<time id="last-updated-time" className="font-medium text-foreground" />
 						</div>
 					)}
 				</div>
 			)}
 
 			{(prev || next) && (
-				<nav className="doc-footer-nav">
-					<div className="prev">
+				<nav className="grid grid-cols-1 gap-4 md:grid-cols-2">
+					<div>
 						{prev && (
-							<a href={prev.link} className="pager-link prev-link">
-								<span className="desc">Previous page</span>
-								<span className="title">{prev.text}</span>
-							</a>
+							<Link
+								to={prev.link}
+								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md"
+							>
+								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+									<Icon icon="lucide:arrow-left" className="h-3 w-3" />
+									Previous
+								</span>
+								<span className="font-semibold text-foreground group-hover:text-primary">
+									{prev.text}
+								</span>
+							</Link>
 						)}
 					</div>
-					<div className="next">
+					<div className="md:text-right">
 						{next && (
-							<a href={next.link} className="pager-link next-link">
-								<span className="desc">Next page</span>
-								<span className="title">{next.text}</span>
-							</a>
+							<Link
+								to={next.link}
+								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md md:items-end"
+							>
+								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+									Next
+									<Icon icon="lucide:arrow-right" className="h-3 w-3" />
+								</span>
+								<span className="font-semibold text-foreground group-hover:text-primary">
+									{next.text}
+								</span>
+							</Link>
 						)}
 					</div>
 				</nav>
