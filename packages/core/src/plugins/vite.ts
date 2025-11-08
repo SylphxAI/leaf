@@ -32,9 +32,6 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 			},
 		},
 		markdownPlugin(config),
-		...react({
-			jsxRuntime: "automatic",
-			jsxImportSource: "react",
-		}),
+		react(),
 	];
 }

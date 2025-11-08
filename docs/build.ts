@@ -22,9 +22,14 @@ await viteBuild({
 		routesPlugin(resolve(root, "docs")),
 		...createLeafPlugin(config),
 	],
+	define: {
+		"process.env.NODE_ENV": JSON.stringify("production"),
+		__DEV__: false,
+	},
 	build: {
 		outDir,
 		emptyOutDir: true,
+		minify: "esbuild",
 	},
 });
 
