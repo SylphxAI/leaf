@@ -2,5 +2,7 @@
 	"buildCommand": "bun run build && cd docs && bun run build",
 	"outputDirectory": "docs/dist",
 	"installCommand": "bun install",
-	"framework": null
+	"framework": null,
+	"cleanUrls": true,
+	"trailingSlash": false
 }
