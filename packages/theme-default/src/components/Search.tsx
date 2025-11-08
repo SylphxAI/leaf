@@ -127,11 +127,10 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Portal>
-				<Dialog.Overlay className="fixed inset-0 z-50 bg-background/70 backdrop-blur-lg data-[state=open]:animate-fade-in" />
-				<Dialog.Content className="fixed left-[50%] top-[15%] z-50 w-full max-w-2xl translate-x-[-50%] animate-slide-in-from-top">
+				<Dialog.Overlay className="fixed inset-0 z-[100] bg-background/70 backdrop-blur-lg data-[state=open]:animate-fade-in" />
+				<Dialog.Content className="fixed left-[50%] top-[15%] z-[101] w-full max-w-2xl translate-x-[-50%] animate-slide-in-from-top" style={{ transform: 'translate(-50%, 0)' }}>
 					<div
-						className="mx-4 overflow-hidden rounded-2xl border border-border/50 bg-popover/95 backdrop-blur-xl"
-						style={{ boxShadow: "var(--shadow-lg)" }}
+						className="mx-4 overflow-hidden rounded-2xl border border-border/50 bg-popover/95 backdrop-blur-xl shadow-2xl"
 					>
 						{/* Search Input with gradient accent */}
 						<div className="relative flex items-center border-b border-border/50 px-5 py-4">
