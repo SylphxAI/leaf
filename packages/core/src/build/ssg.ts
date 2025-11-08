@@ -388,17 +388,46 @@ async function generatePageHTML(
 
 	// Inject the rendered content, TOC, and scripts into the template
 	// Replace <div id="root"></div> with pre-rendered content
+	// NOTE: This is a partial SSR - only renders markdown content
+	// Header, Sidebar, and other UI components will be hydrated by React on the client
 	let html = template.replace(
 		'<div id="root"></div>',
 		`<div id="root">
-			<div class="layout-content">
-				<main class="main-content">
-					<div class="doc-content">
-						<div class="markdown-content">${contentHtml}</div>
-						${docFooterHtml}
+			<div class="layout">
+				<header class="header">
+					<div class="header-container">
+						<a href="/" class="site-title">ReactPress</a>
+						<nav class="nav"></nav>
+						<button class="sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="false">
+							<span class="sidebar-toggle-icon">
+								<span class="line"></span>
+								<span class="line"></span>
+								<span class="line"></span>
+							</span>
+						</button>
+						<button class="theme-toggle" aria-label="Toggle theme">🌙</button>
 					</div>
-				</main>
-				${tocHtml}
+				</header>
+				<button class="search-btn" aria-label="Search">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="11" cy="11" r="8"></circle>
+						<path d="m21 21-4.35-4.35"></path>
+					</svg>
+					<span>Search</span>
+					<kbd>⌘K</kbd>
+				</button>
+				<div class="layout-content">
+					<aside class="sidebar">
+						<nav class="sidebar-nav"></nav>
+					</aside>
+					<main class="main-content">
+						<div class="doc-content">
+							<div class="markdown-content">${contentHtml}</div>
+							${docFooterHtml}
+						</div>
+					</main>
+					${tocHtml}
+				</div>
 			</div>
 		</div>${tocScript}${codeCopyScript}${codeGroupsScript}${mermaidScript}${lastUpdatedScript}`,
 	);

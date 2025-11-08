@@ -33,9 +33,11 @@ function SidebarGroup({
 				child.items?.some((grandchild) => grandchild.link === location.pathname),
 		);
 
-	// Start collapsed to avoid SSR/client mismatch flash
-	// Will auto-expand via useEffect if needed
-	const [collapsed, setCollapsed] = React.useState(item.collapsed ?? true);
+	const shouldExpand = hasActiveChild;
+
+	// IMPORTANT: Initialize with false (expanded) to match SSR structure
+	// Groups with active children will stay expanded, others will be interactive
+	const [collapsed, setCollapsed] = React.useState(item.collapsed ?? false);
 
 	React.useEffect(() => {
 		if (shouldExpand && collapsed) {
