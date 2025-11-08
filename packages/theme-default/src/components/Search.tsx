@@ -60,7 +60,12 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 	// Load search index
 	useEffect(() => {
 		fetch("/search-index.json")
-			.then((res) => res.json())
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error(`HTTP ${res.status}`);
+				}
+				return res.json();
+			})
 			.then((documents: SearchDocument[]) => {
 				const miniSearch = new MiniSearch({
 					fields: ["title", "text"],
@@ -76,6 +81,10 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 				setSearchIndex(miniSearch);
 			})
 			.catch((err) => {
+				// Silently fail in development mode when search index doesn't exist
+				if (import.meta.env.DEV) {
+					return;
+				}
 				console.error("Failed to load search index:", err);
 			});
 	}, []);

@@ -1,6 +1,6 @@
-import type { Root, Element } from "hast";
+import type { Root, Element, Parent } from "hast";
 import type { Plugin } from "unified";
-import { visit } from "unist-util-visit";
+import { visit, SKIP } from "unist-util-visit";
 
 /**
  * Rehype plugin to mark mermaid code blocks for client-side rendering
@@ -8,7 +8,7 @@ import { visit } from "unist-util-visit";
  */
 export const rehypeMermaid: Plugin<[], Root> = () => {
 	return (tree) => {
-		visit(tree, "element", (node: Element, index, parent) => {
+		visit(tree, "element", (node: Element, index, parent: Parent | undefined) => {
 			if (!parent || index === undefined) return;
 			if (node.tagName !== "pre") return;
 
@@ -42,12 +42,15 @@ export const rehypeMermaid: Plugin<[], Root> = () => {
 				children: [
 					{
 						type: "text",
-						value: mermaidCode,
+						value: mermaidCode.trim(),
 					},
 				],
 			};
 
 			parent.children[index] = mermaidDiv;
+
+			// Skip visiting children since we replaced the node
+			return [SKIP, index];
 		});
 	};
 };
