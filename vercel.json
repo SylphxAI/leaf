@@ -1,5 +1,5 @@
 {
-	"buildCommand": "bun install && bun --filter @sylphx/leaf run build && bun --filter @sylphx/leaf-theme-default run build && bun --filter @sylphx/leaf-cli run build && cd docs && bun run build.ts",
+	"buildCommand": "bun run build && cd docs && bun run build.ts",
 	"outputDirectory": "docs/dist",
 	"installCommand": "bun install",
 	"framework": null
