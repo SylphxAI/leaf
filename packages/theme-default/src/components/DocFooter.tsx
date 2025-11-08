@@ -50,12 +50,13 @@ export function DocFooter({
 			)}
 
 			{(prev || next) && (
-				<nav className="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<nav className="grid grid-cols-1 gap-4 md:grid-cols-2" aria-label="Page navigation">
 					<div>
 						{prev && (
 							<Link
 								to={prev.link}
 								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md"
+								aria-label={`Previous page: ${prev.text}`}
 							>
 								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
 									<Icon icon="lucide:arrow-left" className="h-3 w-3" />
@@ -72,6 +73,7 @@ export function DocFooter({
 							<Link
 								to={next.link}
 								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md md:items-end"
+								aria-label={`Next page: ${next.text}`}
 							>
 								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
 									Next

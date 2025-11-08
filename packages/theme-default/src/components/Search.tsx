@@ -162,10 +162,21 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 					isVisible ? "opacity-100" : "opacity-0"
 				}`}
 				onClick={() => setOpen(false)}
+				aria-label="Close search"
+				role="button"
+				tabIndex={0}
+				onKeyDown={(e) => {
+					if (e.key === "Enter" || e.key === " ") {
+						setOpen(false);
+					}
+				}}
 			/>
 
 			{/* Search Dialog */}
 			<div
+				role="dialog"
+				aria-modal="true"
+				aria-label="Search documentation"
 				className={`fixed left-1/2 top-1/2 z-50 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
 					isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
 				}`}
@@ -189,6 +200,7 @@ export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {})
 							onChange={(e) => setQuery(e.target.value)}
 							className="flex-1 bg-transparent text-xl font-medium placeholder:text-muted-foreground focus:outline-none"
 							autoFocus
+							aria-label="Search documentation"
 						/>
 						<kbd className="hidden sm:inline-flex h-8 select-none items-center gap-1.5 rounded-lg border border-border/60 bg-muted/60 px-3 font-mono text-sm font-medium transition-all hover:border-border hover:bg-muted">
 							ESC

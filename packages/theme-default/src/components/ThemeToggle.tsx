@@ -10,7 +10,8 @@ export function ThemeToggle(): JSX.Element {
 			type="button"
 			className="inline-flex items-center justify-center rounded-lg border border-input bg-background p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
 			onClick={toggleTheme}
-			aria-label="Toggle theme"
+			aria-label={`Toggle theme (current: ${theme})`}
+			aria-pressed={theme === "dark"}
 		>
 			<Icon
 				icon={theme === "light" ? "lucide:moon" : "lucide:sun"}

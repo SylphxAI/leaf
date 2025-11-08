@@ -66,6 +66,7 @@ function SidebarGroup({
 						"text-foreground hover:bg-accent"
 					)}
 					style={{ paddingLeft: `${level * 0.75 + 0.75}rem` }}
+					aria-expanded={open}
 				>
 					<span>{item.text}</span>
 					<Icon
@@ -100,11 +101,21 @@ export function Sidebar({
 				<div
 					className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
 					onClick={onClose}
+					aria-label="Close sidebar"
+					role="button"
+					tabIndex={0}
+					onKeyDown={(e) => {
+						if (e.key === "Enter" || e.key === " ") {
+							onClose?.();
+						}
+					}}
 				/>
 			)}
 
 			{/* Sidebar */}
 			<aside
+				role="navigation"
+				aria-label="Documentation navigation"
 				className={cn(
 					"fixed top-16 bottom-0 left-0 z-40 w-64 border-r border-border/40 bg-background",
 					"transition-transform duration-300 ease-in-out lg:translate-x-0",

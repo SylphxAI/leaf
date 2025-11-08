@@ -53,7 +53,7 @@ export function TableOfContents({
 		<div className="sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto">
 			<div className="space-y-2">
 				<h3 className="text-sm font-semibold text-foreground">On this page</h3>
-				<nav>
+				<nav aria-label="Table of contents">
 					<ul className="space-y-1">
 						{items.map((item) => {
 							const isActive = activeId === item.id;
@@ -72,6 +72,7 @@ export function TableOfContents({
 												? "text-primary font-medium"
 												: "text-muted-foreground hover:text-foreground"
 										)}
+										aria-current={isActive ? "location" : undefined}
 									>
 										{item.text}
 									</a>

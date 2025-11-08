@@ -27,6 +27,7 @@ export function Header({
 				<button
 					onClick={onMenuClick}
 					className="mr-4 inline-flex items-center justify-center rounded-lg p-2.5 text-muted-foreground transition-all duration-200 hover:bg-accent/50 hover:text-foreground active:scale-95 lg:hidden"
+					aria-label="Toggle menu"
 				>
 					<Icon icon="lucide:menu" className="h-5 w-5" />
 					<span className="sr-only">Toggle menu</span>
@@ -58,7 +59,7 @@ export function Header({
 				</Link>
 
 				{/* Navigation with refined active state */}
-				<nav className="hidden gap-0.5 md:flex flex-1">
+				<nav className="hidden gap-0.5 md:flex flex-1" aria-label="Main navigation">
 					{nav.map((item) => {
 						const isActive = location.pathname.startsWith(item.link);
 						return (
@@ -71,6 +72,7 @@ export function Header({
 										? "text-primary"
 										: "text-muted-foreground hover:text-foreground hover:bg-accent/50"
 								)}
+								aria-current={isActive ? "page" : undefined}
 							>
 								{item.text}
 								{isActive && (
@@ -92,6 +94,7 @@ export function Header({
 					<button
 						onClick={onSearchClick}
 						className="group inline-flex items-center gap-2.5 rounded-xl border border-border/50 bg-muted/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm transition-all duration-200 hover:border-border hover:bg-muted hover:text-foreground hover:shadow-md active:scale-95"
+						aria-label="Search documentation"
 					>
 						<Icon
 							icon="lucide:search"
