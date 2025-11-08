@@ -12,6 +12,9 @@ const root = process.cwd();
 const config = await loadConfig(root);
 const outDir = resolve(root, "dist");
 
+// FORCE production environment
+process.env.NODE_ENV = "production";
+
 console.log("Building Leaf documentation...");
 
 // Build the client-side bundle

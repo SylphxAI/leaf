@@ -18,11 +18,11 @@
 	"dependencies": {
 		"@sylphx/leaf": "workspace:*",
 		"cac": "^6.7.14",
-		"vite": "^6.0.1"
+		"vite": "^6.4.1"
 	},
 	"devDependencies": {
-		"@types/node": "^22.10.1",
+		"@types/node": "^22.19.0",
 		"bunup": "^0.15.14",
-		"typescript": "^5.6.3"
+		"typescript": "^5.9.3"
 	}
 }

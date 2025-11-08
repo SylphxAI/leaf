@@ -13,10 +13,11 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 					define: {
 						__LEAF_CONFIG__: JSON.stringify(config),
 						"process.env.NODE_ENV": JSON.stringify(mode),
+						__DEV__: !isProduction,
 					},
 					esbuild: {
 						jsx: "automatic",
-						jsxDev: false,
+						jsxDev: !isProduction,
 						jsxImportSource: "react",
 					},
 					resolve: {
@@ -25,13 +26,15 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 					optimizeDeps: {
 						esbuildOptions: {
 							jsx: "automatic",
-							jsxDev: false,
+							jsxDev: !isProduction,
 						},
 					},
 				};
 			},
 		},
 		markdownPlugin(config),
-		react(),
+		react({
+			jsxRuntime: "automatic",
+		}),
 	];
 }
