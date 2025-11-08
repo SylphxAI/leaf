@@ -15,6 +15,7 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 	const matches = useMatches();
 	const location = useLocation();
 	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const [searchOpen, setSearchOpen] = useState(false);
 
 	const currentMatch = matches[matches.length - 1];
 	const handle = (currentMatch?.handle as any) || {};
@@ -42,8 +43,9 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 				title={config?.title}
 				nav={config?.theme?.nav}
 				onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+				onSearchClick={() => setSearchOpen(true)}
 			/>
-			<Search />
+			<Search open={searchOpen} onOpenChange={setSearchOpen} />
 
 			<div className="pt-16">
 				<Sidebar

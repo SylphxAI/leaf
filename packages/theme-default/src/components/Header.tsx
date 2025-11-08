@@ -8,12 +8,14 @@ interface HeaderProps {
 	title?: string;
 	nav?: Array<{ text: string; link: string }>;
 	onMenuClick?: () => void;
+	onSearchClick?: () => void;
 }
 
 export function Header({
 	title = "Leaf",
 	nav = [],
 	onMenuClick,
+	onSearchClick,
 }: HeaderProps): JSX.Element {
 	const location = useLocation();
 
@@ -86,7 +88,10 @@ export function Header({
 
 				{/* Actions with modern search box */}
 				<div className="flex items-center gap-3 ml-auto">
-					<button className="group inline-flex items-center gap-2.5 rounded-xl border border-border/50 bg-muted/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm transition-all duration-200 hover:border-border hover:bg-muted hover:text-foreground hover:shadow-md active:scale-95">
+					<button
+						onClick={onSearchClick}
+						className="group inline-flex items-center gap-2.5 rounded-xl border border-border/50 bg-muted/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm transition-all duration-200 hover:border-border hover:bg-muted hover:text-foreground hover:shadow-md active:scale-95"
+					>
 						<Icon
 							icon="lucide:search"
 							className="h-4 w-4 transition-transform duration-200 group-hover:scale-110"

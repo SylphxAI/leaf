@@ -22,8 +22,15 @@ interface SearchResult {
 	score: number;
 }
 
-export function Search(): JSX.Element {
-	const [open, setOpen] = useState(false);
+interface SearchProps {
+	open?: boolean;
+	onOpenChange?: (open: boolean) => void;
+}
+
+export function Search({ open: controlledOpen, onOpenChange }: SearchProps = {}): JSX.Element {
+	const [internalOpen, setInternalOpen] = useState(false);
+	const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+	const setOpen = onOpenChange || setInternalOpen;
 	const [query, setQuery] = useState("");
 	const [results, setResults] = useState<SearchResult[]>([]);
 	const [selectedIndex, setSelectedIndex] = useState(0);
