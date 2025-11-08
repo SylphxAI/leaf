@@ -60,6 +60,46 @@ export async function generateStaticSite(options: SSGOptions): Promise<void> {
 	await generateSearchIndex(routes, outDir);
 }
 
+// Critical CSS - inline styles for instant first paint (NO FOUC)
+const CRITICAL_CSS = `<style>
+/* Critical CSS for instant render - prevents FOUC */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root,:root[data-theme="light"]{--font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--color-bg:#ffffff;--color-text:#1a1a1a;--color-border:#e5e5e5;--color-accent:#0070f3;color-scheme:light}
+:root[data-theme="dark"]{--color-bg:#0a0a0a;--color-text:#ededed;--color-border:#2a2a2a;--color-accent:#3291ff;color-scheme:dark}
+body{font-family:var(--font-sans);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.layout{min-height:100vh;display:flex;flex-direction:column}
+.layout-content{display:flex;flex:1}
+.main-content{flex:1;max-width:1200px;margin:0 auto;width:100%}
+.header{border-bottom:1px solid var(--color-border);position:sticky;top:0;background-color:var(--color-bg);z-index:100}
+.header-content{max-width:1400px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{font-size:1.5rem;font-weight:700;text-decoration:none;color:var(--color-accent)}
+.nav{display:flex;gap:2rem;align-items:center}
+.nav-link{text-decoration:none;color:var(--color-text);font-weight:500;transition:color 0.2s}
+.nav-link:hover{color:var(--color-accent)}
+.sidebar{width:250px;border-right:1px solid var(--color-border);padding:2rem 0;position:sticky;top:73px;height:calc(100vh - 73px);overflow-y:auto}
+.sidebar-nav{display:flex;flex-direction:column;gap:0.5rem;padding:0 1.5rem}
+.sidebar-link{text-decoration:none;color:var(--color-text);padding:0.5rem 0.75rem;border-radius:0.375rem;transition:all 0.2s;font-size:0.9375rem;display:block}
+.sidebar-link:hover{background-color:var(--color-border)}
+.sidebar-link.active{background-color:var(--color-accent);color:white;font-weight:500}
+.sidebar-group{margin-bottom:0.5rem}
+.sidebar-group-label{width:100%;background:none;border:none;text-align:left;padding:0.5rem 0.75rem;border-radius:0.375rem;font-size:0.9375rem;color:var(--color-text);cursor:pointer;font-weight:500;display:flex;align-items:center;justify-content:space-between;gap:0.5rem}
+.sidebar-group-items{display:flex;flex-direction:column;gap:0.25rem;margin-top:0.25rem;overflow:hidden}
+.sidebar-group-items.collapsed{max-height:0;opacity:0;margin-top:0}
+.sidebar-group-items.expanded{max-height:2000px;opacity:1}
+.doc-content{max-width:800px;padding:2rem}
+.toc-aside{width:250px;padding:2rem 1.5rem;position:sticky;top:73px;height:calc(100vh - 73px);overflow-y:auto;border-left:1px solid var(--color-border)}
+.toc-title{font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;color:var(--color-text);opacity:0.8}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-item{margin:0}
+.toc-level-2{margin-bottom:0.5rem}
+.toc-level-3{margin-left:1rem;margin-bottom:0.375rem}
+.toc-link{display:block;color:var(--color-text);text-decoration:none;font-size:0.875rem;line-height:1.5;padding:0.25rem 0.5rem;border-radius:0.25rem;transition:all 0.2s;opacity:0.7}
+.toc-link:hover{opacity:1;background-color:var(--color-border)}
+.header-mobile-menu{display:none}
+@media(max-width:1200px){.toc-aside{display:none}}
+@media(max-width:768px){.sidebar{position:fixed;top:73px;left:0;bottom:0;transform:translateX(-100%);transition:transform 0.3s;z-index:200;background-color:var(--color-bg)}.sidebar.open{transform:translateX(0)}.header-mobile-menu{display:block}}
+</style>`;
+
 async function generatePageHTML(
 	route: Route,
 	outDir: string,
@@ -72,8 +112,8 @@ async function generatePageHTML(
 	// Read and process the markdown file
 	const fileContent = await readFile(route.component, "utf-8");
 
-	// Strip frontmatter before processing
-	const { content: markdownContent } = matter(fileContent);
+	// Parse frontmatter
+	const { content: markdownContent, data: frontmatter } = matter(fileContent);
 
 	// Get last modified time from git
 	const lastModified = await getLastModifiedTime(route.component);
@@ -112,44 +152,153 @@ async function generatePageHTML(
 	const processor = unified()
 		.use(remarkParse)
 		.use(remarkGfm)
-		.use(remarkMath) // Process math equations
-		.use(remarkBadge) // Process badges in markdown text
-		.use(remarkCodeGroups) // Must run before remarkContainers
+		.use(remarkMath)
+		.use(remarkBadge)
+		.use(remarkCodeGroups)
 		.use(remarkContainers)
 		.use(remarkCodeMeta)
 		.use(extractToc)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)
-		.use(rehypeKatex) // Render math equations with KaTeX
-		.use(rehypeMermaid) // Mark mermaid diagrams before highlighting
+		.use(rehypeKatex)
+		.use(rehypeMermaid)
 		.use(rehypeHighlight)
 		.use(rehypeLineHighlight)
-		.use(rehypeExternalLinks) // Add external link icons
+		.use(rehypeExternalLinks)
 		.use(rehypeStringify, { allowDangerousHtml: true });
 
 	const vfile = await processor.process(markdownContent);
 	const contentHtml = String(vfile);
 
-	// Generate TOC HTML
-	const tocHtml =
+	// SEO Meta Tags
+	const pageTitle = frontmatter.title || config.title || "Leaf";
+	const pageDescription = frontmatter.description || config.description || "A modern React-based documentation framework";
+	const siteUrl = config.siteUrl || "https://leaf.sylphx.com";
+	const canonicalUrl = `${siteUrl}${route.path}`;
+	const ogImage = frontmatter.ogImage || `${siteUrl}/og-image.png`;
+
+	const seoMeta = `
+		<title>${pageTitle}</title>
+		<meta name="description" content="${pageDescription}" />
+		<link rel="canonical" href="${canonicalUrl}" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="${canonicalUrl}" />
+		<meta property="og:title" content="${pageTitle}" />
+		<meta property="og:description" content="${pageDescription}" />
+		<meta property="og:image" content="${ogImage}" />
+		<meta property="og:site_name" content="${config.title || 'Leaf'}" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="${canonicalUrl}" />
+		<meta name="twitter:title" content="${pageTitle}" />
+		<meta name="twitter:description" content="${pageDescription}" />
+		<meta name="twitter:image" content="${ogImage}" />
+
+		<!-- Additional Meta Tags -->
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="author" content="${config.author || 'Sylphx'}" />
+		<meta name="theme-color" content="#0070f3" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	`;
+
+	// Generate Sidebar HTML matching React component structure
+	function generateSidebarHTML(items: any[], level = 0): string {
+		if (!items || items.length === 0) return "";
+
+		return items
+			.map((item) => {
+				const hasChildren = item.items && item.items.length > 0;
+
+				if (!hasChildren && item.link) {
+					// Simple link
+					const isActive = item.link === route.path;
+					return `<a href="${item.link}" class="sidebar-link${isActive ? " active" : ""}">${item.text}</a>`;
+				}
+
+				if (hasChildren) {
+					// Group with children
+					const childrenHTML = generateSidebarHTML(item.items, level + 1);
+
+					if (item.link) {
+						// Group with link (not used in current config but supported)
+						const isActive = item.link === route.path;
+						return `<div class="sidebar-group">
+							<div class="sidebar-group-header">
+								<a href="${item.link}" class="sidebar-link${isActive ? " active" : ""}">${item.text}</a>
+								<button class="sidebar-group-toggle" aria-label="Expand group">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<polyline points="6 9 12 15 18 9" />
+									</svg>
+								</button>
+							</div>
+							<div class="sidebar-group-items expanded">${childrenHTML}</div>
+						</div>`;
+					} else {
+						// Group without link (label only)
+						return `<div class="sidebar-group">
+							<button class="sidebar-group-label">
+								<span>${item.text}</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="6 9 12 15 18 9" />
+								</svg>
+							</button>
+							<div class="sidebar-group-items expanded">${childrenHTML}</div>
+						</div>`;
+					}
+				}
+
+				return "";
+			})
+			.join("");
+	}
+
+	const sidebarHTML = generateSidebarHTML(config.theme?.sidebar || []);
+
+	// Generate Nav HTML matching React component
+	const navHTML = (config.theme?.nav || [])
+		.map((item: any) => {
+			const isExternal = item.link && item.link.startsWith("http");
+			if (isExternal) {
+				return `<a href="${item.link}" class="nav-link" target="_blank" rel="noopener noreferrer">${item.text}</a>`;
+			} else {
+				return `<a href="${item.link}" class="nav-link">${item.text}</a>`;
+			}
+		})
+		.join("");
+
+	// Generate TOC HTML matching React component structure
+	const tocHTML =
 		toc.length > 0
-			? `
-		<aside class="toc-aside">
+			? `<aside class="toc-aside">
 			<nav class="toc">
 				<h3 class="toc-title">On this page</h3>
 				<ul class="toc-list">
 					${toc.map((item) => `<li class="toc-item toc-level-${item.level}"><a href="#${item.id}" class="toc-link">${item.text}</a></li>`).join("\n\t\t\t\t\t")}
 				</ul>
 			</nav>
-		</aside>
-	`
+		</aside>`
 			: "";
 
-	// Inline TOC script (lightweight, no dependencies)
-	const tocScript =
-		toc.length > 0
-			? `
+	// Generate DocFooter HTML
+	const docFooterHTML = lastModifiedText
+		? `<footer class="doc-footer">
+			<div class="doc-footer-meta">
+				<div class="last-updated">
+					<span class="last-updated-text">Last updated: </span>
+					<time id="last-updated-time">${lastModifiedText}</time>
+				</div>
+			</div>
+		</footer>`
+		: "";
+
+	// Client-side scripts for interactivity
+	const clientScripts = `
 		<script>
+		// TOC active tracking
 		(function() {
 			if (typeof window === "undefined") return;
 			const toc = document.querySelector(".toc");
@@ -184,13 +333,8 @@ async function generatePageHTML(
 				observer.observe(heading);
 			});
 		})();
-		</script>
-	`
-			: "";
 
-	// Code copy script
-	const codeCopyScript = `
-		<script>
+		// Code copy buttons
 		(function() {
 			if (typeof window === "undefined") return;
 
@@ -240,12 +384,8 @@ async function generatePageHTML(
 				wrapper.appendChild(button);
 			});
 		})();
-		</script>
-	`;
 
-	// Code groups script
-	const codeGroupsScript = `
-		<script>
+		// Code groups
 		(function() {
 			if (typeof window === "undefined") return;
 
@@ -344,176 +484,36 @@ async function generatePageHTML(
 				}
 			});
 		})();
+
+		// Mermaid diagrams
+		${contentHtml.includes('class="mermaid"') ? `
+		(function() {
+			if (typeof window === "undefined") return;
+			import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs').then((m) => {
+				m.default.initialize({
+					startOnLoad: true,
+					theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+				});
+			});
+		})();
+		` : ''}
 		</script>
 	`;
 
-	// Generate Sidebar HTML from config
-	function generateSidebarHTML(items: any[], level = 0): string {
-		if (!items || items.length === 0) return "";
+	// Inject everything into template - MATCH React component structure EXACTLY
+	let html = template;
 
-		return items
-			.map((item) => {
-				const hasChildren = item.items && item.items.length > 0;
-				const paddingLeft = level * 1 + 0.75;
+	// Replace title tag
+	html = html.replace(/<title>.*?<\/title>/, `<title>${pageTitle}</title>`);
 
-				if (!hasChildren && item.link) {
-					// Simple link
-					const isActive = item.link === route.path;
-					return `<a href="${item.link}" class="sidebar-link${isActive ? " active" : ""}" style="padding-left: ${paddingLeft}rem">${item.text}</a>`;
-				}
+	// Inject SEO meta tags before </head>
+	html = html.replace("</head>", `${seoMeta}${CRITICAL_CSS}</head>`);
 
-				if (hasChildren) {
-					// Group with children
-					const hasActiveChild = item.items.some(
-						(child: any) => child.link === route.path
-					);
-					const childrenHTML = generateSidebarHTML(item.items, level + 1);
-
-					if (item.link) {
-						// Group with link
-						const isActive = item.link === route.path;
-						return `<div class="sidebar-group">
-							<div class="sidebar-group-header">
-								<a href="${item.link}" class="sidebar-link${isActive ? " active" : ""}" style="padding-left: ${paddingLeft}rem">${item.text}</a>
-								<button class="sidebar-group-toggle" aria-label="Expand group">
-									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform 0.2s;">
-										<polyline points="6 9 12 15 18 9" />
-									</svg>
-								</button>
-							</div>
-							<div class="sidebar-group-items expanded">${childrenHTML}</div>
-						</div>`;
-					} else {
-						// Group without link (label only)
-						return `<div class="sidebar-group">
-							<button class="sidebar-group-label" style="padding-left: ${paddingLeft}rem">
-								<span>${item.text}</span>
-								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform 0.2s;">
-									<polyline points="6 9 12 15 18 9" />
-								</svg>
-							</button>
-							<div class="sidebar-group-items expanded">${childrenHTML}</div>
-						</div>`;
-					}
-				}
-
-				return "";
-			})
-			.join("");
-	}
-
-	const sidebarItems = config.theme?.sidebar || [];
-	const sidebarHTML = generateSidebarHTML(sidebarItems);
-
-	// Last updated script
-	const lastUpdatedScript =
-		lastModifiedText
-			? `
-		<script>
-		(function() {
-			if (typeof window === "undefined") return;
-			const timeElement = document.getElementById("last-updated-time");
-			if (timeElement) {
-				timeElement.textContent = "${lastModifiedText}";
-			}
-		})();
-		</script>
-	`
-			: "";
-
-	// Mermaid script - only add if there are mermaid diagrams
-	const hasMermaid = contentHtml.includes('class="mermaid"');
-	const mermaidScript = hasMermaid
-		? `
-		<script type="module">
-		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-		mermaid.initialize({
-			startOnLoad: true,
-			theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
-		});
-		</script>
-	`
-		: "";
-
-	// Generate DocFooter HTML with last updated
-	const docFooterHtml = lastModifiedText
-		? `
-		<footer class="doc-footer">
-			<div class="doc-footer-meta">
-				<div class="last-updated">
-					<span class="last-updated-text">Last updated: </span>
-					<time id="last-updated-time">${lastModifiedText}</time>
-				</div>
-			</div>
-		</footer>
-	`
-		: "";
-
-	// Generate Nav HTML from config
-	const navHTML = (config.theme?.nav || [])
-		.map((item: any) => {
-			const isExternal = item.link.startsWith("http");
-			return `<a href="${item.link}" class="nav-link"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ""}>${item.text}</a>`;
-		})
-		.join("");
-
-	// Critical CSS for instant layout rendering (prevent FOUC)
-	const criticalCSS = `<style>
-		/* Critical layout styles - inline for instant render */
-		.layout{display:flex;flex-direction:column;min-height:100vh}
-		.header{position:fixed;top:0;left:0;right:0;height:60px;z-index:100;background:var(--bg-color,#fff);border-bottom:1px solid var(--border-color,#e2e8f0)}
-		.header-container{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 24px}
-		.layout-content{display:flex;margin-top:60px;max-width:1440px;width:100%;margin-left:auto;margin-right:auto}
-		.sidebar{position:fixed;top:60px;left:0;bottom:0;width:280px;overflow-y:auto;border-right:1px solid var(--border-color,#e2e8f0);background:var(--bg-color,#fff);z-index:50}
-		.main-content{flex:1;margin-left:280px;padding:32px 48px;max-width:calc(100% - 280px)}
-		@media(max-width:768px){.sidebar{transform:translateX(-100%);transition:transform 0.3s}.main-content{margin-left:0;max-width:100%;padding:24px}}
-	</style>`;
-
-	// Inject the rendered content, TOC, and scripts into the template
-	let html = template.replace(
+	// Replace root div with SSR content - MUST match React Layout component exactly
+	html = html.replace(
 		'<div id="root"></div>',
-		`<div id="root">
-			<div class="layout">
-				<header class="header">
-					<div class="header-container">
-						<a href="/" class="site-title">${config.title || "ReactPress"}</a>
-						<nav class="nav">${navHTML}</nav>
-						<button class="sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="false">
-							<span class="sidebar-toggle-icon">
-								<span class="line"></span>
-								<span class="line"></span>
-								<span class="line"></span>
-							</span>
-						</button>
-						<button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-					</div>
-				</header>
-				<button class="search-btn" aria-label="Search">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="11" cy="11" r="8"></circle>
-						<path d="m21 21-4.35-4.35"></path>
-					</svg>
-					<span>Search</span>
-					<kbd>⌘K</kbd>
-				</button>
-				<div class="layout-content">
-					<aside class="sidebar">
-						<nav class="sidebar-nav">${sidebarHTML}</nav>
-					</aside>
-					<main class="main-content">
-						<div class="doc-content">
-							<div class="markdown-content">${contentHtml}</div>
-							${docFooterHtml}
-						</div>
-					</main>
-					${tocHtml}
-				</div>
-			</div>
-		</div>${tocScript}${codeCopyScript}${codeGroupsScript}${mermaidScript}${lastUpdatedScript}`,
+		`<div id="root"><div class="layout"><header class="header"><div class="header-content"><div class="header-mobile-menu"></div><a href="/" class="logo">${config.title || "Leaf"}</a><nav class="nav">${navHTML}<button class="theme-toggle" aria-label="Toggle theme">🌙</button></nav></div></header><div class="layout-content"><aside class="sidebar"><div class="sidebar-nav">${sidebarHTML}</div></aside><main class="main-content"><div class="doc-content"><div class="markdown-content">${contentHtml}</div>${docFooterHTML}</div></main>${tocHTML}</div></div></div>${clientScripts}`,
 	);
-
-	// Inject critical CSS into <head>
-	html = html.replace("</head>", `${criticalCSS}</head>`);
 
 	// Ensure directory exists
 	await mkdir(dirname(htmlPath), { recursive: true });
