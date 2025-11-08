@@ -355,12 +355,15 @@
 
 	/* External Links */
 	.external-link {
-		@apply inline-flex items-center gap-1;
-		white-space: nowrap;
+		display: inline-block !important;
+		white-space: nowrap !important;
+		word-break: keep-all;
 	}
 
 	.external-link-icon {
-		@apply w-4 h-4 opacity-50 transition-opacity flex-shrink-0;
+		@apply w-4 h-4 opacity-50 transition-opacity;
+		display: inline;
+		vertical-align: middle;
 	}
 
 	.external-link:hover .external-link-icon {
