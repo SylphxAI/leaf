@@ -117,7 +117,7 @@ export function Sidebar({
 			{/* Sidebar with card-based design */}
 			<aside
 				className={cn(
-					"fixed inset-y-0 left-0 z-50 w-72 border-r border-border/40 bg-background/90 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/70 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:translate-x-0",
+					"fixed inset-y-0 left-0 z-50 w-64 border-r border-border/40 bg-background/90 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/70 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] lg:translate-x-0",
 					"transform transition-all duration-300 ease-in-out",
 					open ? "translate-x-0 shadow-2xl" : "-translate-x-full lg:shadow-none"
 				)}
@@ -143,7 +143,7 @@ export function Sidebar({
 					</div>
 
 					{/* Navigation with refined spacing */}
-					<nav className="flex-1 overflow-y-auto p-6 space-y-2 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
+					<nav className="flex-1 overflow-y-auto p-4 space-y-1.5 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
 						{items.map((item, idx) => (
 							<SidebarGroup key={item.link || idx} item={item} />
 						))}

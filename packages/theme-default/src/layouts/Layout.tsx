@@ -52,15 +52,15 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 					onClose={() => setSidebarOpen(false)}
 				/>
 
-				<div className="flex flex-1 flex-col lg:ml-72">
-					<div className="flex flex-1 gap-6 px-4 sm:px-6 md:px-8 lg:gap-8">
-						<main className="flex-1 min-w-0 py-6 md:py-8 lg:py-10">
+				<div className="flex flex-1 flex-col lg:ml-64">
+					<div className="flex flex-1 gap-4 px-4 sm:px-6 md:px-8 lg:gap-6">
+						<main className="flex-1 min-w-0 py-4 md:py-6 lg:py-8">
 							<article className="mx-auto w-full max-w-3xl">
 								<div className="prose">
 									<Outlet />
 								</div>
 								{docFooter && (
-									<div className="mt-12 pt-6 border-t border-border/40">
+									<div className="mt-10 pt-5 border-t border-border/40">
 										<DocFooter {...docFooter} />
 									</div>
 								)}

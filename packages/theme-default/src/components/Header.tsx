@@ -19,7 +19,7 @@ export function Header({
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/60 transition-all duration-300">
-			<div className="flex h-16 items-center px-4 sm:px-6 md:px-8">
+			<div className="flex h-14 items-center px-4 sm:px-6 md:px-8">
 				{/* Mobile Menu Button */}
 				<button
 					onClick={onMenuClick}

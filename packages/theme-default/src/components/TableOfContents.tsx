@@ -50,23 +50,23 @@ export function TableOfContents({
 		activeIndex >= 0 ? ((activeIndex + 1) / items.length) * 100 : 0;
 
 	return (
-		<div className="sticky top-20 w-56 h-[calc(100vh-6rem)] overflow-y-auto">
+		<div className="sticky top-16 w-52 h-[calc(100vh-5rem)] overflow-y-auto">
 			<div
-				className="space-y-4 rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-lg"
+				className="space-y-3 rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-lg"
 				style={{ boxShadow: "var(--shadow)" }}
 			>
 				{/* Header with gradient icon */}
-				<div className="flex items-center gap-2.5 border-b border-border/50 pb-3">
+				<div className="flex items-center gap-2 border-b border-border/50 pb-2.5">
 					<div
-						className="flex h-7 w-7 items-center justify-center rounded-lg text-white"
+						className="flex h-6 w-6 items-center justify-center rounded-lg text-white"
 						style={{
 							background:
 								"linear-gradient(135deg, hsl(var(--primary-gradient-start)), hsl(var(--primary-gradient-end)))",
 						}}
 					>
-						<Icon icon="lucide:list" className="h-3.5 w-3.5" />
+						<Icon icon="lucide:list" className="h-3 w-3" />
 					</div>
-					<h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+					<h3 className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
 						On this page
 					</h3>
 				</div>
@@ -96,7 +96,7 @@ export function TableOfContents({
 									<a
 										href={`#${item.id}`}
 										className={cn(
-											"group relative block rounded-lg px-3 py-1.5 transition-all duration-200",
+											"group relative block rounded-lg px-2.5 py-1 transition-all duration-200 text-xs",
 											isActive
 												? "bg-primary/10 text-primary font-semibold shadow-sm"
 												: "text-muted-foreground hover:bg-accent/50 hover:text-foreground active:scale-95"
