@@ -16,8 +16,8 @@ const router = createBrowserRouter([
 		element: <Layout config={config} />,
 		children: routes.map((route: any) => {
 			const Component = route.component;
-			const toc = Component.toc || [];
-			const docFooter = Component.docFooter;
+			const toc = route.toc || [];
+			const docFooter = route.docFooter;
 
 			if (route.path === "/") {
 				return {

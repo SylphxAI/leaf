@@ -50,7 +50,7 @@ export function TableOfContents({
 		activeIndex >= 0 ? ((activeIndex + 1) / items.length) * 100 : 0;
 
 	return (
-		<div className="sticky top-16 w-52 h-[calc(100vh-5rem)] overflow-y-auto">
+		<div className="sticky top-16 w-56 h-[calc(100vh-5rem)] overflow-y-auto">
 			<div
 				className="space-y-3 rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-lg"
 				style={{ boxShadow: "var(--shadow)" }}

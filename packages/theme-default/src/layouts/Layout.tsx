@@ -38,7 +38,7 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 
 	return (
 		<div className="flex min-h-screen flex-col bg-background">
-			<div className="mx-auto w-full max-w-[1440px]">
+			<div className="mx-auto w-full" style={{ maxWidth: '1376px' }}>
 				<Header
 					title={config?.title}
 					nav={config?.theme?.nav}
@@ -47,17 +47,17 @@ export function Layout({ config }: LayoutProps): JSX.Element {
 			</div>
 			<Search />
 
-			<div className="mx-auto w-full max-w-[1440px] flex flex-1">
+			<div className="mx-auto w-full flex flex-1" style={{ maxWidth: '1376px' }}>
 				<Sidebar
 					items={config?.theme?.sidebar}
 					open={sidebarOpen}
 					onClose={() => setSidebarOpen(false)}
 				/>
 
-				<div className="flex flex-1 flex-col lg:ml-64">
-					<div className="flex flex-1 gap-4 px-4 sm:px-6 md:px-8 lg:gap-6">
-						<main className="flex-1 min-w-0 py-4 md:py-6 lg:py-8">
-							<article className="w-full max-w-3xl">
+				<div className="flex flex-1 flex-col lg:ml-60">
+					<div className="flex flex-1 gap-6 px-6 md:px-8 lg:gap-8 xl:px-12">
+						<main className="flex-1 min-w-0 py-6 md:py-8 lg:py-10">
+							<article className="mx-auto w-full" style={{ maxWidth: '688px' }}>
 								<div className="prose">
 									<Outlet />
 								</div>

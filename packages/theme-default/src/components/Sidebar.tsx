@@ -114,10 +114,10 @@ export function Sidebar({
 				/>
 			)}
 
-			{/* Sidebar with card-based design */}
+			{/* Sidebar with card-based design - VitePress standard 240px */}
 			<aside
 				className={cn(
-					"fixed inset-y-0 left-0 z-50 w-64 border-r border-border/40 bg-background/90 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/70 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] lg:translate-x-0",
+					"fixed inset-y-0 left-0 z-50 w-60 border-r border-border/40 bg-background/90 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/70 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] lg:translate-x-0",
 					"transform transition-all duration-300 ease-in-out",
 					open ? "translate-x-0 shadow-2xl" : "-translate-x-full lg:shadow-none"
 				)}

@@ -47,10 +47,11 @@ export function routesPlugin(docsDir: string): Plugin {
 		}
 
 		// Generate module code with dynamic imports
+		// Import both default and named exports (toc, docFooter)
 		const imports = routes
 			.map(
 				(route, index) =>
-					`import Route${index} from "${route.filePath.replace(/\\/g, "/")}";`,
+					`import Route${index}, { toc as toc${index}, docFooter as docFooter${index} } from "${route.filePath.replace(/\\/g, "/")}";`,
 			)
 			.join("\n");
 
@@ -59,6 +60,8 @@ export function routesPlugin(docsDir: string): Plugin {
 				(route, index) => `  {
     path: "${route.path}",
     component: Route${index},
+    toc: toc${index},
+    docFooter: docFooter${index},
     data: ${JSON.stringify({
 			title: route.title,
 			description: route.description,
