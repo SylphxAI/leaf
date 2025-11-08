@@ -355,9 +355,12 @@
 
 	/* External Links */
 	.external-link {
-		display: inline-block !important;
+		@apply font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors;
+	}
+
+	.external-link-icon-wrapper {
 		white-space: nowrap !important;
-		word-break: keep-all;
+		display: inline-block !important;
 	}
 
 	.external-link-icon {
