@@ -19,5 +19,46 @@
 	<body>
 		<div id="root"></div>
 		<script type="module" src="/.leaf-client.tsx"></script>
+
+		<!-- Mermaid initialization -->
+		<script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+			// Initialize mermaid with theme detection
+			function initMermaid() {
+				const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+				mermaid.initialize({
+					startOnLoad: true,
+					theme: theme,
+					securityLevel: 'loose',
+					fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+				});
+			}
+
+			// Initialize on load
+			initMermaid();
+
+			// Re-initialize when theme changes
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+						initMermaid();
+						mermaid.run();
+					}
+				});
+			});
+
+			observer.observe(document.documentElement, { attributes: true });
+
+			// Re-render mermaid diagrams when navigating
+			let lastUrl = location.href;
+			new MutationObserver(() => {
+				const url = location.href;
+				if (url !== lastUrl) {
+					lastUrl = url;
+					setTimeout(() => mermaid.run(), 50);
+				}
+			}).observe(document.getElementById('root'), { subtree: true, childList: true });
+		</script>
 	</body>
 </html>
