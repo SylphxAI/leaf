@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import type { Plugin } from "vite";
 import { markdownPlugin } from "./markdown.js";
+import { virtualModulesPlugin } from "./virtual-modules.js";
 import type { LeafConfig } from "../types.js";
 
 export function createLeafPlugin(config: LeafConfig): Plugin[] {
@@ -35,6 +36,7 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 				};
 			},
 		},
+		virtualModulesPlugin(config),
 		markdownPlugin(config),
 		react({
 			jsxRuntime: "automatic",

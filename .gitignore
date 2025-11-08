@@ -6,6 +6,9 @@ out
 dist
 *.tgz
 
+# Leaf temporary files
+.leaf-temp-*
+
 # code coverage
 coverage
 *.lcov
