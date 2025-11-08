@@ -86,9 +86,9 @@ export function Layout({ config, currentRoute, children }: LayoutProps): JSX.Ele
 								</article>
 							</main>
 
-							{/* TOC - only render when items exist */}
+							{/* TOC - only render when items exist, hidden on mobile/tablet */}
 							{hasToc && (
-								<aside className="hidden xl:block flex-shrink-0" style={{ width: '14rem' }}>
+								<aside className="hidden lg:block flex-shrink-0" style={{ width: '14rem' }}>
 									<TableOfContents items={toc} />
 								</aside>
 							)}
