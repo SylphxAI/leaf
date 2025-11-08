@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "preact/hooks";
 import { $router, open as zenOpen } from "@sylphx/zen-router";
 import { subscribe, get } from "@sylphx/zen";
 

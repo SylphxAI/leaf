@@ -20,7 +20,7 @@
 		"dev": "bunup 'src/**/*.ts' --watch"
 	},
 	"dependencies": {
-		"@vitejs/plugin-react": "^5.1.0",
+		"@preact/preset-vite": "^2.10.2",
 		"fast-glob": "^3.3.3",
 		"gray-matter": "^4.0.3",
 		"katex": "^0.16.25",
@@ -46,7 +46,6 @@
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0"
+		"preact": "^10.27.0"
 	}
 }

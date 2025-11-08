@@ -1,9 +1,10 @@
-import React from "react";
+// ASSUMPTION: JSX automatic runtime via Preact preset
 import { open } from "@sylphx/zen-router";
+import type { JSX } from "preact";
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
 	to: string;
-	children: React.ReactNode;
+	children: JSX.Element | JSX.Element[] | string;
 }
 
 /**
@@ -11,7 +12,7 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
  * Intercepts clicks and uses zen-router's open() for SPA navigation
  */
 export function Link({ to, children, ...props }: LinkProps) {
-	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+	const handleClick = (e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
 		// Allow default behavior for:
 		// - External links
 		// - Modified clicks (ctrl/cmd/shift)

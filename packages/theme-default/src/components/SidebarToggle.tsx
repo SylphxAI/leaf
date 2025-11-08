@@ -1,4 +1,4 @@
-import React from "react";
+// ASSUMPTION: JSX automatic runtime via Preact preset
 import { Icon } from "@iconify/react";
 
 export interface SidebarToggleProps {

@@ -1,5 +1,5 @@
-import { StrictMode, useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
+import { useEffect, useState } from "preact/hooks";
+import { render } from "preact";
 import { $router, defineRoutes } from "@sylphx/zen-router";
 import { subscribe, get } from "@sylphx/zen";
 import { Layout } from "@sylphx/leaf-theme-default";
@@ -138,8 +138,4 @@ if (!rootElement) {
 	throw new Error("Root element not found");
 }
 
-createRoot(rootElement).render(
-	<StrictMode>
-		<App />
-	</StrictMode>,
-);
+render(<App />, rootElement);

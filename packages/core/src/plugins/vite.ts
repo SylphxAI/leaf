@@ -1,4 +1,4 @@
-import react from "@vitejs/plugin-react";
+import preact from "@preact/preset-vite";
 import type { Plugin } from "vite";
 import { markdownPlugin } from "./markdown.js";
 import { virtualModulesPlugin } from "./virtual-modules.js";
@@ -16,30 +16,14 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 						"process.env.NODE_ENV": JSON.stringify(mode),
 						__DEV__: !isProduction,
 					},
-					esbuild: {
-						jsx: "automatic",
-						jsxDev: false,
-						jsxImportSource: "react",
-					},
 					resolve: {
 						conditions: isProduction ? ["production", "default"] : ["development", "default"],
-					},
-					optimizeDeps: {
-						esbuildOptions: {
-							jsx: "automatic",
-							jsxDev: false,
-							define: {
-								"process.env.NODE_ENV": JSON.stringify(mode),
-							},
-						},
 					},
 				};
 			},
 		},
 		virtualModulesPlugin(config),
 		markdownPlugin(config),
-		react({
-			jsxRuntime: "automatic",
-		}),
+		preact(),
 	];
 }

@@ -1,5 +1,5 @@
 import { type Zen } from "@sylphx/zen";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 
 // TEMPORARY: Import Zen functions with type assertions
 import * as ZenModule from "@sylphx/zen";

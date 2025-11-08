@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 import { Icon } from "@iconify/react";
 import { cn } from "../lib/utils";
 

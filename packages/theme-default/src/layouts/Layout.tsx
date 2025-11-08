@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "preact/hooks";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { TableOfContents, type TocItem } from "../components/TableOfContents";

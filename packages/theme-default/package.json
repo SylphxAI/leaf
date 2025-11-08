@@ -1,22 +1,7 @@
 {
 	"name": "@sylphx/leaf-theme-default",
 	"version": "0.1.0",
-	"type": "module",
 	"main": "./dist/src/index.js",
-	"types": "./dist/src/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./dist/src/index.js",
-			"types": "./dist/src/index.d.ts"
-		},
-		"./style.css": "./dist/style.css"
-	},
-	"files": ["dist"],
-	"scripts": {
-		"build": "NODE_ENV=production bunup 'src/**/*.{ts,tsx}' && cp src/styles/index.css dist/style.css && node ../../scripts/fix-exports.js",
-		"dev": "bunup 'src/**/*.{ts,tsx}' --watch",
-		"dev:fix": "bunup 'src/**/*.{ts,tsx}' --watch --on-success 'cp src/styles/index.css dist/style.css && cd ../.. && node scripts/fix-exports.js packages/theme-default/dist'"
-	},
 	"dependencies": {
 		"@iconify/react": "^6.0.2",
 		"@radix-ui/react-collapsible": "^1.1.12",
@@ -32,17 +17,30 @@
 		"katex": "^0.16.25",
 		"minisearch": "^7.2.0",
 		"postcss": "^8.5.6",
+		"preact": "^10.27.2",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^3.4.18"
 	},
 	"devDependencies": {
+		"@preact/preset-vite": "^2.10.2",
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.2",
 		"bunup": "^0.15.14",
 		"typescript": "^5.9.3"
 	},
-	"peerDependencies": {
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0"
-	}
+	"exports": {
+		".": {
+			"import": "./dist/src/index.js",
+			"types": "./dist/src/index.d.ts"
+		},
+		"./style.css": "./dist/style.css"
+	},
+	"files": ["dist"],
+	"scripts": {
+		"build": "NODE_ENV=production bunup 'src/**/*.{ts,tsx}' && cp src/styles/index.css dist/style.css && node ../../scripts/fix-exports.js",
+		"dev": "bunup 'src/**/*.{ts,tsx}' --watch",
+		"dev:fix": "bunup 'src/**/*.{ts,tsx}' --watch --on-success 'cp src/styles/index.css dist/style.css && cd ../.. && node scripts/fix-exports.js packages/theme-default/dist'"
+	},
+	"type": "module",
+	"types": "./dist/src/index.d.ts"
 }

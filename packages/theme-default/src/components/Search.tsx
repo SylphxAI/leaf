@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "preact/hooks";
 import { useNavigate } from "../hooks/useRouter";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Icon } from "@iconify/react";
