@@ -7,7 +7,7 @@ import { Button } from "./Button";
 import { cn } from "../lib/utils";
 
 interface SocialLink {
-	icon: "github" | "twitter" | "discord";
+	icon: "github" | "twitter" | "discord" | "npm";
 	link: string;
 }
 
@@ -23,6 +23,7 @@ const iconMap = {
 	github: "lucide:github",
 	twitter: "lucide:twitter",
 	discord: "simple-icons:discord",
+	npm: "simple-icons:npm",
 };
 
 export function Header({

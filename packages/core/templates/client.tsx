@@ -64,6 +64,15 @@ function App() {
 		};
 	}, []);
 
+	// Update document title based on current route
+	useEffect(() => {
+		const route = findMatchingRoute(routerState.path, zenRoutes);
+		const pageTitle = route?.data?.frontmatter?.title;
+		const siteTitle = config?.title || "Leaf";
+
+		document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+	}, [routerState.path]);
+
 	// Handle scroll restoration on route change
 	useEffect(() => {
 		const hash = window.location.hash;

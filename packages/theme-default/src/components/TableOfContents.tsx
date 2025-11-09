@@ -50,37 +50,47 @@ export function TableOfContents({
 		activeIndex >= 0 ? ((activeIndex + 1) / items.length) * 100 : 0;
 
 	return (
-		<div className="sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto">
-			<div className="space-y-2">
-				<h3 className="text-sm font-semibold text-foreground">On this page</h3>
-				<nav aria-label="Table of contents">
-					<ul className="space-y-1">
-						{items.map((item) => {
-							const isActive = activeId === item.id;
-							return (
-								<li
-									key={item.id}
-									className={cn(
-										item.level === 3 && "ml-4"
-									)}
-								>
-									<a
-										href={`#${item.id}`}
+		<div className="group sticky top-24 h-[calc(100vh-6rem)]">
+			<div className="relative h-full overflow-y-auto pr-3">
+				{/* Scroll Progress Indicator */}
+				<div className="absolute right-0 top-0 h-full w-0.5 bg-border/50 opacity-0 transition-opacity group-hover:opacity-100">
+					<div
+						className="w-full bg-primary transition-all duration-300"
+						style={{ height: `${progress}%` }}
+					/>
+				</div>
+
+				<div className="space-y-2">
+					<h3 className="text-sm font-semibold text-foreground">On this page</h3>
+					<nav aria-label="Table of contents">
+						<ul className="space-y-1">
+							{items.map((item) => {
+								const isActive = activeId === item.id;
+								return (
+									<li
+										key={item.id}
 										className={cn(
-											"block text-sm py-1 transition-colors",
-											isActive
-												? "text-primary font-medium"
-												: "text-muted-foreground hover:text-foreground"
+											item.level === 3 && "ml-4"
 										)}
-										aria-current={isActive ? "location" : undefined}
 									>
-										{item.text}
-									</a>
-								</li>
-							);
-						})}
-					</ul>
-				</nav>
+										<a
+											href={`#${item.id}`}
+											className={cn(
+												"block text-sm py-1 transition-colors",
+												isActive
+													? "text-primary font-medium"
+													: "text-muted-foreground hover:text-foreground"
+											)}
+											aria-current={isActive ? "location" : undefined}
+										>
+											{item.text}
+										</a>
+									</li>
+								);
+							})}
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	);
