@@ -135,9 +135,11 @@
 	}
 
 	.prose h1 {
-		@apply scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mt-0 mb-6 text-foreground;
+		@apply scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mt-0 mb-6 text-foreground relative;
 		line-height: 1.25;
 		letter-spacing: -0.025em;
+		margin-left: 0;
+		padding-left: 0;
 	}
 
 	.prose h2 {
@@ -376,26 +378,23 @@
 	}
 
 	/* Header anchors - only h1 like VitePress, shown on hover in left margin */
-	.prose h1 {
-		@apply relative;
-	}
-
 	.header-anchor {
-		@apply absolute text-foreground/40 no-underline transition-all;
-		left: -2rem;
+		@apply absolute no-underline transition-all;
+		left: -1.5em;
+		top: 0;
+		color: hsl(var(--primary));
 		font-weight: 500;
-		font-size: 1.5rem;
+		font-size: 0.85em;
 		opacity: 0;
-		transform: translateX(0.25rem);
+		user-select: none;
 	}
 
 	.prose h1:hover .header-anchor {
 		opacity: 1;
-		transform: translateX(0);
 	}
 
 	.header-anchor:hover {
-		@apply text-primary;
+		opacity: 1 !important;
 	}
 
 	/* Code Groups */
