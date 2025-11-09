@@ -15,7 +15,7 @@
 
 ## 🎯 Why Leaf?
 
-- **⚡ Lightning Fast**: 66-75x faster builds with Bun (~50ms vs 5300ms)
+- **⚡ Fast Builds**: ~2s for 22 pages with search index
 - **📦 Ultra Lightweight**: 29% smaller than React alternatives (125KB gzipped)
 - **🎨 Beautiful**: Modern, responsive design with dark mode
 - **🛠️ Zero Config**: Works out of the box, no configuration required
@@ -48,12 +48,12 @@
 
 ### 🔍 **Search & Discovery**
 - ✅ Local fuzzy search with MiniSearch (Cmd/Ctrl+K)
-- ✅ 366 searchable documents indexed
+- ✅ 605 searchable documents indexed
 
 ### ⚡ **Performance**
 - ✅ Static Site Generation (SSG)
 - ✅ Pre-rendered HTML for instant loading
-- ✅ **66-75x faster builds** with Bunup (~50ms vs 5300ms)
+- ✅ **Fast builds** with Vite (~2s for 22 pages)
 - ✅ Ultra-lightweight runtime (Preact 3KB + zen-router 1.45KB)
 - ✅ 29% smaller bundle vs React (125KB gzipped)
 - ✅ **⚡⚡⚡ Blazing fast**: Lighthouse scores 95+
@@ -261,7 +261,7 @@ Default theme featuring:
 
 The `docs/` directory contains **comprehensive Leaf documentation** built with Leaf itself:
 
-- **14 pages** of complete documentation
+- **22 pages** of complete documentation
 - **Introduction**: What is Leaf, Why Leaf, Getting Started
 - **Guide**: Installation, Configuration, Markdown, Theming
 - **Features**: Code Highlighting, Math Equations, Mermaid Diagrams, Search
@@ -271,15 +271,15 @@ The `docs/` directory contains **comprehensive Leaf documentation** built with L
 ```bash
 cd docs
 bun install
-bun run build        # Generates 14 static pages
+bun run build        # Generates 22 static pages
 bun run dev          # Development server
 ```
 
 **Stats:**
-- 📄 14 static HTML pages
-- 🔍 366 searchable documents
-- 📦 563KB JavaScript (118KB gzipped)
-- ⏱️ ~500ms build time
+- 📄 22 static HTML pages
+- 🔍 605 searchable documents
+- 📦 802KB JavaScript (uncompressed)
+- ⏱️ ~2s build time
 
 ### Example Site
 
@@ -345,14 +345,14 @@ All core features completed:
 - ✅ Mobile responsive design
 - ✅ Dark mode
 - ✅ Git-based timestamps
-- ✅ **Comprehensive documentation site** (14 pages, self-hosted)
+- ✅ **Comprehensive documentation site** (22 pages, self-hosted)
 - ✅ Example documentation site
 
 Build stats (official docs):
-- 📦 Bundle: 563KB (gzip: 118KB)
-- 🔍 Search index: 366 documents (94KB)
-- ⚡ Build time: ~500ms
-- 🏗️ 14 static pages generated
+- 📦 Bundle: 802KB JavaScript (57KB CSS)
+- 🔍 Search index: 605 documents (159KB)
+- ⚡ Build time: ~2s
+- 🏗️ 22 static pages generated
 - 🧮 Math: KaTeX rendering
 - 📊 Diagrams: Mermaid v11 (CDN)
 - 📝 Comprehensive documentation for all features
@@ -365,7 +365,7 @@ Build stats (official docs):
 - ✅ Full Markdown + MDX support with GFM
 - ✅ Syntax highlighting with line numbers and tabs
 - ✅ Custom containers (tip, warning, danger, details)
-- ✅ Local search with MiniSearch (366 docs indexed)
+- ✅ Local search with MiniSearch (605 docs indexed)
 - ✅ Static Site Generation (SSG)
 - ✅ Math equations with KaTeX
 - ✅ Mermaid diagrams
@@ -410,10 +410,10 @@ MIT
 
 ## 📊 v0.1.0 Release Stats
 
-- **📦 Bundle Size**: 563KB (118KB gzipped)
-- **⚡ Build Speed**: 66-75x faster (~50ms vs 5300ms)
-- **🔍 Search Index**: 366 documents (94KB)
-- **📄 Static Pages**: 14 pages generated
+- **📦 Bundle Size**: 802KB JavaScript (57KB CSS)
+- **⚡ Build Speed**: ~2s (22 pages with search index)
+- **🔍 Search Index**: 605 documents (159KB)
+- **📄 Static Pages**: 22 pages generated
 - **🎯 Performance**: Lighthouse scores 95+
 - **🎨 Features**: 100% VitePress parity achieved
 
