@@ -93,7 +93,7 @@ export function createMarkdownProcessor(
 		.use(...(config.markdown?.remarkPlugins || []))
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)
-		// .use(rehypeHeaderAnchors) // Disabled header anchors
+		.use(rehypeHeaderAnchors)
 		.use(rehypeKatex)
 		.use(rehypeMermaid)
 		.use(rehypeHighlight)

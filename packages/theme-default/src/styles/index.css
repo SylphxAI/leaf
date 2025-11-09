@@ -191,6 +191,37 @@
 		line-height: 1.4;
 	}
 
+	/* Header Anchors - VitePress style */
+	.prose h1 a.header-anchor,
+	.prose h2 a.header-anchor,
+	.prose h3 a.header-anchor,
+	.prose h4 a.header-anchor,
+	.prose h5 a.header-anchor,
+	.prose h6 a.header-anchor {
+		@apply ml-2 opacity-0 no-underline transition-all duration-200;
+		color: hsl(var(--primary));
+		font-weight: 400;
+		user-select: none;
+	}
+
+	.prose h1:hover a.header-anchor,
+	.prose h2:hover a.header-anchor,
+	.prose h3:hover a.header-anchor,
+	.prose h4:hover a.header-anchor,
+	.prose h5:hover a.header-anchor,
+	.prose h6:hover a.header-anchor {
+		opacity: 1;
+	}
+
+	.prose h1 a.header-anchor:hover,
+	.prose h2 a.header-anchor:hover,
+	.prose h3 a.header-anchor:hover,
+	.prose h4 a.header-anchor:hover,
+	.prose h5 a.header-anchor:hover,
+	.prose h6 a.header-anchor:hover {
+		opacity: 0.8;
+	}
+
 	.prose p {
 		@apply my-6;
 		font-size: 17px;

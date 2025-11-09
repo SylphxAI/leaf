@@ -9,8 +9,8 @@ import { visit } from "unist-util-visit";
 export const rehypeHeaderAnchors: Plugin<[], Root> = () => {
 	return (tree) => {
 		visit(tree, "element", (node: Element) => {
-			// Only process h1 tags (VitePress style)
-			if (node.tagName !== "h1") return;
+			// Process all heading tags (h1-h6)
+			if (!["h1", "h2", "h3", "h4", "h5", "h6"].includes(node.tagName)) return;
 
 			// Skip if no id (rehype-slug should have added it)
 			if (!node.properties?.id) return;
@@ -24,13 +24,13 @@ export const rehypeHeaderAnchors: Plugin<[], Root> = () => {
 				properties: {
 					className: ["header-anchor"],
 					href: `#${id}`,
-					"aria-label": "Permalink to this heading",
+					"aria-label": `Permalink to ${node.tagName}`,
 				},
 				children: [{ type: "text", value: "#" }],
 			};
 
-			// Prepend anchor to heading children
-			node.children.unshift(anchor);
+			// Append anchor to heading children (so it appears after the text)
+			node.children.push(anchor);
 		});
 	};
 };
