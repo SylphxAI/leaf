@@ -69,28 +69,28 @@ export function Layout({ config, currentRoute, children }: LayoutProps): JSX.Ele
 
 				<div className={cn("lg:pl-80", !hasSidebar && "lg:pl-0")}>
 					<div className={cn(
-						"px-4 py-6 md:px-6 md:py-8 lg:pl-16 lg:pr-8 lg:py-10",
+						"px-6 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16",
 						!hasSidebar && !hasToc && "lg:max-w-5xl lg:mx-auto"
 					)}>
-						<div className="flex gap-8 xl:gap-12">
+						<div className="flex gap-12 xl:gap-16">
 							<main className="flex-1 min-w-0">
 								{/* Copy page button */}
-								<div className="mb-6 flex justify-end">
+								<div className="mb-8 flex justify-end">
 									<CopyPage title={config?.title} />
 								</div>
 
-								<div className="prose prose-slate dark:prose-invert max-w-none lg:max-w-4xl">
+								<div className="prose max-w-none lg:max-w-3xl">
 									{children}
 								</div>
 								{docFooter && (
-									<div className="mt-16 pt-8 border-t border-border/40">
+									<div className="mt-24 pt-12 border-t border-border">
 										<DocFooter {...docFooter} />
 									</div>
 								)}
 							</main>
 
 							{hasToc && (
-								<aside className="hidden lg:block flex-shrink-0 w-56">
+								<aside className="hidden lg:block flex-shrink-0 w-64">
 									<TableOfContents items={toc} />
 								</aside>
 							)}

@@ -7,113 +7,104 @@
 
 @layer base {
 	:root {
-		/* VitePress-inspired Light Mode Color System */
+		/* Modern Minimalist Light Mode */
 		--background: 0 0% 100%;
-		--foreground: 224 15% 12%;
+		--foreground: 222 17% 14%;
 
-		/* Cards with subtle elevation */
+		/* Elevated surfaces */
 		--card: 0 0% 100%;
-		--card-foreground: 224 15% 12%;
+		--card-foreground: 222 17% 14%;
 
-		/* Popovers */
+		/* Popovers & Dropdowns */
 		--popover: 0 0% 100%;
-		--popover-foreground: 224 15% 12%;
+		--popover-foreground: 222 17% 14%;
 
-		/* Primary - Gradient Green (Leaf theme #10b981 → #14b8a6) */
-		--primary: 160 84% 39%;
+		/* Primary - Muted professional green */
+		--primary: 160 60% 45%;
 		--primary-foreground: 0 0% 100%;
-		--primary-gradient-start: 160 84% 39%;
-		--primary-gradient-end: 173 80% 40%;
 
-		/* Secondary - Very Light Gray */
-		--secondary: 240 9% 96%;
-		--secondary-foreground: 224 15% 12%;
+		/* Secondary - Ultra light gray */
+		--secondary: 220 13% 97%;
+		--secondary-foreground: 222 17% 14%;
 
-		/* Muted - Refined neutrals */
-		--muted: 240 9% 96%;
-		--muted-foreground: 224 10% 45%;
+		/* Muted elements */
+		--muted: 220 13% 97%;
+		--muted-foreground: 220 9% 46%;
 
-		/* Accent - Gradient Green-Teal (matching primary) */
-		--accent: 160 84% 39%;
+		/* Accent (same as primary for consistency) */
+		--accent: 160 60% 45%;
 		--accent-foreground: 0 0% 100%;
-		--accent-gradient-start: 160 84% 39%;
-		--accent-gradient-end: 173 80% 40%;
 
-		/* Semantic Colors */
-		--destructive: 0 84% 60%;
+		/* Semantic colors - refined */
+		--destructive: 0 72% 51%;
 		--destructive-foreground: 0 0% 100%;
-		--success: 142 76% 36%;
+		--success: 142 71% 45%;
 		--success-foreground: 0 0% 100%;
 		--warning: 38 92% 50%;
 		--warning-foreground: 0 0% 100%;
 
-		/* Borders - Subtle and refined */
-		--border: 240 9% 92%;
-		--input: 240 9% 92%;
-		--ring: 160 84% 39%;
+		/* Borders - very subtle */
+		--border: 220 13% 91%;
+		--input: 220 13% 91%;
+		--ring: 160 60% 45%;
 
-		/* Radius - Smooth modern curves */
-		--radius: 0.75rem;
+		/* Radius - minimal curves */
+		--radius: 0.5rem;
 
-		/* Shadows - VitePress-style depth */
-		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-		--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+		/* Shadows - extremely subtle */
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+		--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.02);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.02);
+		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.02);
 	}
 
 	[data-theme="dark"] {
-		/* VitePress-inspired Dark Mode Color System */
-		--background: 0 0% 4%;
-		--foreground: 0 0% 98%;
+		/* Modern Minimalist Dark Mode */
+		--background: 222 47% 4%;
+		--foreground: 210 40% 98%;
 
-		/* Cards with glowing borders */
-		--card: 240 6% 12%;
-		--card-foreground: 0 0% 98%;
+		/* Elevated surfaces */
+		--card: 222 47% 7%;
+		--card-foreground: 210 40% 98%;
 
-		/* Popovers */
-		--popover: 240 6% 12%;
-		--popover-foreground: 0 0% 98%;
+		/* Popovers & Dropdowns */
+		--popover: 222 47% 7%;
+		--popover-foreground: 210 40% 98%;
 
-		/* Primary - Gradient Bright Green (Leaf theme #34d399 → #2dd4bf) */
-		--primary: 158 64% 52%;
-		--primary-foreground: 0 0% 10%;
-		--primary-gradient-start: 158 64% 52%;
-		--primary-gradient-end: 172 66% 50%;
+		/* Primary - Slightly brighter for dark mode */
+		--primary: 160 65% 55%;
+		--primary-foreground: 222 47% 4%;
 
-		/* Secondary - Deep Gray */
-		--secondary: 240 6% 9%;
-		--secondary-foreground: 0 0% 98%;
+		/* Secondary - Dark gray */
+		--secondary: 222 47% 8%;
+		--secondary-foreground: 210 40% 98%;
 
-		/* Muted - Refined dark neutrals */
-		--muted: 240 6% 9%;
-		--muted-foreground: 240 5% 60%;
+		/* Muted elements */
+		--muted: 222 47% 8%;
+		--muted-foreground: 215 20% 65%;
 
-		/* Accent - Gradient Bright Green (matching primary) */
-		--accent: 158 64% 52%;
-		--accent-foreground: 0 0% 10%;
-		--accent-gradient-start: 158 64% 52%;
-		--accent-gradient-end: 172 66% 50%;
+		/* Accent (same as primary) */
+		--accent: 160 65% 55%;
+		--accent-foreground: 222 47% 4%;
 
-		/* Semantic Colors - Adjusted for dark mode */
-		--destructive: 0 84% 60%;
-		--destructive-foreground: 0 0% 98%;
-		--success: 142 70% 45%;
-		--success-foreground: 0 0% 98%;
+		/* Semantic colors - dark mode optimized */
+		--destructive: 0 72% 51%;
+		--destructive-foreground: 210 40% 98%;
+		--success: 142 71% 50%;
+		--success-foreground: 210 40% 98%;
 		--warning: 38 92% 50%;
-		--warning-foreground: 0 0% 10%;
+		--warning-foreground: 222 47% 4%;
 
-		/* Borders - Glowing subtle borders */
-		--border: 240 6% 18%;
-		--input: 240 6% 18%;
-		--ring: 158 64% 52%;
+		/* Borders - subtle in dark */
+		--border: 222 47% 15%;
+		--input: 222 47% 15%;
+		--ring: 160 65% 55%;
 
-		/* Shadows - Dark mode depth with glow */
-		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-		--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
-		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-		--glow: 0 0 20px rgb(52 211 153 / 0.15);
+		/* Shadows - very subtle even in dark */
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+		--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
 	}
 
 	* {
@@ -122,89 +113,126 @@
 
 	body {
 		@apply bg-background text-foreground;
-		font-feature-settings:
-			"rlig" 1,
-			"calt" 1;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+		font-feature-settings: "rlig" 1, "calt" 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 }
 
 @layer components {
-	/* Prose Styling for Markdown Content */
+	/* Prose Styling for Markdown Content - Modern Minimalist */
 	.prose {
-		@apply max-w-none text-foreground;
+		@apply max-w-none;
+		color: hsl(var(--foreground) / 0.9);
+		font-size: 16px;
+		line-height: 1.7;
 	}
 
 	.prose h1 {
-		@apply scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mt-0 mb-6 text-foreground relative;
-		line-height: 1.25;
-		letter-spacing: -0.025em;
+		@apply scroll-m-20 relative mt-0 mb-8 text-foreground;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.03em;
 		margin-left: 0;
 		padding-left: 0;
 	}
 
+	@media (min-width: 1024px) {
+		.prose h1 {
+			font-size: 3rem;
+		}
+	}
+
 	.prose h2 {
-		@apply scroll-m-20 border-t border-border pt-8 mt-10 mb-4 text-3xl font-semibold tracking-tight first:border-t-0 first:pt-0 first:mt-0 text-foreground;
+		@apply scroll-m-20 mt-16 mb-6 text-foreground first:mt-0;
+		font-size: 1.875rem;
+		font-weight: 600;
 		line-height: 1.3;
 		letter-spacing: -0.02em;
 	}
 
 	.prose h3 {
-		@apply scroll-m-20 text-xl font-semibold tracking-tight mt-8 mb-4 text-foreground;
+		@apply scroll-m-20 mt-12 mb-4 text-foreground;
+		font-size: 1.5rem;
+		font-weight: 600;
 		line-height: 1.4;
+		letter-spacing: -0.01em;
 	}
 
 	.prose h4 {
-		@apply scroll-m-20 text-lg font-semibold tracking-tight mt-6 mb-3 text-foreground;
+		@apply scroll-m-20 mt-8 mb-3 text-foreground;
+		font-size: 1.25rem;
+		font-weight: 600;
 		line-height: 1.5;
 	}
 
 	.prose p {
-		@apply text-base leading-7 my-4;
-		color: hsl(var(--foreground) / 0.85);
+		@apply my-5;
+		font-size: 16px;
+		line-height: 1.8;
+		color: hsl(var(--foreground) / 0.8);
 	}
 
 	.prose a {
-		@apply font-medium text-primary no-underline hover:underline hover:underline-offset-4 transition-colors;
+		@apply font-medium text-primary no-underline transition-colors;
+		text-underline-offset: 3px;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
 	}
 
 	.prose strong {
-		@apply font-semibold text-foreground;
+		@apply font-semibold;
+		color: hsl(var(--foreground) / 0.95);
 	}
 
 	.prose code:not(pre code) {
-		@apply relative rounded px-[0.4em] py-[0.25em] font-mono text-[0.9em] bg-muted border border-border;
-		color: hsl(var(--foreground) / 0.9);
-		font-weight: 400;
+		@apply relative rounded-md px-[0.5em] py-[0.3em] font-mono bg-muted;
+		font-size: 0.875em;
+		color: hsl(var(--foreground) / 0.85);
+		font-weight: 500;
+		border: none;
 	}
 
 	.prose pre {
-		@apply my-4 overflow-x-auto rounded-lg border border-border bg-muted/50 p-4;
+		@apply my-6 overflow-x-auto rounded-lg bg-muted p-5;
 		line-height: 1.7;
+		border: 1px solid hsl(var(--border));
 	}
 
 	.prose pre code {
-		@apply text-[13px] leading-relaxed bg-transparent p-0 font-mono;
-		color: hsl(var(--foreground) / 0.9);
+		@apply bg-transparent p-0 font-mono;
+		font-size: 14px;
+		line-height: 1.7;
+		color: hsl(var(--foreground) / 0.85);
 		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	}
 
 	.prose ul,
 	.prose ol {
-		@apply my-4 ml-5 list-disc space-y-2;
-		padding-left: 1.25rem;
+		@apply my-6 ml-6 space-y-3;
+		padding-left: 0;
+	}
+
+	.prose ul {
+		list-style-type: disc;
 	}
 
 	.prose ol {
-		@apply list-decimal;
+		list-style-type: decimal;
 	}
 
 	.prose li {
-		@apply leading-7;
-		color: hsl(var(--foreground) / 0.85);
+		line-height: 1.8;
+		color: hsl(var(--foreground) / 0.8);
+		padding-left: 0.5rem;
 	}
 
 	.prose li::marker {
-		color: hsl(var(--foreground) / 0.4);
+		color: hsl(var(--foreground) / 0.35);
 		font-weight: 400;
 	}
 
@@ -213,24 +241,27 @@
 	}
 
 	.prose blockquote {
-		@apply mt-6 border-l-2 pl-4 italic;
-		color: hsl(var(--foreground) / 0.7);
+		@apply mt-8 mb-6 border-l-4 pl-6 italic;
+		color: hsl(var(--foreground) / 0.65);
 		border-color: hsl(var(--border));
+		font-size: 1.05em;
 	}
 
 	/* Table wrapper for mobile horizontal scroll */
 	.prose table {
-		@apply w-full my-5 rounded-lg border border-border;
+		@apply w-full my-8 rounded-lg;
 		display: block;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		font-size: 0.9em;
+		border: 1px solid hsl(var(--border));
 	}
 
 	.prose thead {
-		@apply border-b border-border;
+		@apply border-b;
 		display: table-header-group;
-		background-color: hsl(var(--muted) / 0.3);
+		background-color: hsl(var(--muted) / 0.4);
+		border-color: hsl(var(--border));
 	}
 
 	.prose tbody {
@@ -238,8 +269,9 @@
 	}
 
 	.prose tr {
-		@apply border-b border-border;
+		@apply border-b;
 		display: table-row;
+		border-color: hsl(var(--border) / 0.5);
 	}
 
 	.prose tr:last-child {
@@ -247,9 +279,9 @@
 	}
 
 	.prose th {
-		@apply py-3 text-left text-sm font-semibold;
-		padding-left: 1rem;
-		padding-right: 1rem;
+		@apply py-4 text-left text-sm font-semibold;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 		display: table-cell;
 		white-space: nowrap;
 		color: hsl(var(--foreground) / 0.9);
@@ -257,43 +289,50 @@
 
 	@media (min-width: 768px) {
 		.prose th {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
 		}
 	}
 
 	.prose td {
-		@apply py-3 text-sm align-middle;
-		padding-left: 1rem;
-		padding-right: 1rem;
+		@apply py-4 text-sm align-middle;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 		display: table-cell;
-		color: hsl(var(--foreground) / 0.8);
+		color: hsl(var(--foreground) / 0.75);
 	}
 
 	@media (min-width: 768px) {
 		.prose td {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
 		}
 	}
 
 	.prose td:first-child {
 		@apply font-medium;
-		color: hsl(var(--foreground) / 0.9);
+		color: hsl(var(--foreground) / 0.85);
 	}
 
-	/* Custom Containers */
+	/* Custom Containers - Modern Minimalist */
 	.custom-block {
-		@apply my-5 rounded-lg border-l-4 p-4 border border-l-4;
-		background-color: hsl(var(--muted) / 0.3);
+		@apply my-8 rounded-lg p-5;
+		border: 1px solid;
 	}
 
 	.custom-block-title {
-		@apply font-semibold mb-2 flex items-center gap-2 text-sm;
+		@apply font-semibold mb-3 flex items-center gap-2;
+		font-size: 0.9375rem;
 	}
 
 	.custom-block p {
-		margin: 0.5rem 0;
+		margin: 0.75rem 0;
+		font-size: 0.9375rem;
+		line-height: 1.7;
+	}
+
+	.custom-block p:first-of-type {
+		margin-top: 0;
 	}
 
 	.custom-block p:last-child {
@@ -301,43 +340,34 @@
 	}
 
 	.custom-block-tip {
-		background-color: hsl(var(--success) / 0.08);
-		border-color: hsl(var(--success));
-		border-right-color: hsl(var(--border));
-		border-top-color: hsl(var(--border));
-		border-bottom-color: hsl(var(--border));
+		background-color: hsl(var(--success) / 0.05);
+		border-color: hsl(var(--success) / 0.2);
 	}
 
 	.custom-block-tip .custom-block-title {
-		color: hsl(var(--success) / 0.9);
+		color: hsl(var(--success));
 	}
 
 	.custom-block-warning {
-		background-color: hsl(var(--warning) / 0.08);
-		border-color: hsl(var(--warning));
-		border-right-color: hsl(var(--border));
-		border-top-color: hsl(var(--border));
-		border-bottom-color: hsl(var(--border));
+		background-color: hsl(var(--warning) / 0.05);
+		border-color: hsl(var(--warning) / 0.2);
 	}
 
 	.custom-block-warning .custom-block-title {
-		color: hsl(var(--warning) / 0.9);
+		color: hsl(var(--warning));
 	}
 
 	.custom-block-danger {
-		background-color: hsl(var(--destructive) / 0.08);
-		border-color: hsl(var(--destructive));
-		border-right-color: hsl(var(--border));
-		border-top-color: hsl(var(--border));
-		border-bottom-color: hsl(var(--border));
+		background-color: hsl(var(--destructive) / 0.05);
+		border-color: hsl(var(--destructive) / 0.2);
 	}
 
 	.custom-block-danger .custom-block-title {
-		color: hsl(var(--destructive) / 0.9);
+		color: hsl(var(--destructive));
 	}
 
 	.custom-block-details {
-		background-color: hsl(var(--muted) / 0.3);
+		background-color: hsl(var(--muted) / 0.5);
 		border-color: hsl(var(--border));
 	}
 
