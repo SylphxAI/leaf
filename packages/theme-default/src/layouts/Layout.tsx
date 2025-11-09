@@ -7,6 +7,8 @@ import { DocFooter, type DocFooterProps } from "../components/DocFooter";
 import { Search } from "../components/Search";
 import { CopyPage } from "../components/CopyPage";
 import { MobileTocToggle } from "../components/MobileTocToggle";
+import { Hero, type HeroProps } from "../components/Hero";
+import { Features, type Feature } from "../components/Features";
 import { cn } from "../lib/utils";
 import { initCopyCode } from "../lib/copy-code";
 
@@ -16,6 +18,7 @@ interface LayoutProps {
 		path: string;
 		toc: TocItem[];
 		docFooter: DocFooterProps;
+		frontmatter?: Record<string, any>;
 	} | null;
 	children: ComponentChildren;
 }
@@ -24,6 +27,8 @@ export function Layout({ config, currentRoute, children }: LayoutProps): JSX.Ele
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 	const [searchOpen, setSearchOpen] = useState(false);
 
+	const frontmatter = currentRoute?.frontmatter || {};
+	const isHeroLayout = frontmatter.layout === "home";
 	const toc = currentRoute?.toc || [];
 	const docFooter = currentRoute?.docFooter;
 
@@ -50,6 +55,47 @@ export function Layout({ config, currentRoute, children }: LayoutProps): JSX.Ele
 		initCopyCode();
 	}, []);
 
+	// Hero Layout
+	if (isHeroLayout) {
+		const hero = frontmatter.hero as HeroProps | undefined;
+		const features = (frontmatter.features || []) as Feature[];
+
+		return (
+			<div className="min-h-screen bg-background">
+				<Header
+					title={config?.title}
+					nav={config?.theme?.nav}
+					socialLinks={config?.theme?.socialLinks}
+					onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+					onSearchClick={() => setSearchOpen(true)}
+				/>
+				<Search open={searchOpen} onOpenChange={setSearchOpen} />
+
+				<div className="pt-16">
+					{/* Hero Section */}
+					{hero && <Hero {...hero} />}
+
+					{/* Features Section */}
+					{features.length > 0 && <Features features={features} />}
+
+					{/* Content Section */}
+					{children && (
+						<div className="border-t border-border">
+							<div className="px-8 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20">
+								<div className="mx-auto max-w-5xl">
+									<div className="prose max-w-none">
+										{children}
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
+				</div>
+			</div>
+		);
+	}
+
+	// Standard Layout
 	return (
 		<div className="min-h-screen bg-background">
 			<Header

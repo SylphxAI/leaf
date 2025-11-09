@@ -15,6 +15,7 @@ interface LeafRouteConfig {
 	component: React.ComponentType;
 	toc: any[];
 	docFooter: any;
+	data?: any;
 }
 
 // Convert routes to zen-router format and define them
@@ -23,6 +24,7 @@ const zenRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
 	component: route.component,
 	toc: route.toc || [],
 	docFooter: route.docFooter,
+	data: route.data,
 }));
 
 defineRoutes(zenRoutes);
@@ -125,6 +127,7 @@ function App() {
 				path: routerState.path,
 				toc: route.toc,
 				docFooter: route.docFooter,
+				frontmatter: route.data?.frontmatter || {},
 			}}
 		>
 			<Component />
