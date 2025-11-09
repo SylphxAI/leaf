@@ -381,8 +381,9 @@
 	}
 
 	.header-anchor {
-		@apply absolute -left-6 text-foreground opacity-0 no-underline transition-opacity;
+		@apply absolute -left-10 text-foreground opacity-0 no-underline transition-opacity;
 		font-weight: 600;
+		font-size: 1.25rem;
 	}
 
 	.prose h1:hover .header-anchor {

@@ -117,7 +117,7 @@ export function Sidebar({
 				role="navigation"
 				aria-label="Documentation navigation"
 				className={cn(
-					"fixed top-16 bottom-0 left-0 z-40 w-64 border-r border-border/40 bg-background",
+					"fixed top-16 bottom-0 left-0 z-40 w-80 border-r border-border/40 bg-background",
 					"transition-transform duration-300 ease-in-out lg:translate-x-0",
 					open ? "translate-x-0" : "-translate-x-full"
 				)}

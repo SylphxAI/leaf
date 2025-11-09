@@ -67,9 +67,9 @@ export function Layout({ config, currentRoute, children }: LayoutProps): JSX.Ele
 					onClose={() => setSidebarOpen(false)}
 				/>
 
-				<div className={cn("lg:pl-64", !hasSidebar && "lg:pl-0")}>
+				<div className={cn("lg:pl-80", !hasSidebar && "lg:pl-0")}>
 					<div className={cn(
-						"px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10",
+						"px-4 py-6 md:px-6 md:py-8 lg:pl-16 lg:pr-8 lg:py-10",
 						!hasSidebar && !hasToc && "lg:max-w-5xl lg:mx-auto"
 					)}>
 						<div className="flex gap-8 xl:gap-12">
