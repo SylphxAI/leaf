@@ -122,7 +122,7 @@ export function Sidebar({
 					open ? "translate-x-0" : "-translate-x-full"
 				)}
 			>
-				<div className="h-full overflow-y-auto px-6 py-8">
+				<div className="sidebar-scroll h-full overflow-y-auto px-6 py-8">
 					<nav className="space-y-1">
 						{items.map((item, idx) => (
 							<SidebarGroup key={item.link || idx} item={item} />
