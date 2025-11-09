@@ -8,6 +8,7 @@ export default {
 		// Classes added dynamically by markdown plugins
 		"external-link",
 		"external-link-icon",
+		"header-anchor",
 	],
 	darkMode: ["class", '[data-theme="dark"]'],
 	theme: {
