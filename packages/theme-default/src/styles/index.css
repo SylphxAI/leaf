@@ -375,23 +375,27 @@
 		@apply opacity-100 relative top-0 right-0;
 	}
 
-	/* Header anchors - only h1 like VitePress, hidden and no layout impact */
+	/* Header anchors - only h1 like VitePress, shown on hover in left margin */
 	.prose h1 {
 		@apply relative;
 	}
 
 	.header-anchor {
-		@apply absolute -left-10 text-foreground opacity-0 no-underline transition-opacity;
-		font-weight: 600;
-		font-size: 1.25rem;
+		@apply absolute text-foreground/40 no-underline transition-all;
+		left: -2rem;
+		font-weight: 500;
+		font-size: 1.5rem;
+		opacity: 0;
+		transform: translateX(0.25rem);
 	}
 
 	.prose h1:hover .header-anchor {
-		@apply opacity-100;
+		opacity: 1;
+		transform: translateX(0);
 	}
 
 	.header-anchor:hover {
-		@apply underline;
+		@apply text-primary;
 	}
 
 	/* Code Groups */
