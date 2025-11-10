@@ -57,31 +57,25 @@ Visit [http://localhost:5173](http://localhost:5173) 🎉
 
 ## 💡 Learn More
 
-import { Cards } from '@sylphx/leaf-theme-default';
-
-<Cards cards={[
-  {
-    icon: '📖',
-    title: 'Why Leaf?',
-    description: 'Discover what makes Leaf different and when to use it over alternatives.',
-    link: '/why'
-  },
-  {
-    icon: '📚',
-    title: 'Guide',
-    description: 'Learn about configuration, theming, markdown features, and deployment.',
-    link: '/guide'
-  },
-  {
-    icon: '🎨',
-    title: 'Features',
-    description: 'Explore code highlighting, math equations, diagrams, and more.',
-    link: '/features/code-highlighting'
-  },
-  {
-    icon: '🔧',
-    title: 'API Reference',
-    description: 'Detailed configuration options and theming API documentation.',
-    link: '/api'
-  }
-]} columns={2} />
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-12">
+  <a href="/why" class="group block p-6 border border-border rounded-lg hover:border-primary transition-colors">
+    <div class="text-4xl mb-3">📖</div>
+    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Why Leaf?</h3>
+    <p class="text-sm text-muted-foreground">Discover what makes Leaf different and when to use it over alternatives.</p>
+  </a>
+  <a href="/guide" class="group block p-6 border border-border rounded-lg hover:border-primary transition-colors">
+    <div class="text-4xl mb-3">📚</div>
+    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Guide</h3>
+    <p class="text-sm text-muted-foreground">Learn about configuration, theming, markdown features, and deployment.</p>
+  </a>
+  <a href="/features/code-highlighting" class="group block p-6 border border-border rounded-lg hover:border-primary transition-colors">
+    <div class="text-4xl mb-3">🎨</div>
+    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Features</h3>
+    <p class="text-sm text-muted-foreground">Explore code highlighting, math equations, diagrams, and more.</p>
+  </a>
+  <a href="/api" class="group block p-6 border border-border rounded-lg hover:border-primary transition-colors">
+    <div class="text-4xl mb-3">🔧</div>
+    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">API Reference</h3>
+    <p class="text-sm text-muted-foreground">Detailed configuration options and theming API documentation.</p>
+  </a>
+</div>
