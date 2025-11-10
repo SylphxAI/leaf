@@ -5,42 +5,49 @@ order: 2
 
 # Getting Started
 
-Get up and running with Leaf in minutes.
+Get your documentation site running in under 60 seconds.
 
-## Prerequisites
-
-You need **Bun** installed on your system. If you don't have it:
+## Quick Start
 
 ```bash
-# Install Bun
-curl -fsSL https://bun.sh/install | bash
+# 1. Install CLI
+npm install -D @sylphx/leaf-cli
+
+# 2. Create your first doc
+mkdir docs
+echo '# Hello World\n\nMy first Leaf doc!' > docs/index.md
+
+# 3. Start dev server
+npx leaf dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) 🎉
 
 ## Installation
 
-### Option 1: Clone the Repository
+Choose your preferred package manager:
 
-```bash
-# Clone the repo
-git clone https://github.com/sylphxltd/leaf.git
-cd leaf
+:::code-group
 
-# Install dependencies
-bun install
-
-# Start development server
-cd examples/docs
-bun dev
+```bash [npm]
+npm install -D @sylphx/leaf-cli
 ```
 
-### Option 2: Create New Project (Coming Soon)
-
-```bash
-# Using create-leaf CLI
-bunx create-leaf my-docs
-cd my-docs
-bun dev
+```bash [bun]
+bun add -D @sylphx/leaf-cli
 ```
+
+```bash [pnpm]
+pnpm add -D @sylphx/leaf-cli
+```
+
+```bash [yarn]
+yarn add -D @sylphx/leaf-cli
+```
+
+:::
+
+**That's it!** The CLI includes everything you need - core framework and default theme.
 
 ## Project Structure
 
@@ -57,11 +64,11 @@ my-docs/
 └── package.json
 ```
 
-## Configuration
+## Configuration (Optional)
 
-Create a `leaf.config.ts` file:
+Leaf works with **zero configuration**, but you can customize it:
 
-::: code-group
+:::code-group
 
 ```ts [leaf.config.ts]
 import { defineConfig } from '@sylphx/leaf';
@@ -73,15 +80,6 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide' },
       { text: 'API', link: '/api' }
-    ],
-    sidebar: [
-      {
-        text: 'Introduction',
-        items: [
-          { text: 'What is it?', link: '/' },
-          { text: 'Getting Started', link: '/getting-started' }
-        ]
-      }
     ]
   }
 });
@@ -93,14 +91,15 @@ export default {
   description: 'My awesome documentation site',
   theme: {
     nav: [
-      { text: 'Guide', link: '/guide' },
-      { text: 'API', link: '/api' }
+      { text: 'Guide', link: '/guide' }
     ]
   }
 };
 ```
 
 :::
+
+See the [Configuration Guide](/guide/configuration) for all options.
 
 ## Writing Content
 
@@ -128,33 +127,83 @@ const hello = "world";
 \`\`\`
 ```
 
-## Development
+## CLI Commands
 
-Start the development server:
+### Development Server
 
-```bash
-bun dev
+Start the development server with hot reload:
+
+:::code-group
+
+```bash [npm]
+npx leaf dev
 ```
+
+```bash [bun]
+bunx leaf dev
+```
+
+```bash [pnpm]
+pnpm leaf dev
+```
+
+```bash [yarn]
+yarn leaf dev
+```
+
+:::
 
 Your site will be available at `http://localhost:5173`
 
-## Building for Production
+### Build for Production
 
-Build your documentation:
+Generate static HTML files:
 
-```bash
-bun run build
+:::code-group
+
+```bash [npm]
+npx leaf build
 ```
 
-This generates static HTML in the `dist` directory.
-
-## Preview Production Build
-
-Preview the production build locally:
-
-```bash
-bun preview
+```bash [bun]
+bunx leaf build
 ```
+
+```bash [pnpm]
+pnpm leaf build
+```
+
+```bash [yarn]
+yarn leaf build
+```
+
+:::
+
+Output is in the `dist/` directory.
+
+### Preview Production Build
+
+Test your production build locally:
+
+:::code-group
+
+```bash [npm]
+npx leaf preview
+```
+
+```bash [bun]
+bunx leaf preview
+```
+
+```bash [pnpm]
+pnpm leaf preview
+```
+
+```bash [yarn]
+yarn leaf preview
+```
+
+:::
 
 ## What's Next?
 
@@ -166,26 +215,32 @@ bun preview
 
 ### Port Already in Use
 
-If port 5173 is already in use:
+If port 5173 is already in use, specify a different port:
 
 ```bash
-# Use a different port
-bun dev --port 3000
+npx leaf dev --port 3000
 ```
 
 ### Build Errors
 
-If you encounter build errors:
+Clear cache and reinstall:
 
 ```bash
-# Clear cache and rebuild
 rm -rf node_modules dist
-bun install
-bun run build
+npm install
+npx leaf build
 ```
 
-## Getting Help
+### Module Not Found
 
-- 📖 [Documentation](/)
+Make sure you installed `@sylphx/leaf-cli` (not just `@sylphx/leaf`):
+
+```bash
+npm install -D @sylphx/leaf-cli
+```
+
+## Need Help?
+
+- 📖 [Full Documentation](/guide)
 - 🐛 [Report Issues](https://github.com/sylphxltd/leaf/issues)
 - 💬 [GitHub Discussions](https://github.com/sylphxltd/leaf/discussions)

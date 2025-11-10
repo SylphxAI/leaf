@@ -5,108 +5,103 @@ description: How to install Leaf in your project
 
 # Installation
 
-Leaf is available as an npm package and can be installed in any React project.
+Complete guide to installing and setting up Leaf.
 
 ## Prerequisites
 
-Before you begin, make sure you have the following installed:
-
 - **Node.js** version 18 or higher
-- **Bun** or **npm/pnpm/yarn** package manager
+- **npm**, **bun**, **pnpm**, or **yarn** package manager
 
-## Quick Install
+## Quick Install (Recommended)
+
+For most users, install the CLI which includes everything:
 
 :::code-group
 
 ```bash [npm]
-npm install @sylphx/leaf @sylphx/leaf-theme-default
+npm install -D @sylphx/leaf-cli
 ```
 
 ```bash [bun]
-bun add @sylphx/leaf @sylphx/leaf-theme-default
+bun add -D @sylphx/leaf-cli
 ```
 
 ```bash [pnpm]
-pnpm add @sylphx/leaf @sylphx/leaf-theme-default
+pnpm add -D @sylphx/leaf-cli
 ```
 
 ```bash [yarn]
-yarn add @sylphx/leaf @sylphx/leaf-theme-default
+yarn add -D @sylphx/leaf-cli
 ```
 
 :::
 
-## Create a New Project
+**What's included:**
+- `@sylphx/leaf` - Core framework
+- `@sylphx/leaf-theme-default` - Default theme
+- CLI commands: `leaf dev`, `leaf build`, `leaf preview`
 
-If you're starting from scratch, you can create a new Leaf project using our starter template:
+## Create New Project (Coming Soon)
+
+Scaffold a new project with our starter template:
 
 :::code-group
 
 ```bash [npm]
 npm create leaf@latest my-docs
 cd my-docs
-npm install
 npm run dev
 ```
 
 ```bash [bun]
 bun create leaf my-docs
 cd my-docs
-bun install
-bun run dev
+bun dev
 ```
 
 :::
 
-## Manual Setup
+## Manual Setup (Advanced)
 
-If you prefer to set up Leaf manually:
+For advanced use cases like custom build pipelines or monorepos.
 
-### 1. Create Project Structure
+### 1. Install Core Packages
+
+```bash
+npm install @sylphx/leaf @sylphx/leaf-theme-default
+```
+
+### 2. Create Project Structure
 
 ```
 my-docs/
 ├── docs/              # Your markdown files
-│   ├── index.mdx
-│   ├── guide/
-│   └── api/
+│   └── index.mdx
 ├── src/
 │   └── main.tsx       # React entry point
-├── index.html         # HTML template
-├── leaf.config.ts
-├── vite.config.ts
+├── leaf.config.ts     # Optional configuration
+├── vite.config.ts     # Vite configuration
 └── package.json
 ```
 
-### 2. Configure Leaf
+### 3. Configure Vite
 
-Create `leaf.config.ts`:
+Create `vite.config.ts`:
 
 ```typescript
-import { defineConfig } from "@sylphx/leaf";
+import { defineConfig } from "vite";
+import { createLeafPlugin, routesPlugin, loadConfig } from "@sylphx/leaf";
+import { resolve } from "node:path";
+
+const docsDir = resolve(process.cwd(), "docs");
+const config = await loadConfig(process.cwd());
 
 export default defineConfig({
-  title: "My Documentation",
-  description: "My awesome documentation site",
-  theme: {
-    nav: [
-      { text: "Guide", link: "/guide" },
-      { text: "API", link: "/api" }
-    ],
-    sidebar: [
-      {
-        text: "Getting Started",
-        items: [
-          { text: "Introduction", link: "/" },
-          { text: "Installation", link: "/installation" }
-        ]
-      }
-    ]
-  }
+  plugins: [routesPlugin(docsDir), ...createLeafPlugin(config)]
 });
 ```
 
-### 3. Create Entry Point
+### 4. Create Entry Point
 
 Create `src/main.tsx`:
 
@@ -136,23 +131,6 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-### 4. Configure Vite
-
-Create `vite.config.ts`:
-
-```typescript
-import { defineConfig } from "vite";
-import { createLeafPlugin, routesPlugin, loadConfig } from "@sylphx/leaf";
-import { resolve } from "node:path";
-
-const docsDir = resolve(process.cwd(), "docs");
-const config = await loadConfig(process.cwd());
-
-export default defineConfig({
-  plugins: [routesPlugin(docsDir), ...createLeafPlugin(config)]
-});
-```
-
 ### 5. Add Scripts
 
 Add to `package.json`:
@@ -161,32 +139,13 @@ Add to `package.json`:
 {
   "scripts": {
     "dev": "vite",
-    "build": "bun run build.ts",
+    "build": "vite build",
     "preview": "vite preview"
   }
 }
 ```
 
-### 6. Setup `.gitignore`
-
-Create `.gitignore` to exclude build artifacts:
-
-```gitignore
-# Dependencies
-node_modules
-
-# Build output
-dist
-
-# Leaf temporary files
-.leaf/
-
-# Environment files
-.env
-.env.local
-```
-
-### 7. Create Your First Page
+### 6. Create Your First Page
 
 Create `docs/index.mdx`:
 
@@ -200,26 +159,49 @@ title: Welcome
 This is my documentation site built with Leaf!
 ```
 
-## Verify Installation
+For complete examples, see the [examples](https://github.com/sylphxltd/leaf/tree/main/examples) directory.
 
-Start the development server:
+## Package Comparison
 
-:::code-group
+Understanding when to use each package:
 
-```bash [npm]
-npm run dev
-```
+| Package | Use Case | Installation |
+|---------|----------|--------------|
+| **@sylphx/leaf-cli** | ✅ Most users | `npm install -D @sylphx/leaf-cli` |
+| **@sylphx/leaf** + **@sylphx/leaf-theme-default** | Custom builds, monorepos | `npm install @sylphx/leaf @sylphx/leaf-theme-default` |
 
-```bash [bun]
-bun run dev
-```
-
-:::
-
-Open your browser to `http://localhost:5173` to see your site!
+**Recommendation:** Start with `@sylphx/leaf-cli`. Only use manual setup for advanced customization.
 
 ## What's Next?
 
 - [Configure your site](/guide/configuration)
 - [Learn about Markdown features](/guide/markdown)
 - [Customize the theme](/guide/theming)
+
+## Troubleshooting
+
+### "Cannot find module '@sylphx/leaf-cli'"
+
+Make sure you installed the CLI package:
+
+```bash
+npm install -D @sylphx/leaf-cli
+```
+
+### "leaf: command not found"
+
+Use `npx` to run the CLI:
+
+```bash
+npx leaf dev
+```
+
+Or add `node_modules/.bin` to your PATH.
+
+### TypeScript Errors
+
+Install type definitions:
+
+```bash
+npm install -D @types/node
+```

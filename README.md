@@ -95,79 +95,110 @@ docs/                 - Leaf official documentation (self-hosted)
 - **Linting**: Biome
 - **Testing**: Vitest
 
-## Quick Start
-
-### Development
-
-```bash
-# Install dependencies
-bun install
-
-# Start development server
-bun dev
-
-# Build all packages
-bun run build
-
-# Lint code
-bun run lint:fix
-```
-
-### Using Leaf
-
-```bash
-# Install CLI
-bun add -D @sylphx/leaf-cli
-
-# Start development server
-bunx leaf dev
-
-# Build for production
-bunx leaf build
-
-# Preview production build
-bunx leaf preview
-```
-
-**That's it!** Your documentation site is ready. 🎉
-
----
-
-## 📦 Installation
-
-```bash
-# npm
-npm install -D @sylphx/leaf-cli
-
-# yarn
-yarn add -D @sylphx/leaf-cli
-
-# bun (recommended)
-bun add -D @sylphx/leaf-cli
-```
-
 ## 🚀 Quick Start
 
+Get your documentation site running in **under 60 seconds**:
+
 ```bash
-# Create your docs directory
-mkdir docs && cd docs
+# 1. Install CLI (one-time setup)
+npm install -D @sylphx/leaf-cli
 
-# Create a simple markdown file
-echo '# Hello World\n\nThis is my first Leaf doc!' > index.md
+# 2. Create your first doc
+mkdir docs
+echo '# Hello World\n\nMy first Leaf doc!' > docs/index.md
 
-# Start development server
-bunx leaf dev
-
-# 🎉 Open http://localhost:5173
+# 3. Start dev server
+npx leaf dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) 🎉
+
+### Alternative Package Managers
+
+:::code-group
+
+```bash [npm]
+npm install -D @sylphx/leaf-cli
+npx leaf dev
+```
+
+```bash [bun]
+bun add -D @sylphx/leaf-cli
+bunx leaf dev
+```
+
+```bash [pnpm]
+pnpm add -D @sylphx/leaf-cli
+pnpm leaf dev
+```
+
+```bash [yarn]
+yarn add -D @sylphx/leaf-cli
+yarn leaf dev
+```
+
+:::
 
 ---
 
-## Configuration
+## 📦 Understanding the Packages
 
-Create `leaf.config.ts`:
+Leaf is split into focused packages for flexibility:
+
+### For End Users (Most Common)
+
+| Package | Purpose | When to Use |
+|---------|---------|-------------|
+| **`@sylphx/leaf-cli`** | Command-line tool | ✅ **Start here!** Includes everything needed |
+
+The CLI automatically includes `@sylphx/leaf` (core) and `@sylphx/leaf-theme-default` (theme).
+
+### For Advanced Users
+
+| Package | Purpose | When to Use |
+|---------|---------|-------------|
+| **`@sylphx/leaf`** | Core framework | Building custom tooling or themes |
+| **`@sylphx/leaf-theme-default`** | Default theme | Creating custom theme variations |
+
+**💡 Recommendation:** Use `@sylphx/leaf-cli` unless you're building custom tooling.
+
+---
+
+## 📖 Full Installation Guide
+
+### Option 1: CLI (Recommended)
+
+**Best for:** Getting started quickly, zero configuration
+
+```bash
+# Install
+npm install -D @sylphx/leaf-cli
+
+# Commands
+npx leaf dev      # Start dev server
+npx leaf build    # Build for production
+npx leaf preview  # Preview production build
+```
+
+### Option 2: Manual Setup (Advanced)
+
+**Best for:** Custom build pipelines, monorepos, advanced customization
+
+```bash
+# Install core packages
+npm install @sylphx/leaf @sylphx/leaf-theme-default
+```
+
+Then configure Vite manually. See [Installation Guide](/guide/installation) for details.
+
+---
+
+## ⚙️ Configuration (Optional)
+
+Leaf works with **zero configuration**, but you can customize it:
 
 ```typescript
+// leaf.config.ts
 import { defineConfig } from '@sylphx/leaf';
 
 export default defineConfig({
@@ -184,6 +215,43 @@ export default defineConfig({
     ]
   }
 });
+```
+
+---
+
+## 🏗️ Contributing to Leaf
+
+This section is for **Leaf developers** working on the framework itself.
+
+### Development Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/sylphxltd/leaf.git
+cd leaf
+
+# Install dependencies
+bun install
+
+# Start development
+cd examples/docs
+bun dev
+
+# Build all packages
+bun run build
+
+# Lint code
+bun run lint:fix
+```
+
+### Monorepo Structure
+
+```
+packages/
+  ├── core/           - Core framework (@sylphx/leaf)
+  ├── cli/            - CLI tool (@sylphx/leaf-cli)
+  ├── theme-default/  - Default theme (@sylphx/leaf-theme-default)
+  └── create-leaf/    - Scaffolding tool (coming soon)
 ```
 
 ## 📊 Comparison with VitePress
@@ -223,37 +291,6 @@ export default defineConfig({
 | **Build Speed** | ⚡⚡⚡ Faster | ⚡⚡ Fast |
 | **Bundle Size** | 665KB (125KB gzipped) | Similar |
 
-## Core Packages
-
-### @sylphx/leaf
-
-Core framework providing:
-- Configuration management
-- Route generation from MDX files
-- Vite plugin integration
-- Type definitions
-
-### @sylphx/leaf-cli
-
-Command-line interface:
-- `leaf dev` - Start development server
-- `leaf build` - Build for production
-- `leaf preview` - Preview production build
-
-### @sylphx/leaf-theme-default
-
-Default theme featuring:
-- ✅ Responsive layout with mobile hamburger menu
-- ✅ Dark mode with system preference detection
-- ✅ Auto-generated sidebar with collapsible groups
-- ✅ Table of contents with scroll spy
-- ✅ Local search modal (Cmd/Ctrl+K)
-- ✅ Code syntax highlighting with copy buttons
-- ✅ Code line highlighting and tabs
-- ✅ Custom containers and badges
-- ✅ External link icons
-- ✅ Last updated timestamps
-- ✅ Beautiful typography and spacing
 
 ## Documentation & Examples
 
@@ -293,92 +330,33 @@ cd examples/docs
 bun dev
 ```
 
-## Architecture
+## 🎯 Project Status
 
-### Core Design
+**✅ Production Ready** - v0.1.1 with complete VitePress parity
 
-1. **Zero-config by default**: Works out of the box with sensible defaults
-2. **File-based routing**: Automatic route generation from `docs/**/*.mdx`
-3. **Plugin system**: Extensible via Vite plugins
-4. **Theme customization**: Override default theme components
+### ✅ Core Features
+- Full Markdown + MDX support with GFM
+- Syntax highlighting with line numbers and tabs
+- Custom containers (tip, warning, danger, details)
+- Local search with MiniSearch
+- Static Site Generation (SSG)
+- Math equations with KaTeX
+- Mermaid diagrams
+- Header hash links with hover effects
 
-### Build Process
+### 📊 Performance Stats
+- 📦 Bundle: 125KB gzipped
+- ⚡ Build: ~2s for 22 pages
+- 🔍 Search: 605 documents indexed
+- 🎯 Lighthouse: 95+ scores
 
-```
-MDX Files → Route Generation → Vite Build → Static Site
-```
-
-### State Management
-
-Uses **Zen** for:
-- Theme toggling (light/dark mode)
-- Global application state
-- Reactive updates across components
-
-## Development
-
-### Building Packages
-
-```bash
-# Build core
-cd packages/core && bun run build
-
-# Build CLI
-cd packages/cli && bun run build
-
-# Build theme
-cd packages/theme-default && bun run build
-```
-
-### Project Status
-
-✅ **Production Ready - VitePress Parity Achieved!**
-
-All core features completed:
-- ✅ Core framework with SSG
-- ✅ CLI tool (dev/build/preview)
-- ✅ Complete default theme
-- ✅ Full Markdown/MDX support
-- ✅ All VitePress markdown features
-- ✅ Local search (MiniSearch)
-- ✅ Auto-generated navigation
-- ✅ Mobile responsive design
-- ✅ Dark mode
-- ✅ Git-based timestamps
-- ✅ **Comprehensive documentation site** (22 pages, self-hosted)
-- ✅ Example documentation site
-
-Build stats (official docs):
-- 📦 Bundle: 802KB JavaScript (57KB CSS)
-- 🔍 Search index: 605 documents (159KB)
-- ⚡ Build time: ~2s
-- 🏗️ 22 static pages generated
-- 🧮 Math: KaTeX rendering
-- 📊 Diagrams: Mermaid v11 (CDN)
-- 📝 Comprehensive documentation for all features
-
-## 🎯 v0.1.0 Status
-
-**✅ PRODUCTION READY** - Leaf v0.1.0 achieves complete VitePress parity:
-
-### ✅ Core Features (All Complete)
-- ✅ Full Markdown + MDX support with GFM
-- ✅ Syntax highlighting with line numbers and tabs
-- ✅ Custom containers (tip, warning, danger, details)
-- ✅ Local search with MiniSearch (605 docs indexed)
-- ✅ Static Site Generation (SSG)
-- ✅ Math equations with KaTeX
-- ✅ Mermaid diagrams
-- ✅ **Header hash links with hover effects** (NEW!)
-
-### 🚀 What's Next (v0.2.0 Roadmap)
-- [ ] Edit link integration
-- [ ] Image lazy loading & optimization
-- [ ] RSS feed generation
-- [ ] I18n support
-- [ ] Plugin API
-- [ ] Theme customization API
-- [ ] CLI scaffolding tool
+### 🚀 What's Next (v0.2.0)
+- Edit link integration
+- Image lazy loading & optimization
+- RSS feed generation
+- I18n support
+- Plugin API
+- Theme customization API
 
 ## Why Leaf over VitePress?
 
@@ -408,21 +386,12 @@ MIT
 
 ---
 
-## 📊 v0.1.0 Release Stats
+## 📚 Resources
 
-- **📦 Bundle Size**: 802KB JavaScript (57KB CSS)
-- **⚡ Build Speed**: ~2s (22 pages with search index)
-- **🔍 Search Index**: 605 documents (159KB)
-- **📄 Static Pages**: 22 pages generated
-- **🎯 Performance**: Lighthouse scores 95+
-- **🎨 Features**: 100% VitePress parity achieved
-
-## Getting Help
-
+- **📖 Documentation**: [Full Guide](https://github.com/sylphxltd/leaf/tree/main/docs)
 - **🐛 Issues**: [Report bugs or request features](https://github.com/sylphxltd/leaf/issues)
-- **📚 Documentation**: [Complete guide](https://github.com/sylphxltd/leaf/tree/main/docs)
-- **🏢 Organization**: [@sylphxltd](https://github.com/sylphxltd)
-- **📦 npm**: [@sylphx](https://www.npmjs.com/org/sylphx)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/sylphxltd/leaf/discussions)
+- **📦 Packages**: [@sylphx on npm](https://www.npmjs.com/org/sylphx)
 
 ---
 
