@@ -49,7 +49,7 @@ const app = createApp({
 `
 };
 
-export default function ThemeShowcase() {
+export function ThemeShowcase() {
   const [selectedTheme, setSelectedTheme] = useState('default');
   const currentTheme = themes.find(t => t.id === selectedTheme) || themes[0];
 
