@@ -5,11 +5,33 @@
   --line-height: 1.6;
 }
 
-/* Apply CSS variables to the entire document */
+/* Apply CSS variables to the entire document with !important override */
 html {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size) !important;
+  line-height: var(--line-height) !important;
+}
+
+/* Force override for Tailwind utility classes */
+html.theme-blog,
+body.theme-blog {
+  font-family: Georgia, serif !important;
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+html.theme-business,
+body.theme-business {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+html.theme-minimal,
+body.theme-minimal {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
 }
 
 /* Theme-specific styles */
@@ -29,6 +51,15 @@ html {
   --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   --font-size: 16px;
   --line-height: 1.6;
+}
+
+/* Override all text elements */
+.theme-blog * {
+  font-family: Georgia, serif !important;
+}
+
+.theme-business * {
+  font-family: Helvetica, Arial, sans-serif !important;
 }
 
 /* Ensure smooth transitions */
