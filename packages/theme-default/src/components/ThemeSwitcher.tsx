@@ -22,13 +22,22 @@ export function ThemeSwitcher(): h.JSX.Element {
   }, []);
 
   const applyThemeStyles = (themeId: string) => {
+    console.log('Applying theme:', themeId);
+
     // Apply theme-specific styles like LiveThemeSelector
     const body = document.body;
+    console.log('Current body classes:', body.className);
+
+    // Remove existing theme classes
     body.className = body.className.replace(/theme-\w+/g, '');
+    // Add new theme class
     body.classList.add(`theme-${themeId}`);
+
+    console.log('New body classes:', body.className);
 
     // Apply CSS custom properties based on theme
     const root = document.documentElement;
+    console.log('Setting CSS variables for theme:', themeId);
 
     if (themeId === 'blog') {
       root.style.setProperty('--font-family', 'Georgia, serif');
@@ -47,6 +56,8 @@ export function ThemeSwitcher(): h.JSX.Element {
       root.style.setProperty('--font-size', '16px');
       root.style.setProperty('--line-height', '1.6');
     }
+
+    console.log('CSS variables applied');
   };
 
   const currentTheme = themes.find(t => t.id === currentThemeId) || themes[0];
