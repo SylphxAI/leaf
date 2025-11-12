@@ -4,6 +4,7 @@ export { Sidebar } from "./components/Sidebar";
 export { ThemeToggle } from "./components/ThemeToggle";
 export { ThemeSwitcher } from "./components/ThemeSwitcher";
 export { ThemeShowcase } from "./components/ThemeShowcase";
+export { default as LiveThemeSelector } from "./components/LiveThemeSelector";
 export { TableOfContents } from "./components/TableOfContents";
 export type { TocItem } from "./components/TableOfContents";
 export { SidebarToggle } from "./components/SidebarToggle";

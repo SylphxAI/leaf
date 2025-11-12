@@ -2,6 +2,12 @@
 
 Leaf comes with multiple built-in themes that you can switch between instantly. Each theme is designed for different use cases and aesthetics.
 
+## 🚀 Live Theme Preview
+
+Experience our themes in real-time with the interactive theme selector below:
+
+\<LiveThemeSelector />
+
 ## Available Themes
 
 ### 🎨 Default Theme

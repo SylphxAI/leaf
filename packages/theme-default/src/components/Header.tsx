@@ -3,7 +3,7 @@ import { Link } from "./Link";
 import { useLocation } from "../hooks/useRouter";
 import { Icon } from "@iconify/react";
 import { ThemeToggle } from "./ThemeToggle";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 import { Button } from "./Button";
 import { cn } from "../lib/utils";
 
