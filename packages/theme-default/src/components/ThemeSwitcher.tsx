@@ -22,42 +22,49 @@ export function ThemeSwitcher(): h.JSX.Element {
   }, []);
 
   const applyThemeStyles = (themeId: string) => {
-    console.log('Applying theme:', themeId);
+    console.log('🎨 Applying theme:', themeId);
 
-    // Apply theme-specific styles like LiveThemeSelector
+    // Apply theme-specific styles - Critical: Apply to documentElement for CSS variables
+    const root = document.documentElement;
     const body = document.body;
-    console.log('Current body classes:', body.className);
 
-    // Remove existing theme classes
+    // Remove existing theme classes from both root and body
+    root.className = root.className.replace(/theme-\w+/g, '');
     body.className = body.className.replace(/theme-\w+/g, '');
-    // Add new theme class
+
+    // Add new theme class to both
+    root.classList.add(`theme-${themeId}`);
     body.classList.add(`theme-${themeId}`);
 
-    console.log('New body classes:', body.className);
+    console.log('📋 Root classes:', root.className);
+    console.log('📋 Body classes:', body.className);
 
-    // Apply CSS custom properties based on theme
-    const root = document.documentElement;
-    console.log('Setting CSS variables for theme:', themeId);
-
+    // Force CSS variables to be set directly (in case CSS file not loaded)
     if (themeId === 'blog') {
-      root.style.setProperty('--font-family', 'Georgia, serif');
-      root.style.setProperty('--font-size', '18px');
-      root.style.setProperty('--line-height', '1.7');
+      root.style.setProperty('--font-family', 'Georgia, serif', 'important');
+      root.style.setProperty('--font-size', '18px', 'important');
+      root.style.setProperty('--line-height', '1.7', 'important');
     } else if (themeId === 'business') {
-      root.style.setProperty('--font-family', 'Helvetica, Arial, sans-serif');
-      root.style.setProperty('--font-size', '15px');
-      root.style.setProperty('--line-height', '1.5');
+      root.style.setProperty('--font-family', 'Helvetica, Arial, sans-serif', 'important');
+      root.style.setProperty('--font-size', '15px', 'important');
+      root.style.setProperty('--line-height', '1.5', 'important');
     } else if (themeId === 'minimal') {
-      root.style.setProperty('--font-family', '-apple-system, BlinkMacSystemFont, sans-serif');
-      root.style.setProperty('--font-size', '16px');
-      root.style.setProperty('--line-height', '1.6');
+      root.style.setProperty('--font-family', '-apple-system, BlinkMacSystemFont, sans-serif', 'important');
+      root.style.setProperty('--font-size', '16px', 'important');
+      root.style.setProperty('--line-height', '1.6', 'important');
     } else {
-      root.style.setProperty('--font-family', 'Inter, system-ui, sans-serif');
-      root.style.setProperty('--font-size', '16px');
-      root.style.setProperty('--line-height', '1.6');
+      root.style.setProperty('--font-family', 'Inter, system-ui, sans-serif', 'important');
+      root.style.setProperty('--font-size', '16px', 'important');
+      root.style.setProperty('--line-height', '1.6', 'important');
     }
 
-    console.log('CSS variables applied');
+    // Also set directly on body as fallback
+    body.style.fontFamily = root.style.getPropertyValue('--font-family');
+    body.style.fontSize = root.style.getPropertyValue('--font-size');
+    body.style.lineHeight = root.style.getPropertyValue('--line-height');
+
+    console.log('✅ CSS variables applied forcefully');
+    console.log('   Font family:', root.style.getPropertyValue('--font-family'));
   };
 
   const currentTheme = themes.find(t => t.id === currentThemeId) || themes[0];
