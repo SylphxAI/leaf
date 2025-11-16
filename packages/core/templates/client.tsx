@@ -1,6 +1,6 @@
-import { createSignal, createEffect, onCleanup } from "solid-js";
+import { createEffect, onCleanup } from "solid-js";
 import { render } from "solid-js/web";
-import { Router, Route, useLocation, useNavigate } from "@solidjs/router";
+import { Router, useLocation } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
 import "@sylphx/leaf-theme-default/style.css";
 
@@ -35,7 +35,7 @@ function findMatchingRoute(pathname: string, routes: LeafRouteConfig[]): LeafRou
 	return catchAll || null;
 }
 
-// App component
+// App component - must be inside Router
 function App() {
 	const location = useLocation();
 
@@ -121,7 +121,5 @@ if (!rootElement) {
 }
 
 render(() => (
-	<Router>
-		<App />
-	</Router>
+	<Router root={App} />
 ), rootElement);
