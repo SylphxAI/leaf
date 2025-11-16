@@ -54,7 +54,6 @@
 		"dev": "bunup 'src/**/*.ts' --watch"
 	},
 	"dependencies": {
-		"@preact/preset-vite": "^2.10.2",
 		"fast-glob": "^3.3.3",
 		"gray-matter": "^4.0.3",
 		"html-react-parser": "^5.2.8",
@@ -72,7 +71,8 @@
 		"remark-rehype": "^11.1.2",
 		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0",
-		"vite": "^7.2.2"
+		"vite": "^7.2.2",
+		"vite-plugin-solid": "^2.10.2"
 	},
 	"devDependencies": {
 		"@types/mdast": "^4.0.4",
@@ -81,6 +81,6 @@
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"preact": "^10.27.0"
+		"solid-js": "^1.9.3"
 	}
 }

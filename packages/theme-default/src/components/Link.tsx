@@ -1,25 +1,27 @@
-// ASSUMPTION: JSX automatic runtime via Preact preset
 import { open } from "@sylphx/zen-router";
-import type { JSX } from "preact";
+import type { JSX, ParentComponent } from "solid-js";
+import { splitProps } from "solid-js";
 
-interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
+interface LinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
 	to: string;
-	children: JSX.Element | JSX.Element[] | string;
+	children: JSX.Element;
 }
 
 /**
  * Link component that works with zen-router
  * Intercepts clicks and uses zen-router's open() for SPA navigation
  */
-export function Link({ to, children, ...props }: LinkProps): JSX.Element {
-	const handleClick = (e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
+export const Link: ParentComponent<LinkProps> = (props) => {
+	const [local, others] = splitProps(props, ["to", "children"]);
+
+	const handleClick = (e: MouseEvent) => {
 		// Allow default behavior for:
 		// - External links
 		// - Modified clicks (ctrl/cmd/shift)
 		// - Right clicks
 		if (
-			to.startsWith("http") ||
-			to.startsWith("//") ||
+			local.to.startsWith("http") ||
+			local.to.startsWith("//") ||
 			e.ctrlKey ||
 			e.metaKey ||
 			e.shiftKey ||
@@ -29,12 +31,12 @@ export function Link({ to, children, ...props }: LinkProps): JSX.Element {
 		}
 
 		e.preventDefault();
-		open(to);
+		open(local.to);
 	};
 
 	return (
-		<a href={to} onClick={handleClick} {...props}>
-			{children}
+		<a href={local.to} onClick={handleClick} {...others}>
+			{local.children}
 		</a>
 	);
-}
+};

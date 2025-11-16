@@ -10,4 +10,7 @@ export default defineConfig({
 		description: "Documentation for Sylphx tools",
 		base: "/",
 	})],
+	resolve: {
+		dedupe: ["solid-js", "solid-js/web"],
+	},
 });

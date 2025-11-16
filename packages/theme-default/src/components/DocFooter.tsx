@@ -1,6 +1,7 @@
-// ASSUMPTION: JSX automatic runtime via Preact preset
 import { Link } from "./Link";
-import { Icon } from "@iconify/react";
+import "iconify-icon";
+import { Show } from "solid-js";
+
 
 export interface DocFooterProps {
 	prev?: {
@@ -18,75 +19,70 @@ export interface DocFooterProps {
 	lastUpdated?: boolean;
 }
 
-export function DocFooter({
-	prev,
-	next,
-	editLink,
-	lastUpdated,
-}: DocFooterProps): JSX.Element {
+export function DocFooter(props: DocFooterProps) {
 	return (
-		<footer className="mt-12 border-t pt-8">
-			{(editLink || lastUpdated) && (
-				<div className="mb-8 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-					{editLink && (
+		<footer class="mt-12 border-t pt-8">
+			<Show when={props.editLink || props.lastUpdated}>
+				<div class="mb-8 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+					<Show when={props.editLink}>
 						<a
-							href={editLink.pattern}
+							href={props.editLink!.pattern}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
+							class="inline-flex items-center gap-2 rounded-md px-3 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
 						>
-							<Icon icon="lucide:edit" className="h-4 w-4" />
-							<span>{editLink.text || "Edit this page"}</span>
+							<iconify-icon icon="lucide:edit" class="h-4 w-4" />
+							<span>{props.editLink!.text || "Edit this page"}</span>
 						</a>
-					)}
-					{lastUpdated && (
-						<div className="flex items-center gap-2">
-							<Icon icon="lucide:clock" className="h-4 w-4" />
+					</Show>
+					<Show when={props.lastUpdated}>
+						<div class="flex items-center gap-2">
+							<iconify-icon icon="lucide:clock" class="h-4 w-4" />
 							<span>Last updated: </span>
-							<time id="last-updated-time" className="font-medium text-foreground" />
+							<time id="last-updated-time" class="font-medium text-foreground" />
 						</div>
-					)}
+					</Show>
 				</div>
-			)}
+			</Show>
 
-			{(prev || next) && (
-				<nav className="grid grid-cols-1 gap-4 md:grid-cols-2" aria-label="Page navigation">
+			<Show when={props.prev || props.next}>
+				<nav class="grid grid-cols-1 gap-4 md:grid-cols-2" aria-label="Page navigation">
 					<div>
-						{prev && (
+						<Show when={props.prev}>
 							<Link
-								to={prev.link}
-								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md"
-								aria-label={`Previous page: ${prev.text}`}
+								to={props.prev!.link}
+								class="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md"
+								aria-label={`Previous page: ${props.prev!.text}`}
 							>
-								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-									<Icon icon="lucide:arrow-left" className="h-3 w-3" />
+								<span class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+									<iconify-icon icon="lucide:arrow-left" class="h-3 w-3" />
 									Previous
 								</span>
-								<span className="font-semibold text-foreground group-hover:text-primary">
-									{prev.text}
+								<span class="font-semibold text-foreground group-hover:text-primary">
+									{props.prev!.text}
 								</span>
 							</Link>
-						)}
+						</Show>
 					</div>
-					<div className="md:text-right">
-						{next && (
+					<div class="md:text-right">
+						<Show when={props.next}>
 							<Link
-								to={next.link}
-								className="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md md:items-end"
-								aria-label={`Next page: ${next.text}`}
+								to={props.next!.link}
+								class="group flex flex-col gap-2 rounded-lg border bg-card p-4 transition-all hover:border-primary hover:shadow-md md:items-end"
+								aria-label={`Next page: ${props.next!.text}`}
 							>
-								<span className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+								<span class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
 									Next
-									<Icon icon="lucide:arrow-right" className="h-3 w-3" />
+									<iconify-icon icon="lucide:arrow-right" class="h-3 w-3" />
 								</span>
-								<span className="font-semibold text-foreground group-hover:text-primary">
-									{next.text}
+								<span class="font-semibold text-foreground group-hover:text-primary">
+									{props.next!.text}
 								</span>
 							</Link>
-						)}
+						</Show>
 					</div>
 				</nav>
-			)}
+			</Show>
 		</footer>
 	);
 }

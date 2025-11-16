@@ -1,25 +1,17 @@
-import type { ComponentChildren } from "preact";
+import type { JSX, ParentComponent } from "solid-js";
 import { cn } from "../lib/utils";
 
 interface ButtonProps {
-	children: ComponentChildren;
+	children: JSX.Element;
 	onClick?: () => void;
-	className?: string;
+	class?: string;
 	variant?: "icon" | "default";
 	type?: "button" | "submit" | "reset";
 	"aria-label"?: string;
 	"aria-pressed"?: boolean;
 }
 
-export function Button({
-	children,
-	onClick,
-	className,
-	variant = "default",
-	type = "button",
-	"aria-label": ariaLabel,
-	"aria-pressed": ariaPressed,
-}: ButtonProps): JSX.Element {
+export const Button: ParentComponent<ButtonProps> = (props) => {
 	const baseStyles = "inline-flex items-center justify-center rounded-lg transition-all active:scale-95";
 
 	const variantStyles = {
@@ -29,13 +21,13 @@ export function Button({
 
 	return (
 		<button
-			type={type}
-			className={cn(baseStyles, variantStyles[variant], className)}
-			onClick={onClick}
-			aria-label={ariaLabel}
-			aria-pressed={ariaPressed}
+			type={props.type || "button"}
+			class={cn(baseStyles, variantStyles[props.variant || "default"], props.class)}
+			onClick={props.onClick}
+			aria-label={props["aria-label"]}
+			aria-pressed={props["aria-pressed"]}
 		>
-			{children}
+			{props.children}
 		</button>
 	);
-}
+};

@@ -4,14 +4,10 @@
 	"description": "🎨 Default theme for Leaf documentation framework with responsive design, dark mode, and search",
 	"main": "./dist/src/index.js",
 	"dependencies": {
-		"@iconify/react": "^6.0.2",
-		"@radix-ui/react-collapsible": "^1.1.12",
-		"@radix-ui/react-dialog": "^1.1.15",
-		"@radix-ui/react-dropdown-menu": "^2.1.16",
-		"@radix-ui/react-separator": "^1.1.8",
+		"@kobalte/core": "^0.13.11",
+		"@solidjs/router": "^0.15.4",
 		"@sylphx/silk": "^2.0.2",
 		"@sylphx/zen": "^1.2.1",
-		"@sylphx/zen-router": "^1.0.2",
 		"autoprefixer": "^10.4.21",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -20,17 +16,15 @@
 		"katex": "^0.16.25",
 		"minisearch": "^7.2.0",
 		"postcss": "^8.5.6",
-		"preact": "^10.27.2",
+		"solid-js": "^1.9.3",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^3.4.18"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.7",
-		"@preact/preset-vite": "^2.10.2",
-		"@types/react": "^19.2.2",
-		"@types/react-dom": "^19.2.2",
 		"bunup": "^0.15.14",
-		"typescript": "^5.9.3"
+		"typescript": "^5.9.3",
+		"vite-plugin-solid": "^2.10.2"
 	},
 	"exports": {
 		".": {

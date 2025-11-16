@@ -1,7 +1,6 @@
-import { useEffect, useState } from "preact/hooks";
-import { render } from "preact";
-import { $router, defineRoutes } from "@sylphx/zen-router";
-import { subscribe, get } from "@sylphx/zen";
+import { createSignal, createEffect, onCleanup, Component } from "solid-js";
+import { render } from "solid-js/web";
+import { Router, Route, useLocation, useNavigate } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
 import "@sylphx/leaf-theme-default/style.css";
 
@@ -12,14 +11,14 @@ import config from "virtual:leaf/config";
 
 interface LeafRouteConfig {
 	path: string;
-	component: React.ComponentType;
+	component: Component;
 	toc: any[];
 	docFooter: any;
 	data?: any;
 }
 
-// Convert routes to zen-router format and define them
-const zenRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
+// Convert routes to SolidJS router format
+const solidRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
 	path: route.path === "/" ? "/" : route.path,
 	component: route.component,
 	toc: route.toc || [],
@@ -27,59 +26,31 @@ const zenRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
 	data: route.data,
 }));
 
-defineRoutes(zenRoutes);
-
-// Simple route matcher (since zen-router doesn't export matchRoutes)
+// Simple route matcher
 function findMatchingRoute(pathname: string, routes: LeafRouteConfig[]): LeafRouteConfig | null {
-	// Normalize path
 	const normalizedPath = pathname === "" ? "/" : pathname;
-
-	// Try exact match first
 	const exactMatch = routes.find(r => r.path === normalizedPath);
 	if (exactMatch) return exactMatch;
-
-	// Try catch-all route
 	const catchAll = routes.find(r => r.path === "*");
 	return catchAll || null;
 }
 
-// App component that subscribes to router state
+// App component
 function App() {
-	const [routerState, setRouterState] = useState(() => get($router));
-
-	useEffect(() => {
-		// Subscribe to router changes
-		const unsubscribe = subscribe($router, setRouterState);
-
-		// Listen to browser back/forward
-		const handlePopState = () => {
-			const newState = get($router);
-			setRouterState(newState);
-		};
-		window.addEventListener("popstate", handlePopState);
-
-		return () => {
-			unsubscribe();
-			window.removeEventListener("popstate", handlePopState);
-		};
-	}, []);
+	const location = useLocation();
 
 	// Update document title based on current route
-	useEffect(() => {
-		const route = findMatchingRoute(routerState.path, zenRoutes);
+	createEffect(() => {
+		const route = findMatchingRoute(location.pathname, solidRoutes);
 		const pageTitle = route?.data?.frontmatter?.title;
 		const siteTitle = config?.title || "Leaf";
-
 		document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
-	}, [routerState.path]);
+	});
 
 	// Handle scroll restoration on route change
-	useEffect(() => {
-		const hash = window.location.hash;
-
+	createEffect(() => {
+		const hash = location.hash;
 		if (hash) {
-			// Wait for React to render, then scroll to hash target
-			// Use requestAnimationFrame + setTimeout for better timing
 			requestAnimationFrame(() => {
 				setTimeout(() => {
 					const element = document.querySelector(hash);
@@ -89,17 +60,15 @@ function App() {
 				}, 100);
 			});
 		} else {
-			// No hash - scroll to top
 			window.scrollTo(0, 0);
 		}
-	}, [routerState.path]);
+	});
 
-	// Handle same-page hash navigation (e.g., clicking TOC)
-	useEffect(() => {
+	// Handle same-page hash navigation
+	createEffect(() => {
 		const handleHashChange = () => {
 			const hash = window.location.hash;
 			if (hash) {
-				// Use requestAnimationFrame for smooth scroll
 				requestAnimationFrame(() => {
 					const element = document.querySelector(hash);
 					if (element) {
@@ -110,37 +79,38 @@ function App() {
 		};
 
 		window.addEventListener('hashchange', handleHashChange);
-		return () => window.removeEventListener('hashchange', handleHashChange);
-	}, []);
+		onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
+	});
 
 	// Match current route
-	const route = findMatchingRoute(routerState.path, zenRoutes);
-
-	if (!route) {
-		return (
-			<Layout config={config} currentRoute={null}>
-				<div className="prose prose-slate dark:prose-invert max-w-none">
-					<h1>404 - Page Not Found</h1>
-					<p>The page you're looking for doesn't exist.</p>
-				</div>
-			</Layout>
-		);
-	}
-
-	const Component = route.component;
+	const route = () => findMatchingRoute(location.pathname, solidRoutes);
 
 	return (
-		<Layout
-			config={config}
-			currentRoute={{
-				path: routerState.path,
-				toc: route.toc,
-				docFooter: route.docFooter,
-				frontmatter: route.data?.frontmatter || {},
-			}}
-		>
-			<Component />
-		</Layout>
+		<>
+			{!route() ? (
+				<Layout config={config} currentRoute={null}>
+					<div class="prose prose-slate dark:prose-invert max-w-none">
+						<h1>404 - Page Not Found</h1>
+						<p>The page you're looking for doesn't exist.</p>
+					</div>
+				</Layout>
+			) : (
+				<Layout
+					config={config}
+					currentRoute={{
+						path: location.pathname,
+						toc: route()!.toc,
+						docFooter: route()!.docFooter,
+						frontmatter: route()!.data?.frontmatter || {},
+					}}
+				>
+					{(() => {
+						const RouteComponent = route()!.component;
+						return <RouteComponent />;
+					})()}
+				</Layout>
+			)}
+		</>
 	);
 }
 
@@ -150,4 +120,8 @@ if (!rootElement) {
 	throw new Error("Root element not found");
 }
 
-render(<App />, rootElement);
+render(() => (
+	<Router>
+		<App />
+	</Router>
+), rootElement);

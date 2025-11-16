@@ -1,6 +1,6 @@
-import { h } from "preact";
-import { useState, useEffect } from "preact/hooks";
-import { Icon } from "@iconify/react";
+import { createSignal, createEffect, onMount, Show, For } from "solid-js";
+import "iconify-icon";
+
 
 const themes = [
   { id: 'default', name: 'Default', description: 'Modern documentation theme', icon: 'mdi:palette' },
@@ -9,17 +9,17 @@ const themes = [
   { id: 'minimal', name: 'Minimal', description: 'Clean and minimal theme', icon: 'mdi:bullseye-arrow' }
 ];
 
-export function ThemeSwitcher(): h.JSX.Element {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentThemeId, setCurrentThemeId] = useState('default');
+export function ThemeSwitcher() {
+  const [isOpen, setIsOpen] = createSignal(false);
+  const [currentThemeId, setCurrentThemeId] = createSignal('default');
 
-  useEffect(() => {
+  onMount(() => {
     const stored = localStorage.getItem('leaf-theme');
     if (stored) {
       setCurrentThemeId(stored);
       applyThemeStyles(stored);
     }
-  }, []);
+  });
 
   const applyThemeStyles = (themeId: string) => {
     console.log('🎨 Applying theme:', themeId);
@@ -67,7 +67,7 @@ export function ThemeSwitcher(): h.JSX.Element {
     console.log('   Font family:', root.style.getPropertyValue('--font-family'));
   };
 
-  const currentTheme = themes.find(t => t.id === currentThemeId) || themes[0];
+  const currentTheme = () => themes.find(t => t.id === currentThemeId()) || themes[0];
 
   const handleThemeChange = (themeId: string) => {
     setCurrentThemeId(themeId);
@@ -77,16 +77,16 @@ export function ThemeSwitcher(): h.JSX.Element {
   };
 
   return (
-    <div className="relative">
+    <div class="relative">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        onClick={() => setIsOpen(!isOpen())}
+        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
         aria-label="Switch theme"
       >
-        <Icon icon={currentTheme.icon} className="text-lg" />
-        <span className="hidden md:inline">{currentTheme.name}</span>
+        <iconify-icon icon={currentTheme().icon} class="text-lg" />
+        <span class="hidden md:inline">{currentTheme().name}</span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          class={`w-4 h-4 transition-transform ${isOpen() ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -95,34 +95,35 @@ export function ThemeSwitcher(): h.JSX.Element {
         </svg>
       </button>
 
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
-          <div className="p-4">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Choose Theme</h3>
-            <div className="space-y-2">
-              {themes.map(theme => (
-                <button
-                  key={theme.id}
-                  onClick={() => handleThemeChange(theme.id)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                    currentThemeId === theme.id
-                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
-                      : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <Icon icon={theme.icon} className="text-lg" />
-                    <div>
-                      <div className="font-medium">{theme.name}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{theme.description}</div>
+      <Show when={isOpen()}>
+        <div class="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+          <div class="p-4">
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Choose Theme</h3>
+            <div class="space-y-2">
+              <For each={themes}>
+                {(theme) => (
+                  <button
+                    onClick={() => handleThemeChange(theme.id)}
+                    class={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                      currentThemeId() === theme.id
+                        ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+                        : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                    }`}
+                  >
+                    <div class="flex items-center gap-3">
+                      <iconify-icon icon={theme.icon} class="text-lg" />
+                      <div>
+                        <div class="font-medium">{theme.name}</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">{theme.description}</div>
+                      </div>
                     </div>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                )}
+              </For>
             </div>
           </div>
         </div>
-      )}
+      </Show>
     </div>
   );
 }

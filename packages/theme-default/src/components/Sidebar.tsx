@@ -1,10 +1,10 @@
-// ASSUMPTION: JSX automatic runtime via Preact preset
-import { useState } from "preact/hooks";
+import { createSignal, Show, For } from "solid-js";
 import { Link } from "./Link";
 import { useLocation } from "../hooks/useRouter";
-import * as Collapsible from "@radix-ui/react-collapsible";
-import { Icon } from "@iconify/react";
+import * as Collapsible from "@kobalte/core/collapsible";
+import "iconify-icon";
 import { cn } from "../lib/utils";
+
 
 interface SidebarItem {
 	text: string;
@@ -19,68 +19,64 @@ interface SidebarProps {
 	onClose?: () => void;
 }
 
-function SidebarGroup({
-	item,
-	level = 0,
-}: {
-	item: SidebarItem;
-	level?: number;
-}): JSX.Element {
+function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 	const location = useLocation();
-	const hasItems = item.items && item.items.length > 0;
+	const hasItems = props.item.items && props.item.items.length > 0;
 
-	const isActive = item.link && location.pathname === item.link;
-	const hasActiveChild =
+	const isActive = () => props.item.link && location.pathname === props.item.link;
+	const hasActiveChild = () =>
 		hasItems &&
-		item.items.some(
+		props.item.items!.some(
 			(child) =>
 				child.link === location.pathname ||
 				child.items?.some((grandchild) => grandchild.link === location.pathname),
 		);
 
-	const [open, setOpen] = useState(!item.collapsed || hasActiveChild);
+	const [open, setOpen] = createSignal(!props.item.collapsed || hasActiveChild());
 
-	if (!hasItems && item.link) {
+	if (!hasItems && props.item.link) {
 		return (
 			<Link
-				to={item.link}
-				className={cn(
+				to={props.item.link}
+				class={cn(
 					"block rounded-lg px-3 py-2.5 text-sm font-semibold transition-all",
-					isActive
+					isActive()
 						? "bg-primary/10 text-primary shadow-sm border border-primary/20"
 						: "text-muted-foreground hover:bg-muted hover:text-foreground hover:shadow-sm"
 				)}
-				style={{ paddingLeft: `${level * 1 + 0.75}rem` }}
+				style={{ "padding-left": `${(props.level || 0) * 1 + 0.75}rem` }}
 			>
-				{item.text}
+				{props.item.text}
 			</Link>
 		);
 	}
 
 	if (hasItems) {
 		return (
-			<Collapsible.Root open={open} onOpenChange={setOpen} className="space-y-1">
+			<Collapsible.Root open={open()} onOpenChange={setOpen} class="space-y-1">
 				<Collapsible.Trigger
-					className={cn(
+					class={cn(
 						"flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-bold transition-all",
 						"text-foreground hover:bg-muted/60 hover:shadow-sm"
 					)}
-					style={{ paddingLeft: `${level * 1 + 0.75}rem` }}
-					aria-expanded={open}
+					style={{ "padding-left": `${(props.level || 0) * 1 + 0.75}rem` }}
+					aria-expanded={open()}
 				>
-					<span>{item.text}</span>
-					<Icon
+					<span>{props.item.text}</span>
+					<iconify-icon
 						icon="lucide:chevron-right"
-						className={cn(
+						class={cn(
 							"h-4 w-4 transition-all duration-200 text-muted-foreground",
-							open && "rotate-90 text-primary"
+							open() && "rotate-90 text-primary"
 						)}
 					/>
 				</Collapsible.Trigger>
-				<Collapsible.Content className="space-y-1 pt-1">
-					{item.items.map((child, idx) => (
-						<SidebarGroup key={child.link || idx} item={child} level={level + 1} />
-					))}
+				<Collapsible.Content class="space-y-1 pt-1">
+					<For each={props.item.items}>
+						{(child) => (
+							<SidebarGroup item={child} level={(props.level || 0) + 1} />
+						)}
+					</For>
 				</Collapsible.Content>
 			</Collapsible.Root>
 		);
@@ -89,44 +85,40 @@ function SidebarGroup({
 	return null;
 }
 
-export function Sidebar({
-	items = [],
-	open = false,
-	onClose,
-}: SidebarProps): JSX.Element {
+export function Sidebar(props: SidebarProps) {
 	return (
 		<>
 			{/* Overlay for mobile */}
-			{open && (
+			<Show when={props.open}>
 				<div
-					className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
-					onClick={onClose}
+					class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+					onClick={props.onClose}
 					aria-label="Close sidebar"
 					role="button"
 					tabIndex={0}
 					onKeyDown={(e) => {
 						if (e.key === "Enter" || e.key === " ") {
-							onClose?.();
+							props.onClose?.();
 						}
 					}}
 				/>
-			)}
+			</Show>
 
 			{/* Sidebar */}
 			<aside
 				role="navigation"
 				aria-label="Documentation navigation"
-				className={cn(
+				class={cn(
 					"fixed top-16 bottom-0 left-0 z-40 w-80 border-r border-border bg-background",
 					"transition-transform duration-300 ease-in-out lg:translate-x-0",
-					open ? "translate-x-0" : "-translate-x-full"
+					props.open ? "translate-x-0" : "-translate-x-full"
 				)}
 			>
-				<div className="sidebar-scroll h-full overflow-y-auto px-6 py-10">
-					<nav className="space-y-0.5">
-						{items.map((item, idx) => (
-							<SidebarGroup key={item.link || idx} item={item} />
-						))}
+				<div class="sidebar-scroll h-full overflow-y-auto px-6 py-10">
+					<nav class="space-y-0.5">
+						<For each={props.items || []}>
+							{(item) => <SidebarGroup item={item} />}
+						</For>
 					</nav>
 				</div>
 			</aside>

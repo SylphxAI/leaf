@@ -1,4 +1,4 @@
-import preact from "@preact/preset-vite";
+import solidPlugin from "vite-plugin-solid";
 import type { Plugin } from "vite";
 import { markdownPlugin } from "./markdown.js";
 import { virtualModulesPlugin } from "./virtual-modules.js";
@@ -19,13 +19,9 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 					},
 					resolve: {
 						conditions: isProduction ? ["production", "default"] : ["development", "default"],
-						alias: {
-							react: "preact/compat",
-							"react-dom": "preact/compat",
-						},
 					},
 					optimizeDeps: {
-						include: ["preact/compat", "preact/hooks", "html-react-parser"],
+						include: ["solid-js", "solid-js/web", "@solidjs/router", "html-react-parser"],
 					},
 				};
 			},
@@ -33,6 +29,6 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 		assetsPlugin(config),
 		virtualModulesPlugin(config),
 		markdownPlugin(config),
-		preact(),
+		solidPlugin(),
 	];
 }

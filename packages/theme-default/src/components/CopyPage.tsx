@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { createSignal, createEffect, onCleanup } from "solid-js";
 import { Button } from "./Button";
 import "iconify-icon";
 
@@ -6,23 +6,16 @@ interface CopyPageProps {
 	title?: string;
 }
 
-declare global {
-	namespace JSX {
-		interface IntrinsicElements {
-			"iconify-icon": any;
-		}
-	}
-}
 
-export function CopyPage({ title }: CopyPageProps): JSX.Element {
-	const [copied, setCopied] = useState(false);
+export function CopyPage(props: CopyPageProps) {
+	const [copied, setCopied] = createSignal(false);
 
-	useEffect(() => {
-		if (copied) {
+	createEffect(() => {
+		if (copied()) {
 			const timer = setTimeout(() => setCopied(false), 2000);
-			return () => clearTimeout(timer);
+			onCleanup(() => clearTimeout(timer));
 		}
-	}, [copied]);
+	});
 
 	const handleCopy = async () => {
 		try {
@@ -34,8 +27,8 @@ export function CopyPage({ title }: CopyPageProps): JSX.Element {
 			let content = "";
 
 			// Add title if available
-			if (title) {
-				content += `# ${title}\n\n`;
+			if (props.title) {
+				content += `# ${props.title}\n\n`;
 			}
 
 			// Extract text content while preserving structure
@@ -90,17 +83,17 @@ export function CopyPage({ title }: CopyPageProps): JSX.Element {
 		<Button
 			onClick={handleCopy}
 			variant="default"
-			className="text-xs font-medium"
+			class="text-xs font-medium"
 			aria-label="Copy page content"
 		>
 			<iconify-icon
-				icon={copied ? "ph:check-bold" : "ph:copy-bold"}
+				icon={copied() ? "ph:check-bold" : "ph:copy-bold"}
 				width="14"
 				height="14"
-				class={`transition-colors duration-200 ${copied ? 'text-success' : ''}`}
+				class={`transition-colors duration-200 ${copied() ? 'text-success' : ''}`}
 			/>
-			<span className="hidden lg:inline">
-				{copied ? "Copied!" : "Copy"}
+			<span class="hidden lg:inline">
+				{copied() ? "Copied!" : "Copy"}
 			</span>
 		</Button>
 	);
