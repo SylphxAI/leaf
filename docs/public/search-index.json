@@ -1,0 +1,4208 @@
+[
+  {
+    "id": "/examples",
+    "title": "Examples",
+    "text": "Explore real-world examples and demos showcasing Leaf's features.",
+    "path": "/examples"
+  },
+  {
+    "id": "/examples#0",
+    "title": "Examples > Examples",
+    "text": "Explore real-world examples and demos showcasing Leaf's features.",
+    "path": "/examples",
+    "section": "Examples"
+  },
+  {
+    "id": "/examples#1",
+    "title": "Examples > Live Demos",
+    "text": "",
+    "path": "/examples",
+    "section": "Live Demos"
+  },
+  {
+    "id": "/examples#2",
+    "title": "Examples > Basic Documentation Site",
+    "text": "A minimal documentation site demonstrating core features: Auto-generated sidebar Auto-generated sidebar Dark mode toggle Dark mode toggle Search functionality Search functionality Responsive layout Responsive layout ::: tip Coming Soon\nExample repositories are being prepared. Check back soon!\n:::",
+    "path": "/examples",
+    "section": "Basic Documentation Site"
+  },
+  {
+    "id": "/examples#3",
+    "title": "Examples > API Documentation",
+    "text": "Full API reference site with: Multi-level navigation Multi-level navigation Code examples with syntax highlighting Code examples with syntax highlighting Math equations Math equations Mermaid diagrams Mermaid diagrams ::: tip Coming Soon\nExample repositories are being prepared. Check back soon!\n:::",
+    "path": "/examples",
+    "section": "API Documentation"
+  },
+  {
+    "id": "/examples#4",
+    "title": "Examples > Component Library Docs",
+    "text": "Documentation for a React component library featuring: Live component previews Live component previews Props tables Props tables Usage examples Usage examples Custom theme Custom theme ::: tip Coming Soon\nExample repositories are being prepared. Check back soon!\n:::",
+    "path": "/examples",
+    "section": "Component Library Docs"
+  },
+  {
+    "id": "/examples#5",
+    "title": "Examples > Code Examples",
+    "text": "",
+    "path": "/examples",
+    "section": "Code Examples"
+  },
+  {
+    "id": "/examples#6",
+    "title": "Examples > Custom Container",
+    "text": "",
+    "path": "/examples",
+    "section": "Custom Container"
+  },
+  {
+    "id": "/examples#7",
+    "title": "Examples > Code Groups",
+    "text": "",
+    "path": "/examples",
+    "section": "Code Groups"
+  },
+  {
+    "id": "/examples#8",
+    "title": "Examples > Math Equations",
+    "text": "Inline math: $E = mc^2$ Block math: $$\n\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}\n$$",
+    "path": "/examples",
+    "section": "Math Equations"
+  },
+  {
+    "id": "/examples#9",
+    "title": "Examples > Mermaid Diagrams",
+    "text": "",
+    "path": "/examples",
+    "section": "Mermaid Diagrams"
+  },
+  {
+    "id": "/examples#10",
+    "title": "Examples > Templates",
+    "text": "",
+    "path": "/examples",
+    "section": "Templates"
+  },
+  {
+    "id": "/examples#11",
+    "title": "Examples > Starter Template",
+    "text": "Clone the official starter template:",
+    "path": "/examples",
+    "section": "Starter Template"
+  },
+  {
+    "id": "/examples#12",
+    "title": "Examples > Blog Template",
+    "text": "Documentation site with blog features:",
+    "path": "/examples",
+    "section": "Blog Template"
+  },
+  {
+    "id": "/examples#13",
+    "title": "Examples > Contributing Examples",
+    "text": "Have an example to share? We'd love to feature it! Fork the repository Fork the repository Add your example to Add your example to Update this page Update this page Submit a pull request Submit a pull request See the  contributing guide  for details.",
+    "path": "/examples",
+    "section": "Contributing Examples"
+  },
+  {
+    "id": "/showcase",
+    "title": "Showcase",
+    "text": "Real-world documentation sites built with Leaf.",
+    "path": "/showcase"
+  },
+  {
+    "id": "/showcase#0",
+    "title": "Showcase > Showcase",
+    "text": "Real-world documentation sites built with Leaf.",
+    "path": "/showcase",
+    "section": "Showcase"
+  },
+  {
+    "id": "/showcase#1",
+    "title": "Showcase > Official Sites",
+    "text": "",
+    "path": "/showcase",
+    "section": "Official Sites"
+  },
+  {
+    "id": "/showcase#2",
+    "title": "Showcase > Leaf Documentation",
+    "text": "This site you're reading! ✅ Full VitePress feature parity demonstration ✅ Full VitePress feature parity demonstration ✅ Math equations, Mermaid diagrams, code highlighting ✅ Math equations, Mermaid diagrams, code highlighting ✅ Search functionality with Cmd/Ctrl+K ✅ Search functionality with Cmd/Ctrl+K ✅ Dark mode with smooth transitions ✅ Dark mode with smooth transitions ✅ Mobile responsive design ✅ Mobile responsive design View Live  |  Source Code Tech Stack: SolidJS 10.x (SolidJS-based) SolidJS 10.x (SolidJS-based) TypeScript 5.9+ TypeScript 5.9+ Bun / Node.js runtime Bun / Node.js runtime Tailwind CSS 3.4 Tailwind CSS 3.4 Vite 6 Vite 6 Features Showcased: Custom containers (tip, warning, danger, details) Custom containers (tip, warning, danger, details) Code groups with tabs Code groups with tabs Line-specific code highlighting Line-specific code highlighting Math equations with KaTeX Math equations with KaTeX Mermaid flowcharts and diagrams Mermaid flowcharts and diagrams Auto-generated TOC and sidebar Auto-generated TOC and sidebar Local fuzzy search Local fuzzy search",
+    "path": "/showcase",
+    "section": "Leaf Documentation"
+  },
+  {
+    "id": "/showcase#3",
+    "title": "Showcase > Sylphx Product Documentation",
+    "text": "Coming Soon Official documentation for Sylphx products: Zen (State Management) Zen (State Management) Silk (CSS-in-TS) Silk (CSS-in-TS) Craft (Data Manipulation) Craft (Data Manipulation) Leaf (This framework!) Leaf (This framework!)",
+    "path": "/showcase",
+    "section": "Sylphx Product Documentation"
+  },
+  {
+    "id": "/showcase#4",
+    "title": "Showcase > Community Showcase",
+    "text": "::: tip Want to be featured?\nBuilt something with Leaf?  Submit your site! \n:::",
+    "path": "/showcase",
+    "section": "Community Showcase"
+  },
+  {
+    "id": "/showcase#5",
+    "title": "Showcase > Example: API Documentation",
+    "text": "Perfect for library and framework docs: Features Used: Sample Structure:",
+    "path": "/showcase",
+    "section": "Example: API Documentation"
+  },
+  {
+    "id": "/showcase#6",
+    "title": "Showcase > Example: Product Documentation",
+    "text": "Great for SaaS and product docs: Features Used: Navigation Strategy:",
+    "path": "/showcase",
+    "section": "Example: Product Documentation"
+  },
+  {
+    "id": "/showcase#7",
+    "title": "Showcase > Example: Technical Blog",
+    "text": "Perfect for engineering blogs: Features Used: Blog Post Example:",
+    "path": "/showcase",
+    "section": "Example: Technical Blog"
+  },
+  {
+    "id": "/showcase#8",
+    "title": "Showcase > Example: Knowledge Base",
+    "text": "Ideal for internal wikis: Features Used: Sidebar Structure:",
+    "path": "/showcase",
+    "section": "Example: Knowledge Base"
+  },
+  {
+    "id": "/showcase#9",
+    "title": "Showcase > Example: Course/Tutorial Site",
+    "text": "Great for educational content: Features Used: Tutorial Structure:",
+    "path": "/showcase",
+    "section": "Example: Course/Tutorial Site"
+  },
+  {
+    "id": "/showcase#10",
+    "title": "Showcase > Performance Benchmarks",
+    "text": "Real metrics from production Leaf sites:",
+    "path": "/showcase",
+    "section": "Performance Benchmarks"
+  },
+  {
+    "id": "/showcase#11",
+    "title": "Showcase > Build Performance",
+    "text": "",
+    "path": "/showcase",
+    "section": "Build Performance"
+  },
+  {
+    "id": "/showcase#12",
+    "title": "Showcase > Runtime Performance",
+    "text": "Lighthouse Scores (Average): 🟢 Performance:  98/100 🟢 Performance:  98/100 🟢 Accessibility:  100/100 🟢 Accessibility:  100/100 🟢 Best Practices:  100/100 🟢 Best Practices:  100/100 🟢 SEO:  100/100 🟢 SEO:  100/100 Core Web Vitals (this documentation site): LCP (Largest Contentful Paint):  < 0.5s  🟢 (target: < 2.5s) LCP (Largest Contentful Paint):  < 0.5s  🟢 (target: < 2.5s) INP (Interaction to Next Paint):  < 100ms  🟢 (target: < 200ms) INP (Interaction to Next Paint):  < 100ms  🟢 (target: < 200ms) CLS (Cumulative Layout Shift):  < 0.01  🟢 (target: < 0.1) CLS (Cumulative Layout Shift):  < 0.01  🟢 (target: < 0.1) Note: FID is deprecated as of March 2024, replaced by INP. Your metrics will vary based on content and hosting.",
+    "path": "/showcase",
+    "section": "Runtime Performance"
+  },
+  {
+    "id": "/showcase#13",
+    "title": "Showcase > Design Patterns",
+    "text": "",
+    "path": "/showcase",
+    "section": "Design Patterns"
+  },
+  {
+    "id": "/showcase#14",
+    "title": "Showcase > Pattern 1: Multi-Language Docs",
+    "text": "Support multiple languages:",
+    "path": "/showcase",
+    "section": "Pattern 1: Multi-Language Docs"
+  },
+  {
+    "id": "/showcase#15",
+    "title": "Showcase > Pattern 2: Versioned Docs",
+    "text": "Multiple versions side-by-side:",
+    "path": "/showcase",
+    "section": "Pattern 2: Versioned Docs"
+  },
+  {
+    "id": "/showcase#16",
+    "title": "Showcase > Pattern 3: Component Documentation",
+    "text": "Document React components:",
+    "path": "/showcase",
+    "section": "Pattern 3: Component Documentation"
+  },
+  {
+    "id": "/showcase#17",
+    "title": "Showcase > Templates",
+    "text": "",
+    "path": "/showcase",
+    "section": "Templates"
+  },
+  {
+    "id": "/showcase#18",
+    "title": "Showcase > Minimal Template",
+    "text": "Best For: Personal projects Personal projects Quick references Quick references Simple libraries Simple libraries",
+    "path": "/showcase",
+    "section": "Minimal Template"
+  },
+  {
+    "id": "/showcase#19",
+    "title": "Showcase > Standard Template",
+    "text": "Best For: Open source libraries Open source libraries Framework documentation Framework documentation Developer tools Developer tools",
+    "path": "/showcase",
+    "section": "Standard Template"
+  },
+  {
+    "id": "/showcase#20",
+    "title": "Showcase > Enterprise Template",
+    "text": "Best For: Product documentation Product documentation Enterprise software Enterprise software Complex systems Complex systems",
+    "path": "/showcase",
+    "section": "Enterprise Template"
+  },
+  {
+    "id": "/showcase#21",
+    "title": "Showcase > Tips for Great Docs",
+    "text": "",
+    "path": "/showcase",
+    "section": "Tips for Great Docs"
+  },
+  {
+    "id": "/showcase#22",
+    "title": "Showcase > 1. Clear Navigation",
+    "text": "✅  Good: ❌  Bad:",
+    "path": "/showcase",
+    "section": "1. Clear Navigation"
+  },
+  {
+    "id": "/showcase#23",
+    "title": "Showcase > 2. Progressive Disclosure",
+    "text": "Start simple, add depth:",
+    "path": "/showcase",
+    "section": "2. Progressive Disclosure"
+  },
+  {
+    "id": "/showcase#24",
+    "title": "Showcase > 3. Visual Hierarchy",
+    "text": "Use headings, containers, and spacing:",
+    "path": "/showcase",
+    "section": "3. Visual Hierarchy"
+  },
+  {
+    "id": "/showcase#25",
+    "title": "Showcase > 4. Search-Friendly Content",
+    "text": "Use descriptive headings Use descriptive headings Include keywords naturally Include keywords naturally Add frontmatter metadata Add frontmatter metadata Cross-link related pages Cross-link related pages",
+    "path": "/showcase",
+    "section": "4. Search-Friendly Content"
+  },
+  {
+    "id": "/showcase#26",
+    "title": "Showcase > Share Your Site!",
+    "text": "Built something awesome with Leaf? Open a discussion Open a discussion Share your site URL and source (if public) Share your site URL and source (if public) Describe your use case Describe your use case Get featured on this page! Get featured on this page! ::: tip Community Gallery\nWe're building a community gallery of Leaf sites. Be one of the first!\n:::",
+    "path": "/showcase",
+    "section": "Share Your Site!"
+  },
+  {
+    "id": "/faq",
+    "title": "FAQ",
+    "text": "Common questions about Leaf documentation framework.",
+    "path": "/faq"
+  },
+  {
+    "id": "/faq#0",
+    "title": "FAQ > Frequently Asked Questions",
+    "text": "Common questions about Leaf documentation framework.",
+    "path": "/faq",
+    "section": "Frequently Asked Questions"
+  },
+  {
+    "id": "/faq#1",
+    "title": "FAQ > General",
+    "text": "",
+    "path": "/faq",
+    "section": "General"
+  },
+  {
+    "id": "/faq#2",
+    "title": "FAQ > What is Leaf?",
+    "text": "Leaf is a modern documentation framework built with SolidJS (SolidJS-based) that provides VitePress-compatible markdown syntax and features. It uses TypeScript for type safety and gives you access to the full SolidJS ecosystem.",
+    "path": "/faq",
+    "section": "What is Leaf?"
+  },
+  {
+    "id": "/faq#3",
+    "title": "FAQ > How is Leaf different from VitePress?",
+    "text": "Leaf uses  SolidJS  (SolidJS-based) instead of Vue,  Sylphx tools  (Zen, Silk) for state and styling, and supports both  Bun and Node.js  runtimes. It maintains VitePress-compatible markdown syntax while giving you access to the SolidJS ecosystem.",
+    "path": "/faq",
+    "section": "How is Leaf different from VitePress?"
+  },
+  {
+    "id": "/faq#4",
+    "title": "FAQ > Is Leaf production-ready?",
+    "text": "Yes! Leaf has all core features implemented and tested: ✅ SSG (Static Site Generation) ✅ SSG (Static Site Generation) ✅ Search functionality ✅ Search functionality ✅ Dark mode ✅ Dark mode ✅ Math equations ✅ Math equations ✅ Mermaid diagrams ✅ Mermaid diagrams ✅ Code highlighting ✅ Code highlighting ✅ Mobile responsive ✅ Mobile responsive",
+    "path": "/faq",
+    "section": "Is Leaf production-ready?"
+  },
+  {
+    "id": "/faq#5",
+    "title": "FAQ > Is Leaf free to use?",
+    "text": "Yes, Leaf is open source and free for both commercial and non-commercial use.",
+    "path": "/faq",
+    "section": "Is Leaf free to use?"
+  },
+  {
+    "id": "/faq#6",
+    "title": "FAQ > Installation & Setup",
+    "text": "",
+    "path": "/faq",
+    "section": "Installation & Setup"
+  },
+  {
+    "id": "/faq#7",
+    "title": "FAQ > Do I need Bun?",
+    "text": "No , Bun is optional but recommended. Leaf works with both Bun and Node.js 18+: ::: tip Why Bun?\nBun provides faster package installation (~2-3x). Build times are similar between Bun and Node.js for most projects.\n:::",
+    "path": "/faq",
+    "section": "Do I need Bun?"
+  },
+  {
+    "id": "/faq#8",
+    "title": "FAQ > Can I use npm or pnpm for package management?",
+    "text": "Yes! You can use any package manager: All work correctly. Bun is fastest for installation but any will work for builds.",
+    "path": "/faq",
+    "section": "Can I use npm or pnpm for package management?"
+  },
+  {
+    "id": "/faq#9",
+    "title": "FAQ > How do I start a new project?",
+    "text": "Clone the repository and use the examples: ::: details Coming Soon: CLI Tool :::",
+    "path": "/faq",
+    "section": "How do I start a new project?"
+  },
+  {
+    "id": "/faq#10",
+    "title": "FAQ > What's the minimum file structure?",
+    "text": "That's it! Everything else is generated automatically.",
+    "path": "/faq",
+    "section": "What's the minimum file structure?"
+  },
+  {
+    "id": "/faq#11",
+    "title": "FAQ > Features",
+    "text": "",
+    "path": "/faq",
+    "section": "Features"
+  },
+  {
+    "id": "/faq#12",
+    "title": "FAQ > Does Leaf support TypeScript?",
+    "text": "Yes! Leaf is 100% TypeScript. Your config file (  ) gets full autocomplete and type checking.",
+    "path": "/faq",
+    "section": "Does Leaf support TypeScript?"
+  },
+  {
+    "id": "/faq#13",
+    "title": "FAQ > Can I use SolidJS components in markdown?",
+    "text": "Absolutely! Leaf uses MDX, so you can import and use SolidJS components anywhere:",
+    "path": "/faq",
+    "section": "Can I use SolidJS components in markdown?"
+  },
+  {
+    "id": "/faq#14",
+    "title": "FAQ > Does Leaf support dark mode?",
+    "text": "Yes, dark mode is built-in and toggleable. It uses CSS custom properties for theming.",
+    "path": "/faq",
+    "section": "Does Leaf support dark mode?"
+  },
+  {
+    "id": "/faq#15",
+    "title": "FAQ > How does search work?",
+    "text": "Leaf uses MiniSearch for local fuzzy search. The search index is generated at build time and included in your static site. No server required! Open search with: Cmd/Ctrl + K Cmd/Ctrl + K Click search button in header Click search button in header",
+    "path": "/faq",
+    "section": "How does search work?"
+  },
+  {
+    "id": "/faq#16",
+    "title": "FAQ > Can I customize the theme?",
+    "text": "Yes! You can: Override CSS custom properties Override CSS custom properties Create a custom theme package Create a custom theme package Use Tailwind CSS utilities Use Tailwind CSS utilities See  Theming Guide  for details.",
+    "path": "/faq",
+    "section": "Can I customize the theme?"
+  },
+  {
+    "id": "/faq#17",
+    "title": "FAQ > Markdown",
+    "text": "",
+    "path": "/faq",
+    "section": "Markdown"
+  },
+  {
+    "id": "/faq#18",
+    "title": "FAQ > What markdown features are supported?",
+    "text": "All GitHub Flavored Markdown plus: Custom containers (tip, warning, danger, details) Custom containers (tip, warning, danger, details) Code groups with tabs Code groups with tabs Line-specific syntax highlighting Line-specific syntax highlighting Math equations (KaTeX) Math equations (KaTeX) Mermaid diagrams Mermaid diagrams Inline badges Inline badges External link icons External link icons",
+    "path": "/faq",
+    "section": "What markdown features are supported?"
+  },
+  {
+    "id": "/faq#19",
+    "title": "FAQ > Can I use Vue components?",
+    "text": "No, Leaf uses SolidJS. You'll need to convert Vue components to SolidJS. See  Migration Guide  for help.",
+    "path": "/faq",
+    "section": "Can I use Vue components?"
+  },
+  {
+    "id": "/faq#20",
+    "title": "FAQ > How do I highlight specific lines of code?",
+    "text": "Use the    syntax:",
+    "path": "/faq",
+    "section": "How do I highlight specific lines of code?"
+  },
+  {
+    "id": "/faq#21",
+    "title": "FAQ > How do I create code groups (tabs)?",
+    "text": "",
+    "path": "/faq",
+    "section": "How do I create code groups (tabs)?"
+  },
+  {
+    "id": "/faq#22",
+    "title": "FAQ > Do math equations work?",
+    "text": "Yes! Leaf uses KaTeX for LaTeX-style math:",
+    "path": "/faq",
+    "section": "Do math equations work?"
+  },
+  {
+    "id": "/faq#23",
+    "title": "FAQ > How do I add diagrams?",
+    "text": "Use Mermaid syntax:",
+    "path": "/faq",
+    "section": "How do I add diagrams?"
+  },
+  {
+    "id": "/faq#24",
+    "title": "FAQ > Configuration",
+    "text": "",
+    "path": "/faq",
+    "section": "Configuration"
+  },
+  {
+    "id": "/faq#25",
+    "title": "FAQ > Where do I configure Leaf?",
+    "text": "Create    in your project root:",
+    "path": "/faq",
+    "section": "Where do I configure Leaf?"
+  },
+  {
+    "id": "/faq#26",
+    "title": "FAQ > How do I configure navigation?",
+    "text": "",
+    "path": "/faq",
+    "section": "How do I configure navigation?"
+  },
+  {
+    "id": "/faq#27",
+    "title": "FAQ > How do I configure the sidebar?",
+    "text": "",
+    "path": "/faq",
+    "section": "How do I configure the sidebar?"
+  },
+  {
+    "id": "/faq#28",
+    "title": "FAQ > Can I auto-generate the sidebar?",
+    "text": "Not yet, but it's on the roadmap! Currently, you need to define sidebar manually.",
+    "path": "/faq",
+    "section": "Can I auto-generate the sidebar?"
+  },
+  {
+    "id": "/faq#29",
+    "title": "FAQ > Build & Deployment",
+    "text": "",
+    "path": "/faq",
+    "section": "Build & Deployment"
+  },
+  {
+    "id": "/faq#30",
+    "title": "FAQ > How do I build for production?",
+    "text": "This generates static files in    directory.",
+    "path": "/faq",
+    "section": "How do I build for production?"
+  },
+  {
+    "id": "/faq#31",
+    "title": "FAQ > Where can I deploy Leaf sites?",
+    "text": "Anywhere that hosts static sites: ✅ Vercel (recommended) ✅ Vercel (recommended) ✅ Netlify ✅ Netlify ✅ GitHub Pages ✅ GitHub Pages ✅ Cloudflare Pages ✅ Cloudflare Pages ✅ Any static hosting ✅ Any static hosting See  Deployment Guide  for details.",
+    "path": "/faq",
+    "section": "Where can I deploy Leaf sites?"
+  },
+  {
+    "id": "/faq#32",
+    "title": "FAQ > How fast is the build?",
+    "text": "Typical build times: Small site (10-20 pages): ~1s Small site (10-20 pages): ~1s Medium site (50-100 pages): ~3s Medium site (50-100 pages): ~3s Large site (200+ pages): ~8s Large site (200+ pages): ~8s Powered by Bun and Vite for fast builds.",
+    "path": "/faq",
+    "section": "How fast is the build?"
+  },
+  {
+    "id": "/faq#33",
+    "title": "FAQ > Can I use a custom domain?",
+    "text": "Yes! All major platforms support custom domains: Vercel: Project Settings → Domains Vercel: Project Settings → Domains Netlify: Site Settings → Domain Management Netlify: Site Settings → Domain Management GitHub Pages: Repository Settings → Pages GitHub Pages: Repository Settings → Pages",
+    "path": "/faq",
+    "section": "Can I use a custom domain?"
+  },
+  {
+    "id": "/faq#34",
+    "title": "FAQ > Do I need a server?",
+    "text": "No! Leaf generates static HTML. Deploy to any CDN or static host.",
+    "path": "/faq",
+    "section": "Do I need a server?"
+  },
+  {
+    "id": "/faq#35",
+    "title": "FAQ > Performance",
+    "text": "",
+    "path": "/faq",
+    "section": "Performance"
+  },
+  {
+    "id": "/faq#36",
+    "title": "FAQ > How big is the bundle?",
+    "text": "Total:  237KB  (73KB gzipped) Total:  237KB  (73KB gzipped) Smaller than VitePress (~250KB) Smaller than VitePress (~250KB)",
+    "path": "/faq",
+    "section": "How big is the bundle?"
+  },
+  {
+    "id": "/faq#37",
+    "title": "FAQ > What are the Lighthouse scores?",
+    "text": "Production Leaf sites typically score: Performance:  98-100 Performance:  98-100 Accessibility:  100 Accessibility:  100 Best Practices:  100 Best Practices:  100 SEO:  100 SEO:  100",
+    "path": "/faq",
+    "section": "What are the Lighthouse scores?"
+  },
+  {
+    "id": "/faq#38",
+    "title": "FAQ > Does it work offline?",
+    "text": "Yes, once the initial page loads. The static HTML is pre-rendered and cached by the browser.",
+    "path": "/faq",
+    "section": "Does it work offline?"
+  },
+  {
+    "id": "/faq#39",
+    "title": "FAQ > How does SSG work?",
+    "text": "At build time, Leaf: Processes all markdown files Processes all markdown files Generates static HTML for each page Generates static HTML for each page Creates a search index Creates a search index Outputs everything to Outputs everything to No runtime rendering needed!",
+    "path": "/faq",
+    "section": "How does SSG work?"
+  },
+  {
+    "id": "/faq#40",
+    "title": "FAQ > Troubleshooting",
+    "text": "",
+    "path": "/faq",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/faq#41",
+    "title": "FAQ > Search isn't working",
+    "text": "Make sure you've built the site at least once: Search requires the generated   .",
+    "path": "/faq",
+    "section": "Search isn't working"
+  },
+  {
+    "id": "/faq#42",
+    "title": "FAQ > Dark mode isn't working",
+    "text": "Check that your theme toggle is connected. The default theme includes this by default.",
+    "path": "/faq",
+    "section": "Dark mode isn't working"
+  },
+  {
+    "id": "/faq#43",
+    "title": "FAQ > Code blocks aren't styled",
+    "text": "Ensure you're importing the theme CSS:",
+    "path": "/faq",
+    "section": "Code blocks aren't styled"
+  },
+  {
+    "id": "/faq#44",
+    "title": "FAQ > Math equations aren't rendering",
+    "text": "Math is processed at build time. Make sure you're using proper LaTeX syntax:",
+    "path": "/faq",
+    "section": "Math equations aren't rendering"
+  },
+  {
+    "id": "/faq#45",
+    "title": "FAQ > Mermaid diagrams aren't showing",
+    "text": "Ensure you're using proper mermaid code fence:",
+    "path": "/faq",
+    "section": "Mermaid diagrams aren't showing"
+  },
+  {
+    "id": "/faq#46",
+    "title": "FAQ > Routes return 404",
+    "text": "Configure your server to redirect all routes to   : Netlify (_redirects): Vercel (vercel.json):",
+    "path": "/faq",
+    "section": "Routes return 404"
+  },
+  {
+    "id": "/faq#47",
+    "title": "FAQ > Build is slow",
+    "text": "Try: Clear cache: Clear cache: Update dependencies: Update dependencies: Check for large images (optimize them!) Check for large images (optimize them!) Reduce number of markdown files processed Reduce number of markdown files processed",
+    "path": "/faq",
+    "section": "Build is slow"
+  },
+  {
+    "id": "/faq#48",
+    "title": "FAQ > Migration",
+    "text": "",
+    "path": "/faq",
+    "section": "Migration"
+  },
+  {
+    "id": "/faq#49",
+    "title": "FAQ > How hard is it to migrate from VitePress?",
+    "text": "Easy! Most markdown works as-is: Copy your docs folder Copy your docs folder Convert config file Convert config file Convert Vue components to SolidJS (if any) Convert Vue components to SolidJS (if any) Done! Done! See  Migration Guide  for step-by-step instructions.",
+    "path": "/faq",
+    "section": "How hard is it to migrate from VitePress?"
+  },
+  {
+    "id": "/faq#50",
+    "title": "FAQ > Can I keep my VitePress markdown?",
+    "text": "Yes! Leaf uses the same markdown syntax. No changes needed for: Containers Containers Code groups Code groups Math equations Math equations Mermaid diagrams Mermaid diagrams Frontmatter Frontmatter",
+    "path": "/faq",
+    "section": "Can I keep my VitePress markdown?"
+  },
+  {
+    "id": "/faq#51",
+    "title": "FAQ > Do I need to rewrite components?",
+    "text": "Only if you have custom Vue components. Convert them to SolidJS: VitePress (Vue): Leaf (SolidJS):",
+    "path": "/faq",
+    "section": "Do I need to rewrite components?"
+  },
+  {
+    "id": "/faq#52",
+    "title": "FAQ > Contributing",
+    "text": "",
+    "path": "/faq",
+    "section": "Contributing"
+  },
+  {
+    "id": "/faq#53",
+    "title": "FAQ > How can I contribute?",
+    "text": "We welcome contributions! 🐛  Report bugs 🐛  Report bugs 💡  Suggest features 💡  Suggest features 📝 Improve documentation 📝 Improve documentation 🔧 Submit pull requests 🔧 Submit pull requests",
+    "path": "/faq",
+    "section": "How can I contribute?"
+  },
+  {
+    "id": "/faq#54",
+    "title": "FAQ > Where's the source code?",
+    "text": "GitHub:  github.com/sylphxltd/leaf",
+    "path": "/faq",
+    "section": "Where's the source code?"
+  },
+  {
+    "id": "/faq#55",
+    "title": "FAQ > How do I report a bug?",
+    "text": "Check  existing issues Check  existing issues Create a new issue with: Clear title Steps to reproduce Expected vs actual behavior Leaf version Bun version Create a new issue with: Clear title Clear title Steps to reproduce Steps to reproduce Expected vs actual behavior Expected vs actual behavior Leaf version Leaf version Bun version Bun version",
+    "path": "/faq",
+    "section": "How do I report a bug?"
+  },
+  {
+    "id": "/faq#56",
+    "title": "FAQ > Can I request features?",
+    "text": "Yes! Open a discussion:\n github.com/sylphxltd/leaf/discussions",
+    "path": "/faq",
+    "section": "Can I request features?"
+  },
+  {
+    "id": "/faq#57",
+    "title": "FAQ > Support",
+    "text": "",
+    "path": "/faq",
+    "section": "Support"
+  },
+  {
+    "id": "/faq#58",
+    "title": "FAQ > Where can I get help?",
+    "text": "📖  Documentation 📖  Documentation 💬  GitHub Discussions 💬  GitHub Discussions 🐛  GitHub Issues 🐛  GitHub Issues",
+    "path": "/faq",
+    "section": "Where can I get help?"
+  },
+  {
+    "id": "/faq#59",
+    "title": "FAQ > Is there a community?",
+    "text": "We're building it! Join us on GitHub Discussions to connect with other Leaf users.",
+    "path": "/faq",
+    "section": "Is there a community?"
+  },
+  {
+    "id": "/faq#60",
+    "title": "FAQ > How do I stay updated?",
+    "text": "⭐ Star the  GitHub repo ⭐ Star the  GitHub repo 👀 Watch for releases 👀 Watch for releases 💬 Follow GitHub Discussions 💬 Follow GitHub Discussions",
+    "path": "/faq",
+    "section": "How do I stay updated?"
+  },
+  {
+    "id": "/faq#61",
+    "title": "FAQ > Roadmap",
+    "text": "",
+    "path": "/faq",
+    "section": "Roadmap"
+  },
+  {
+    "id": "/faq#62",
+    "title": "FAQ > What's coming next?",
+    "text": "🚀 CLI tool (  ) 🚀 CLI tool (  ) 🔍 Auto-generated sidebar 🔍 Auto-generated sidebar 🌍 Multi-language support 🌍 Multi-language support 🎨 More themes 🎨 More themes 📊 Analytics integration 📊 Analytics integration 🔌 Plugin ecosystem 🔌 Plugin ecosystem",
+    "path": "/faq",
+    "section": "What's coming next?"
+  },
+  {
+    "id": "/faq#63",
+    "title": "FAQ > When is v1.0?",
+    "text": "Current Status:  v0.1.0 in active development Targeting v1.0 stable release once: ✅ All core features are stable (done) ✅ All core features are stable (done) 🚧 CLI tool (  ) is released (in progress) 🚧 CLI tool (  ) is released (in progress) ✅ Documentation is complete (done) ✅ Documentation is complete (done) 🔄 Community feedback is addressed (ongoing) 🔄 Community feedback is addressed (ongoing) Follow progress on  GitHub .",
+    "path": "/faq",
+    "section": "When is v1.0?"
+  },
+  {
+    "id": "/faq#64",
+    "title": "FAQ > Still have questions?",
+    "text": "Can't find your answer? Ask on  GitHub Discussions !",
+    "path": "/faq",
+    "section": "Still have questions?"
+  },
+  {
+    "id": "/getting-started",
+    "title": "Getting Started",
+    "text": "Get your documentation site running in under 60 seconds.",
+    "path": "/getting-started"
+  },
+  {
+    "id": "/getting-started#0",
+    "title": "Getting Started > Getting Started",
+    "text": "Get your documentation site running in under 60 seconds.",
+    "path": "/getting-started",
+    "section": "Getting Started"
+  },
+  {
+    "id": "/getting-started#1",
+    "title": "Getting Started > Quick Start",
+    "text": "Open  http://localhost:5173  🎉",
+    "path": "/getting-started",
+    "section": "Quick Start"
+  },
+  {
+    "id": "/getting-started#2",
+    "title": "Getting Started > Installation",
+    "text": "Choose your preferred package manager: :::code-group ::: That's it!  The CLI includes everything you need - core framework and default theme.",
+    "path": "/getting-started",
+    "section": "Installation"
+  },
+  {
+    "id": "/getting-started#3",
+    "title": "Getting Started > Project Structure",
+    "text": "A typical Leaf project looks like this:",
+    "path": "/getting-started",
+    "section": "Project Structure"
+  },
+  {
+    "id": "/getting-started#4",
+    "title": "Getting Started > Configuration (Optional)",
+    "text": "Leaf works with  zero configuration , but you can customize it: :::code-group ::: See the  Configuration Guide  for all options.",
+    "path": "/getting-started",
+    "section": "Configuration (Optional)"
+  },
+  {
+    "id": "/getting-started#5",
+    "title": "Getting Started > Writing Content",
+    "text": "Create your first documentation page:",
+    "path": "/getting-started",
+    "section": "Writing Content"
+  },
+  {
+    "id": "/getting-started#6",
+    "title": "Getting Started > CLI Commands",
+    "text": "",
+    "path": "/getting-started",
+    "section": "CLI Commands"
+  },
+  {
+    "id": "/getting-started#7",
+    "title": "Getting Started > Development Server",
+    "text": "Start the development server with hot reload: :::code-group ::: Your site will be available at",
+    "path": "/getting-started",
+    "section": "Development Server"
+  },
+  {
+    "id": "/getting-started#8",
+    "title": "Getting Started > Build for Production",
+    "text": "Generate static HTML files: :::code-group ::: Output is in the    directory.",
+    "path": "/getting-started",
+    "section": "Build for Production"
+  },
+  {
+    "id": "/getting-started#9",
+    "title": "Getting Started > Preview Production Build",
+    "text": "Test your production build locally: :::code-group :::",
+    "path": "/getting-started",
+    "section": "Preview Production Build"
+  },
+  {
+    "id": "/getting-started#10",
+    "title": "Getting Started > What's Next?",
+    "text": "Learn about  Markdown features Learn about  Markdown features Explore  Configuration options Explore  Configuration options See all  Features See all  Features",
+    "path": "/getting-started",
+    "section": "What's Next?"
+  },
+  {
+    "id": "/getting-started#11",
+    "title": "Getting Started > Troubleshooting",
+    "text": "",
+    "path": "/getting-started",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/getting-started#12",
+    "title": "Getting Started > Port Already in Use",
+    "text": "If port 5173 is already in use, specify a different port:",
+    "path": "/getting-started",
+    "section": "Port Already in Use"
+  },
+  {
+    "id": "/getting-started#13",
+    "title": "Getting Started > Build Errors",
+    "text": "Clear cache and reinstall:",
+    "path": "/getting-started",
+    "section": "Build Errors"
+  },
+  {
+    "id": "/getting-started#14",
+    "title": "Getting Started > Module Not Found",
+    "text": "Make sure you installed    (not just   ):",
+    "path": "/getting-started",
+    "section": "Module Not Found"
+  },
+  {
+    "id": "/getting-started#15",
+    "title": "Getting Started > Need Help?",
+    "text": "📖  Full Documentation 📖  Full Documentation 🐛  Report Issues 🐛  Report Issues 💬  GitHub Discussions 💬  GitHub Discussions",
+    "path": "/getting-started",
+    "section": "Need Help?"
+  },
+  {
+    "id": "/",
+    "title": "Leaf - SolidJS Documentation Framework",
+    "text": "Get up and running in under a minute:",
+    "path": "/"
+  },
+  {
+    "id": "/#0",
+    "title": "Leaf - SolidJS Documentation Framework > 🚀 Quick Start",
+    "text": "Get up and running in under a minute: Visit  http://localhost:5173  🎉 → Full Installation Guide",
+    "path": "/",
+    "section": "🚀 Quick Start"
+  },
+  {
+    "id": "/#1",
+    "title": "Leaf - SolidJS Documentation Framework > 📚 Learn More",
+    "text": "",
+    "path": "/",
+    "section": "📚 Learn More"
+  },
+  {
+    "id": "/why",
+    "title": "Why Leaf?",
+    "text": "Leaf brings the power of fine-grained reactivity to documentation sites while maintaining the simplicity and speed of VitePress.",
+    "path": "/why"
+  },
+  {
+    "id": "/why#0",
+    "title": "Why Leaf? > Why Leaf?",
+    "text": "Leaf brings the power of fine-grained reactivity to documentation sites while maintaining the simplicity and speed of VitePress.",
+    "path": "/why",
+    "section": "Why Leaf?"
+  },
+  {
+    "id": "/why#1",
+    "title": "Why Leaf? > Comparison with VitePress",
+    "text": "",
+    "path": "/why",
+    "section": "Comparison with VitePress"
+  },
+  {
+    "id": "/why#2",
+    "title": "Why Leaf? > Key Advantages",
+    "text": "",
+    "path": "/why",
+    "section": "Key Advantages"
+  },
+  {
+    "id": "/why#3",
+    "title": "Why Leaf? > 1. Fine-Grained Reactivity",
+    "text": "SolidJS provides superior reactivity without Virtual DOM overhead: Direct DOM Updates : No diffing, no reconciliation Direct DOM Updates : No diffing, no reconciliation Automatic Dependency Tracking : Signals track dependencies automatically Automatic Dependency Tracking : Signals track dependencies automatically Minimal Re-renders : Only affected DOM nodes update Minimal Re-renders : Only affected DOM nodes update Simple Mental Model : Predictable reactivity with signals and effects Simple Mental Model : Predictable reactivity with signals and effects",
+    "path": "/why",
+    "section": "1. Fine-Grained Reactivity"
+  },
+  {
+    "id": "/why#4",
+    "title": "Why Leaf? > 2. Modern Runtime",
+    "text": "Bun or Node.js  - Use either runtime: Bun : Faster package installation and built-in TypeScript support Bun : Faster package installation and built-in TypeScript support Node.js 18+ : Stable and widely supported Node.js 18+ : Stable and widely supported Both work equally well for production builds Both work equally well for production builds",
+    "path": "/why",
+    "section": "2. Modern Runtime"
+  },
+  {
+    "id": "/why#5",
+    "title": "Why Leaf? > 3. Lightweight Runtime",
+    "text": "Leaf uses  SolidJS  for minimal framework overhead: No Virtual DOM  means less runtime code and faster updates.",
+    "path": "/why",
+    "section": "3. Lightweight Runtime"
+  },
+  {
+    "id": "/why#6",
+    "title": "Why Leaf? > 4. TypeScript First",
+    "text": "100% TypeScript with full type safety:",
+    "path": "/why",
+    "section": "4. TypeScript First"
+  },
+  {
+    "id": "/why#7",
+    "title": "Why Leaf? > 5. Better DX (Developer Experience)",
+    "text": "::: tip Hot Module Replacement\nFast HMR powered by Vite. Changes reflect in <100ms.\n::: ::: tip Zero Configuration\nWorks out of the box with sensible defaults. Configure only what you need.\n::: ::: tip Auto-Generated\nSidebar and TOC are automatically generated from your file structure and headings.\n:::",
+    "path": "/why",
+    "section": "5. Better DX (Developer Experience)"
+  },
+  {
+    "id": "/why#8",
+    "title": "Why Leaf? > When to Use Leaf",
+    "text": "✅  Use Leaf if you: Want fine-grained reactivity without Virtual DOM Want fine-grained reactivity without Virtual DOM Prefer SolidJS's simple mental model Prefer SolidJS's simple mental model Need minimal runtime overhead Need minimal runtime overhead Want maximum performance Want maximum performance Use Bun runtime for fast builds Use Bun runtime for fast builds Need TypeScript-first tooling Need TypeScript-first tooling ❌  Use VitePress if you: Prefer Vue ecosystem Prefer Vue ecosystem Have existing VitePress site Have existing VitePress site Need Vue-specific features Need Vue-specific features Team is Vue-focused Team is Vue-focused",
+    "path": "/why",
+    "section": "When to Use Leaf"
+  },
+  {
+    "id": "/why#9",
+    "title": "Why Leaf? > Performance Comparison",
+    "text": "",
+    "path": "/why",
+    "section": "Performance Comparison"
+  },
+  {
+    "id": "/why#10",
+    "title": "Why Leaf? > Build Time",
+    "text": "Fast builds with Vite and Bun: ~2s for 22 pages including search index generation ~2s for 22 pages including search index generation Hot Module Replacement in <100ms Hot Module Replacement in <100ms Optimized with SolidJS compiler Optimized with SolidJS compiler",
+    "path": "/why",
+    "section": "Build Time"
+  },
+  {
+    "id": "/why#11",
+    "title": "Why Leaf? > Bundle Size",
+    "text": "Lightweight runtime with SolidJS: Leaf: Minimal overhead (~12KB framework) Leaf: Minimal overhead (~12KB framework) VitePress: ~75KB gzipped VitePress: ~75KB gzipped No Virtual DOM = Less runtime code No Virtual DOM = Less runtime code",
+    "path": "/why",
+    "section": "Bundle Size"
+  },
+  {
+    "id": "/why#12",
+    "title": "Why Leaf? > First Load",
+    "text": "Both achieve fast first load through SSG: HTML pre-rendered at build time HTML pre-rendered at build time No JavaScript needed for initial view No JavaScript needed for initial view Progressive hydration Progressive hydration",
+    "path": "/why",
+    "section": "First Load"
+  },
+  {
+    "id": "/why#13",
+    "title": "Why Leaf? > Real-World Example",
+    "text": "This documentation site is built with Leaf! You're experiencing: ⚡ Fast page loads via SSG ⚡ Fast page loads via SSG 🔍 <50ms local search (Cmd/Ctrl+K) 🔍 <50ms local search (Cmd/Ctrl+K) 🎨 Beautiful dark mode 🎨 Beautiful dark mode 📱 Mobile responsive 📱 Mobile responsive 🧮 Math equations: $E = mc^2$ 🧮 Math equations: $E = mc^2$ 📊 Mermaid diagrams (see above) 📊 Mermaid diagrams (see above)",
+    "path": "/why",
+    "section": "Real-World Example"
+  },
+  {
+    "id": "/why#14",
+    "title": "Why Leaf? > Migration from VitePress",
+    "text": "Migrating is straightforward since Leaf maintains VitePress markdown syntax: Copy markdown files  - They work as-is! Copy markdown files  - They work as-is! Update config  - Similar structure Update config  - Similar structure Adjust imports  - Change    to Adjust imports  - Change    to Run build  - Done! Run build  - Done! See  Migration Guide  for details.",
+    "path": "/why",
+    "section": "Migration from VitePress"
+  },
+  {
+    "id": "/why#15",
+    "title": "Why Leaf? > Conclusion",
+    "text": "Leaf gives you: 🚀 VitePress-compatible markdown 🚀 VitePress-compatible markdown ⚡ Fine-grained reactivity with SolidJS ⚡ Fine-grained reactivity with SolidJS 🪶 Lightweight runtime (~12KB framework) 🪶 Lightweight runtime (~12KB framework) 💪 Type-safe configuration 💪 Type-safe configuration 🎨 Beautiful theme with switcher 🎨 Beautiful theme with switcher ⚡ Fast builds with Bun ⚡ Fast builds with Bun Ready to try it?  Get started  now!",
+    "path": "/why",
+    "section": "Conclusion"
+  },
+  {
+    "id": "/guide/markdown",
+    "title": "Markdown Guide",
+    "text": "Leaf supports all standard Markdown syntax plus powerful extensions.",
+    "path": "/guide/markdown"
+  },
+  {
+    "id": "/guide/markdown#0",
+    "title": "Markdown Guide > Markdown Features",
+    "text": "Leaf supports all standard Markdown syntax plus powerful extensions.",
+    "path": "/guide/markdown",
+    "section": "Markdown Features"
+  },
+  {
+    "id": "/guide/markdown#1",
+    "title": "Markdown Guide > Basic Syntax",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Basic Syntax"
+  },
+  {
+    "id": "/guide/markdown#2",
+    "title": "Markdown Guide > Headings",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Headings"
+  },
+  {
+    "id": "/guide/markdown#3",
+    "title": "Markdown Guide > Text Formatting",
+    "text": "Bold text  with    or Italic text  with    or Strikethrough  with",
+    "path": "/guide/markdown",
+    "section": "Text Formatting"
+  },
+  {
+    "id": "/guide/markdown#4",
+    "title": "Markdown Guide > Lists",
+    "text": "Unordered: Item 1 Item 1 Item 2 Nested item Item 2 Nested item Nested item Ordered: First First Second Second Third Third",
+    "path": "/guide/markdown",
+    "section": "Lists"
+  },
+  {
+    "id": "/guide/markdown#5",
+    "title": "Markdown Guide > Links",
+    "text": "Internal link External link  - automatically gets an icon!",
+    "path": "/guide/markdown",
+    "section": "Links"
+  },
+  {
+    "id": "/guide/markdown#6",
+    "title": "Markdown Guide > Images",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Images"
+  },
+  {
+    "id": "/guide/markdown#7",
+    "title": "Markdown Guide > Code Blocks",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Code Blocks"
+  },
+  {
+    "id": "/guide/markdown#8",
+    "title": "Markdown Guide > Basic Code Block",
+    "text": "```typescript\nfunction greet(name: string) {\nconsole.log(  );\n}\n```",
+    "path": "/guide/markdown",
+    "section": "Basic Code Block"
+  },
+  {
+    "id": "/guide/markdown#9",
+    "title": "Markdown Guide > Line Highlighting",
+    "text": "Highlight specific lines with   : ```typescript {2,4-6}\nimport { zen } from '@sylphx/zen'; const store = zen({ count: 0 }); function increment() {\nstore.set({ count: store.get().count + 1 });\nconsole.log('Updated!');\n}\n```",
+    "path": "/guide/markdown",
+    "section": "Line Highlighting"
+  },
+  {
+    "id": "/guide/markdown#10",
+    "title": "Markdown Guide > Code Groups",
+    "text": "Show multiple language examples with tabs: ::: code-group ```ts [config.ts]\nexport default {\ntitle: 'My Docs',\ndescription: 'Documentation'\n}\n``` ```js [config.js]\nmodule.exports = {\ntitle: 'My Docs',\ndescription: 'Documentation'\n}\n``` ```json [config.json]\n{\n\"title\": \"My Docs\",\n\"description\": \"Documentation\"\n}\n``` :::",
+    "path": "/guide/markdown",
+    "section": "Code Groups"
+  },
+  {
+    "id": "/guide/markdown#11",
+    "title": "Markdown Guide > Custom Containers",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Custom Containers"
+  },
+  {
+    "id": "/guide/markdown#12",
+    "title": "Markdown Guide > Tip",
+    "text": "::: tip\nThis is a helpful tip for your readers!\n:::",
+    "path": "/guide/markdown",
+    "section": "Tip"
+  },
+  {
+    "id": "/guide/markdown#13",
+    "title": "Markdown Guide > Warning",
+    "text": "::: warning\nBe careful with this operation!\n:::",
+    "path": "/guide/markdown",
+    "section": "Warning"
+  },
+  {
+    "id": "/guide/markdown#14",
+    "title": "Markdown Guide > Danger",
+    "text": "::: danger STOP\nThis is a critical warning about destructive actions!\n:::",
+    "path": "/guide/markdown",
+    "section": "Danger"
+  },
+  {
+    "id": "/guide/markdown#15",
+    "title": "Markdown Guide > Details",
+    "text": "::: details Click to expand\nHidden content that readers can expand when needed. You can include any markdown: Lists Lists Bold text Bold text `Code`\n::: `Code`\n:::",
+    "path": "/guide/markdown",
+    "section": "Details"
+  },
+  {
+    "id": "/guide/markdown#16",
+    "title": "Markdown Guide > Badges",
+    "text": "Highlight important information with inline badges: New feature New feature Beta status Beta status Deprecated Deprecated Version Version Syntax:",
+    "path": "/guide/markdown",
+    "section": "Badges"
+  },
+  {
+    "id": "/guide/markdown#17",
+    "title": "Markdown Guide > Math Equations",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Math Equations"
+  },
+  {
+    "id": "/guide/markdown#18",
+    "title": "Markdown Guide > Inline Math",
+    "text": "When $a \\ne 0$, there are two solutions to $ax^2 + bx + c = 0$.",
+    "path": "/guide/markdown",
+    "section": "Inline Math"
+  },
+  {
+    "id": "/guide/markdown#19",
+    "title": "Markdown Guide > Block Equations",
+    "text": "$$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$$",
+    "path": "/guide/markdown",
+    "section": "Block Equations"
+  },
+  {
+    "id": "/guide/markdown#20",
+    "title": "Markdown Guide > Complex Formulas",
+    "text": "$$\n\\begin{aligned}\n\\nabla \\cdot \\mathbf{E} &= \\frac{\\rho}{\\epsilon_0} \\\n\\nabla \\times \\mathbf{B} &= \\mu_0\\mathbf{J} + \\mu_0\\epsilon_0\\frac{\\partial \\mathbf{E}}{\\partial t}\n\\end{aligned}\n$$",
+    "path": "/guide/markdown",
+    "section": "Complex Formulas"
+  },
+  {
+    "id": "/guide/markdown#21",
+    "title": "Markdown Guide > Mermaid Diagrams",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Mermaid Diagrams"
+  },
+  {
+    "id": "/guide/markdown#22",
+    "title": "Markdown Guide > Flowchart",
+    "text": "```mermaid\ngraph TD\nA[Start] --> B{Decision}\nB -->|Yes| C[Action 1]\nB -->|No| D[Action 2]\nC --> E[End]\nD --> E\n```",
+    "path": "/guide/markdown",
+    "section": "Flowchart"
+  },
+  {
+    "id": "/guide/markdown#23",
+    "title": "Markdown Guide > Sequence Diagram",
+    "text": "```mermaid\nsequenceDiagram\nUser->>API: Request\nAPI->>Database: Query\nDatabase-->>API: Result\nAPI-->>User: Response\n```",
+    "path": "/guide/markdown",
+    "section": "Sequence Diagram"
+  },
+  {
+    "id": "/guide/markdown#24",
+    "title": "Markdown Guide > Gantt Chart",
+    "text": "```mermaid\ngantt\ntitle Project Timeline\ndateFormat YYYY-MM-DD\nsection Planning\nResearch :a1, 2024-01-01, 30d\nDesign :a2, after a1, 20d\n```",
+    "path": "/guide/markdown",
+    "section": "Gantt Chart"
+  },
+  {
+    "id": "/guide/markdown#25",
+    "title": "Markdown Guide > Tables",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Tables"
+  },
+  {
+    "id": "/guide/markdown#26",
+    "title": "Markdown Guide > Blockquotes",
+    "text": "This is a blockquote.\nIt can span multiple lines.",
+    "path": "/guide/markdown",
+    "section": "Blockquotes"
+  },
+  {
+    "id": "/guide/markdown#27",
+    "title": "Markdown Guide > Horizontal Rule",
+    "text": "",
+    "path": "/guide/markdown",
+    "section": "Horizontal Rule"
+  },
+  {
+    "id": "/guide/markdown#28",
+    "title": "Markdown Guide > Frontmatter",
+    "text": "Add metadata to your pages:",
+    "path": "/guide/markdown",
+    "section": "Frontmatter"
+  },
+  {
+    "id": "/guide/markdown#29",
+    "title": "Markdown Guide > Next Steps",
+    "text": "Learn about  Configuration Learn about  Configuration Explore  Code Highlighting Explore  Code Highlighting See  Math Equations See  Math Equations",
+    "path": "/guide/markdown",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/migration",
+    "title": "Migrating from VitePress",
+    "text": "Migrate your VitePress documentation to Leaf with minimal effort. Leaf maintains  VitePress markdown syntax compatibility , so most content works as-is.",
+    "path": "/guide/migration"
+  },
+  {
+    "id": "/guide/migration#0",
+    "title": "Migrating from VitePress > Migrating from VitePress",
+    "text": "Migrate your VitePress documentation to Leaf with minimal effort. Leaf maintains  VitePress markdown syntax compatibility , so most content works as-is. Component Support in Markdown Leaf now supports using React components directly in markdown files just like VitePress: Components automatically receive props (JSON, strings, numbers, or booleans).",
+    "path": "/guide/migration",
+    "section": "Migrating from VitePress"
+  },
+  {
+    "id": "/guide/migration#1",
+    "title": "Migrating from VitePress > Why Migrate?",
+    "text": "⚛️  React Ecosystem  - Access to React components and libraries ⚛️  React Ecosystem  - Access to React components and libraries ⚡  Bun / Node.js  - Use Bun for faster builds or Node.js 18+ ⚡  Bun / Node.js  - Use Bun for faster builds or Node.js 18+ 🎨  Modern Tooling  - TypeScript-first development 🎨  Modern Tooling  - TypeScript-first development 📦  Small Bundle  - 7KB framework overhead (SolidJS + Zen + Silk) 📦  Small Bundle  - 7KB framework overhead (SolidJS + Zen + Silk) 🔥  VitePress-Compatible  - Same markdown syntax and features 🔥  VitePress-Compatible  - Same markdown syntax and features",
+    "path": "/guide/migration",
+    "section": "Why Migrate?"
+  },
+  {
+    "id": "/guide/migration#2",
+    "title": "Migrating from VitePress > Quick Comparison",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "Quick Comparison"
+  },
+  {
+    "id": "/guide/migration#3",
+    "title": "Migrating from VitePress > Migration Steps",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "Migration Steps"
+  },
+  {
+    "id": "/guide/migration#4",
+    "title": "Migrating from VitePress > 1. Install Leaf",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "1. Install Leaf"
+  },
+  {
+    "id": "/guide/migration#5",
+    "title": "Migrating from VitePress > 2. Copy Content",
+    "text": "Copy your markdown files from VitePress to Leaf: ::: tip Markdown Compatibility\nAll VitePress markdown features work in Leaf without modification: Containers (tip, warning, danger, details) Containers (tip, warning, danger, details) Code groups with syntax highlighting Code groups with syntax highlighting Math equations with KaTeX Math equations with KaTeX Custom frontmatter\n::: Custom frontmatter\n:::",
+    "path": "/guide/migration",
+    "section": "2. Copy Content"
+  },
+  {
+    "id": "/guide/migration#6",
+    "title": "Migrating from VitePress > 3. Migrate Configuration",
+    "text": "VitePress config.ts: Leaf config.ts: Key Differences:",
+    "path": "/guide/migration",
+    "section": "3. Migrate Configuration"
+  },
+  {
+    "id": "/guide/migration#7",
+    "title": "Migrating from VitePress > 4. Update Package.json",
+    "text": "VitePress: Leaf:",
+    "path": "/guide/migration",
+    "section": "4. Update Package.json"
+  },
+  {
+    "id": "/guide/migration#8",
+    "title": "Migrating from VitePress > 5. Convert Custom Components",
+    "text": "VitePress components (Vue) need to be rewritten in React: VitePress (Vue): Leaf (React):",
+    "path": "/guide/migration",
+    "section": "5. Convert Custom Components"
+  },
+  {
+    "id": "/guide/migration#9",
+    "title": "Migrating from VitePress > 6. Update Imports in Markdown",
+    "text": "VitePress: Leaf: Key Differences: VitePress: Need    to import Vue components VitePress: Need    to import Vue components Leaf: Use React components directly in markdown, no imports needed Leaf: Use React components directly in markdown, no imports needed",
+    "path": "/guide/migration",
+    "section": "6. Update Imports in Markdown"
+  },
+  {
+    "id": "/guide/migration#10",
+    "title": "Migrating from VitePress > Feature Mapping",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "Feature Mapping"
+  },
+  {
+    "id": "/guide/migration#11",
+    "title": "Migrating from VitePress > Containers",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Containers"
+  },
+  {
+    "id": "/guide/migration#12",
+    "title": "Migrating from VitePress > Code Groups",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Code Groups"
+  },
+  {
+    "id": "/guide/migration#13",
+    "title": "Migrating from VitePress > Code Line Highlighting",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Code Line Highlighting"
+  },
+  {
+    "id": "/guide/migration#14",
+    "title": "Migrating from VitePress > Badges",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Badges"
+  },
+  {
+    "id": "/guide/migration#15",
+    "title": "Migrating from VitePress > Math Equations",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Math Equations"
+  },
+  {
+    "id": "/guide/migration#16",
+    "title": "Migrating from VitePress > Mermaid Diagrams",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Mermaid Diagrams"
+  },
+  {
+    "id": "/guide/migration#17",
+    "title": "Migrating from VitePress > Frontmatter",
+    "text": "✅  Works identically:",
+    "path": "/guide/migration",
+    "section": "Frontmatter"
+  },
+  {
+    "id": "/guide/migration#18",
+    "title": "Migrating from VitePress > Breaking Changes",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "Breaking Changes"
+  },
+  {
+    "id": "/guide/migration#19",
+    "title": "Migrating from VitePress > 1. Sidebar Configuration",
+    "text": "✅  Both formats supported!  Leaf now supports both object and array formats: VitePress object format (now supported): Leaf array format: No changes needed!  Your VitePress sidebar configuration will work as-is.",
+    "path": "/guide/migration",
+    "section": "1. Sidebar Configuration"
+  },
+  {
+    "id": "/guide/migration#20",
+    "title": "Migrating from VitePress > 2. Theme Customization",
+    "text": "VitePress  uses CSS variables in Leaf  uses Tailwind CSS with custom properties in",
+    "path": "/guide/migration",
+    "section": "2. Theme Customization"
+  },
+  {
+    "id": "/guide/migration#21",
+    "title": "Migrating from VitePress > 3. Layout Components",
+    "text": "VitePress  uses Vue components in Leaf  uses React components - create custom theme package",
+    "path": "/guide/migration",
+    "section": "3. Layout Components"
+  },
+  {
+    "id": "/guide/migration#22",
+    "title": "Migrating from VitePress > 4. Plugins",
+    "text": "VitePress  uses Vite + Vue plugins Leaf  uses Vite + React plugins:",
+    "path": "/guide/migration",
+    "section": "4. Plugins"
+  },
+  {
+    "id": "/guide/migration#23",
+    "title": "Migrating from VitePress > Migration Checklist",
+    "text": "Install Bun runtime Install Bun runtime Copy markdown files (no changes needed) Copy markdown files (no changes needed) Create    from VitePress config Create    from VitePress config Update    scripts and dependencies Update    scripts and dependencies Convert Vue components to React (if any) Convert Vue components to React (if any) Update component imports in MDX files Update component imports in MDX files Test all routes work correctly Test all routes work correctly Verify search functionality Verify search functionality Check dark mode toggle Check dark mode toggle Test build and deployment Test build and deployment Update CI/CD pipelines Update CI/CD pipelines",
+    "path": "/guide/migration",
+    "section": "Migration Checklist"
+  },
+  {
+    "id": "/guide/migration#24",
+    "title": "Migrating from VitePress > Common Issues",
+    "text": "",
+    "path": "/guide/migration",
+    "section": "Common Issues"
+  },
+  {
+    "id": "/guide/migration#25",
+    "title": "Migrating from VitePress > Issue: Code Groups Not Rendering",
+    "text": "Solution:  Ensure proper spacing:",
+    "path": "/guide/migration",
+    "section": "Issue: Code Groups Not Rendering"
+  },
+  {
+    "id": "/guide/migration#26",
+    "title": "Migrating from VitePress > Issue: Math Not Rendering",
+    "text": "Solution:  Leaf includes KaTeX by default. Ensure no conflicting markdown processing.",
+    "path": "/guide/migration",
+    "section": "Issue: Math Not Rendering"
+  },
+  {
+    "id": "/guide/migration#27",
+    "title": "Migrating from VitePress > Issue: Custom Components Not Working",
+    "text": "Solution: Convert Vue components to React Convert Vue components to React Use MDX imports instead of Use MDX imports instead of Export named exports, not default Export named exports, not default",
+    "path": "/guide/migration",
+    "section": "Issue: Custom Components Not Working"
+  },
+  {
+    "id": "/guide/migration#28",
+    "title": "Migrating from VitePress > Issue: 404 on Routes",
+    "text": "Solution:  Check    path in config matches deployment:",
+    "path": "/guide/migration",
+    "section": "Issue: 404 on Routes"
+  },
+  {
+    "id": "/guide/migration#29",
+    "title": "Migrating from VitePress > Performance",
+    "text": "After migration: Build Time : 12% faster builds than VitePress (tested on M1 MacBook Pro, 16GB RAM, Node.js 18, 22-page documentation site) Build Time : 12% faster builds than VitePress (tested on M1 MacBook Pro, 16GB RAM, Node.js 18, 22-page documentation site) Bundle Size : Comparable to VitePress (~73KB gzipped) Bundle Size : Comparable to VitePress (~73KB gzipped) Runtime : Works with Bun or Node.js 18+ Runtime : Works with Bun or Node.js 18+ HMR : Sub-100ms hot module replacement with Vite HMR : Sub-100ms hot module replacement with Vite",
+    "path": "/guide/migration",
+    "section": "Performance"
+  },
+  {
+    "id": "/guide/migration#30",
+    "title": "Migrating from VitePress > Example Migration",
+    "text": "Before (VitePress): After (Leaf):",
+    "path": "/guide/migration",
+    "section": "Example Migration"
+  },
+  {
+    "id": "/guide/migration#31",
+    "title": "Migrating from VitePress > Getting Help",
+    "text": "Need help migrating? 📖  Leaf Documentation 📖  Leaf Documentation 💬  GitHub Discussions 💬  GitHub Discussions 🐛  Report Issues 🐛  Report Issues",
+    "path": "/guide/migration",
+    "section": "Getting Help"
+  },
+  {
+    "id": "/guide/migration#32",
+    "title": "Migrating from VitePress > Next Steps",
+    "text": "After migration: Deploy your site Deploy your site Customize the theme Customize the theme Add custom components Add custom components Optimize performance Optimize performance Welcome to Leaf!",
+    "path": "/guide/migration",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/theming",
+    "title": "Theming",
+    "text": "Leaf provides a flexible theming system with built-in dark mode support and full customization capabilities.",
+    "path": "/guide/theming"
+  },
+  {
+    "id": "/guide/theming#0",
+    "title": "Theming > Theming",
+    "text": "Leaf provides a flexible theming system with built-in dark mode support and full customization capabilities.",
+    "path": "/guide/theming",
+    "section": "Theming"
+  },
+  {
+    "id": "/guide/theming#1",
+    "title": "Theming > Default Theme",
+    "text": "Leaf comes with a beautiful default theme that works out of the box: The default theme includes: Responsive design  - Works on all screen sizes Responsive design  - Works on all screen sizes Dark mode  - Automatic theme switching Dark mode  - Automatic theme switching Smooth animations  - Polished UI transitions Smooth animations  - Polished UI transitions Accessible  - WCAG 2.1 AA compliant Accessible  - WCAG 2.1 AA compliant",
+    "path": "/guide/theming",
+    "section": "Default Theme"
+  },
+  {
+    "id": "/guide/theming#2",
+    "title": "Theming > Hero Page Layout",
+    "text": "Create stunning landing pages with the hero layout, perfect for homepages and marketing pages.",
+    "path": "/guide/theming",
+    "section": "Hero Page Layout"
+  },
+  {
+    "id": "/guide/theming#3",
+    "title": "Theming > Basic Hero Page",
+    "text": "Add    to your frontmatter:",
+    "path": "/guide/theming",
+    "section": "Basic Hero Page"
+  },
+  {
+    "id": "/guide/theming#4",
+    "title": "Theming > Hero Configuration",
+    "text": "The hero section supports: name  (optional)\nBadge text displayed above the main heading. text  (required)\nMain heading text with gradient styling. tagline  (optional)\nSubtitle text displayed below the main heading. actions  (optional)\nArray of action buttons. image  (optional)\nHero image displayed on the right side (like VitePress). Perfect for showcasing screenshots, product mockups, or diagrams. The hero uses a responsive 2-column grid layout: Desktop : Image appears on the right side Desktop : Image appears on the right side Mobile : Image appears below the hero content Mobile : Image appears below the hero content",
+    "path": "/guide/theming",
+    "section": "Hero Configuration"
+  },
+  {
+    "id": "/guide/theming#5",
+    "title": "Theming > Features Grid",
+    "text": "Add a features grid below the hero: Feature Options: - Iconify icon name (e.g.,   ,   ) - Iconify icon name (e.g.,   ,   ) - Feature heading - Feature heading - Feature description - Feature description (optional) - Make the feature card clickable (optional) - Make the feature card clickable",
+    "path": "/guide/theming",
+    "section": "Features Grid"
+  },
+  {
+    "id": "/guide/theming#6",
+    "title": "Theming > Complete Example",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Complete Example"
+  },
+  {
+    "id": "/guide/theming#7",
+    "title": "Theming > Styling Hero Pages",
+    "text": "Customize hero styling with CSS variables:",
+    "path": "/guide/theming",
+    "section": "Styling Hero Pages"
+  },
+  {
+    "id": "/guide/theming#8",
+    "title": "Theming > Dark Mode",
+    "text": "Dark mode is automatically enabled. Users can toggle between light and dark themes using the theme switcher in the header. The theme preference is: Stored in localStorage Stored in localStorage Respects system preferences on first visit Respects system preferences on first visit Persists across sessions Persists across sessions",
+    "path": "/guide/theming",
+    "section": "Dark Mode"
+  },
+  {
+    "id": "/guide/theming#9",
+    "title": "Theming > Customizing Dark Mode Colors",
+    "text": "You can customize dark mode colors using CSS variables:",
+    "path": "/guide/theming",
+    "section": "Customizing Dark Mode Colors"
+  },
+  {
+    "id": "/guide/theming#10",
+    "title": "Theming > CSS Variables",
+    "text": "The default theme uses CSS custom properties (variables) for theming:",
+    "path": "/guide/theming",
+    "section": "CSS Variables"
+  },
+  {
+    "id": "/guide/theming#11",
+    "title": "Theming > Colors",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Colors"
+  },
+  {
+    "id": "/guide/theming#12",
+    "title": "Theming > Typography",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Typography"
+  },
+  {
+    "id": "/guide/theming#13",
+    "title": "Theming > Spacing",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Spacing"
+  },
+  {
+    "id": "/guide/theming#14",
+    "title": "Theming > Layout",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Layout"
+  },
+  {
+    "id": "/guide/theming#15",
+    "title": "Theming > Custom Styling",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Custom Styling"
+  },
+  {
+    "id": "/guide/theming#16",
+    "title": "Theming > Override CSS Variables",
+    "text": "Create a custom CSS file and override variables: Import it after the theme CSS:",
+    "path": "/guide/theming",
+    "section": "Override CSS Variables"
+  },
+  {
+    "id": "/guide/theming#17",
+    "title": "Theming > Custom Component Styles",
+    "text": "Target specific components with CSS:",
+    "path": "/guide/theming",
+    "section": "Custom Component Styles"
+  },
+  {
+    "id": "/guide/theming#18",
+    "title": "Theming > Creating a Custom Theme",
+    "text": "To create a completely custom theme:",
+    "path": "/guide/theming",
+    "section": "Creating a Custom Theme"
+  },
+  {
+    "id": "/guide/theming#19",
+    "title": "Theming > 1. Create Theme Package",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "1. Create Theme Package"
+  },
+  {
+    "id": "/guide/theming#20",
+    "title": "Theming > 2. Implement Layout Component",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "2. Implement Layout Component"
+  },
+  {
+    "id": "/guide/theming#21",
+    "title": "Theming > 3. Style Your Theme",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "3. Style Your Theme"
+  },
+  {
+    "id": "/guide/theming#22",
+    "title": "Theming > 4. Use Your Theme",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "4. Use Your Theme"
+  },
+  {
+    "id": "/guide/theming#23",
+    "title": "Theming > Responsive Design",
+    "text": "The default theme is fully responsive. Customize breakpoints:",
+    "path": "/guide/theming",
+    "section": "Responsive Design"
+  },
+  {
+    "id": "/guide/theming#24",
+    "title": "Theming > Typography Customization",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Typography Customization"
+  },
+  {
+    "id": "/guide/theming#25",
+    "title": "Theming > Custom Fonts",
+    "text": "Import custom fonts:",
+    "path": "/guide/theming",
+    "section": "Custom Fonts"
+  },
+  {
+    "id": "/guide/theming#26",
+    "title": "Theming > Font Weights",
+    "text": "",
+    "path": "/guide/theming",
+    "section": "Font Weights"
+  },
+  {
+    "id": "/guide/theming#27",
+    "title": "Theming > Animation",
+    "text": "Customize transitions and animations:",
+    "path": "/guide/theming",
+    "section": "Animation"
+  },
+  {
+    "id": "/guide/theming#28",
+    "title": "Theming > Component Variants",
+    "text": "Create component variants using CSS:",
+    "path": "/guide/theming",
+    "section": "Component Variants"
+  },
+  {
+    "id": "/guide/theming#29",
+    "title": "Theming > Best Practices",
+    "text": "Use CSS Variables  - They make theming much easier Use CSS Variables  - They make theming much easier Respect System Preferences  - Support dark mode Respect System Preferences  - Support dark mode Mobile First  - Design for mobile, enhance for desktop Mobile First  - Design for mobile, enhance for desktop Accessibility  - Maintain color contrast ratios Accessibility  - Maintain color contrast ratios Performance  - Minimize CSS bundle size Performance  - Minimize CSS bundle size Consistency  - Use a design system Consistency  - Use a design system",
+    "path": "/guide/theming",
+    "section": "Best Practices"
+  },
+  {
+    "id": "/guide/theming#30",
+    "title": "Theming > Next Steps",
+    "text": "API Reference API Reference View Example Themes View Example Themes",
+    "path": "/guide/theming",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/deployment",
+    "title": "Deployment",
+    "text": "Deploy your Leaf documentation site to production in minutes.",
+    "path": "/guide/deployment"
+  },
+  {
+    "id": "/guide/deployment#0",
+    "title": "Deployment > Deployment",
+    "text": "Deploy your Leaf documentation site to production in minutes.",
+    "path": "/guide/deployment",
+    "section": "Deployment"
+  },
+  {
+    "id": "/guide/deployment#1",
+    "title": "Deployment > Build Your Site",
+    "text": "First, build your static site: This generates optimized static files in the    directory: Pre-rendered HTML for instant loading Pre-rendered HTML for instant loading Minified CSS and JavaScript Minified CSS and JavaScript Search index for local search Search index for local search Optimized assets Optimized assets",
+    "path": "/guide/deployment",
+    "section": "Build Your Site"
+  },
+  {
+    "id": "/guide/deployment#2",
+    "title": "Deployment > Deployment Platforms",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Deployment Platforms"
+  },
+  {
+    "id": "/guide/deployment#3",
+    "title": "Deployment > Vercel  ",
+    "text": "The easiest way to deploy Leaf is with Vercel: 1. Install Vercel CLI: 2. Deploy: vercel.json configuration: ::: code-group ::: GitHub Integration: Push your code to GitHub Push your code to GitHub Import project in Vercel dashboard Import project in Vercel dashboard Set build command: Set build command: Set output directory: Set output directory: Deploy! Deploy! ::: tip Auto Deployments\nVercel automatically deploys when you push to your main branch.\n:::",
+    "path": "/guide/deployment",
+    "section": "Vercel  "
+  },
+  {
+    "id": "/guide/deployment#4",
+    "title": "Deployment > Netlify",
+    "text": "Deploy to Netlify in two ways: Option 1: Netlify CLI Option 2: Git Integration Create   : Then connect your Git repository in Netlify dashboard.",
+    "path": "/guide/deployment",
+    "section": "Netlify"
+  },
+  {
+    "id": "/guide/deployment#5",
+    "title": "Deployment > GitHub Pages",
+    "text": "Deploy to GitHub Pages using GitHub Actions: 1. Create workflow file: 2. Enable GitHub Pages: Go to repository Settings → Pages Go to repository Settings → Pages Source: GitHub Actions Source: GitHub Actions 3. Configure base path  (if using project site):",
+    "path": "/guide/deployment",
+    "section": "GitHub Pages"
+  },
+  {
+    "id": "/guide/deployment#6",
+    "title": "Deployment > Cloudflare Pages",
+    "text": "Option 1: Wrangler CLI Option 2: Git Integration Connect your Git repository in Cloudflare Pages dashboard Connect your Git repository in Cloudflare Pages dashboard Set build command: Set build command: Set output directory: Set output directory: Deploy! Deploy! cloudflare-pages.toml:",
+    "path": "/guide/deployment",
+    "section": "Cloudflare Pages"
+  },
+  {
+    "id": "/guide/deployment#7",
+    "title": "Deployment > Docker",
+    "text": "Create a containerized deployment: Dockerfile: nginx.conf: Build and run:",
+    "path": "/guide/deployment",
+    "section": "Docker"
+  },
+  {
+    "id": "/guide/deployment#8",
+    "title": "Deployment > Environment Variables",
+    "text": "Set environment variables for your deployment: Access in your config:",
+    "path": "/guide/deployment",
+    "section": "Environment Variables"
+  },
+  {
+    "id": "/guide/deployment#9",
+    "title": "Deployment > Custom Domain",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Custom Domain"
+  },
+  {
+    "id": "/guide/deployment#10",
+    "title": "Deployment > Vercel",
+    "text": "Go to project Settings → Domains Go to project Settings → Domains Add your custom domain Add your custom domain Configure DNS: Configure DNS:",
+    "path": "/guide/deployment",
+    "section": "Vercel"
+  },
+  {
+    "id": "/guide/deployment#11",
+    "title": "Deployment > Netlify",
+    "text": "Go to Site Settings → Domain Management Go to Site Settings → Domain Management Add custom domain Add custom domain Configure DNS: Configure DNS:",
+    "path": "/guide/deployment",
+    "section": "Netlify"
+  },
+  {
+    "id": "/guide/deployment#12",
+    "title": "Deployment > Cloudflare Pages",
+    "text": "Go to project → Custom Domains Go to project → Custom Domains Add your domain Add your domain DNS is automatically configured if using Cloudflare DNS DNS is automatically configured if using Cloudflare DNS",
+    "path": "/guide/deployment",
+    "section": "Cloudflare Pages"
+  },
+  {
+    "id": "/guide/deployment#13",
+    "title": "Deployment > Performance Optimization",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Performance Optimization"
+  },
+  {
+    "id": "/guide/deployment#14",
+    "title": "Deployment > Enable Compression",
+    "text": "Most platforms enable gzip/brotli automatically, but verify: Vercel/Netlify:  ✅ Enabled by default Custom Server (nginx):",
+    "path": "/guide/deployment",
+    "section": "Enable Compression"
+  },
+  {
+    "id": "/guide/deployment#15",
+    "title": "Deployment > CDN Configuration",
+    "text": "Configure caching headers: _headers file (Netlify): vercel.json:",
+    "path": "/guide/deployment",
+    "section": "CDN Configuration"
+  },
+  {
+    "id": "/guide/deployment#16",
+    "title": "Deployment > Analytics",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Analytics"
+  },
+  {
+    "id": "/guide/deployment#17",
+    "title": "Deployment > Google Analytics",
+    "text": "Add to your   :",
+    "path": "/guide/deployment",
+    "section": "Google Analytics"
+  },
+  {
+    "id": "/guide/deployment#18",
+    "title": "Deployment > Plausible Analytics",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Plausible Analytics"
+  },
+  {
+    "id": "/guide/deployment#19",
+    "title": "Deployment > Health Checks",
+    "text": "Add a health check endpoint: public/health.json: Access at:",
+    "path": "/guide/deployment",
+    "section": "Health Checks"
+  },
+  {
+    "id": "/guide/deployment#20",
+    "title": "Deployment > Troubleshooting",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/guide/deployment#21",
+    "title": "Deployment > 404 Errors on Routes",
+    "text": "Ensure your server redirects all routes to    for SPA routing. Netlify:  Add    file: Vercel:  Automatically configured Nginx:",
+    "path": "/guide/deployment",
+    "section": "404 Errors on Routes"
+  },
+  {
+    "id": "/guide/deployment#22",
+    "title": "Deployment > Build Failures",
+    "text": "Out of Memory: Increase Node memory limit: Missing Dependencies: Ensure all dependencies are in   , not   :",
+    "path": "/guide/deployment",
+    "section": "Build Failures"
+  },
+  {
+    "id": "/guide/deployment#23",
+    "title": "Deployment > Asset Loading Issues",
+    "text": "Check your    path configuration:",
+    "path": "/guide/deployment",
+    "section": "Asset Loading Issues"
+  },
+  {
+    "id": "/guide/deployment#24",
+    "title": "Deployment > Continuous Deployment",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Continuous Deployment"
+  },
+  {
+    "id": "/guide/deployment#25",
+    "title": "Deployment > Auto-deploy on Git Push",
+    "text": "All platforms support automatic deployment: Vercel/Netlify/Cloudflare:  Connect Git repo in dashboard Vercel/Netlify/Cloudflare:  Connect Git repo in dashboard GitHub Pages:  Use workflow file (see above) GitHub Pages:  Use workflow file (see above) Every push to main branch triggers deployment Every push to main branch triggers deployment",
+    "path": "/guide/deployment",
+    "section": "Auto-deploy on Git Push"
+  },
+  {
+    "id": "/guide/deployment#26",
+    "title": "Deployment > Preview Deployments",
+    "text": "Vercel/Netlify:  Automatic preview for pull requests Cloudflare Pages:  Preview for all branches",
+    "path": "/guide/deployment",
+    "section": "Preview Deployments"
+  },
+  {
+    "id": "/guide/deployment#27",
+    "title": "Deployment > Security",
+    "text": "",
+    "path": "/guide/deployment",
+    "section": "Security"
+  },
+  {
+    "id": "/guide/deployment#28",
+    "title": "Deployment > Content Security Policy",
+    "text": "Add CSP headers: _headers (Netlify):",
+    "path": "/guide/deployment",
+    "section": "Content Security Policy"
+  },
+  {
+    "id": "/guide/deployment#29",
+    "title": "Deployment > HTTPS",
+    "text": "All platforms provide free SSL: ✅ Vercel: Automatic ✅ Vercel: Automatic ✅ Netlify: Automatic ✅ Netlify: Automatic ✅ Cloudflare Pages: Automatic ✅ Cloudflare Pages: Automatic ✅ GitHub Pages: Automatic ✅ GitHub Pages: Automatic",
+    "path": "/guide/deployment",
+    "section": "HTTPS"
+  },
+  {
+    "id": "/guide/deployment#30",
+    "title": "Deployment > Next Steps",
+    "text": "Set up  Analytics Set up  Analytics Configure  Custom Domain Configure  Custom Domain Enable  Preview Deployments Enable  Preview Deployments Add  Health Checks Add  Health Checks",
+    "path": "/guide/deployment",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/deployment#31",
+    "title": "Deployment > Support",
+    "text": "Having deployment issues? Check: GitHub Issues GitHub Issues Platform Documentation Platform Documentation Troubleshooting Troubleshooting",
+    "path": "/guide/deployment",
+    "section": "Support"
+  },
+  {
+    "id": "/guide",
+    "title": "Guide",
+    "text": "Welcome to the Leaf documentation guide. This section will help you get started with Leaf and master its features.",
+    "path": "/guide"
+  },
+  {
+    "id": "/guide#0",
+    "title": "Guide > Guide",
+    "text": "Welcome to the Leaf documentation guide. This section will help you get started with Leaf and master its features.",
+    "path": "/guide",
+    "section": "Guide"
+  },
+  {
+    "id": "/guide#1",
+    "title": "Guide > Getting Started",
+    "text": "New to Leaf? Start here:",
+    "path": "/guide",
+    "section": "Getting Started"
+  },
+  {
+    "id": "/guide#2",
+    "title": "Guide > Installation",
+    "text": "Learn how to install Leaf and set up your first documentation site. Covers: Prerequisites (Bun runtime) Prerequisites (Bun runtime) Creating a new project Creating a new project Directory structure Directory structure Running the development server Running the development server",
+    "path": "/guide",
+    "section": "Installation"
+  },
+  {
+    "id": "/guide#3",
+    "title": "Guide > Configuration",
+    "text": "Understand Leaf's configuration system: Config file structure (  ) Config file structure (  ) Site metadata (title, description) Site metadata (title, description) Theme configuration Theme configuration Navigation and sidebar setup Navigation and sidebar setup Build options Build options",
+    "path": "/guide",
+    "section": "Configuration"
+  },
+  {
+    "id": "/guide#4",
+    "title": "Guide > Core Features",
+    "text": "Master Leaf's powerful features:",
+    "path": "/guide",
+    "section": "Core Features"
+  },
+  {
+    "id": "/guide#5",
+    "title": "Guide > Markdown",
+    "text": "Everything you can do with Markdown in Leaf: Standard Markdown syntax Standard Markdown syntax Custom containers (tip, warning, danger) Custom containers (tip, warning, danger) Code blocks with syntax highlighting Code blocks with syntax highlighting Line highlighting Line highlighting Code groups Code groups Math equations with KaTeX Math equations with KaTeX Mermaid diagrams Mermaid diagrams Tables and more Tables and more",
+    "path": "/guide",
+    "section": "Markdown"
+  },
+  {
+    "id": "/guide#6",
+    "title": "Guide > Theming",
+    "text": "Customize Leaf's appearance: Using the default theme Using the default theme Customizing colors and styles Customizing colors and styles Creating custom components Creating custom components Building a custom theme from scratch Building a custom theme from scratch Theme configuration options Theme configuration options",
+    "path": "/guide",
+    "section": "Theming"
+  },
+  {
+    "id": "/guide#7",
+    "title": "Guide > Quick Links",
+    "text": "Examples  - See Leaf in action with real examples Examples  - See Leaf in action with real examples API Reference  - Detailed API documentation API Reference  - Detailed API documentation GitHub  - View source code and contribute GitHub  - View source code and contribute",
+    "path": "/guide",
+    "section": "Quick Links"
+  },
+  {
+    "id": "/guide#8",
+    "title": "Guide > Need Help?",
+    "text": "If you encounter any issues or have questions: Check the relevant guide section Check the relevant guide section Look through the  API documentation Look through the  API documentation Search  GitHub Issues Search  GitHub Issues Open a new issue if you can't find an answer Open a new issue if you can't find an answer",
+    "path": "/guide",
+    "section": "Need Help?"
+  },
+  {
+    "id": "/guide#9",
+    "title": "Guide > What's Next?",
+    "text": "Once you're comfortable with the basics, explore: Advanced  markdown features Advanced  markdown features Custom  theming Custom  theming API reference  for programmatic usage API reference  for programmatic usage Real-world examples Real-world examples",
+    "path": "/guide",
+    "section": "What's Next?"
+  },
+  {
+    "id": "/guide/configuration",
+    "title": "Configuration",
+    "text": "Leaf is configured through a    file in your project root.",
+    "path": "/guide/configuration"
+  },
+  {
+    "id": "/guide/configuration#0",
+    "title": "Configuration > Configuration",
+    "text": "Leaf is configured through a    file in your project root.",
+    "path": "/guide/configuration",
+    "section": "Configuration"
+  },
+  {
+    "id": "/guide/configuration#1",
+    "title": "Configuration > Config File",
+    "text": "Create a    file:",
+    "path": "/guide/configuration",
+    "section": "Config File"
+  },
+  {
+    "id": "/guide/configuration#2",
+    "title": "Configuration > Core Options",
+    "text": "",
+    "path": "/guide/configuration",
+    "section": "Core Options"
+  },
+  {
+    "id": "/guide/configuration#3",
+    "title": "Configuration > title",
+    "text": "Type: Type: Default: Default: The title of your site. This appears in the browser tab and site header.",
+    "path": "/guide/configuration",
+    "section": "title"
+  },
+  {
+    "id": "/guide/configuration#4",
+    "title": "Configuration > description",
+    "text": "Type: Type: Default: Default: The description of your site for SEO purposes.",
+    "path": "/guide/configuration",
+    "section": "description"
+  },
+  {
+    "id": "/guide/configuration#5",
+    "title": "Configuration > base",
+    "text": "Type: Type: Default: Default: The base URL path for your site. Use this if deploying to a subdirectory.",
+    "path": "/guide/configuration",
+    "section": "base"
+  },
+  {
+    "id": "/guide/configuration#6",
+    "title": "Configuration > Theme Configuration",
+    "text": "",
+    "path": "/guide/configuration",
+    "section": "Theme Configuration"
+  },
+  {
+    "id": "/guide/configuration#7",
+    "title": "Configuration > theme.nav",
+    "text": "Type: Type: Navigation menu items displayed in the header.",
+    "path": "/guide/configuration",
+    "section": "theme.nav"
+  },
+  {
+    "id": "/guide/configuration#8",
+    "title": "Configuration > theme.sidebar",
+    "text": "Type: Type: Sidebar navigation structure. Simple Array: Multi-Sidebar (Path-Based): Auto-Generated Sidebar: Leaf can automatically generate sidebar from your file structure:",
+    "path": "/guide/configuration",
+    "section": "theme.sidebar"
+  },
+  {
+    "id": "/guide/configuration#9",
+    "title": "Configuration > theme.logo",
+    "text": "Type: Type: Path to your logo image.",
+    "path": "/guide/configuration",
+    "section": "theme.logo"
+  },
+  {
+    "id": "/guide/configuration#10",
+    "title": "Configuration > theme.socialLinks",
+    "text": "Type: Type: Social media links displayed in the header.",
+    "path": "/guide/configuration",
+    "section": "theme.socialLinks"
+  },
+  {
+    "id": "/guide/configuration#11",
+    "title": "Configuration > Markdown Configuration",
+    "text": "",
+    "path": "/guide/configuration",
+    "section": "Markdown Configuration"
+  },
+  {
+    "id": "/guide/configuration#12",
+    "title": "Configuration > markdown.remarkPlugins",
+    "text": "Type: Type: Custom remark plugins to process markdown.",
+    "path": "/guide/configuration",
+    "section": "markdown.remarkPlugins"
+  },
+  {
+    "id": "/guide/configuration#13",
+    "title": "Configuration > markdown.rehypePlugins",
+    "text": "Type: Type: Custom rehype plugins to process HTML output.",
+    "path": "/guide/configuration",
+    "section": "markdown.rehypePlugins"
+  },
+  {
+    "id": "/guide/configuration#14",
+    "title": "Configuration > Build Options",
+    "text": "",
+    "path": "/guide/configuration",
+    "section": "Build Options"
+  },
+  {
+    "id": "/guide/configuration#15",
+    "title": "Configuration > outDir",
+    "text": "Type: Type: Default: Default: Output directory for built files.",
+    "path": "/guide/configuration",
+    "section": "outDir"
+  },
+  {
+    "id": "/guide/configuration#16",
+    "title": "Configuration > Full Example",
+    "text": "Here's a complete configuration example:",
+    "path": "/guide/configuration",
+    "section": "Full Example"
+  },
+  {
+    "id": "/guide/configuration#17",
+    "title": "Configuration > TypeScript Support",
+    "text": "Leaf provides full TypeScript support with type checking and IntelliSense:",
+    "path": "/guide/configuration",
+    "section": "TypeScript Support"
+  },
+  {
+    "id": "/guide/configuration#18",
+    "title": "Configuration > Next Steps",
+    "text": "Learn about Markdown features Learn about Markdown features Customize the theme Customize the theme API Reference API Reference",
+    "path": "/guide/configuration",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/advanced",
+    "title": "Advanced Features",
+    "text": "Unlock the full power of Leaf with advanced techniques and integrations.",
+    "path": "/guide/advanced"
+  },
+  {
+    "id": "/guide/advanced#0",
+    "title": "Advanced Features > Advanced Features",
+    "text": "Unlock the full power of Leaf with advanced techniques and integrations.",
+    "path": "/guide/advanced",
+    "section": "Advanced Features"
+  },
+  {
+    "id": "/guide/advanced#1",
+    "title": "Advanced Features > Custom React Components in MDX",
+    "text": "Leaf supports full MDX, letting you use React components anywhere in your documentation.",
+    "path": "/guide/advanced",
+    "section": "Custom React Components in MDX"
+  },
+  {
+    "id": "/guide/advanced#2",
+    "title": "Advanced Features > Inline Components",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Inline Components"
+  },
+  {
+    "id": "/guide/advanced#3",
+    "title": "Advanced Features > Interactive Demos",
+    "text": "Create live, interactive examples: Use in your docs:",
+    "path": "/guide/advanced",
+    "section": "Interactive Demos"
+  },
+  {
+    "id": "/guide/advanced#4",
+    "title": "Advanced Features > Code Playground",
+    "text": "Build interactive code editors:",
+    "path": "/guide/advanced",
+    "section": "Code Playground"
+  },
+  {
+    "id": "/guide/advanced#5",
+    "title": "Advanced Features > State Management with Zen",
+    "text": "Use Sylphx Zen for interactive documentation:",
+    "path": "/guide/advanced",
+    "section": "State Management with Zen"
+  },
+  {
+    "id": "/guide/advanced#6",
+    "title": "Advanced Features > Basic Store",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Basic Store"
+  },
+  {
+    "id": "/guide/advanced#7",
+    "title": "Advanced Features > Computed Values",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Computed Values"
+  },
+  {
+    "id": "/guide/advanced#8",
+    "title": "Advanced Features > Custom Markdown Plugins",
+    "text": "Extend markdown processing with custom remark/rehype plugins.",
+    "path": "/guide/advanced",
+    "section": "Custom Markdown Plugins"
+  },
+  {
+    "id": "/guide/advanced#9",
+    "title": "Advanced Features > Custom Remark Plugin",
+    "text": "Transform markdown AST: Add to config:",
+    "path": "/guide/advanced",
+    "section": "Custom Remark Plugin"
+  },
+  {
+    "id": "/guide/advanced#10",
+    "title": "Advanced Features > Custom Rehype Plugin",
+    "text": "Transform HTML AST:",
+    "path": "/guide/advanced",
+    "section": "Custom Rehype Plugin"
+  },
+  {
+    "id": "/guide/advanced#11",
+    "title": "Advanced Features > Custom Containers",
+    "text": "Create custom container types beyond tip/warning/danger: Use in markdown:",
+    "path": "/guide/advanced",
+    "section": "Custom Containers"
+  },
+  {
+    "id": "/guide/advanced#12",
+    "title": "Advanced Features > API Integration",
+    "text": "Fetch and display external data:",
+    "path": "/guide/advanced",
+    "section": "API Integration"
+  },
+  {
+    "id": "/guide/advanced#13",
+    "title": "Advanced Features > Dynamic Imports",
+    "text": "Load components only when needed:",
+    "path": "/guide/advanced",
+    "section": "Dynamic Imports"
+  },
+  {
+    "id": "/guide/advanced#14",
+    "title": "Advanced Features > Custom Theme",
+    "text": "Create a custom theme package:",
+    "path": "/guide/advanced",
+    "section": "Custom Theme"
+  },
+  {
+    "id": "/guide/advanced#15",
+    "title": "Advanced Features > 1. Create Theme Package",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "1. Create Theme Package"
+  },
+  {
+    "id": "/guide/advanced#16",
+    "title": "Advanced Features > 2. Implement Layout",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "2. Implement Layout"
+  },
+  {
+    "id": "/guide/advanced#17",
+    "title": "Advanced Features > 3. Export Theme",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "3. Export Theme"
+  },
+  {
+    "id": "/guide/advanced#18",
+    "title": "Advanced Features > 4. Use Custom Theme",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "4. Use Custom Theme"
+  },
+  {
+    "id": "/guide/advanced#19",
+    "title": "Advanced Features > Build-Time Data",
+    "text": "Generate data at build time: Access in components:",
+    "path": "/guide/advanced",
+    "section": "Build-Time Data"
+  },
+  {
+    "id": "/guide/advanced#20",
+    "title": "Advanced Features > Analytics Integration",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Analytics Integration"
+  },
+  {
+    "id": "/guide/advanced#21",
+    "title": "Advanced Features > Custom Event Tracking",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Custom Event Tracking"
+  },
+  {
+    "id": "/guide/advanced#22",
+    "title": "Advanced Features > Page View Tracking",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Page View Tracking"
+  },
+  {
+    "id": "/guide/advanced#23",
+    "title": "Advanced Features > SEO Optimization",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "SEO Optimization"
+  },
+  {
+    "id": "/guide/advanced#24",
+    "title": "Advanced Features > Dynamic Meta Tags",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Dynamic Meta Tags"
+  },
+  {
+    "id": "/guide/advanced#25",
+    "title": "Advanced Features > Structured Data",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Structured Data"
+  },
+  {
+    "id": "/guide/advanced#26",
+    "title": "Advanced Features > Performance Optimization",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Performance Optimization"
+  },
+  {
+    "id": "/guide/advanced#27",
+    "title": "Advanced Features > Image Optimization",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Image Optimization"
+  },
+  {
+    "id": "/guide/advanced#28",
+    "title": "Advanced Features > Code Splitting",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Code Splitting"
+  },
+  {
+    "id": "/guide/advanced#29",
+    "title": "Advanced Features > Testing Documentation",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Testing Documentation"
+  },
+  {
+    "id": "/guide/advanced#30",
+    "title": "Advanced Features > Visual Regression Testing",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Visual Regression Testing"
+  },
+  {
+    "id": "/guide/advanced#31",
+    "title": "Advanced Features > Link Checking",
+    "text": "",
+    "path": "/guide/advanced",
+    "section": "Link Checking"
+  },
+  {
+    "id": "/guide/advanced#32",
+    "title": "Advanced Features > Next Steps",
+    "text": "Ready to build something amazing? Explore  Custom Components Explore  Custom Components Try  State Management Try  State Management Create  Custom Plugins Create  Custom Plugins Build  Interactive Demos Build  Interactive Demos",
+    "path": "/guide/advanced",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/guide/advanced#33",
+    "title": "Advanced Features > Examples Repository",
+    "text": "Check out advanced examples: Examples include: Interactive API documentation Interactive API documentation Component library docs Component library docs Multi-language site Multi-language site Blog with categories Blog with categories Knowledge base with search Knowledge base with search",
+    "path": "/guide/advanced",
+    "section": "Examples Repository"
+  },
+  {
+    "id": "/guide/installation",
+    "title": "Installation",
+    "text": "Complete guide to installing and setting up Leaf.",
+    "path": "/guide/installation"
+  },
+  {
+    "id": "/guide/installation#0",
+    "title": "Installation > Installation",
+    "text": "Complete guide to installing and setting up Leaf.",
+    "path": "/guide/installation",
+    "section": "Installation"
+  },
+  {
+    "id": "/guide/installation#1",
+    "title": "Installation > Prerequisites",
+    "text": "Node.js  version 18 or higher Node.js  version 18 or higher npm ,  bun ,  pnpm , or  yarn  package manager npm ,  bun ,  pnpm , or  yarn  package manager",
+    "path": "/guide/installation",
+    "section": "Prerequisites"
+  },
+  {
+    "id": "/guide/installation#2",
+    "title": "Installation > Quick Install (Recommended)",
+    "text": "For most users, install the CLI which includes everything: :::code-group ::: What's included: - Core framework - Core framework - Default theme - Default theme CLI commands:   ,   , CLI commands:   ,   ,",
+    "path": "/guide/installation",
+    "section": "Quick Install (Recommended)"
+  },
+  {
+    "id": "/guide/installation#3",
+    "title": "Installation > Create New Project (Coming Soon)",
+    "text": "Scaffold a new project with our starter template: :::code-group :::",
+    "path": "/guide/installation",
+    "section": "Create New Project (Coming Soon)"
+  },
+  {
+    "id": "/guide/installation#4",
+    "title": "Installation > Manual Setup (Advanced)",
+    "text": "For advanced use cases like custom build pipelines or monorepos.",
+    "path": "/guide/installation",
+    "section": "Manual Setup (Advanced)"
+  },
+  {
+    "id": "/guide/installation#5",
+    "title": "Installation > 1. Install Core Packages",
+    "text": "",
+    "path": "/guide/installation",
+    "section": "1. Install Core Packages"
+  },
+  {
+    "id": "/guide/installation#6",
+    "title": "Installation > 2. Create Project Structure",
+    "text": "",
+    "path": "/guide/installation",
+    "section": "2. Create Project Structure"
+  },
+  {
+    "id": "/guide/installation#7",
+    "title": "Installation > 3. Configure Vite",
+    "text": "Create   :",
+    "path": "/guide/installation",
+    "section": "3. Configure Vite"
+  },
+  {
+    "id": "/guide/installation#8",
+    "title": "Installation > 4. Create Entry Point",
+    "text": "Create   :",
+    "path": "/guide/installation",
+    "section": "4. Create Entry Point"
+  },
+  {
+    "id": "/guide/installation#9",
+    "title": "Installation > 5. Add Scripts",
+    "text": "Add to   :",
+    "path": "/guide/installation",
+    "section": "5. Add Scripts"
+  },
+  {
+    "id": "/guide/installation#10",
+    "title": "Installation > 6. Create Your First Page",
+    "text": "Create   : For complete examples, see the  examples  directory.",
+    "path": "/guide/installation",
+    "section": "6. Create Your First Page"
+  },
+  {
+    "id": "/guide/installation#11",
+    "title": "Installation > Package Comparison",
+    "text": "Understanding when to use each package: Recommendation:  Start with   . Only use manual setup for advanced customization.",
+    "path": "/guide/installation",
+    "section": "Package Comparison"
+  },
+  {
+    "id": "/guide/installation#12",
+    "title": "Installation > What's Next?",
+    "text": "Configure your site Configure your site Learn about Markdown features Learn about Markdown features Customize the theme Customize the theme",
+    "path": "/guide/installation",
+    "section": "What's Next?"
+  },
+  {
+    "id": "/guide/installation#13",
+    "title": "Installation > Troubleshooting",
+    "text": "",
+    "path": "/guide/installation",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/guide/installation#14",
+    "title": "Installation > \"Cannot find module '@sylphx/leaf-cli'\"",
+    "text": "Make sure you installed the CLI package:",
+    "path": "/guide/installation",
+    "section": "\"Cannot find module '@sylphx/leaf-cli'\""
+  },
+  {
+    "id": "/guide/installation#15",
+    "title": "Installation > \"leaf: command not found\"",
+    "text": "Use    to run the CLI: Or add    to your PATH.",
+    "path": "/guide/installation",
+    "section": "\"leaf: command not found\""
+  },
+  {
+    "id": "/guide/installation#16",
+    "title": "Installation > TypeScript Errors",
+    "text": "Install type definitions:",
+    "path": "/guide/installation",
+    "section": "TypeScript Errors"
+  },
+  {
+    "id": "/api/config",
+    "title": "Config API",
+    "text": "Complete reference for Leaf configuration options.",
+    "path": "/api/config"
+  },
+  {
+    "id": "/api/config#0",
+    "title": "Config API > Config API",
+    "text": "Complete reference for Leaf configuration options.",
+    "path": "/api/config",
+    "section": "Config API"
+  },
+  {
+    "id": "/api/config#1",
+    "title": "Config API > defineConfig",
+    "text": "Helper function for type-safe configuration: Type Signature:",
+    "path": "/api/config",
+    "section": "defineConfig"
+  },
+  {
+    "id": "/api/config#2",
+    "title": "Config API > LeafConfig",
+    "text": "Main configuration interface:",
+    "path": "/api/config",
+    "section": "LeafConfig"
+  },
+  {
+    "id": "/api/config#3",
+    "title": "Config API > Site Metadata",
+    "text": "",
+    "path": "/api/config",
+    "section": "Site Metadata"
+  },
+  {
+    "id": "/api/config#4",
+    "title": "Config API > title",
+    "text": "Type: Type: Default: Default: Site title used in page titles and metadata. Appears as:",
+    "path": "/api/config",
+    "section": "title"
+  },
+  {
+    "id": "/api/config#5",
+    "title": "Config API > description",
+    "text": "Type: Type: Default: Default: Site description for SEO and social sharing.",
+    "path": "/api/config",
+    "section": "description"
+  },
+  {
+    "id": "/api/config#6",
+    "title": "Config API > base",
+    "text": "Type: Type: Default: Default: Base URL path for the site. Important for deployment to subdirectories. URL Resolution: → → → → → →",
+    "path": "/api/config",
+    "section": "base"
+  },
+  {
+    "id": "/api/config#7",
+    "title": "Config API > lang",
+    "text": "Type: Type: Default: Default: Site language for HTML    attribute.",
+    "path": "/api/config",
+    "section": "lang"
+  },
+  {
+    "id": "/api/config#8",
+    "title": "Config API > ThemeConfig",
+    "text": "Theme configuration options:",
+    "path": "/api/config",
+    "section": "ThemeConfig"
+  },
+  {
+    "id": "/api/config#9",
+    "title": "Config API > theme.logo",
+    "text": "Type: Type: Path to logo image.",
+    "path": "/api/config",
+    "section": "theme.logo"
+  },
+  {
+    "id": "/api/config#10",
+    "title": "Config API > theme.nav",
+    "text": "Type: Type: Navigation menu items. Example:",
+    "path": "/api/config",
+    "section": "theme.nav"
+  },
+  {
+    "id": "/api/config#11",
+    "title": "Config API > theme.sidebar",
+    "text": "Type: Type: Sidebar navigation structure. Single Sidebar: Multiple Sidebars:",
+    "path": "/api/config",
+    "section": "theme.sidebar"
+  },
+  {
+    "id": "/api/config#12",
+    "title": "Config API > theme.socialLinks",
+    "text": "Type: Type: Social media links. Example:",
+    "path": "/api/config",
+    "section": "theme.socialLinks"
+  },
+  {
+    "id": "/api/config#13",
+    "title": "Config API > theme.footer",
+    "text": "Type: Type: Footer configuration. Example:",
+    "path": "/api/config",
+    "section": "theme.footer"
+  },
+  {
+    "id": "/api/config#14",
+    "title": "Config API > theme.editLink",
+    "text": "Type: Type: \"Edit this page\" link configuration. Example: The    placeholder is replaced with the page's file path.",
+    "path": "/api/config",
+    "section": "theme.editLink"
+  },
+  {
+    "id": "/api/config#15",
+    "title": "Config API > theme.lastUpdated",
+    "text": "Type: Type: Default: Default: Display last updated timestamp for each page based on Git history. Example (simple): Example (with custom options): ::: tip\nThe lastUpdated timestamp is extracted from Git commit history. Make sure your repository has commit history for accurate timestamps.\n:::",
+    "path": "/api/config",
+    "section": "theme.lastUpdated"
+  },
+  {
+    "id": "/api/config#16",
+    "title": "Config API > MarkdownConfig",
+    "text": "Markdown processing configuration:",
+    "path": "/api/config",
+    "section": "MarkdownConfig"
+  },
+  {
+    "id": "/api/config#17",
+    "title": "Config API > markdown.remarkPlugins",
+    "text": "Type: Type: Custom  remark  plugins to process markdown AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
+    "path": "/api/config",
+    "section": "markdown.remarkPlugins"
+  },
+  {
+    "id": "/api/config#18",
+    "title": "Config API > markdown.rehypePlugins",
+    "text": "Type: Type: Custom  rehype  plugins to process HTML AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
+    "path": "/api/config",
+    "section": "markdown.rehypePlugins"
+  },
+  {
+    "id": "/api/config#19",
+    "title": "Config API > markdown.highlight",
+    "text": "Type: Type: Code highlighting configuration. Example:",
+    "path": "/api/config",
+    "section": "markdown.highlight"
+  },
+  {
+    "id": "/api/config#20",
+    "title": "Config API > markdown.math",
+    "text": "Type: Type: Math equation configuration.",
+    "path": "/api/config",
+    "section": "markdown.math"
+  },
+  {
+    "id": "/api/config#21",
+    "title": "Config API > markdown.mermaid",
+    "text": "Type: Type: Mermaid diagram configuration.",
+    "path": "/api/config",
+    "section": "markdown.mermaid"
+  },
+  {
+    "id": "/api/config#22",
+    "title": "Config API > SearchConfig",
+    "text": "Search functionality configuration:",
+    "path": "/api/config",
+    "section": "SearchConfig"
+  },
+  {
+    "id": "/api/config#23",
+    "title": "Config API > search.enabled",
+    "text": "Type: Type: Default: Default: Enable/disable search.",
+    "path": "/api/config",
+    "section": "search.enabled"
+  },
+  {
+    "id": "/api/config#24",
+    "title": "Config API > search.maxResults",
+    "text": "Type: Type: Default: Default: Maximum search results to display.",
+    "path": "/api/config",
+    "section": "search.maxResults"
+  },
+  {
+    "id": "/api/config#25",
+    "title": "Config API > search.minQueryLength",
+    "text": "Type: Type: Default: Default: Minimum query length before searching.",
+    "path": "/api/config",
+    "section": "search.minQueryLength"
+  },
+  {
+    "id": "/api/config#26",
+    "title": "Config API > search.boost",
+    "text": "Type: Type: Relevance boost for content types.",
+    "path": "/api/config",
+    "section": "search.boost"
+  },
+  {
+    "id": "/api/config#27",
+    "title": "Config API > search.exclude",
+    "text": "Type: Type: Glob patterns for pages to exclude from search.",
+    "path": "/api/config",
+    "section": "search.exclude"
+  },
+  {
+    "id": "/api/config#28",
+    "title": "Config API > Helper Functions",
+    "text": "",
+    "path": "/api/config",
+    "section": "Helper Functions"
+  },
+  {
+    "id": "/api/config#29",
+    "title": "Config API > loadConfig",
+    "text": "Load and resolve configuration: Type Signature:",
+    "path": "/api/config",
+    "section": "loadConfig"
+  },
+  {
+    "id": "/api/config#30",
+    "title": "Config API > generateSidebar",
+    "text": "Auto-generate sidebar from file structure: Type Signature:",
+    "path": "/api/config",
+    "section": "generateSidebar"
+  },
+  {
+    "id": "/api/config#31",
+    "title": "Config API > defineConfigWithTheme",
+    "text": "Type-safe config with custom theme:",
+    "path": "/api/config",
+    "section": "defineConfigWithTheme"
+  },
+  {
+    "id": "/api/config#32",
+    "title": "Config API > Plugin API",
+    "text": "Create custom plugins: Example:",
+    "path": "/api/config",
+    "section": "Plugin API"
+  },
+  {
+    "id": "/api/config#33",
+    "title": "Config API > Environment Variables",
+    "text": "Access environment variables in config:",
+    "path": "/api/config",
+    "section": "Environment Variables"
+  },
+  {
+    "id": "/api/config#34",
+    "title": "Config API > TypeScript Support",
+    "text": "Full TypeScript support with types:",
+    "path": "/api/config",
+    "section": "TypeScript Support"
+  },
+  {
+    "id": "/api/config#35",
+    "title": "Config API > Next Steps",
+    "text": "Markdown Plugins API Markdown Plugins API Theming API Theming API Configuration Guide Configuration Guide",
+    "path": "/api/config",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api/theming",
+    "title": "Theming API",
+    "text": "Complete API reference for creating and customizing Leaf themes.",
+    "path": "/api/theming"
+  },
+  {
+    "id": "/api/theming#0",
+    "title": "Theming API > Theming API",
+    "text": "Complete API reference for creating and customizing Leaf themes.",
+    "path": "/api/theming",
+    "section": "Theming API"
+  },
+  {
+    "id": "/api/theming#1",
+    "title": "Theming API > Theme Structure",
+    "text": "A Leaf theme package structure:",
+    "path": "/api/theming",
+    "section": "Theme Structure"
+  },
+  {
+    "id": "/api/theming#2",
+    "title": "Theming API > Layout Component",
+    "text": "The main layout component that wraps all pages.",
+    "path": "/api/theming",
+    "section": "Layout Component"
+  },
+  {
+    "id": "/api/theming#3",
+    "title": "Theming API > Interface",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Interface"
+  },
+  {
+    "id": "/api/theming#4",
+    "title": "Theming API > Basic Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Basic Example"
+  },
+  {
+    "id": "/api/theming#5",
+    "title": "Theming API > Header Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Header Component"
+  },
+  {
+    "id": "/api/theming#6",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#7",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#8",
+    "title": "Theming API > Sidebar Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Sidebar Component"
+  },
+  {
+    "id": "/api/theming#9",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#10",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#11",
+    "title": "Theming API > TOC Component",
+    "text": "Table of contents component.",
+    "path": "/api/theming",
+    "section": "TOC Component"
+  },
+  {
+    "id": "/api/theming#12",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#13",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#14",
+    "title": "Theming API > Search Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Search Component"
+  },
+  {
+    "id": "/api/theming#15",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#16",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#17",
+    "title": "Theming API > Theme Switcher",
+    "text": "Toggle between light and dark themes.",
+    "path": "/api/theming",
+    "section": "Theme Switcher"
+  },
+  {
+    "id": "/api/theming#18",
+    "title": "Theming API > CSS Variables",
+    "text": "Define theme variables:",
+    "path": "/api/theming",
+    "section": "CSS Variables"
+  },
+  {
+    "id": "/api/theming#19",
+    "title": "Theming API > Layout Styles",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Layout Styles"
+  },
+  {
+    "id": "/api/theming#20",
+    "title": "Theming API > Hooks",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Hooks"
+  },
+  {
+    "id": "/api/theming#21",
+    "title": "Theming API > useConfig",
+    "text": "Access Leaf config:",
+    "path": "/api/theming",
+    "section": "useConfig"
+  },
+  {
+    "id": "/api/theming#22",
+    "title": "Theming API > useTOC",
+    "text": "Extract table of contents from current page:",
+    "path": "/api/theming",
+    "section": "useTOC"
+  },
+  {
+    "id": "/api/theming#23",
+    "title": "Theming API > useActiveHash",
+    "text": "Track active heading in TOC:",
+    "path": "/api/theming",
+    "section": "useActiveHash"
+  },
+  {
+    "id": "/api/theming#24",
+    "title": "Theming API > Publishing a Theme",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Publishing a Theme"
+  },
+  {
+    "id": "/api/theming#25",
+    "title": "Theming API > Package.json",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Package.json"
+  },
+  {
+    "id": "/api/theming#26",
+    "title": "Theming API > Exports",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Exports"
+  },
+  {
+    "id": "/api/theming#27",
+    "title": "Theming API > Theme Examples",
+    "text": "Full example themes: Default Theme Default Theme Minimal Theme Minimal Theme Blog Theme Blog Theme",
+    "path": "/api/theming",
+    "section": "Theme Examples"
+  },
+  {
+    "id": "/api/theming#28",
+    "title": "Theming API > Next Steps",
+    "text": "Config API Config API Markdown Plugins API Markdown Plugins API Theming Guide Theming Guide",
+    "path": "/api/theming",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api",
+    "title": "API Reference",
+    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
+    "path": "/api"
+  },
+  {
+    "id": "/api#0",
+    "title": "API Reference > API Reference",
+    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
+    "path": "/api",
+    "section": "API Reference"
+  },
+  {
+    "id": "/api#1",
+    "title": "API Reference > Overview",
+    "text": "Leaf provides a comprehensive API for building modern documentation sites. This section covers: Config API  - All configuration options Config API  - All configuration options Markdown Plugins  - Extending markdown processing Markdown Plugins  - Extending markdown processing Theming API  - Customizing the theme Theming API  - Customizing the theme",
+    "path": "/api",
+    "section": "Overview"
+  },
+  {
+    "id": "/api#2",
+    "title": "API Reference > Quick Links",
+    "text": "",
+    "path": "/api",
+    "section": "Quick Links"
+  },
+  {
+    "id": "/api#3",
+    "title": "API Reference > Configuration",
+    "text": "Learn how to configure Leaf for your project. The config file supports TypeScript and provides full intellisense. View Config API →",
+    "path": "/api",
+    "section": "Configuration"
+  },
+  {
+    "id": "/api#4",
+    "title": "API Reference > Markdown Plugins",
+    "text": "Extend Leaf's markdown processing with custom remark and rehype plugins. View Markdown Plugins →",
+    "path": "/api",
+    "section": "Markdown Plugins"
+  },
+  {
+    "id": "/api#5",
+    "title": "API Reference > Theming",
+    "text": "Customize the default theme or create your own from scratch. View Theming API →",
+    "path": "/api",
+    "section": "Theming"
+  },
+  {
+    "id": "/api#6",
+    "title": "API Reference > Type Definitions",
+    "text": "All APIs are fully typed with TypeScript. Import types from   :",
+    "path": "/api",
+    "section": "Type Definitions"
+  },
+  {
+    "id": "/api#7",
+    "title": "API Reference > Next Steps",
+    "text": "Start with the  Config API  to understand all available configuration options.",
+    "path": "/api",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api/markdown-plugins",
+    "title": "Markdown Plugins API",
+    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
+    "path": "/api/markdown-plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#0",
+    "title": "Markdown Plugins API > Markdown Plugins API",
+    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
+    "path": "/api/markdown-plugins",
+    "section": "Markdown Plugins API"
+  },
+  {
+    "id": "/api/markdown-plugins#1",
+    "title": "Markdown Plugins API > Overview",
+    "text": "Leaf uses the  unified  processor with: remark  - Markdown processor remark  - Markdown processor rehype  - HTML processor rehype  - HTML processor You can add custom plugins at either stage of the pipeline:",
+    "path": "/api/markdown-plugins",
+    "section": "Overview"
+  },
+  {
+    "id": "/api/markdown-plugins#2",
+    "title": "Markdown Plugins API > Plugin Types",
+    "text": "Leaf exports TypeScript types for better plugin development:",
+    "path": "/api/markdown-plugins",
+    "section": "Plugin Types"
+  },
+  {
+    "id": "/api/markdown-plugins#3",
+    "title": "Markdown Plugins API > RemarkPlugin",
+    "text": "Type for remark plugins that process markdown AST. Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "RemarkPlugin"
+  },
+  {
+    "id": "/api/markdown-plugins#4",
+    "title": "Markdown Plugins API > RehypePlugin",
+    "text": "Type for rehype plugins that process HTML AST. Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "RehypePlugin"
+  },
+  {
+    "id": "/api/markdown-plugins#5",
+    "title": "Markdown Plugins API > TocItem",
+    "text": "Type for table of contents items extracted during markdown processing.",
+    "path": "/api/markdown-plugins",
+    "section": "TocItem"
+  },
+  {
+    "id": "/api/markdown-plugins#6",
+    "title": "Markdown Plugins API > LeafPluginConfig",
+    "text": "Configuration interface for custom plugin systems.",
+    "path": "/api/markdown-plugins",
+    "section": "LeafPluginConfig"
+  },
+  {
+    "id": "/api/markdown-plugins#7",
+    "title": "Markdown Plugins API > Remark Plugins",
+    "text": "Process markdown AST before conversion to HTML. Use cases: Transform markdown syntax Transform markdown syntax Add custom markdown elements Add custom markdown elements Extract metadata Extract metadata Modify content structure Modify content structure",
+    "path": "/api/markdown-plugins",
+    "section": "Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#8",
+    "title": "Markdown Plugins API > Rehype Plugins",
+    "text": "Process HTML AST after markdown conversion. Use cases: Modify HTML output Modify HTML output Add attributes to elements Add attributes to elements Wrap content in containers Wrap content in containers Post-process code blocks Post-process code blocks",
+    "path": "/api/markdown-plugins",
+    "section": "Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#9",
+    "title": "Markdown Plugins API > Creating Remark Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#10",
+    "title": "Markdown Plugins API > Basic Structure",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Basic Structure"
+  },
+  {
+    "id": "/api/markdown-plugins#11",
+    "title": "Markdown Plugins API > Example: Custom Callout",
+    "text": "Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Custom Callout"
+  },
+  {
+    "id": "/api/markdown-plugins#12",
+    "title": "Markdown Plugins API > Example: Reading Time",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Reading Time"
+  },
+  {
+    "id": "/api/markdown-plugins#13",
+    "title": "Markdown Plugins API > Example: Auto-Linking Headers",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Auto-Linking Headers"
+  },
+  {
+    "id": "/api/markdown-plugins#14",
+    "title": "Markdown Plugins API > Creating Rehype Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#15",
+    "title": "Markdown Plugins API > Basic Structure",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Basic Structure"
+  },
+  {
+    "id": "/api/markdown-plugins#16",
+    "title": "Markdown Plugins API > Example: Image Lazy Loading",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Image Lazy Loading"
+  },
+  {
+    "id": "/api/markdown-plugins#17",
+    "title": "Markdown Plugins API > Example: External Link Icons",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: External Link Icons"
+  },
+  {
+    "id": "/api/markdown-plugins#18",
+    "title": "Markdown Plugins API > Example: Code Block Enhancement",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Code Block Enhancement"
+  },
+  {
+    "id": "/api/markdown-plugins#19",
+    "title": "Markdown Plugins API > Plugin Configuration",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Plugin Configuration"
+  },
+  {
+    "id": "/api/markdown-plugins#20",
+    "title": "Markdown Plugins API > With Options",
+    "text": "Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "With Options"
+  },
+  {
+    "id": "/api/markdown-plugins#21",
+    "title": "Markdown Plugins API > Utilities",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Utilities"
+  },
+  {
+    "id": "/api/markdown-plugins#22",
+    "title": "Markdown Plugins API > unist-util-visit",
+    "text": "Visit nodes in the tree:",
+    "path": "/api/markdown-plugins",
+    "section": "unist-util-visit"
+  },
+  {
+    "id": "/api/markdown-plugins#23",
+    "title": "Markdown Plugins API > unist-util-filter",
+    "text": "Filter nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "unist-util-filter"
+  },
+  {
+    "id": "/api/markdown-plugins#24",
+    "title": "Markdown Plugins API > hast-util-to-string",
+    "text": "Extract text from nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "hast-util-to-string"
+  },
+  {
+    "id": "/api/markdown-plugins#25",
+    "title": "Markdown Plugins API > mdast-util-to-string",
+    "text": "Extract text from markdown nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "mdast-util-to-string"
+  },
+  {
+    "id": "/api/markdown-plugins#26",
+    "title": "Markdown Plugins API > AST Node Types",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "AST Node Types"
+  },
+  {
+    "id": "/api/markdown-plugins#27",
+    "title": "Markdown Plugins API > Markdown (mdast) Nodes",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Markdown (mdast) Nodes"
+  },
+  {
+    "id": "/api/markdown-plugins#28",
+    "title": "Markdown Plugins API > HTML (hast) Nodes",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "HTML (hast) Nodes"
+  },
+  {
+    "id": "/api/markdown-plugins#29",
+    "title": "Markdown Plugins API > Built-in Plugins",
+    "text": "Leaf includes these plugins by default:",
+    "path": "/api/markdown-plugins",
+    "section": "Built-in Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#30",
+    "title": "Markdown Plugins API > Remark Plugins",
+    "text": "remarkGfm  - GitHub Flavored Markdown remarkGfm  - GitHub Flavored Markdown remarkMath  - Math equations remarkMath  - Math equations remarkBadge  - Badge components remarkBadge  - Badge components remarkCodeGroups  - Code group tabs remarkCodeGroups  - Code group tabs remarkContainers  - Custom containers remarkContainers  - Custom containers remarkCodeMeta  - Code block metadata remarkCodeMeta  - Code block metadata",
+    "path": "/api/markdown-plugins",
+    "section": "Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#31",
+    "title": "Markdown Plugins API > Rehype Plugins",
+    "text": "rehypeSlug  - Add IDs to headings rehypeSlug  - Add IDs to headings rehypeKatex  - Render math equations rehypeKatex  - Render math equations rehypeMermaid  - Mark mermaid diagrams rehypeMermaid  - Mark mermaid diagrams rehypeHighlight  - Syntax highlighting rehypeHighlight  - Syntax highlighting rehypeLineHighlight  - Line highlighting rehypeLineHighlight  - Line highlighting rehypeExternalLinks  - External link icons rehypeExternalLinks  - External link icons",
+    "path": "/api/markdown-plugins",
+    "section": "Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#32",
+    "title": "Markdown Plugins API > Advanced Patterns",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Advanced Patterns"
+  },
+  {
+    "id": "/api/markdown-plugins#33",
+    "title": "Markdown Plugins API > Accessing File Data",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Accessing File Data"
+  },
+  {
+    "id": "/api/markdown-plugins#34",
+    "title": "Markdown Plugins API > Async Transformations",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Async Transformations"
+  },
+  {
+    "id": "/api/markdown-plugins#35",
+    "title": "Markdown Plugins API > Creating Containers",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Containers"
+  },
+  {
+    "id": "/api/markdown-plugins#36",
+    "title": "Markdown Plugins API > Testing Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Testing Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#37",
+    "title": "Markdown Plugins API > Resources",
+    "text": "unified documentation unified documentation remark plugins remark plugins rehype plugins rehype plugins unist utilities unist utilities",
+    "path": "/api/markdown-plugins",
+    "section": "Resources"
+  },
+  {
+    "id": "/api/markdown-plugins#38",
+    "title": "Markdown Plugins API > Next Steps",
+    "text": "Config API Config API Theming API Theming API Markdown Guide Markdown Guide",
+    "path": "/api/markdown-plugins",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/features/search",
+    "title": "Search",
+    "text": "Leaf includes a powerful, fast, and lightweight full-text search system built into every documentation site.",
+    "path": "/features/search"
+  },
+  {
+    "id": "/features/search#0",
+    "title": "Search > Search",
+    "text": "Leaf includes a powerful, fast, and lightweight full-text search system built into every documentation site.",
+    "path": "/features/search",
+    "section": "Search"
+  },
+  {
+    "id": "/features/search#1",
+    "title": "Search > Features",
+    "text": "⚡ Fast Response  - <50ms search response (tested on M1 MacBook Pro, 16GB RAM) ⚡ Fast Response  - <50ms search response (tested on M1 MacBook Pro, 16GB RAM) 🔍 Full-Text  - Searches through all content, not just titles 🔍 Full-Text  - Searches through all content, not just titles 🎯 Relevance Ranking  - Most relevant results appear first 🎯 Relevance Ranking  - Most relevant results appear first ⌨️ Keyboard Navigation  - Navigate results with arrow keys ⌨️ Keyboard Navigation  - Navigate results with arrow keys 📱 Mobile Friendly  - Works on all devices 📱 Mobile Friendly  - Works on all devices 🌙 Theme Aware  - Matches your site theme 🌙 Theme Aware  - Matches your site theme 💾 Offline Support  - Search works offline after initial page load 💾 Offline Support  - Search works offline after initial page load",
+    "path": "/features/search",
+    "section": "Features"
+  },
+  {
+    "id": "/features/search#2",
+    "title": "Search > Using Search",
+    "text": "",
+    "path": "/features/search",
+    "section": "Using Search"
+  },
+  {
+    "id": "/features/search#3",
+    "title": "Search > Opening Search",
+    "text": "Press    (Mac) or    (Windows/Linux) to open the search dialog from anywhere on your site. Alternatively, click the search icon in the navigation bar.",
+    "path": "/features/search",
+    "section": "Opening Search"
+  },
+  {
+    "id": "/features/search#4",
+    "title": "Search > Searching",
+    "text": "Start typing your query. Results appear as you type: Title matches  - Pages with matching titles appear first Title matches  - Pages with matching titles appear first Content matches  - Pages with matching content follow Content matches  - Pages with matching content follow Excerpt preview  - See context around your search term Excerpt preview  - See context around your search term",
+    "path": "/features/search",
+    "section": "Searching"
+  },
+  {
+    "id": "/features/search#5",
+    "title": "Search > Navigation",
+    "text": "↑/↓ Arrow keys  - Move between results ↑/↓ Arrow keys  - Move between results Enter  - Navigate to selected result Enter  - Navigate to selected result Esc  - Close search dialog Esc  - Close search dialog",
+    "path": "/features/search",
+    "section": "Navigation"
+  },
+  {
+    "id": "/features/search#6",
+    "title": "Search > How It Works",
+    "text": "Leaf generates a search index during the build process: Indexing  - All markdown content is processed Indexing  - All markdown content is processed Tokenization  - Content is split into searchable terms Tokenization  - Content is split into searchable terms Weighting  - Titles and headings get higher relevance Weighting  - Titles and headings get higher relevance Compression  - Index is optimized for size Compression  - Index is optimized for size Distribution  - Index is bundled with your site Distribution  - Index is bundled with your site The entire process happens at build time, so there's: ✅ No server required ✅ No server required ✅ No external API calls ✅ No external API calls ✅ No tracking or analytics ✅ No tracking or analytics ✅ Privacy-friendly ✅ Privacy-friendly",
+    "path": "/features/search",
+    "section": "How It Works"
+  },
+  {
+    "id": "/features/search#7",
+    "title": "Search > Search Index",
+    "text": "The search index is automatically generated from your content:",
+    "path": "/features/search",
+    "section": "Search Index"
+  },
+  {
+    "id": "/features/search#8",
+    "title": "Search > What Gets Indexed",
+    "text": "Titles  - Page titles (highest weight) Titles  - Page titles (highest weight) Headings  - All H1-H6 headings Headings  - All H1-H6 headings Content  - All paragraph text Content  - All paragraph text Descriptions  - Meta descriptions Descriptions  - Meta descriptions Code comments  - Comments in code blocks Code comments  - Comments in code blocks Links  - Link text Links  - Link text",
+    "path": "/features/search",
+    "section": "What Gets Indexed"
+  },
+  {
+    "id": "/features/search#9",
+    "title": "Search > What Doesn't Get Indexed",
+    "text": "Code syntax  - Code blocks (except comments) Code syntax  - Code blocks (except comments) HTML tags  - Raw HTML is stripped HTML tags  - Raw HTML is stripped Special characters  - Only alphanumeric text Special characters  - Only alphanumeric text",
+    "path": "/features/search",
+    "section": "What Doesn't Get Indexed"
+  },
+  {
+    "id": "/features/search#10",
+    "title": "Search > Performance",
+    "text": "The search system is designed for performance: For a typical documentation site with 100 pages: Total index size : ~500KB - 1MB (compressed) Total index size : ~500KB - 1MB (compressed) Download time : <1s on 3G Download time : <1s on 3G Parsing time : <100ms Parsing time : <100ms",
+    "path": "/features/search",
+    "section": "Performance"
+  },
+  {
+    "id": "/features/search#11",
+    "title": "Search > Configuration",
+    "text": "Search is enabled by default. To customize:",
+    "path": "/features/search",
+    "section": "Configuration"
+  },
+  {
+    "id": "/features/search#12",
+    "title": "Search > Options",
+    "text": "",
+    "path": "/features/search",
+    "section": "Options"
+  },
+  {
+    "id": "/features/search#13",
+    "title": "Search > enabled",
+    "text": "Type: Type: Default: Default: Enable or disable search functionality.",
+    "path": "/features/search",
+    "section": "enabled"
+  },
+  {
+    "id": "/features/search#14",
+    "title": "Search > maxResults",
+    "text": "Type: Type: Default: Default: Maximum number of search results to display.",
+    "path": "/features/search",
+    "section": "maxResults"
+  },
+  {
+    "id": "/features/search#15",
+    "title": "Search > minQueryLength",
+    "text": "Type: Type: Default: Default: Minimum characters required before searching.",
+    "path": "/features/search",
+    "section": "minQueryLength"
+  },
+  {
+    "id": "/features/search#16",
+    "title": "Search > boost",
+    "text": "Type: Type: Relevance boost for different content types: - Page titles (default: 4) - Page titles (default: 4) - Headings H1-H6 (default: 2) - Headings H1-H6 (default: 2) - Body content (default: 1) - Body content (default: 1)",
+    "path": "/features/search",
+    "section": "boost"
+  },
+  {
+    "id": "/features/search#17",
+    "title": "Search > exclude",
+    "text": "Type: Type: Glob patterns for pages to exclude from search.",
+    "path": "/features/search",
+    "section": "exclude"
+  },
+  {
+    "id": "/features/search#18",
+    "title": "Search > Advanced Features",
+    "text": "",
+    "path": "/features/search",
+    "section": "Advanced Features"
+  },
+  {
+    "id": "/features/search#19",
+    "title": "Search > Fuzzy Matching",
+    "text": "Search handles typos and close matches: → finds \"Leaf\" → finds \"Leaf\" → finds \"installation\" → finds \"installation\" → finds \"configuration\" → finds \"configuration\"",
+    "path": "/features/search",
+    "section": "Fuzzy Matching"
+  },
+  {
+    "id": "/features/search#20",
+    "title": "Search > Multi-Word Search",
+    "text": "Search for multiple words (AND logic): → finds pages with both terms → finds pages with both terms → finds pages about dark mode themes → finds pages about dark mode themes",
+    "path": "/features/search",
+    "section": "Multi-Word Search"
+  },
+  {
+    "id": "/features/search#21",
+    "title": "Search > Phrase Search",
+    "text": "Use quotes for exact phrases: → exact match only → exact match only → exact command → exact command",
+    "path": "/features/search",
+    "section": "Phrase Search"
+  },
+  {
+    "id": "/features/search#22",
+    "title": "Search > Prefix Search",
+    "text": "Search finds words starting with your query: → finds \"config\", \"configuration\", \"configure\" → finds \"config\", \"configuration\", \"configure\" → finds \"Leaf\", \"React\", \"reactive\" → finds \"Leaf\", \"React\", \"reactive\"",
+    "path": "/features/search",
+    "section": "Prefix Search"
+  },
+  {
+    "id": "/features/search#23",
+    "title": "Search > Search Tips",
+    "text": "Be specific  - More words narrow results Be specific  - More words narrow results Use quotes  - For exact phrases Use quotes  - For exact phrases Check spelling  - Fuzzy matching helps but isn't perfect Check spelling  - Fuzzy matching helps but isn't perfect Try variations  - \"install\" vs \"installation\" Try variations  - \"install\" vs \"installation\" Use keywords  - Technical terms work better than common words Use keywords  - Technical terms work better than common words",
+    "path": "/features/search",
+    "section": "Search Tips"
+  },
+  {
+    "id": "/features/search#24",
+    "title": "Search > Keyboard Shortcuts",
+    "text": "Global shortcuts: Within search dialog:",
+    "path": "/features/search",
+    "section": "Keyboard Shortcuts"
+  },
+  {
+    "id": "/features/search#25",
+    "title": "Search > Custom Search UI",
+    "text": "You can customize the search interface:",
+    "path": "/features/search",
+    "section": "Custom Search UI"
+  },
+  {
+    "id": "/features/search#26",
+    "title": "Search > Styling",
+    "text": "Override search styles with CSS:",
+    "path": "/features/search",
+    "section": "Styling"
+  },
+  {
+    "id": "/features/search#27",
+    "title": "Search > Analytics",
+    "text": "Track search queries and improve your content:",
+    "path": "/features/search",
+    "section": "Analytics"
+  },
+  {
+    "id": "/features/search#28",
+    "title": "Search > Troubleshooting",
+    "text": "",
+    "path": "/features/search",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/features/search#29",
+    "title": "Search > Search not working",
+    "text": "Check if index generated  - Look for    in dist Check if index generated  - Look for    in dist Verify content  - Ensure pages have content to index Verify content  - Ensure pages have content to index Check console  - Look for JavaScript errors Check console  - Look for JavaScript errors",
+    "path": "/features/search",
+    "section": "Search not working"
+  },
+  {
+    "id": "/features/search#30",
+    "title": "Search > No results found",
+    "text": "Check spelling  - Try different variations Check spelling  - Try different variations Simplify query  - Use fewer words Simplify query  - Use fewer words Check if page excluded  - Review    config Check if page excluded  - Review    config",
+    "path": "/features/search",
+    "section": "No results found"
+  },
+  {
+    "id": "/features/search#31",
+    "title": "Search > Slow search",
+    "text": "Large index  - Consider excluding some content Large index  - Consider excluding some content Too many results  - Reduce Too many results  - Reduce Old browser  - Search requires modern JavaScript Old browser  - Search requires modern JavaScript",
+    "path": "/features/search",
+    "section": "Slow search"
+  },
+  {
+    "id": "/features/search#32",
+    "title": "Search > Index too large",
+    "text": "Reduce index size:",
+    "path": "/features/search",
+    "section": "Index too large"
+  },
+  {
+    "id": "/features/search#33",
+    "title": "Search > Comparison with Hosted Solutions",
+    "text": "Leaf uses local client-side search. Hosted solutions offer different tradeoffs: Key Difference:  Leaf is client-side (no infrastructure), while Algolia/Typesense are server-side (more features, requires hosting).",
+    "path": "/features/search",
+    "section": "Comparison with Hosted Solutions"
+  },
+  {
+    "id": "/features/search#34",
+    "title": "Search > Best Practices",
+    "text": "Write descriptive titles  - They carry the most weight Write descriptive titles  - They carry the most weight Use clear headings  - Break content into sections Use clear headings  - Break content into sections Add descriptions  - Help users find content Add descriptions  - Help users find content Avoid duplication  - Confuses search results Avoid duplication  - Confuses search results Test search  - Try common queries Test search  - Try common queries",
+    "path": "/features/search",
+    "section": "Best Practices"
+  },
+  {
+    "id": "/features/search#35",
+    "title": "Search > Future Enhancements",
+    "text": "Coming soon: 🔮 AI-powered semantic search 🔮 AI-powered semantic search 🏷️ Tag-based filtering 🏷️ Tag-based filtering 📊 Search analytics dashboard 📊 Search analytics dashboard 🌐 Multi-language support 🌐 Multi-language support 🎤 Voice search 🎤 Voice search",
+    "path": "/features/search",
+    "section": "Future Enhancements"
+  },
+  {
+    "id": "/features/search#36",
+    "title": "Search > Next Steps",
+    "text": "Configure your site Configure your site Customize the theme Customize the theme API reference API reference",
+    "path": "/features/search",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/features/math",
+    "title": "Math Equations",
+    "text": "Leaf supports LaTeX math equations using  KaTeX , a fast math typesetting library.",
+    "path": "/features/math"
+  },
+  {
+    "id": "/features/math#0",
+    "title": "Math Equations > Math Equations",
+    "text": "Leaf supports LaTeX math equations using  KaTeX , a fast math typesetting library.",
+    "path": "/features/math",
+    "section": "Math Equations"
+  },
+  {
+    "id": "/features/math#1",
+    "title": "Math Equations > Inline Math",
+    "text": "Use single dollar signs    for inline math expressions: Result: The quadratic formula is $ax^2 + bx + c = 0$ where $a \\ne 0$.",
+    "path": "/features/math",
+    "section": "Inline Math"
+  },
+  {
+    "id": "/features/math#2",
+    "title": "Math Equations > Block Math",
+    "text": "Use double dollar signs    for display-mode (centered) equations: Result: $$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$$",
+    "path": "/features/math",
+    "section": "Block Math"
+  },
+  {
+    "id": "/features/math#3",
+    "title": "Math Equations > Common Notation",
+    "text": "",
+    "path": "/features/math",
+    "section": "Common Notation"
+  },
+  {
+    "id": "/features/math#4",
+    "title": "Math Equations > Greek Letters",
+    "text": "Result: $\\alpha, \\beta, \\gamma, \\delta, \\epsilon, \\theta, \\lambda, \\pi, \\sigma, \\omega$ $\\Alpha, \\Beta, \\Gamma, \\Delta, \\Theta, \\Lambda, \\Pi, \\Sigma, \\Omega$",
+    "path": "/features/math",
+    "section": "Greek Letters"
+  },
+  {
+    "id": "/features/math#5",
+    "title": "Math Equations > Superscripts and Subscripts",
+    "text": "Result: $x^2, x^{2y}, x_i, x_{i,j}$",
+    "path": "/features/math",
+    "section": "Superscripts and Subscripts"
+  },
+  {
+    "id": "/features/math#6",
+    "title": "Math Equations > Fractions",
+    "text": "Result: $\\frac{1}{2}, \\frac{a}{b}, \\frac{x^2 + 1}{x^2 - 1}$",
+    "path": "/features/math",
+    "section": "Fractions"
+  },
+  {
+    "id": "/features/math#7",
+    "title": "Math Equations > Square Roots",
+    "text": "Result: $\\sqrt{2}, \\sqrt{x^2 + y^2}, \\sqrt[3]{8}$",
+    "path": "/features/math",
+    "section": "Square Roots"
+  },
+  {
+    "id": "/features/math#8",
+    "title": "Math Equations > Sums and Products",
+    "text": "Result: $$\n\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}\n$$ $$\n\\prod_{i=1}^{n} i = n!\n$$",
+    "path": "/features/math",
+    "section": "Sums and Products"
+  },
+  {
+    "id": "/features/math#9",
+    "title": "Math Equations > Integrals",
+    "text": "Result: $$\n\\int_{a}^{b} f(x) , dx\n$$ $$\n\\iint_D f(x,y) , dx , dy\n$$",
+    "path": "/features/math",
+    "section": "Integrals"
+  },
+  {
+    "id": "/features/math#10",
+    "title": "Math Equations > Limits",
+    "text": "Result: $$\n\\lim_{x \\to \\infty} \\frac{1}{x} = 0\n$$",
+    "path": "/features/math",
+    "section": "Limits"
+  },
+  {
+    "id": "/features/math#11",
+    "title": "Math Equations > Matrix Notation",
+    "text": "",
+    "path": "/features/math",
+    "section": "Matrix Notation"
+  },
+  {
+    "id": "/features/math#12",
+    "title": "Math Equations > Basic Matrix",
+    "text": "Result: $$\n\\begin{matrix}\na & b \\\nc & d\n\\end{matrix}\n$$",
+    "path": "/features/math",
+    "section": "Basic Matrix"
+  },
+  {
+    "id": "/features/math#13",
+    "title": "Math Equations > Matrix with Brackets",
+    "text": "Result: $$\n\\begin{bmatrix}\n1 & 2 & 3 \\\n4 & 5 & 6 \\\n7 & 8 & 9\n\\end{bmatrix}\n$$",
+    "path": "/features/math",
+    "section": "Matrix with Brackets"
+  },
+  {
+    "id": "/features/math#14",
+    "title": "Math Equations > Matrix with Parentheses",
+    "text": "Result: $$\n\\begin{pmatrix}\nx & y \\\nz & w\n\\end{pmatrix}\n$$",
+    "path": "/features/math",
+    "section": "Matrix with Parentheses"
+  },
+  {
+    "id": "/features/math#15",
+    "title": "Math Equations > Equations",
+    "text": "",
+    "path": "/features/math",
+    "section": "Equations"
+  },
+  {
+    "id": "/features/math#16",
+    "title": "Math Equations > Aligned Equations",
+    "text": "Result: $$\n\\begin{aligned}\nf(x) &= x^2 + 2x + 1 \\\n&= (x + 1)^2\n\\end{aligned}\n$$",
+    "path": "/features/math",
+    "section": "Aligned Equations"
+  },
+  {
+    "id": "/features/math#17",
+    "title": "Math Equations > System of Equations",
+    "text": "Result: $$\n\\begin{cases}\nx + y = 5 \\\n2x - y = 1\n\\end{cases}\n$$",
+    "path": "/features/math",
+    "section": "System of Equations"
+  },
+  {
+    "id": "/features/math#18",
+    "title": "Math Equations > Advanced Examples",
+    "text": "",
+    "path": "/features/math",
+    "section": "Advanced Examples"
+  },
+  {
+    "id": "/features/math#19",
+    "title": "Math Equations > Euler's Identity",
+    "text": "One of the most beautiful equations in mathematics: $$\ne^{i\\pi} + 1 = 0\n$$",
+    "path": "/features/math",
+    "section": "Euler's Identity"
+  },
+  {
+    "id": "/features/math#20",
+    "title": "Math Equations > Maxwell's Equations",
+    "text": "$$\n\\begin{aligned}\n\\nabla \\cdot \\mathbf{E} &= \\frac{\\rho}{\\epsilon_0} \\\n\\nabla \\cdot \\mathbf{B} &= 0 \\\n\\nabla \\times \\mathbf{E} &= -\\frac{\\partial \\mathbf{B}}{\\partial t} \\\n\\nabla \\times \\mathbf{B} &= \\mu_0\\mathbf{J} + \\mu_0\\epsilon_0\\frac{\\partial \\mathbf{E}}{\\partial t}\n\\end{aligned}\n$$",
+    "path": "/features/math",
+    "section": "Maxwell's Equations"
+  },
+  {
+    "id": "/features/math#21",
+    "title": "Math Equations > Schrödinger Equation",
+    "text": "$$\ni\\hbar\\frac{\\partial}{\\partial t}\\Psi(\\mathbf{r},t) = \\hat{H}\\Psi(\\mathbf{r},t)\n$$",
+    "path": "/features/math",
+    "section": "Schrödinger Equation"
+  },
+  {
+    "id": "/features/math#22",
+    "title": "Math Equations > Binomial Theorem",
+    "text": "$$\n(x + y)^n = \\sum_{k=0}^{n} \\binom{n}{k} x^{n-k} y^k\n$$",
+    "path": "/features/math",
+    "section": "Binomial Theorem"
+  },
+  {
+    "id": "/features/math#23",
+    "title": "Math Equations > Special Symbols",
+    "text": "",
+    "path": "/features/math",
+    "section": "Special Symbols"
+  },
+  {
+    "id": "/features/math#24",
+    "title": "Math Equations > Logic and Set Theory",
+    "text": "Result: $\\forall, \\exists, \\in, \\notin, \\subset, \\subseteq, \\cap, \\cup, \\emptyset$",
+    "path": "/features/math",
+    "section": "Logic and Set Theory"
+  },
+  {
+    "id": "/features/math#25",
+    "title": "Math Equations > Relations",
+    "text": "Result: $<, >, \\leq, \\geq, \\neq, \\approx, \\equiv, \\sim$",
+    "path": "/features/math",
+    "section": "Relations"
+  },
+  {
+    "id": "/features/math#26",
+    "title": "Math Equations > Arrows",
+    "text": "Result: $\\leftarrow, \\rightarrow, \\leftrightarrow, \\Leftarrow, \\Rightarrow, \\Leftrightarrow$",
+    "path": "/features/math",
+    "section": "Arrows"
+  },
+  {
+    "id": "/features/math#27",
+    "title": "Math Equations > Operators",
+    "text": "Result: $\\pm, \\mp, \\times, \\div, \\cdot, \\circ, \\oplus, \\otimes$",
+    "path": "/features/math",
+    "section": "Operators"
+  },
+  {
+    "id": "/features/math#28",
+    "title": "Math Equations > Text in Math",
+    "text": "Use    for regular text in equations: Result: $$\nP(\\text{success}) = \\frac{\\text{favorable outcomes}}{\\text{total outcomes}}\n$$",
+    "path": "/features/math",
+    "section": "Text in Math"
+  },
+  {
+    "id": "/features/math#29",
+    "title": "Math Equations > Colors",
+    "text": "Add color to emphasize parts of equations:",
+    "path": "/features/math",
+    "section": "Colors"
+  },
+  {
+    "id": "/features/math#30",
+    "title": "Math Equations > Escaping",
+    "text": "To display dollar signs literally, escape them: Result:  The price is $50.",
+    "path": "/features/math",
+    "section": "Escaping"
+  },
+  {
+    "id": "/features/math#31",
+    "title": "Math Equations > Performance",
+    "text": "Math rendering is optimized for production: Pre-rendered at build time  - HTML/CSS generated during SSG Pre-rendered at build time  - HTML/CSS generated during SSG No runtime JavaScript  - Math is already rendered in HTML No runtime JavaScript  - Math is already rendered in HTML KaTeX library  - ~77KB gzip (only used during build, not shipped to browser) KaTeX library  - ~77KB gzip (only used during build, not shipped to browser) Fast page loads  - No client-side math processing needed Fast page loads  - No client-side math processing needed",
+    "path": "/features/math",
+    "section": "Performance"
+  },
+  {
+    "id": "/features/math#32",
+    "title": "Math Equations > Configuration",
+    "text": "Math support is enabled by default. To customize:",
+    "path": "/features/math",
+    "section": "Configuration"
+  },
+  {
+    "id": "/features/math#33",
+    "title": "Math Equations > Best Practices",
+    "text": "Use display mode for complex equations  - Easier to read Use display mode for complex equations  - Easier to read Keep inline math simple  - Too complex breaks flow Keep inline math simple  - Too complex breaks flow Add context  - Explain what equations mean Add context  - Explain what equations mean Test rendering  - Some LaTeX features aren't supported Test rendering  - Some LaTeX features aren't supported Consider accessibility  - Provide text descriptions for screen readers Consider accessibility  - Provide text descriptions for screen readers",
+    "path": "/features/math",
+    "section": "Best Practices"
+  },
+  {
+    "id": "/features/math#34",
+    "title": "Math Equations > Common Issues",
+    "text": "",
+    "path": "/features/math",
+    "section": "Common Issues"
+  },
+  {
+    "id": "/features/math#35",
+    "title": "Math Equations > Dollar signs not rendering as math",
+    "text": "Make sure there's no space after opening or before closing   :",
+    "path": "/features/math",
+    "section": "Dollar signs not rendering as math"
+  },
+  {
+    "id": "/features/math#36",
+    "title": "Math Equations > Complex expressions breaking",
+    "text": "Use proper grouping with   :",
+    "path": "/features/math",
+    "section": "Complex expressions breaking"
+  },
+  {
+    "id": "/features/math#37",
+    "title": "Math Equations > Unsupported LaTeX command",
+    "text": "KaTeX supports most but not all LaTeX commands. Check the  KaTeX support table .",
+    "path": "/features/math",
+    "section": "Unsupported LaTeX command"
+  },
+  {
+    "id": "/features/math#38",
+    "title": "Math Equations > Resources",
+    "text": "KaTeX Documentation KaTeX Documentation LaTeX Math Symbols LaTeX Math Symbols Math Mode in LaTeX Math Mode in LaTeX",
+    "path": "/features/math",
+    "section": "Resources"
+  },
+  {
+    "id": "/features/math#39",
+    "title": "Math Equations > Next Steps",
+    "text": "Learn about Mermaid diagrams Learn about Mermaid diagrams Full Markdown guide Full Markdown guide API reference API reference",
+    "path": "/features/math",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/features/mermaid",
+    "title": "Mermaid Diagrams",
+    "text": "Leaf supports  Mermaid , a powerful diagramming and charting tool that uses text-based syntax.",
+    "path": "/features/mermaid"
+  },
+  {
+    "id": "/features/mermaid#0",
+    "title": "Mermaid Diagrams > Mermaid Diagrams",
+    "text": "Leaf supports  Mermaid , a powerful diagramming and charting tool that uses text-based syntax.",
+    "path": "/features/mermaid",
+    "section": "Mermaid Diagrams"
+  },
+  {
+    "id": "/features/mermaid#1",
+    "title": "Mermaid Diagrams > Flowcharts",
+    "text": "Create flowcharts to visualize processes and workflows: Result:",
+    "path": "/features/mermaid",
+    "section": "Flowcharts"
+  },
+  {
+    "id": "/features/mermaid#2",
+    "title": "Mermaid Diagrams > Flowchart Directions",
+    "text": "or    - Top to bottom or    - Top to bottom - Bottom to top - Bottom to top - Left to right - Left to right - Right to left - Right to left",
+    "path": "/features/mermaid",
+    "section": "Flowchart Directions"
+  },
+  {
+    "id": "/features/mermaid#3",
+    "title": "Mermaid Diagrams > Sequence Diagrams",
+    "text": "Show interactions between different actors: Result:",
+    "path": "/features/mermaid",
+    "section": "Sequence Diagrams"
+  },
+  {
+    "id": "/features/mermaid#4",
+    "title": "Mermaid Diagrams > Class Diagrams",
+    "text": "Model object-oriented systems: Result:",
+    "path": "/features/mermaid",
+    "section": "Class Diagrams"
+  },
+  {
+    "id": "/features/mermaid#5",
+    "title": "Mermaid Diagrams > State Diagrams",
+    "text": "Represent state machines: Result:",
+    "path": "/features/mermaid",
+    "section": "State Diagrams"
+  },
+  {
+    "id": "/features/mermaid#6",
+    "title": "Mermaid Diagrams > Entity Relationship Diagrams",
+    "text": "Model database relationships: Result:",
+    "path": "/features/mermaid",
+    "section": "Entity Relationship Diagrams"
+  },
+  {
+    "id": "/features/mermaid#7",
+    "title": "Mermaid Diagrams > Gantt Charts",
+    "text": "Plan and track project timelines: Result:",
+    "path": "/features/mermaid",
+    "section": "Gantt Charts"
+  },
+  {
+    "id": "/features/mermaid#8",
+    "title": "Mermaid Diagrams > Pie Charts",
+    "text": "Show data distributions: Result:",
+    "path": "/features/mermaid",
+    "section": "Pie Charts"
+  },
+  {
+    "id": "/features/mermaid#9",
+    "title": "Mermaid Diagrams > Git Graphs",
+    "text": "Visualize Git workflows: Result:",
+    "path": "/features/mermaid",
+    "section": "Git Graphs"
+  },
+  {
+    "id": "/features/mermaid#10",
+    "title": "Mermaid Diagrams > Mindmaps",
+    "text": "Organize ideas and concepts:",
+    "path": "/features/mermaid",
+    "section": "Mindmaps"
+  },
+  {
+    "id": "/features/mermaid#11",
+    "title": "Mermaid Diagrams > Journey Diagrams",
+    "text": "Map user experiences:",
+    "path": "/features/mermaid",
+    "section": "Journey Diagrams"
+  },
+  {
+    "id": "/features/mermaid#12",
+    "title": "Mermaid Diagrams > Styling",
+    "text": "Mermaid automatically adapts to your site's theme: Light mode  - Clean, professional colors Light mode  - Clean, professional colors Dark mode  - Vibrant, high-contrast colors Dark mode  - Vibrant, high-contrast colors",
+    "path": "/features/mermaid",
+    "section": "Styling"
+  },
+  {
+    "id": "/features/mermaid#13",
+    "title": "Mermaid Diagrams > Configuration",
+    "text": "Mermaid support is enabled by default. To customize:",
+    "path": "/features/mermaid",
+    "section": "Configuration"
+  },
+  {
+    "id": "/features/mermaid#14",
+    "title": "Mermaid Diagrams > Performance",
+    "text": "Mermaid diagrams are optimized for performance: Lazy loading  - Only loads when diagrams are present Lazy loading  - Only loads when diagrams are present CDN delivery  - Fast, cached distribution CDN delivery  - Fast, cached distribution Lightweight  - ~200KB for the library Lightweight  - ~200KB for the library No build-time rendering  - Renders client-side No build-time rendering  - Renders client-side",
+    "path": "/features/mermaid",
+    "section": "Performance"
+  },
+  {
+    "id": "/features/mermaid#15",
+    "title": "Mermaid Diagrams > Best Practices",
+    "text": "Keep diagrams simple  - Complex diagrams are hard to read Keep diagrams simple  - Complex diagrams are hard to read Use meaningful names  - Clear labels improve understanding Use meaningful names  - Clear labels improve understanding Add titles  - Context helps interpretation Add titles  - Context helps interpretation Consider mobile  - Some diagrams don't fit small screens Consider mobile  - Some diagrams don't fit small screens Use color sparingly  - Too much color is distracting Use color sparingly  - Too much color is distracting",
+    "path": "/features/mermaid",
+    "section": "Best Practices"
+  },
+  {
+    "id": "/features/mermaid#16",
+    "title": "Mermaid Diagrams > Common Patterns",
+    "text": "",
+    "path": "/features/mermaid",
+    "section": "Common Patterns"
+  },
+  {
+    "id": "/features/mermaid#17",
+    "title": "Mermaid Diagrams > Architecture Diagram",
+    "text": "",
+    "path": "/features/mermaid",
+    "section": "Architecture Diagram"
+  },
+  {
+    "id": "/features/mermaid#18",
+    "title": "Mermaid Diagrams > State Machine",
+    "text": "",
+    "path": "/features/mermaid",
+    "section": "State Machine"
+  },
+  {
+    "id": "/features/mermaid#19",
+    "title": "Mermaid Diagrams > API Flow",
+    "text": "",
+    "path": "/features/mermaid",
+    "section": "API Flow"
+  },
+  {
+    "id": "/features/mermaid#20",
+    "title": "Mermaid Diagrams > Troubleshooting",
+    "text": "",
+    "path": "/features/mermaid",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/features/mermaid#21",
+    "title": "Mermaid Diagrams > Diagram not rendering",
+    "text": "Check syntax - Mermaid is sensitive to syntax errors Check syntax - Mermaid is sensitive to syntax errors Ensure language is    (not    or   ) Ensure language is    (not    or   ) Check browser console for errors Check browser console for errors",
+    "path": "/features/mermaid",
+    "section": "Diagram not rendering"
+  },
+  {
+    "id": "/features/mermaid#22",
+    "title": "Mermaid Diagrams > Diagram cut off",
+    "text": "Adjust the diagram width in your CSS:",
+    "path": "/features/mermaid",
+    "section": "Diagram cut off"
+  },
+  {
+    "id": "/features/mermaid#23",
+    "title": "Mermaid Diagrams > Arrows not connecting",
+    "text": "Ensure proper node IDs and arrow syntax:",
+    "path": "/features/mermaid",
+    "section": "Arrows not connecting"
+  },
+  {
+    "id": "/features/mermaid#24",
+    "title": "Mermaid Diagrams > Resources",
+    "text": "Mermaid Documentation Mermaid Documentation Live Editor Live Editor Examples Examples",
+    "path": "/features/mermaid",
+    "section": "Resources"
+  },
+  {
+    "id": "/features/mermaid#25",
+    "title": "Mermaid Diagrams > Next Steps",
+    "text": "Learn about Math Equations Learn about Math Equations Full Markdown guide Full Markdown guide API reference API reference",
+    "path": "/features/mermaid",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/features/code-highlighting",
+    "title": "Code Highlighting",
+    "text": "Leaf provides beautiful syntax highlighting for code blocks with advanced features like line highlighting, line numbers, and code groups.",
+    "path": "/features/code-highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#0",
+    "title": "Code Highlighting > Code Highlighting",
+    "text": "Leaf provides beautiful syntax highlighting for code blocks with advanced features like line highlighting, line numbers, and code groups.",
+    "path": "/features/code-highlighting",
+    "section": "Code Highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#1",
+    "title": "Code Highlighting > Basic Syntax Highlighting",
+    "text": "Use fenced code blocks with language identifiers: Result:",
+    "path": "/features/code-highlighting",
+    "section": "Basic Syntax Highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#2",
+    "title": "Code Highlighting > Supported Languages",
+    "text": "Leaf supports 100+ programming languages including: JavaScript/TypeScript  -   ,   ,   , JavaScript/TypeScript  -   ,   ,   , Web  -   ,   ,   ,   , Web  -   ,   ,   ,   , Backend  -   ,   ,   ,   ,   , Backend  -   ,   ,   ,   ,   , Shell  -   ,   ,   , Shell  -   ,   ,   , Config  -   ,   ,   , Config  -   ,   ,   , Database  -   , Database  -   , And many more! And many more!",
+    "path": "/features/code-highlighting",
+    "section": "Supported Languages"
+  },
+  {
+    "id": "/features/code-highlighting#3",
+    "title": "Code Highlighting > Line Highlighting",
+    "text": "Highlight specific lines using the    syntax after the language: Result: Lines 2, 4, 5, and 6 are highlighted!",
+    "path": "/features/code-highlighting",
+    "section": "Line Highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#4",
+    "title": "Code Highlighting > Line Numbers",
+    "text": "Enable line numbers by adding line numbers to the meta:",
+    "path": "/features/code-highlighting",
+    "section": "Line Numbers"
+  },
+  {
+    "id": "/features/code-highlighting#5",
+    "title": "Code Highlighting > Code Groups",
+    "text": "Group related code snippets with tabs using the    container: Result: ::: code-group ::: Perfect for showing implementations in different languages!",
+    "path": "/features/code-highlighting",
+    "section": "Code Groups"
+  },
+  {
+    "id": "/features/code-highlighting#6",
+    "title": "Code Highlighting > File Names",
+    "text": "Add file names to code blocks: Result:",
+    "path": "/features/code-highlighting",
+    "section": "File Names"
+  },
+  {
+    "id": "/features/code-highlighting#7",
+    "title": "Code Highlighting > Diff Highlighting",
+    "text": "Show additions and removals: Result:",
+    "path": "/features/code-highlighting",
+    "section": "Diff Highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#8",
+    "title": "Code Highlighting > Focus Highlighting",
+    "text": "Focus attention on specific parts:",
+    "path": "/features/code-highlighting",
+    "section": "Focus Highlighting"
+  },
+  {
+    "id": "/features/code-highlighting#9",
+    "title": "Code Highlighting > Inline Code",
+    "text": "Use backticks for inline code: Inline code automatically inherits syntax highlighting in context: Use    for debugging Use    for debugging Install with Install with The    hook manages state The    hook manages state",
+    "path": "/features/code-highlighting",
+    "section": "Inline Code"
+  },
+  {
+    "id": "/features/code-highlighting#10",
+    "title": "Code Highlighting > Custom Themes",
+    "text": "Leaf uses custom syntax themes optimized for readability: Light Theme  - Soft colors with good contrast Light Theme  - Soft colors with good contrast Dark Theme  - Vibrant colors that pop Dark Theme  - Vibrant colors that pop Themes automatically switch with the site theme.",
+    "path": "/features/code-highlighting",
+    "section": "Custom Themes"
+  },
+  {
+    "id": "/features/code-highlighting#11",
+    "title": "Code Highlighting > Advanced Features",
+    "text": "",
+    "path": "/features/code-highlighting",
+    "section": "Advanced Features"
+  },
+  {
+    "id": "/features/code-highlighting#12",
+    "title": "Code Highlighting > Copy Button",
+    "text": "Every code block includes a copy button in the top-right corner. Click to copy the code to clipboard!",
+    "path": "/features/code-highlighting",
+    "section": "Copy Button"
+  },
+  {
+    "id": "/features/code-highlighting#13",
+    "title": "Code Highlighting > Syntax Validation",
+    "text": "Invalid syntax is gracefully handled:",
+    "path": "/features/code-highlighting",
+    "section": "Syntax Validation"
+  },
+  {
+    "id": "/features/code-highlighting#14",
+    "title": "Code Highlighting > Language Aliases",
+    "text": "Use common aliases: → JavaScript → JavaScript → TypeScript → TypeScript → Python → Python → Shell → Shell → YAML → YAML → Markdown → Markdown",
+    "path": "/features/code-highlighting",
+    "section": "Language Aliases"
+  },
+  {
+    "id": "/features/code-highlighting#15",
+    "title": "Code Highlighting > Escaping",
+    "text": "Escape backticks in code by using more backticks:",
+    "path": "/features/code-highlighting",
+    "section": "Escaping"
+  },
+  {
+    "id": "/features/code-highlighting#16",
+    "title": "Code Highlighting > Performance",
+    "text": "Fast Rendering  - Syntax highlighting happens at build time Fast Rendering  - Syntax highlighting happens at build time Small Bundle  - Only necessary language grammars are included Small Bundle  - Only necessary language grammars are included Progressive Enhancement  - Works without JavaScript Progressive Enhancement  - Works without JavaScript",
+    "path": "/features/code-highlighting",
+    "section": "Performance"
+  },
+  {
+    "id": "/features/code-highlighting#17",
+    "title": "Code Highlighting > Configuration",
+    "text": "Customize code highlighting in your config:",
+    "path": "/features/code-highlighting",
+    "section": "Configuration"
+  },
+  {
+    "id": "/features/code-highlighting#18",
+    "title": "Code Highlighting > Best Practices",
+    "text": "Always specify language  - Enables proper syntax highlighting Always specify language  - Enables proper syntax highlighting Use line highlighting sparingly  - Too much highlighting is distracting Use line highlighting sparingly  - Too much highlighting is distracting Keep code blocks focused  - Show only relevant code Keep code blocks focused  - Show only relevant code Use code groups  - Great for multi-language examples Use code groups  - Great for multi-language examples Add comments  - Explain complex code inline Add comments  - Explain complex code inline",
+    "path": "/features/code-highlighting",
+    "section": "Best Practices"
+  },
+  {
+    "id": "/features/code-highlighting#19",
+    "title": "Code Highlighting > Troubleshooting",
+    "text": "",
+    "path": "/features/code-highlighting",
+    "section": "Troubleshooting"
+  },
+  {
+    "id": "/features/code-highlighting#20",
+    "title": "Code Highlighting > Language not highlighting?",
+    "text": "Make sure you're using the correct language identifier:",
+    "path": "/features/code-highlighting",
+    "section": "Language not highlighting?"
+  }
+]

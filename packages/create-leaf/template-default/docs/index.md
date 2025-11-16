@@ -1,6 +1,6 @@
 ---
 title: Welcome to Leaf
-description: A modern Preact-based documentation framework
+description: A modern SolidJS-based documentation framework
 ---
 
 # Welcome to Leaf 🍃
@@ -9,7 +9,7 @@ Congratulations! You've successfully created a Leaf documentation site.
 
 ## What is Leaf?
 
-Leaf is a fast, modern documentation framework built with Preact that achieves 100% feature parity with VitePress. It's zero-config, blazingly fast, and beautifully designed with a 29% smaller bundle size.
+Leaf is a fast, modern documentation framework built with SolidJS that achieves 100% feature parity with VitePress. It's zero-config, blazingly fast, and beautifully designed with a 29% smaller bundle size.
 
 ## Features
 

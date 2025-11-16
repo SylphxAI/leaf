@@ -1,4 +1,4 @@
-import { createSignal, createEffect, onCleanup, JSX, ParentComponent } from "solid-js";
+import { createSignal, createEffect, onCleanup, JSX, ParentComponent, children } from "solid-js";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { TableOfContents, type TocItem } from "../components/TableOfContents";
@@ -25,6 +25,16 @@ interface LayoutProps {
 export const Layout: ParentComponent<LayoutProps> = (props) => {
 	const [sidebarOpen, setSidebarOpen] = createSignal(false);
 	const [searchOpen, setSearchOpen] = createSignal(false);
+
+	const c = children(() => props.children);
+
+	const handleSearchClick = () => {
+		setSearchOpen(true);
+	};
+
+	const handleMenuClick = () => {
+		setSidebarOpen(!sidebarOpen());
+	};
 
 	const frontmatter = () => props.currentRoute?.frontmatter || {};
 	const isHeroLayout = () => frontmatter().layout === "home";
@@ -63,8 +73,8 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						title={props.config?.title}
 						nav={props.config?.theme?.nav}
 						socialLinks={props.config?.theme?.socialLinks}
-						onMenuClick={() => setSidebarOpen(!sidebarOpen())}
-						onSearchClick={() => setSearchOpen(true)}
+						onMenuClick={handleMenuClick}
+						onSearchClick={handleSearchClick}
 					/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 
@@ -76,12 +86,12 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						{(frontmatter().features || []).length > 0 && <Features features={frontmatter().features as Feature[]} />}
 
 						{/* Content Section */}
-						{props.children && (
+						{c() && (
 							<div class="border-t border-border">
 								<div class="px-8 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20">
 									<div class="mx-auto max-w-5xl">
 										<div class="prose max-w-none">
-											{props.children}
+											{c()}
 										</div>
 									</div>
 								</div>
@@ -95,8 +105,8 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						title={props.config?.title}
 						nav={props.config?.theme?.nav}
 						socialLinks={props.config?.theme?.socialLinks}
-						onMenuClick={() => setSidebarOpen(!sidebarOpen())}
-						onSearchClick={() => setSearchOpen(true)}
+						onMenuClick={handleMenuClick}
+						onSearchClick={handleSearchClick}
 					/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 
@@ -120,7 +130,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 										</div>
 
 										<div class="prose max-w-none xl:max-w-3xl">
-											{props.children}
+											{c()}
 										</div>
 										{docFooter() && (
 											<div class="mt-32 pt-16 border-t-2 border-border/50">

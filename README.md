@@ -11,15 +11,15 @@
   🚀 Modern documentation framework with VitePress parity
 </p>
 
-**Leaf** is a fast, modern documentation framework built with Preact that achieves **100% feature parity with VitePress**. Zero-config, blazingly fast, and beautifully designed with **29% smaller bundle size**.
+**Leaf** is a fast, modern documentation framework built with SolidJS that achieves **100% feature parity with VitePress**. Zero-config, blazingly fast, and beautifully designed with **ultra-lightweight bundle size**.
 
 ## 🎯 Why Leaf?
 
 - **⚡ Fast Builds**: ~2s for 22 pages with search index
-- **📦 Ultra Lightweight**: 29% smaller than React alternatives (125KB gzipped)
-- **🎨 Beautiful**: Modern, responsive design with dark mode
+- **📦 Ultra Lightweight**: Fine-grained reactivity with minimal runtime overhead
+- **🎨 Beautiful**: Modern, responsive design with dark mode and theme switching
 - **🛠️ Zero Config**: Works out of the box, no configuration required
-- **🔧 Modern Stack**: Built with Bun, Vite, Preact, and TypeScript
+- **🔧 Modern Stack**: Built with Bun, Vite, SolidJS, and TypeScript
 
 ## ✨ Features
 
@@ -54,8 +54,8 @@
 - ✅ Static Site Generation (SSG)
 - ✅ Pre-rendered HTML for instant loading
 - ✅ **Fast builds** with Vite (~2s for 22 pages)
-- ✅ Ultra-lightweight runtime (Preact 3KB + zen-router 1.45KB)
-- ✅ 29% smaller bundle vs React (125KB gzipped)
+- ✅ Ultra-lightweight runtime with SolidJS fine-grained reactivity
+- ✅ No Virtual DOM overhead - direct DOM manipulation
 - ✅ **⚡⚡⚡ Blazing fast**: Lighthouse scores 95+
 
 ### 🛠️ **Developer Experience**
@@ -87,13 +87,12 @@ docs/                 - Leaf official documentation (self-hosted)
 
 - **Runtime**: Bun
 - **Build Tool**: Vite
-- **Framework**: Preact 10.27 (3KB alternative to React)
-- **Router**: zen-router (@sylphx/zen-router)
-- **State Management**: Zen (@sylphx/zen)
+- **Framework**: SolidJS 1.9+ (Fine-grained reactivity)
+- **Router**: @solidjs/router
 - **Styling**: Tailwind CSS
-- **Data Processing**: Craft (@sylphx/craft)
+- **Search**: MiniSearch
 - **Linting**: Biome
-- **Testing**: Vitest
+- **Testing**: Bun Test
 
 ## 🚀 Quick Start
 
@@ -281,15 +280,15 @@ packages/
 
 | Aspect | Leaf | VitePress |
 |--------|-----------|-----------|
-| **Framework** | Preact 10.27 (3KB) | Vue 3 |
-| **Router** | zen-router (1.45KB) | Vue Router |
+| **Framework** | SolidJS 1.9+ | Vue 3 |
+| **Router** | @solidjs/router | Vue Router |
 | **Runtime** | Bun | Node.js |
 | **Build Tool** | Vite | Vite |
-| **State Management** | Zen (1.45KB) | Vue Composition |
+| **Reactivity** | Fine-grained signals | Vue Composition |
 | **Styling** | Tailwind CSS | CSS Modules |
 | **Search** | MiniSearch | MiniSearch |
 | **Build Speed** | ⚡⚡⚡ Faster | ⚡⚡ Fast |
-| **Bundle Size** | 665KB (125KB gzipped) | Similar |
+| **Bundle Size** | Lightweight | Similar |
 
 
 ## Documentation & Examples
@@ -345,9 +344,9 @@ bun dev
 - Header hash links with hover effects
 
 ### 📊 Performance Stats
-- 📦 Bundle: 125KB gzipped
+- 📦 Bundle: Lightweight with fine-grained reactivity
 - ⚡ Build: ~2s for 22 pages
-- 🔍 Search: 605 documents indexed
+- 🔍 Search: 604+ documents indexed
 - 🎯 Lighthouse: 95+ scores
 
 ### 🚀 What's Next (v0.2.0)
@@ -360,21 +359,21 @@ bun dev
 
 ## Why Leaf over VitePress?
 
-1. **Preact Performance**: 3KB runtime with full React API compatibility
-2. **29% Smaller Bundle**: 125KB gzipped vs 176KB (React baseline)
+1. **SolidJS Performance**: Fine-grained reactivity with no Virtual DOM overhead
+2. **Faster Reactivity**: Direct DOM updates without diffing
 3. **Modern Runtime**: Bun offers faster installs and execution
-4. **Lightweight Stack**: zen-router (1.45KB) + Zen state management
+4. **Lightweight**: Minimal runtime with maximum performance
 5. **Type Safety**: First-class TypeScript support throughout
-6. **React Ecosystem**: Access React libraries via preact/compat
+6. **Simple Mental Model**: Signals and effects without complex reactivity rules
 
 ## Contributing
 
 We welcome contributions! This is an open-source project built to demonstrate:
 - Modern tooling (Bun, Vite, Biome)
 - Monorepo architecture
-- Preact-based static site generation
+- SolidJS-based static site generation
+- Fine-grained reactivity patterns
 - Lightweight performance optimization
-- Integration of Sylphx tools
 
 ## Team
 

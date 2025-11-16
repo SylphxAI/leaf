@@ -44,45 +44,66 @@ export function markdownPlugin(config: LeafConfig): Plugin {
 			const toc = getToc();
 			const components = (vfile.data.components as ComponentPlaceholder[]) || [];
 
+
 			// Generate component imports if any components were detected
 			const hasComponents = components.length > 0;
 			const uniqueComponents = Array.from(
 				new Set(components.map((c) => c.name)),
 			);
 
-			const componentImports = hasComponents
-				? `import { ${uniqueComponents.join(", ")} } from '@sylphx/leaf-theme-default';\nimport { onMount } from 'solid-js';\nimport { render } from 'solid-js/web';\n`
-				: ``;
+			// TEMPORARY: Disable components in markdown - innerHTML + component mounting doesn't work in SolidJS
+			// TODO: Implement proper HTML-to-SolidJS conversion or use a different approach
+			let componentImports = '';
+			let componentMapping = "";
+			let htmlContent = JSON.stringify(html);
+			let renderFunction = `
+  const htmlContent = ${htmlContent};
+  return <div class="markdown-content" innerHTML={htmlContent} />;`;
 
-			// Generate component mapping - not needed anymore, we'll create components directly
-			const componentMapping = "";
+			// Check if Cards component is used
+			if (components.length > 0 && components.some(c => c.name === 'Cards')) {
+				componentImports = `import { Cards } from "@sylphx/leaf-theme-default";`;
 
-			// Generate render function - use solid-js/web render for dynamic component mounting
-			const renderFunction = hasComponents
-				? `
-  let containerRef;
+				const cardsComponents = components.filter(c => c.name === 'Cards');
 
-  onMount(() => {
-    // Mount components after HTML is rendered using solid-js/web render
-    ${components.map((c) => {
-				const propsJson = JSON.stringify(c.props);
-				const varName = c.id.replace(/-/g, '_');
-				// Create props object for spreading
-				const propsStr = Object.keys(c.props).length > 0 ? ` {...${propsJson}}` : '';
-				return `
-    const placeholder_${varName} = containerRef.querySelector('[data-leaf-component="${c.id}"]');
-    if (placeholder_${varName}) {
-      render(() => <${c.name}${propsStr} />, placeholder_${varName});
-    }`;
-			}).join('')}
-  });
+				// Remove Cards placeholders from HTML
+				let modifiedHtml = html;
+				for (const comp of cardsComponents) {
+					modifiedHtml = modifiedHtml.replace(
+						new RegExp(`<div data-leaf-component="${comp.id}"></div>`, 'g'),
+						`__CARDS_${comp.id}__`
+					);
+				}
+				htmlContent = JSON.stringify(modifiedHtml);
 
-  return <div ref={containerRef} class="markdown-content" innerHTML={${JSON.stringify(html)}} />;`
-				: `
-  return <div class="markdown-content" innerHTML={${JSON.stringify(html)}} />;`;
+				// Generate render function with Cards components
+				const cardsRenderers = cardsComponents.map(comp => {
+					const cardsData = comp.props.cards || [];
+					const columns = comp.props.columns || 2;
+					return `<Cards cards={${JSON.stringify(cardsData)}} columns={${columns}} />`;
+				}).join('\n      ');
+
+				renderFunction = `
+  let htmlContent = ${htmlContent};
+  ${cardsComponents.map((comp, idx) => `
+  htmlContent = htmlContent.replace('__CARDS_${comp.id}__', '<!--CARDS_PLACEHOLDER_${idx}-->');`).join('')}
+
+  const parts = htmlContent.split(/<!--CARDS_PLACEHOLDER_\\d+-->/);
+
+  return (
+    <>
+      <div class="markdown-content" innerHTML={parts[0]} />
+      ${cardsComponents.map((comp, idx) => `
+      <Cards cards={${JSON.stringify(comp.props.cards || [])}} columns={${comp.props.columns || 2}} />
+      {parts[${idx + 1}] && <div class="markdown-content" innerHTML={parts[${idx + 1}]} />}`).join('\n      ')}
+    </>
+  );`;
+			}
 
 			// Generate SolidJS component that renders the HTML and exports TOC
 			const component = `
+import { template as _$template } from "solid-js/web";
+import { createComponent as _$createComponent } from "solid-js/web";
 ${componentImports}
 // Build-time TOC as fallback
 const buildTimeToc = ${JSON.stringify(toc)};

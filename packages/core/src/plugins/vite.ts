@@ -4,6 +4,9 @@ import { markdownPlugin } from "./markdown.js";
 import { virtualModulesPlugin } from "./virtual-modules.js";
 import { assetsPlugin } from "./assets.js";
 import type { LeafConfig } from "../types.js";
+import { generateSearchIndex } from "../build/search.js";
+import { generateRoutes } from "../utils/routes.js";
+import { join } from "node:path";
 
 export function createLeafPlugin(config: LeafConfig): Plugin[] {
 	return [
@@ -21,16 +24,34 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 						conditions: isProduction ? ["production", "default"] : ["development", "default"],
 					},
 					optimizeDeps: {
-						include: ["solid-js", "solid-js/web", "@solidjs/router", "html-react-parser"],
+						include: ["solid-js", "solid-js/web", "@solidjs/router"],
 					},
 				};
+			},
+		},
+		{
+			name: "leaf:search-index-dev",
+			async configureServer(server) {
+				// Generate search index on server start
+				const routes = await generateRoutes(process.cwd());
+				const publicDir = join(process.cwd(), "public");
+				await generateSearchIndex(routes, publicDir);
+
+				// Watch for markdown file changes and regenerate search index
+				server.watcher.on("change", async (file) => {
+					if (file.endsWith(".md")) {
+						console.log("Regenerating search index...");
+						const routes = await generateRoutes(process.cwd());
+						await generateSearchIndex(routes, publicDir);
+					}
+				});
 			},
 		},
 		assetsPlugin(config),
 		virtualModulesPlugin(config),
 		markdownPlugin(config),
 		solidPlugin({
-			include: ["**/*.{ts,tsx,js,jsx}"],
+			include: ["**/*.{ts,tsx,js,jsx}", "**/*.md.tsx"],
 		}),
 	];
 }

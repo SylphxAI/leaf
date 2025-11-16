@@ -50,10 +50,9 @@ export function Search(props: SearchProps = {}) {
 	createEffect(() => {
 		if (open()) {
 			setShouldRender(true);
-			const timer = setTimeout(() => {
+			requestAnimationFrame(() => {
 				setIsVisible(true);
-			}, 50);
-			onCleanup(() => clearTimeout(timer));
+			});
 		} else {
 			setIsVisible(false);
 			const timer = setTimeout(() => {
@@ -159,35 +158,35 @@ export function Search(props: SearchProps = {}) {
 		setResults([]);
 	};
 
-	if (!shouldRender()) return null;
-
 	return (
-		<>
-			{/* Overlay */}
-			<div
-				class={`fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${
-					isVisible() ? "opacity-100" : "opacity-0"
-				}`}
-				onClick={() => setOpen(false)}
-				aria-label="Close search"
-				role="button"
-				tabIndex={0}
-				onKeyDown={(e) => {
-					if (e.key === "Enter" || e.key === " ") {
-						setOpen(false);
-					}
-				}}
-			/>
+		<Show when={shouldRender()}>
+			{() => (
+				<>
+						{/* Overlay */}
+						<div
+							class={`fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${
+								isVisible() ? "opacity-100" : "opacity-0"
+							}`}
+							onClick={() => setOpen(false)}
+							aria-label="Close search"
+							role="button"
+							tabIndex={0}
+							onKeyDown={(e) => {
+								if (e.key === "Enter" || e.key === " ") {
+									setOpen(false);
+								}
+							}}
+						/>
 
-			{/* Search Dialog */}
-			<div
-				role="dialog"
-				aria-modal="true"
-				aria-label="Search documentation"
-				class={`fixed left-1/2 top-1/2 z-50 w-full max-w-[85vw] lg:max-w-3xl -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
-					isVisible() ? "opacity-100 scale-100" : "opacity-0 scale-95"
-				}`}
-			>
+					{/* Search Dialog */}
+					<div
+						role="dialog"
+						aria-modal="true"
+						aria-label="Search documentation"
+						class={`fixed left-1/2 top-1/2 z-50 w-full max-w-[85vw] lg:max-w-3xl -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+							isVisible() ? "opacity-100 scale-100" : "opacity-0 scale-95"
+						}`}
+					>
 				<div class="mx-6 overflow-hidden rounded-2xl border border-border bg-background/95 backdrop-blur-2xl shadow-2xl">
 					{/* Search Input */}
 					<div class="relative flex items-center border-b border-border px-6 py-5">
@@ -292,7 +291,9 @@ export function Search(props: SearchProps = {}) {
 						</div>
 					</Show>
 				</div>
-			</div>
-		</>
+					</div>
+				</>
+			)}
+		</Show>
 	);
 }

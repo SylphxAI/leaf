@@ -1,4 +1,4 @@
-import { open } from "@sylphx/zen-router";
+import { A } from "@solidjs/router";
 import type { JSX, ParentComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
@@ -8,35 +8,25 @@ interface LinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 /**
- * Link component that works with zen-router
- * Intercepts clicks and uses zen-router's open() for SPA navigation
+ * Link component that works with @solidjs/router
+ * Uses SolidJS Router's <A> component for SPA navigation
  */
 export const Link: ParentComponent<LinkProps> = (props) => {
 	const [local, others] = splitProps(props, ["to", "children"]);
 
-	const handleClick = (e: MouseEvent) => {
-		// Allow default behavior for:
-		// - External links
-		// - Modified clicks (ctrl/cmd/shift)
-		// - Right clicks
-		if (
-			local.to.startsWith("http") ||
-			local.to.startsWith("//") ||
-			e.ctrlKey ||
-			e.metaKey ||
-			e.shiftKey ||
-			e.button !== 0
-		) {
-			return;
-		}
+	// External links use regular anchor
+	if (local.to.startsWith("http") || local.to.startsWith("//")) {
+		return (
+			<a href={local.to} {...others}>
+				{local.children}
+			</a>
+		);
+	}
 
-		e.preventDefault();
-		open(local.to);
-	};
-
+	// Internal links use SolidJS Router's A component
 	return (
-		<a href={local.to} onClick={handleClick} {...others}>
+		<A href={local.to} {...others}>
 			{local.children}
-		</a>
+		</A>
 	);
 };

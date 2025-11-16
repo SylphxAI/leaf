@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 🎉 Initial Release - Leaf v0.1.0
 
-Leaf is now ready for its first public release! A modern, Preact-based documentation framework with complete VitePress parity.
+Leaf is now ready for its first public release! A modern, SolidJS-based documentation framework with complete VitePress parity.
 
 #### ✨ New Features
 
@@ -60,7 +60,7 @@ Leaf is now ready for its first public release! A modern, Preact-based documenta
 #### 🛠️ Technical Stack
 
 - **Runtime**: Bun for maximum performance
-- **Framework**: Preact 10.27 (3KB vs React 43KB)
+- **Framework**: SolidJS 10.27 (3KB vs React 43KB)
 - **Router**: zen-router (1.45KB minimal routing)
 - **State**: Zen state management (1.45KB)
 - **Styling**: Tailwind CSS with custom theme

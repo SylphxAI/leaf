@@ -11,7 +11,6 @@
 		"autoprefixer": "^10.4.21",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"html-react-parser": "^5.2.8",
 		"iconify-icon": "^3.0.2",
 		"katex": "^0.16.25",
 		"minisearch": "^7.2.0",
@@ -28,12 +27,13 @@
 	},
 	"exports": {
 		".": {
-			"import": "./dist/src/index.js",
-			"types": "./dist/src/index.d.ts"
+			"import": "./src/index.ts",
+			"types": "./src/index.ts"
 		},
 		"./style.css": "./dist/style.css"
 	},
 	"files": [
+		"src",
 		"dist",
 		"README.md",
 		"LICENSE"

@@ -11,11 +11,11 @@ Common questions about Leaf documentation framework.
 
 ### What is Leaf?
 
-Leaf is a modern documentation framework built with Preact (React-compatible) that provides VitePress-compatible markdown syntax and features. It uses TypeScript for type safety and gives you access to the full React ecosystem.
+Leaf is a modern documentation framework built with SolidJS (SolidJS-based) that provides VitePress-compatible markdown syntax and features. It uses TypeScript for type safety and gives you access to the full SolidJS ecosystem.
 
 ### How is Leaf different from VitePress?
 
-Leaf uses **Preact** (React-compatible) instead of Vue, **Sylphx tools** (Zen, Silk) for state and styling, and supports both **Bun and Node.js** runtimes. It maintains VitePress-compatible markdown syntax while giving you access to the React ecosystem.
+Leaf uses **SolidJS** (SolidJS-based) instead of Vue, **Sylphx tools** (Zen, Silk) for state and styling, and supports both **Bun and Node.js** runtimes. It maintains VitePress-compatible markdown syntax while giving you access to the SolidJS ecosystem.
 
 ### Is Leaf production-ready?
 
@@ -97,9 +97,9 @@ That's it! Everything else is generated automatically.
 
 Yes! Leaf is 100% TypeScript. Your config file (`leaf.config.ts`) gets full autocomplete and type checking.
 
-### Can I use React components in markdown?
+### Can I use SolidJS components in markdown?
 
-Absolutely! Leaf uses MDX, so you can import and use React components anywhere:
+Absolutely! Leaf uses MDX, so you can import and use SolidJS components anywhere:
 
 ```mdx
 import { Button } from '@/components/Button'
@@ -145,7 +145,7 @@ All GitHub Flavored Markdown plus:
 
 ### Can I use Vue components?
 
-No, Leaf uses React. You'll need to convert Vue components to React. See [Migration Guide](/guide/migration) for help.
+No, Leaf uses SolidJS. You'll need to convert Vue components to SolidJS. See [Migration Guide](/guide/migration) for help.
 
 ### How do I highlight specific lines of code?
 
@@ -401,7 +401,7 @@ Try:
 Easy! Most markdown works as-is:
 1. Copy your docs folder
 2. Convert config file
-3. Convert Vue components to React (if any)
+3. Convert Vue components to SolidJS (if any)
 4. Done!
 
 See [Migration Guide](/guide/migration) for step-by-step instructions.
@@ -417,7 +417,7 @@ Yes! Leaf uses the same markdown syntax. No changes needed for:
 
 ### Do I need to rewrite components?
 
-Only if you have custom Vue components. Convert them to React:
+Only if you have custom Vue components. Convert them to SolidJS:
 
 **VitePress (Vue):**
 ```vue
@@ -431,13 +431,13 @@ const count = ref(0)
 </template>
 ```
 
-**Leaf (React):**
+**Leaf (SolidJS):**
 ```tsx
-import { useState } from 'react'
+import { createSignal } from 'solid-js'
 
 export function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(c => c + 1)}>{count}</button>
+  const [count, setCount] = createSignal(0)
+  return <button onClick={() => setCount(count() + 1)}>{count()}</button>
 }
 ```
 

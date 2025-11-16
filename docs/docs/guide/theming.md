@@ -87,7 +87,7 @@ Add a features grid below the hero:
 features:
   - icon: lucide:zap
     title: Fast
-    details: Lightning-fast build times with Vite and Preact.
+    details: Lightning-fast build times with Vite and SolidJS.
   - icon: lucide:shield
     title: Type-Safe
     details: Full TypeScript support out of the box.

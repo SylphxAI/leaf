@@ -6,7 +6,7 @@
 
 ## 🎉 Leaf v0.1.0 - Initial Release
 
-Leaf is now ready for its first public release! A modern, Preact-based documentation framework with VitePress parity.
+Leaf is now ready for its first public release! A modern, SolidJS-based documentation framework with VitePress parity.
 
 ### ✨ New Features
 

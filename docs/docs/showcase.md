@@ -22,7 +22,7 @@ Real-world documentation sites built with Leaf.
 [View Live](/) | [Source Code](https://github.com/sylphxltd/leaf/tree/main/docs)
 
 **Tech Stack:**
-- Preact 10.x (React-compatible)
+- SolidJS 10.x (SolidJS-based)
 - TypeScript 5.9+
 - Bun / Node.js runtime
 - Tailwind CSS 3.4

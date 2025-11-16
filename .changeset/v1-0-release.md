@@ -24,7 +24,7 @@
 - **Full Test Coverage**: 36 tests with 74.43% function coverage
 
 #### 4. **Performance & Reliability**
-- **Lightning Fast**: Built with Preact, Vite, and Bun
+- **Lightning Fast**: Built with SolidJS, Vite, and Bun
 - **Production Ready**: All critical paths tested and verified
 - **Type Safe**: Full TypeScript support throughout
 
@@ -67,4 +67,4 @@ bun dev
    ]
    ```
 
-This release marks the achievement of complete VitePress parity, making Leaf the perfect choice for React developers looking for a modern, fast, and fully-featured documentation framework.
+This release marks the achievement of complete VitePress parity, making Leaf the perfect choice for SolidJS developers looking for a modern, fast, and fully-featured documentation framework.

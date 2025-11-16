@@ -99,4 +99,4 @@ All documentation has been updated:
 
 **Thank you for choosing Leaf for your documentation needs!**
 
-This release marks the achievement of complete VitePress parity, making Leaf the perfect choice for React developers looking for a modern, fast, and fully-featured documentation framework. 🎉
+This release marks the achievement of complete VitePress parity, making Leaf the perfect choice for SolidJS developers looking for a modern, fast, and fully-featured documentation framework. 🎉

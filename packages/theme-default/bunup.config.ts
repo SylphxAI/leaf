@@ -5,6 +5,7 @@ export default defineConfig({
 	platform: "browser",
 	jsx: {
 		runtime: "automatic",
-		importSource: "preact",
+		importSource: "solid-js",
+		jsxImportSource: "solid-js",
 	},
 });

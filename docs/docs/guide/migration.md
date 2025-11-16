@@ -26,7 +26,7 @@ Components automatically receive props (JSON, strings, numbers, or booleans).
 - ⚛️ **React Ecosystem** - Access to React components and libraries
 - ⚡ **Bun / Node.js** - Use Bun for faster builds or Node.js 18+
 - 🎨 **Modern Tooling** - TypeScript-first development
-- 📦 **Small Bundle** - 7KB framework overhead (Preact + Zen + Silk)
+- 📦 **Small Bundle** - 7KB framework overhead (SolidJS + Zen + Silk)
 - 🔥 **VitePress-Compatible** - Same markdown syntax and features
 
 ## Quick Comparison

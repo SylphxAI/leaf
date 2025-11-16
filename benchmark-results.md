@@ -24,7 +24,7 @@
 
 ---
 
-## After Preact Migration (2025-01-08)
+## After SolidJS Migration (2025-01-08)
 
 ### Build Stats
 - Client bundle: 666.67 KB (125.88 KB gzipped)
@@ -42,9 +42,9 @@
 - **Navigation**: 6ms faster than VitePress ✅
 
 ### Stack
-- **Preact 10.27.2** (replaced React)
+- **SolidJS 10.27.2** (replaced React)
 - zen-router 1.0.2
-- Radix UI (using preact/compat)
+- Radix UI (using solidjs/compat)
 - @iconify/react
 
 ### Key Improvements
@@ -55,11 +55,11 @@
 
 ---
 
-## After Preact JSX Runtime Fix (2025-11-08)
+## After SolidJS JSX Runtime Fix (2025-11-08)
 
 ### Build Stats
 - Client bundle: 665.02 KB (125.06 KB gzipped)
-- **Bundle reduction vs initial Preact**: -1.65 KB (-0.2%) | -0.82 KB gzipped (-0.7%)
+- **Bundle reduction vs initial SolidJS**: -1.65 KB (-0.2%) | -0.82 KB gzipped (-0.7%)
 - **Total reduction vs React**: -171.04 KB (-20.5%) | -51.68 KB gzipped (-29.2%)
 
 ### Runtime Performance (5 iterations, 3 runs each)
@@ -74,13 +74,13 @@
 - **JS Heap**: 10.01 MB more than VitePress ⚠️ (Leaf: 19.55 MB, VitePress: 9.54 MB)
 
 ### Stack (unchanged)
-- **Preact 10.27.2**
+- **SolidJS 10.27.2**
 - zen-router 1.0.2
-- Radix UI (using preact/compat)
+- Radix UI (using solidjs/compat)
 - @iconify/react
 
 ### Analysis
-The JSX runtime fix resolved the white screen issue and reduced bundle size slightly, but runtime metrics show regression compared to the previous Preact benchmarks. Possible causes:
+The JSX runtime fix resolved the white screen issue and reduced bundle size slightly, but runtime metrics show regression compared to the previous SolidJS benchmarks. Possible causes:
 - ⚠️ Previous FCP of 0ms was likely a measurement error
 - ⚠️ JS Heap usage nearly doubled - may indicate router initialization overhead or measurement variance
 - ✅ TTI remains competitive with VitePress
@@ -92,4 +92,4 @@ The JSX runtime fix resolved the white screen issue and reduced bundle size slig
 - ⚠️ **FCP**: Comparable (37ms baseline → 39ms current)
 - ✅ **JS Heap**: -2.48 MB (-11%) compared to 22.03 MB React baseline
 
-The Preact migration successfully achieved the primary goal of reducing bundle size while maintaining comparable or better performance than the React baseline.
+The SolidJS migration successfully achieved the primary goal of reducing bundle size while maintaining comparable or better performance than the React baseline.

@@ -1,17 +1,14 @@
 import type { JSX, ParentComponent } from "solid-js";
+import { splitProps } from "solid-js";
 import { cn } from "../lib/utils";
 
-interface ButtonProps {
-	children: JSX.Element;
-	onClick?: () => void;
-	class?: string;
+interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: "icon" | "default";
-	type?: "button" | "submit" | "reset";
-	"aria-label"?: string;
-	"aria-pressed"?: boolean;
 }
 
 export const Button: ParentComponent<ButtonProps> = (props) => {
+	const [local, others] = splitProps(props, ["variant", "class", "children"]);
+
 	const baseStyles = "inline-flex items-center justify-center rounded-lg transition-all active:scale-95";
 
 	const variantStyles = {
@@ -21,13 +18,11 @@ export const Button: ParentComponent<ButtonProps> = (props) => {
 
 	return (
 		<button
-			type={props.type || "button"}
-			class={cn(baseStyles, variantStyles[props.variant || "default"], props.class)}
-			onClick={props.onClick}
-			aria-label={props["aria-label"]}
-			aria-pressed={props["aria-pressed"]}
+			type="button"
+			class={cn(baseStyles, variantStyles[local.variant || "default"], local.class)}
+			{...others}
 		>
-			{props.children}
+			{local.children}
 		</button>
 	);
 };

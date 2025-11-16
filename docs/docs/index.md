@@ -1,13 +1,13 @@
 ---
-title: Leaf - React Documentation Framework
-description: Modern documentation framework built with Preact and React-compatible JSX. VitePress-compatible markdown with React ecosystem power.
+title: Leaf - SolidJS Documentation Framework
+description: Modern documentation framework built with SolidJS. VitePress-compatible markdown with fine-grained reactivity.
 order: 1
 layout: home
 
 hero:
   name: Leaf
   text: Modern Documentation Framework
-  tagline: Built for React developers. VitePress-compatible markdown with React ecosystem power.
+  tagline: Built with SolidJS. VitePress-compatible markdown with blazing fast reactivity.
   actions:
     - text: Get Started
       link: /getting-started
@@ -18,11 +18,11 @@ hero:
 
 features:
   - icon: lucide:zap
-    title: Fast Builds
-    details: Built with Preact 10.x for minimal bundle size. 12% faster builds than VitePress with sub-100ms HMR.
+    title: Fine-Grained Reactivity
+    details: Built with SolidJS for minimal runtime overhead. No Virtual DOM diffing - direct DOM updates.
   - icon: lucide:package
-    title: React Ecosystem
-    details: Use any React library - Material-UI, Recharts, React Query, Framer Motion. Full ecosystem compatibility.
+    title: Lightweight Bundle
+    details: Ultra-small bundle size with maximum performance. Fine-grained reactivity means less code shipped.
   - icon: lucide:code-2
     title: TypeScript First
     details: Full autocomplete and type safety. Catch errors before build with type-checked configuration.
@@ -55,4 +55,4 @@ Visit [http://localhost:5173](http://localhost:5173) 🎉
 
 ## 📚 Learn More
 
-<Cards cards='[{"icon":"📖","title":"Why Leaf?","description":"Discover why Leaf is the best documentation framework for React developers","link":"/why"},{"icon":"🚀","title":"Getting Started","description":"Learn how to create your first Leaf documentation site in minutes","link":"/getting-started"}]' columns="2" />
+<Cards cards='[{"icon":"📖","title":"Why Leaf?","description":"Discover why Leaf is the best documentation framework for SolidJS developers","link":"/why"},{"icon":"🚀","title":"Getting Started","description":"Learn how to create your first Leaf documentation site in minutes","link":"/getting-started"}]' columns="2" />

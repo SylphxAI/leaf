@@ -585,6 +585,14 @@
 		@apply opacity-100;
 	}
 
+	/* Fix iconify-icon vertical alignment */
+	iconify-icon {
+		vertical-align: text-bottom;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	/* Mermaid */
 	.mermaid {
 		@apply my-6 p-6 bg-card border border-border rounded-lg text-center;

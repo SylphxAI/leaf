@@ -62,17 +62,17 @@ export function Header(props: HeaderProps) {
 				<nav class="hidden gap-1.5 md:flex flex-1" aria-label="Main navigation">
 					<For each={props.nav || []}>
 						{(item) => {
-							const isActive = location.pathname.startsWith(item.link);
+							const isActive = () => location.pathname.startsWith(item.link);
 							return (
 								<Link
 									to={item.link}
 									class={cn(
 										"relative inline-flex items-center px-4 py-2 text-sm font-semibold transition-all rounded-lg",
-										isActive
+										isActive()
 											? "text-primary-foreground bg-primary shadow-sm"
 											: "text-muted-foreground hover:text-foreground hover:bg-muted/60"
 									)}
-									aria-current={isActive ? "page" : undefined}
+									aria-current={isActive() ? "page" : undefined}
 								>
 									{item.text}
 								</Link>
