@@ -1,0 +1,78 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Background gradient -->
+	<defs>
+		<linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" style="stop-color:#15803D;stop-opacity:1" />
+			<stop offset="100%" style="stop-color:#065F46;stop-opacity:1" />
+		</linearGradient>
+		<linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+			<stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+		</linearGradient>
+	</defs>
+
+	<!-- Background -->
+	<rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+	<!-- Grid pattern overlay -->
+	<g opacity="0.1">
+		<path d="M0 0L1200 0" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 100L1200 100" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 200L1200 200" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 300L1200 300" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 400L1200 400" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 500L1200 500" stroke="#ffffff" stroke-width="1"/>
+		<path d="M0 630L1200 630" stroke="#ffffff" stroke-width="1"/>
+
+		<path d="M0 0L0 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M200 0L200 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M400 0L400 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M600 0L600 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M800 0L800 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M1000 0L1000 630" stroke="#ffffff" stroke-width="1"/>
+		<path d="M1200 0L1200 630" stroke="#ffffff" stroke-width="1"/>
+	</g>
+
+	<!-- Leaf icon -->
+	<g transform="translate(100, 120)">
+		<path d="M50 0C22.4 0 0 22.4 0 50C0 77.6 22.4 100 50 100C77.6 100 100 77.6 100 50C100 22.4 77.6 0 50 0ZM50 20C65.5 20 78 32.5 78 48C78 63.5 65.5 76 50 76C34.5 76 22 63.5 22 48C22 32.5 34.5 20 50 20Z" fill="url(#accent-gradient)"/>
+		<path d="M50 30L35 50L50 70L65 50L50 30Z" fill="#ffffff" opacity="0.9"/>
+	</g>
+
+	<!-- Title -->
+	<text x="240" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="96" font-weight="800" fill="#ffffff">
+		Leaf
+	</text>
+
+	<!-- Tagline -->
+	<text x="240" y="310" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="500" fill="#D1FAE5">
+		SolidJS Documentation Framework
+	</text>
+
+	<!-- Feature badges -->
+	<g transform="translate(240, 360)">
+		<rect x="0" y="0" width="180" height="50" rx="25" fill="#ffffff" opacity="0.15"/>
+		<text x="90" y="33" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff" text-anchor="middle">
+			⚡ Fast
+		</text>
+
+		<rect x="200" y="0" width="200" height="50" rx="25" fill="#ffffff" opacity="0.15"/>
+		<text x="300" y="33" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff" text-anchor="middle">
+			📦 Lightweight
+		</text>
+
+		<rect x="420" y="0" width="220" height="50" rx="25" fill="#ffffff" opacity="0.15"/>
+		<text x="530" y="33" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff" text-anchor="middle">
+			🎯 TypeScript
+		</text>
+	</g>
+
+	<!-- Decorative elements -->
+	<circle cx="1050" cy="150" r="80" fill="#10B981" opacity="0.1"/>
+	<circle cx="1100" cy="480" r="100" fill="#34D399" opacity="0.1"/>
+
+	<!-- Footer -->
+	<text x="240" y="560" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#D1FAE5" opacity="0.8">
+		leaf.sylphx.com
+	</text>
+</svg>

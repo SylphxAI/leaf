@@ -75,6 +75,8 @@ async function generatePageHTML(
 	const canonicalUrl = `${siteUrl}${route.path}`;
 	const ogImage = frontmatter.ogImage || `${siteUrl}/og-image.png`;
 
+	const themeColor = config.theme?.themeColor || "#15803D";
+
 	const seoMeta = `
 		<meta name="description" content="${pageDescription}" />
 		<link rel="canonical" href="${canonicalUrl}" />
@@ -98,8 +100,15 @@ async function generatePageHTML(
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
 		<meta name="author" content="${config.author || 'Sylphx'}" />
-		<meta name="theme-color" content="#0070f3" />
+		<meta name="theme-color" content="${themeColor}" />
+
+		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+		<!-- PWA Manifest -->
+		<link rel="manifest" href="/manifest.webmanifest" />
 	`;
 
 	// Prepare preload data for React (TOC, last modified, etc)
