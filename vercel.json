@@ -1,5 +1,12 @@
 {
-	"buildCommand": "bun run build && cd docs && bun run build",
+	"buildCommand": "bun install && bun run build && bun --cwd docs run build",
 	"outputDirectory": "docs/dist",
-	"installCommand": "bun install"
+	"installCommand": "bun install",
+	"framework": null,
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/index.html"
+		}
+	]
 }

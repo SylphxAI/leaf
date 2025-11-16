@@ -1,0 +1,12 @@
+{
+  "buildCommand": "echo 'Using pre-built files from dist/'",
+  "outputDirectory": "dist",
+  "installCommand": "echo 'No install needed'",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
