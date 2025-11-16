@@ -40,37 +40,33 @@ export function markdownPlugin(config: LeafConfig): Plugin {
 			);
 
 			const componentImports = hasComponents
-				? `import { ${uniqueComponents.join(", ")} } from '@sylphx/leaf-theme-default';\nimport { render as _$render, createComponent as _$createComponent } from 'solid-js/web';\nimport { onMount } from 'solid-js';\n`
+				? `import { ${uniqueComponents.join(", ")} } from '@sylphx/leaf-theme-default';\nimport { onMount } from 'solid-js';\nimport { render } from 'solid-js/web';\n`
 				: ``;
 
 			// Generate component mapping - not needed anymore, we'll create components directly
 			const componentMapping = "";
 
-			// Generate render function using SolidJS render API to mount components
+			// Generate render function - use solid-js/web render for dynamic component mounting
 			const renderFunction = hasComponents
 				? `
   let containerRef;
 
   onMount(() => {
-    // Mount components after HTML is rendered
+    // Mount components after HTML is rendered using solid-js/web render
     ${components.map((c) => {
-				// Generate createComponent call with props object
-				const propsObj = JSON.stringify(c.props);
+				const propsJson = JSON.stringify(c.props);
+				const varName = c.id.replace(/-/g, '_');
 				return `
-    const placeholder_${c.id.replace(/-/g, '_')} = containerRef.querySelector('[data-leaf-component="${c.id}"]');
-    if (placeholder_${c.id.replace(/-/g, '_')}) {
-      _$render(() => _$createComponent(${c.name}, ${propsObj}), placeholder_${c.id.replace(/-/g, '_')});
+    const placeholder_${varName} = containerRef.querySelector('[data-leaf-component="${c.id}"]');
+    if (placeholder_${varName}) {
+      render(() => ${c.name}(${propsJson}), placeholder_${varName});
     }`;
 			}).join('')}
   });
 
-  return (
-    <div ref={containerRef} class="markdown-content" innerHTML={${JSON.stringify(html)}} />
-  );`
+  return <div ref={containerRef} class="markdown-content" innerHTML={${JSON.stringify(html)}} />;`
 				: `
-  return (
-    <div class="markdown-content" innerHTML={${JSON.stringify(html)}} />
-  );`;
+  return <div class="markdown-content" innerHTML={${JSON.stringify(html)}} />;`;
 
 			// Generate SolidJS component that renders the HTML and exports TOC
 			const component = `

@@ -29,6 +29,9 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 		assetsPlugin(config),
 		virtualModulesPlugin(config),
 		markdownPlugin(config),
-		solidPlugin(),
+		solidPlugin({
+			include: ["**/*.{ts,tsx,js,jsx}"],
+			exclude: ["**/*.md"],
+		}),
 	];
 }
