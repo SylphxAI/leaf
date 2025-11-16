@@ -1,4 +1,4 @@
-import { createSignal, createEffect, onCleanup, Component } from "solid-js";
+import { createSignal, createEffect, onCleanup } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Route, useLocation, useNavigate } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
@@ -11,7 +11,7 @@ import config from "virtual:leaf/config";
 
 interface LeafRouteConfig {
 	path: string;
-	component: Component;
+	component: any;
 	toc: any[];
 	docFooter: any;
 	data?: any;
