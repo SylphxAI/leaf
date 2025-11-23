@@ -117,6 +117,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 							items={props.config?.theme?.sidebar}
 							open={sidebarOpen()}
 							onClose={() => setSidebarOpen(false)}
+							currentPath={props.currentRoute?.path}
 						/>
 
 						<div class={cn("lg:pl-80", !hasSidebar() && "lg:pl-0")}>

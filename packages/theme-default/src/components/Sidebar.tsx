@@ -1,6 +1,5 @@
 import { createSignal, Show, For } from "solid-js";
 import { Link } from "./Link";
-import { useLocation } from "../hooks/useRouter";
 import * as Collapsible from "@kobalte/core/collapsible";
 import "iconify-icon";
 import { cn } from "../lib/utils";
@@ -17,19 +16,20 @@ interface SidebarProps {
 	items?: SidebarItem[];
 	open?: boolean;
 	onClose?: () => void;
+	currentPath?: string;
 }
 
-function SidebarGroup(props: { item: SidebarItem; level?: number }) {
-	const location = useLocation();
+function SidebarGroup(props: { item: SidebarItem; level?: number; currentPath?: string }) {
+	const pathname = () => props.currentPath || window.location.pathname;
 	const hasItems = props.item.items && props.item.items.length > 0;
 
-	const isActive = () => props.item.link && location.pathname === props.item.link;
+	const isActive = () => props.item.link && pathname() === props.item.link;
 	const hasActiveChild = () =>
 		hasItems &&
 		props.item.items!.some(
 			(child) =>
-				child.link === location.pathname ||
-				child.items?.some((grandchild) => grandchild.link === location.pathname),
+				child.link === pathname() ||
+				child.items?.some((grandchild) => grandchild.link === pathname()),
 		);
 
 	const [open, setOpen] = createSignal(!props.item.collapsed || hasActiveChild());
@@ -74,7 +74,7 @@ function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 				<Collapsible.Content class="space-y-1 pt-1">
 					<For each={props.item.items}>
 						{(child) => (
-							<SidebarGroup item={child} level={(props.level || 0) + 1} />
+							<SidebarGroup item={child} level={(props.level || 0) + 1} currentPath={props.currentPath} />
 						)}
 					</For>
 				</Collapsible.Content>
@@ -117,7 +117,7 @@ export function Sidebar(props: SidebarProps): JSX.Element {
 				<div class="sidebar-scroll h-full overflow-y-auto px-6 py-10">
 					<nav class="space-y-0.5">
 						<For each={props.items || []}>
-							{(item) => <SidebarGroup item={item} />}
+							{(item) => <SidebarGroup item={item} currentPath={props.currentPath} />}
 						</For>
 					</nav>
 				</div>
