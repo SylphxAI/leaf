@@ -1,6 +1,6 @@
 import { createEffect, onCleanup } from "solid-js";
 import { render } from "solid-js/web";
-import { Router, useLocation } from "@solidjs/router";
+import { Router, Routes, Route, useLocation } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
 import "@sylphx/leaf-theme-default/style.css";
 
@@ -121,5 +121,9 @@ if (!rootElement) {
 }
 
 render(() => (
-	<Router root={App} />
+	<Router>
+		<Routes>
+			<Route path="*" component={App} />
+		</Routes>
+	</Router>
 ), rootElement);
