@@ -1,4 +1,5 @@
 import { createSignal, createEffect, onCleanup, Show, For } from "solid-js";
+import { useNavigate } from "@solidjs/router";
 import "iconify-icon";
 import MiniSearch from "minisearch";
 import { cn } from "../lib/utils";
@@ -43,6 +44,7 @@ export function Search(props: SearchProps = {}): JSX.Element {
 	const [searchIndex, setSearchIndex] = createSignal<MiniSearch | null>(null);
 	const [isVisible, setIsVisible] = createSignal(false);
 	const [shouldRender, setShouldRender] = createSignal(false);
+	const navigate = useNavigate();
 
 	// Handle animation on open/close
 	createEffect(() => {
@@ -150,7 +152,7 @@ export function Search(props: SearchProps = {}): JSX.Element {
 	});
 
 	const handleSelectResult = (result: SearchResult) => {
-		window.location.href = result.path;
+		navigate(result.path);
 		setOpen(false);
 		setQuery("");
 		setResults([]);

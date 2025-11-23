@@ -1,5 +1,6 @@
 import { createSignal, Show, For } from "solid-js";
 import { Link } from "./Link";
+import { useLocation } from "@solidjs/router";
 import * as Collapsible from "@kobalte/core/collapsible";
 import "iconify-icon";
 import { cn } from "../lib/utils";
@@ -16,11 +17,11 @@ interface SidebarProps {
 	items?: SidebarItem[];
 	open?: boolean;
 	onClose?: () => void;
-	currentPath?: string;
 }
 
-function SidebarGroup(props: { item: SidebarItem; level?: number; currentPath?: string }) {
-	const pathname = () => props.currentPath || window.location.pathname;
+function SidebarGroup(props: { item: SidebarItem; level?: number }) {
+	const location = useLocation();
+	const pathname = () => location.pathname;
 	const hasItems = props.item.items && props.item.items.length > 0;
 
 	const isActive = () => props.item.link && pathname() === props.item.link;
@@ -74,7 +75,7 @@ function SidebarGroup(props: { item: SidebarItem; level?: number; currentPath?: 
 				<Collapsible.Content class="space-y-1 pt-1">
 					<For each={props.item.items}>
 						{(child) => (
-							<SidebarGroup item={child} level={(props.level || 0) + 1} currentPath={props.currentPath} />
+							<SidebarGroup item={child} level={(props.level || 0) + 1} />
 						)}
 					</For>
 				</Collapsible.Content>
@@ -117,7 +118,7 @@ export function Sidebar(props: SidebarProps): JSX.Element {
 				<div class="sidebar-scroll h-full overflow-y-auto px-6 py-10">
 					<nav class="space-y-0.5">
 						<For each={props.items || []}>
-							{(item) => <SidebarGroup item={item} currentPath={props.currentPath} />}
+							{(item) => <SidebarGroup item={item} />}
 						</For>
 					</nav>
 				</div>

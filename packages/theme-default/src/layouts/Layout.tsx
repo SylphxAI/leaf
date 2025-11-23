@@ -75,8 +75,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						socialLinks={props.config?.theme?.socialLinks}
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
-						currentPath={props.currentRoute?.path}
-					/>
+						/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 
 					<div class="pt-16">
@@ -108,8 +107,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						socialLinks={props.config?.theme?.socialLinks}
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
-						currentPath={props.currentRoute?.path}
-					/>
+						/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 
 					<div class="pt-16">
@@ -117,8 +115,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 							items={props.config?.theme?.sidebar}
 							open={sidebarOpen()}
 							onClose={() => setSidebarOpen(false)}
-							currentPath={props.currentRoute?.path}
-						/>
+								/>
 
 						<div class={cn("lg:pl-80", !hasSidebar() && "lg:pl-0")}>
 							<div class={cn(

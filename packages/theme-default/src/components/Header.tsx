@@ -5,6 +5,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Button } from "./Button";
 import { cn } from "../lib/utils";
 import { For } from "solid-js";
+import { useLocation } from "@solidjs/router";
 
 
 interface SocialLink {
@@ -18,7 +19,6 @@ interface HeaderProps {
 	socialLinks?: SocialLink[];
 	onMenuClick?: () => void;
 	onSearchClick?: () => void;
-	currentPath?: string;
 }
 
 const iconMap = {
@@ -29,7 +29,8 @@ const iconMap = {
 };
 
 export function Header(props: HeaderProps): JSX.Element {
-	const pathname = () => props.currentPath || window.location.pathname;
+	const location = useLocation();
+	const pathname = () => location.pathname;
 
 	return (
 		<header class="fixed top-0 left-0 right-0 z-50 h-16 border-b border-border bg-background/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/75 shadow-sm">
