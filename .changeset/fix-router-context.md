@@ -2,19 +2,23 @@
 "@sylphx/leaf": patch
 ---
 
-fix: correct Router setup to provide proper context
+fix: remove non-existent Routes import from @solidjs/router
 
-Change Router setup from `<Router root={App} />` to `<Router><App /></Router>`
-to ensure router primitives like useLocation() work correctly in child components.
+Remove `Routes` import and wrapper from client.tsx template, as it doesn't exist
+in @solidjs/router v0.15.4. The Router component internally handles route matching
+and rendering without requiring a Routes wrapper.
 
 **Issue:**
-- Components using useLocation() were throwing "can be only used inside a Route" error
-- Router context was not being properly provided to child components
+- Runtime error: "does not provide an export named 'Routes'"
+- @solidjs/router v0.15.4 doesn't export a Routes component
+- Previous attempts to fix router context issues used incorrect API
 
 **Solution:**
-- Use standard Router wrapper pattern instead of `root` prop
-- Ensures all child components have access to router context
+- Remove `Routes` from imports
+- Use `<Router><Route path="*" component={App} /></Router>` pattern directly
+- Router component internally uses Routes for route matching
 
 **Impact:**
-- Fixes navigation and routing in all Leaf-based documentation sites
-- No breaking changes to API or configuration
+- Fixes docs dev server startup and navigation
+- Compatible with @solidjs/router v0.15.4
+- No breaking changes to user-facing API
