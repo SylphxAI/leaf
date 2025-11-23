@@ -1,4 +1,4 @@
-import { createEffect, onCleanup } from "solid-js";
+import { createEffect, onCleanup, For } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Route, useLocation } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
@@ -26,23 +26,19 @@ const solidRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
 	data: route.data,
 }));
 
-// Simple route matcher
-function findMatchingRoute(pathname: string, routes: LeafRouteConfig[]): LeafRouteConfig | null {
-	const normalizedPath = pathname === "" ? "/" : pathname;
-	const exactMatch = routes.find(r => r.path === normalizedPath);
-	if (exactMatch) return exactMatch;
-	const catchAll = routes.find(r => r.path === "*");
-	return catchAll || null;
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+	throw new Error("Root element not found");
 }
 
-// App component - must be inside Router
-function App() {
+// Wrapper component that uses useLocation
+function RouteWrapper(props: { route: LeafRouteConfig }) {
 	const location = useLocation();
 
 	// Update document title based on current route
 	createEffect(() => {
-		const route = findMatchingRoute(location.pathname, solidRoutes);
-		const pageTitle = route?.data?.frontmatter?.title;
+		const pageTitle = props.route.data?.frontmatter?.title;
 		const siteTitle = config?.title || "Leaf";
 		document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
 	});
@@ -82,46 +78,37 @@ function App() {
 		onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
 	});
 
-	// Match current route
-	const route = () => findMatchingRoute(location.pathname, solidRoutes);
+	const RouteComponent = props.route.component;
 
 	return (
-		<>
-			{!route() ? (
-				<Layout config={config} currentRoute={null}>
-					<div class="prose prose-slate dark:prose-invert max-w-none">
-						<h1>404 - Page Not Found</h1>
-						<p>The page you're looking for doesn't exist.</p>
-					</div>
-				</Layout>
-			) : (
-				<Layout
-					config={config}
-					currentRoute={{
-						path: location.pathname,
-						toc: route()!.toc,
-						docFooter: route()!.docFooter,
-						frontmatter: route()!.data?.frontmatter || {},
-					}}
-				>
-					{(() => {
-						const RouteComponent = route()!.component;
-						return <RouteComponent />;
-					})()}
-				</Layout>
-			)}
-		</>
+		<Layout
+			config={config}
+			currentRoute={{
+				path: location.pathname,
+				toc: props.route.toc,
+				docFooter: props.route.docFooter,
+				frontmatter: props.route.data?.frontmatter || {},
+			}}
+		>
+			<RouteComponent />
+		</Layout>
 	);
-}
-
-const rootElement = document.getElementById("root");
-
-if (!rootElement) {
-	throw new Error("Root element not found");
 }
 
 render(() => (
 	<Router>
-		<Route path="*" component={App} />
+		<For each={solidRoutes}>
+			{(route) => (
+				<Route path={route.path} component={() => <RouteWrapper route={route} />} />
+			)}
+		</For>
+		<Route path="*" component={() => (
+			<Layout config={config} currentRoute={null}>
+				<div class="prose prose-slate dark:prose-invert max-w-none">
+					<h1>404 - Page Not Found</h1>
+					<p>The page you're looking for doesn't exist.</p>
+				</div>
+			</Layout>
+		)} />
 	</Router>
 ), rootElement);

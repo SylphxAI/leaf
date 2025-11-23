@@ -2,23 +2,29 @@
 "@sylphx/leaf": patch
 ---
 
-fix: remove non-existent Routes import from @solidjs/router
+fix: restructure routing to work with @solidjs/router v0.15.4
 
-Remove `Routes` import and wrapper from client.tsx template, as it doesn't exist
-in @solidjs/router v0.15.4. The Router component internally handles route matching
-and rendering without requiring a Routes wrapper.
+Completely restructure client.tsx template to properly integrate with @solidjs/router v0.15.4's
+context system. Instead of using a single App component with manual route matching, create
+proper Route components for each route and use a RouteWrapper component that's rendered by
+the router.
 
 **Issue:**
-- Runtime error: "does not provide an export named 'Routes'"
-- @solidjs/router v0.15.4 doesn't export a Routes component
-- Previous attempts to fix router context issues used incorrect API
+- useLocation() throwing "can be only used inside a Route" error
+- Router context not properly available to components
+- Previous architecture incompatible with how @solidjs/router v0.15.4 provides context
+- Manual route matching fighting against router's design
 
 **Solution:**
-- Remove `Routes` from imports
-- Use `<Router><Route path="*" component={App} /></Router>` pattern directly
-- Router component internally uses Routes for route matching
+- Create Route components for each route in solidRoutes array using For
+- Implement RouteWrapper component as the route component
+- RouteWrapper uses useLocation() and renders Layout with route data
+- Router now properly matches routes and provides context to components
+- Remove manual route matching logic (findMatchingRoute)
 
 **Impact:**
-- Fixes docs dev server startup and navigation
-- Compatible with @solidjs/router v0.15.4
+- Fixes all router context errors
+- Navigation and routing work correctly
+- Header and other components can now use useLocation()
+- More idiomatic @solidjs/router usage
 - No breaking changes to user-facing API
