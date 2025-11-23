@@ -32,83 +32,83 @@ if (!rootElement) {
 	throw new Error("Root element not found");
 }
 
-// Wrapper component that uses useLocation
-function RouteWrapper(props: { route: LeafRouteConfig }) {
-	const location = useLocation();
-
-	// Update document title based on current route
-	createEffect(() => {
-		const pageTitle = props.route.data?.frontmatter?.title;
-		const siteTitle = config?.title || "Leaf";
-		document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
-	});
-
-	// Handle scroll restoration on route change
-	createEffect(() => {
-		const hash = location.hash;
-		if (hash) {
-			requestAnimationFrame(() => {
-				setTimeout(() => {
-					const element = document.querySelector(hash);
-					if (element) {
-						element.scrollIntoView({ behavior: 'smooth' });
-					}
-				}, 100);
-			});
-		} else {
-			window.scrollTo(0, 0);
-		}
-	});
-
-	// Handle same-page hash navigation
-	createEffect(() => {
-		const handleHashChange = () => {
-			const hash = window.location.hash;
-			if (hash) {
-				requestAnimationFrame(() => {
-					const element = document.querySelector(hash);
-					if (element) {
-						element.scrollIntoView({ behavior: 'smooth' });
-					}
-				});
-			}
-		};
-
-		window.addEventListener('hashchange', handleHashChange);
-		onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
-	});
-
-	const RouteComponent = props.route.component;
-
-	return (
-		<Layout
-			config={config}
-			currentRoute={{
-				path: location.pathname,
-				toc: props.route.toc,
-				docFooter: props.route.docFooter,
-				frontmatter: props.route.data?.frontmatter || {},
-			}}
-		>
-			<RouteComponent />
-		</Layout>
-	);
-}
-
 render(() => (
 	<Router>
 		<For each={solidRoutes}>
 			{(route) => (
-				<Route path={route.path} component={() => <RouteWrapper route={route} />} />
+				<Route path={route.path} component={(props: any) => {
+					const location = useLocation();
+
+					// Update document title based on current route
+					createEffect(() => {
+						const pageTitle = route.data?.frontmatter?.title;
+						const siteTitle = config?.title || "Leaf";
+						document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+					});
+
+					// Handle scroll restoration on route change
+					createEffect(() => {
+						const hash = location.hash;
+						if (hash) {
+							requestAnimationFrame(() => {
+								setTimeout(() => {
+									const element = document.querySelector(hash);
+									if (element) {
+										element.scrollIntoView({ behavior: 'smooth' });
+									}
+								}, 100);
+							});
+						} else {
+							window.scrollTo(0, 0);
+						}
+					});
+
+					// Handle same-page hash navigation
+					createEffect(() => {
+						const handleHashChange = () => {
+							const hash = window.location.hash;
+							if (hash) {
+								requestAnimationFrame(() => {
+									const element = document.querySelector(hash);
+									if (element) {
+										element.scrollIntoView({ behavior: 'smooth' });
+									}
+								});
+							}
+						};
+
+						window.addEventListener('hashchange', handleHashChange);
+						onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
+					});
+
+					const RouteComponent = route.component;
+
+					return (
+						<Layout
+							config={config}
+							currentRoute={{
+								path: location.pathname,
+								toc: route.toc,
+								docFooter: route.docFooter,
+								frontmatter: route.data?.frontmatter || {},
+							}}
+						>
+							<RouteComponent />
+						</Layout>
+					);
+				}} />
 			)}
 		</For>
-		<Route path="*" component={() => (
-			<Layout config={config} currentRoute={null}>
-				<div class="prose prose-slate dark:prose-invert max-w-none">
-					<h1>404 - Page Not Found</h1>
-					<p>The page you're looking for doesn't exist.</p>
-				</div>
-			</Layout>
-		)} />
+		<Route path="*" component={(props: any) => {
+			const location = useLocation();
+			return (
+				<Layout config={config} currentRoute={null}>
+					<div class="prose prose-slate dark:prose-invert max-w-none">
+						<h1>404 - Page Not Found</h1>
+						<p>The page you're looking for doesn't exist.</p>
+					</div>
+				</Layout>
+			);
+		}} />
 	</Router>
 ), rootElement);
