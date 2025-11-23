@@ -1,6 +1,6 @@
 {
 	"name": "@sylphx/leaf-cli",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"description": "🚀 Command-line interface for Leaf documentation framework",
 	"bin": {
@@ -47,7 +47,7 @@
 		"dev": "bunup 'src/**/*.ts' --watch"
 	},
 	"dependencies": {
-		"@sylphx/leaf": "^1.0.0",
+		"@sylphx/leaf": "workspace:*",
 		"cac": "^6.7.14",
 		"vite": "^6.4.1"
 	},
