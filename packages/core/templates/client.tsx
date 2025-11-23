@@ -1,6 +1,6 @@
 import { createEffect, onCleanup, For } from "solid-js";
 import { render } from "solid-js/web";
-import { Router, Route, useLocation } from "@solidjs/router";
+import { Router, Route } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
 import "@sylphx/leaf-theme-default/style.css";
 
@@ -37,8 +37,6 @@ render(() => (
 		<For each={solidRoutes}>
 			{(route) => (
 				<Route path={route.path} component={(props: any) => {
-					const location = useLocation();
-
 					// Update document title based on current route
 					createEffect(() => {
 						const pageTitle = route.data?.frontmatter?.title;
@@ -48,7 +46,7 @@ render(() => (
 
 					// Handle scroll restoration on route change
 					createEffect(() => {
-						const hash = location.hash;
+						const hash = window.location.hash;
 						if (hash) {
 							requestAnimationFrame(() => {
 								setTimeout(() => {
@@ -87,7 +85,7 @@ render(() => (
 						<Layout
 							config={config}
 							currentRoute={{
-								path: location.pathname,
+								path: route.path,
 								toc: route.toc,
 								docFooter: route.docFooter,
 								frontmatter: route.data?.frontmatter || {},
@@ -100,7 +98,6 @@ render(() => (
 			)}
 		</For>
 		<Route path="*" component={(props: any) => {
-			const location = useLocation();
 			return (
 				<Layout config={config} currentRoute={null}>
 					<div class="prose prose-slate dark:prose-invert max-w-none">

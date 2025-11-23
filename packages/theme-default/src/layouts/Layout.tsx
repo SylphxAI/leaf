@@ -75,6 +75,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						socialLinks={props.config?.theme?.socialLinks}
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
+						currentPath={props.currentRoute?.path}
 					/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 
@@ -107,6 +108,7 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						socialLinks={props.config?.theme?.socialLinks}
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
+						currentPath={props.currentRoute?.path}
 					/>
 					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
 

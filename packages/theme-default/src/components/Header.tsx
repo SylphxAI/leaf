@@ -1,5 +1,4 @@
 import { Link } from "./Link";
-import { useLocation } from "../hooks/useRouter";
 import "iconify-icon";
 import { ThemeToggle } from "./ThemeToggle";
 import { ThemeSwitcher } from "./ThemeSwitcher";
@@ -19,6 +18,7 @@ interface HeaderProps {
 	socialLinks?: SocialLink[];
 	onMenuClick?: () => void;
 	onSearchClick?: () => void;
+	currentPath?: string;
 }
 
 const iconMap = {
@@ -29,7 +29,7 @@ const iconMap = {
 };
 
 export function Header(props: HeaderProps): JSX.Element {
-	const location = useLocation();
+	const pathname = () => props.currentPath || window.location.pathname;
 
 	return (
 		<header class="fixed top-0 left-0 right-0 z-50 h-16 border-b border-border bg-background/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/75 shadow-sm">
@@ -62,7 +62,7 @@ export function Header(props: HeaderProps): JSX.Element {
 				<nav class="hidden gap-1.5 md:flex flex-1" aria-label="Main navigation">
 					<For each={props.nav || []}>
 						{(item) => {
-							const isActive = () => location.pathname.startsWith(item.link);
+							const isActive = () => pathname().startsWith(item.link);
 							return (
 								<Link
 									to={item.link}
