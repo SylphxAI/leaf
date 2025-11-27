@@ -76,7 +76,10 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
 						/>
-					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
+					<Search
+						open={searchOpen()}
+						onOpenChange={setSearchOpen}
+					/>
 
 					<div class="pt-16">
 						{/* Hero Section */}
@@ -108,14 +111,17 @@ export const Layout: ParentComponent<LayoutProps> = (props) => {
 						onMenuClick={handleMenuClick}
 						onSearchClick={handleSearchClick}
 						/>
-					<Search open={searchOpen()} onOpenChange={setSearchOpen} />
+					<Search
+						open={searchOpen()}
+						onOpenChange={setSearchOpen}
+					/>
 
 					<div class="pt-16">
 						<Sidebar
 							items={props.config?.theme?.sidebar}
 							open={sidebarOpen()}
 							onClose={() => setSidebarOpen(false)}
-								/>
+						/>
 
 						<div class={cn("lg:pl-80", !hasSidebar() && "lg:pl-0")}>
 							<div class={cn(

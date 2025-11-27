@@ -1,4 +1,4 @@
-import { createEffect, onCleanup, Component } from "solid-js";
+import { createEffect, onCleanup, Component, For } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Route, useLocation } from "@solidjs/router";
 import { Layout } from "@sylphx/leaf-theme-default";
@@ -26,96 +26,90 @@ const solidRoutes: LeafRouteConfig[] = routes.map((route: any) => ({
 	data: route.data,
 }));
 
-// Create a wrapper component for each route that has access to router context
-function createRouteComponent(route: LeafRouteConfig): Component {
-	return () => {
-		const location = useLocation();
-
-		// Update document title based on current route
-		createEffect(() => {
-			const pageTitle = route.data?.frontmatter?.title;
-			const siteTitle = config?.title || "Leaf";
-			document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
-		});
-
-		// Handle scroll restoration on route change
-		createEffect(() => {
-			const hash = location.hash;
-			if (hash) {
-				requestAnimationFrame(() => {
-					setTimeout(() => {
-						const element = document.querySelector(hash);
-						if (element) {
-							element.scrollIntoView({ behavior: 'smooth' });
-						}
-					}, 100);
-				});
-			} else {
-				window.scrollTo(0, 0);
-			}
-		});
-
-		// Handle same-page hash navigation
-		createEffect(() => {
-			const handleHashChange = () => {
-				const hash = window.location.hash;
-				if (hash) {
-					requestAnimationFrame(() => {
-						const element = document.querySelector(hash);
-						if (element) {
-							element.scrollIntoView({ behavior: 'smooth' });
-						}
-					});
-				}
-			};
-
-			window.addEventListener('hashchange', handleHashChange);
-			onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
-		});
-
-		const RouteComponent = route.component;
-
-		return (
-			<Layout
-				config={config}
-				currentRoute={{
-					path: location.pathname,
-					toc: route.toc,
-					docFooter: route.docFooter,
-					frontmatter: route.data?.frontmatter || {},
-				}}
-			>
-				<RouteComponent />
-			</Layout>
-		);
-	};
-}
-
-const NotFoundComponent: Component = () => {
-	return (
-		<Layout config={config} currentRoute={null}>
-			<div class="prose prose-slate dark:prose-invert max-w-none">
-				<h1>404 - Page Not Found</h1>
-				<p>The page you're looking for doesn't exist.</p>
-			</div>
-		</Layout>
-	);
-};
-
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
 	throw new Error("Root element not found");
 }
 
-// Generate routes statically (not in reactive context)
-const routeElements = solidRoutes.map((route) => (
-	<Route path={route.path} component={createRouteComponent(route)} />
-));
-
 render(() => (
 	<Router>
-		{routeElements}
-		<Route path="*" component={NotFoundComponent} />
+		<For each={solidRoutes}>
+			{(route) => (
+				<Route path={route.path}>
+					{() => {
+						const location = useLocation();
+
+						// Update document title based on current route
+						createEffect(() => {
+							const pageTitle = route.data?.frontmatter?.title;
+							const siteTitle = config?.title || "Leaf";
+							document.title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+						});
+
+						// Handle scroll restoration on route change
+						createEffect(() => {
+							const hash = location.hash;
+							if (hash) {
+								requestAnimationFrame(() => {
+									setTimeout(() => {
+										const element = document.querySelector(hash);
+										if (element) {
+											element.scrollIntoView({ behavior: 'smooth' });
+										}
+									}, 100);
+								});
+							} else {
+								window.scrollTo(0, 0);
+							}
+						});
+
+						// Handle same-page hash navigation
+						createEffect(() => {
+							const handleHashChange = () => {
+								const hash = window.location.hash;
+								if (hash) {
+									requestAnimationFrame(() => {
+										const element = document.querySelector(hash);
+										if (element) {
+											element.scrollIntoView({ behavior: 'smooth' });
+										}
+									});
+								}
+							};
+
+							window.addEventListener('hashchange', handleHashChange);
+							onCleanup(() => window.removeEventListener('hashchange', handleHashChange));
+						});
+
+						const RouteComponent = route.component;
+
+						return (
+							<Layout
+								config={config}
+								currentRoute={{
+									path: location.pathname,
+									toc: route.toc,
+									docFooter: route.docFooter,
+									frontmatter: route.data?.frontmatter || {},
+								}}
+							>
+								<RouteComponent />
+							</Layout>
+						);
+					}}
+				</Route>
+			)}
+		</For>
+		<Route path="*">
+			{() => (
+				<Layout config={config} currentRoute={null}>
+					<div class="prose prose-slate dark:prose-invert max-w-none">
+						<h1>404 - Page Not Found</h1>
+						<p>The page you're looking for doesn't exist.</p>
+					</div>
+				</Layout>
+			)}
+		</Route>
 	</Router>
 ), rootElement);

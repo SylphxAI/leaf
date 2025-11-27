@@ -2506,814 +2506,6 @@
     "section": "TypeScript Errors"
   },
   {
-    "id": "/api/config",
-    "title": "Config API",
-    "text": "Complete reference for Leaf configuration options.",
-    "path": "/api/config"
-  },
-  {
-    "id": "/api/config#0",
-    "title": "Config API > Config API",
-    "text": "Complete reference for Leaf configuration options.",
-    "path": "/api/config",
-    "section": "Config API"
-  },
-  {
-    "id": "/api/config#1",
-    "title": "Config API > defineConfig",
-    "text": "Helper function for type-safe configuration: Type Signature:",
-    "path": "/api/config",
-    "section": "defineConfig"
-  },
-  {
-    "id": "/api/config#2",
-    "title": "Config API > LeafConfig",
-    "text": "Main configuration interface:",
-    "path": "/api/config",
-    "section": "LeafConfig"
-  },
-  {
-    "id": "/api/config#3",
-    "title": "Config API > Site Metadata",
-    "text": "",
-    "path": "/api/config",
-    "section": "Site Metadata"
-  },
-  {
-    "id": "/api/config#4",
-    "title": "Config API > title",
-    "text": "Type: Type: Default: Default: Site title used in page titles and metadata. Appears as:",
-    "path": "/api/config",
-    "section": "title"
-  },
-  {
-    "id": "/api/config#5",
-    "title": "Config API > description",
-    "text": "Type: Type: Default: Default: Site description for SEO and social sharing.",
-    "path": "/api/config",
-    "section": "description"
-  },
-  {
-    "id": "/api/config#6",
-    "title": "Config API > base",
-    "text": "Type: Type: Default: Default: Base URL path for the site. Important for deployment to subdirectories. URL Resolution: → → → → → →",
-    "path": "/api/config",
-    "section": "base"
-  },
-  {
-    "id": "/api/config#7",
-    "title": "Config API > lang",
-    "text": "Type: Type: Default: Default: Site language for HTML    attribute.",
-    "path": "/api/config",
-    "section": "lang"
-  },
-  {
-    "id": "/api/config#8",
-    "title": "Config API > ThemeConfig",
-    "text": "Theme configuration options:",
-    "path": "/api/config",
-    "section": "ThemeConfig"
-  },
-  {
-    "id": "/api/config#9",
-    "title": "Config API > theme.logo",
-    "text": "Type: Type: Path to logo image.",
-    "path": "/api/config",
-    "section": "theme.logo"
-  },
-  {
-    "id": "/api/config#10",
-    "title": "Config API > theme.nav",
-    "text": "Type: Type: Navigation menu items. Example:",
-    "path": "/api/config",
-    "section": "theme.nav"
-  },
-  {
-    "id": "/api/config#11",
-    "title": "Config API > theme.sidebar",
-    "text": "Type: Type: Sidebar navigation structure. Single Sidebar: Multiple Sidebars:",
-    "path": "/api/config",
-    "section": "theme.sidebar"
-  },
-  {
-    "id": "/api/config#12",
-    "title": "Config API > theme.socialLinks",
-    "text": "Type: Type: Social media links. Example:",
-    "path": "/api/config",
-    "section": "theme.socialLinks"
-  },
-  {
-    "id": "/api/config#13",
-    "title": "Config API > theme.footer",
-    "text": "Type: Type: Footer configuration. Example:",
-    "path": "/api/config",
-    "section": "theme.footer"
-  },
-  {
-    "id": "/api/config#14",
-    "title": "Config API > theme.editLink",
-    "text": "Type: Type: \"Edit this page\" link configuration. Example: The    placeholder is replaced with the page's file path.",
-    "path": "/api/config",
-    "section": "theme.editLink"
-  },
-  {
-    "id": "/api/config#15",
-    "title": "Config API > theme.lastUpdated",
-    "text": "Type: Type: Default: Default: Display last updated timestamp for each page based on Git history. Example (simple): Example (with custom options): ::: tip\nThe lastUpdated timestamp is extracted from Git commit history. Make sure your repository has commit history for accurate timestamps.\n:::",
-    "path": "/api/config",
-    "section": "theme.lastUpdated"
-  },
-  {
-    "id": "/api/config#16",
-    "title": "Config API > MarkdownConfig",
-    "text": "Markdown processing configuration:",
-    "path": "/api/config",
-    "section": "MarkdownConfig"
-  },
-  {
-    "id": "/api/config#17",
-    "title": "Config API > markdown.remarkPlugins",
-    "text": "Type: Type: Custom  remark  plugins to process markdown AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
-    "path": "/api/config",
-    "section": "markdown.remarkPlugins"
-  },
-  {
-    "id": "/api/config#18",
-    "title": "Config API > markdown.rehypePlugins",
-    "text": "Type: Type: Custom  rehype  plugins to process HTML AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
-    "path": "/api/config",
-    "section": "markdown.rehypePlugins"
-  },
-  {
-    "id": "/api/config#19",
-    "title": "Config API > markdown.highlight",
-    "text": "Type: Type: Code highlighting configuration. Example:",
-    "path": "/api/config",
-    "section": "markdown.highlight"
-  },
-  {
-    "id": "/api/config#20",
-    "title": "Config API > markdown.math",
-    "text": "Type: Type: Math equation configuration.",
-    "path": "/api/config",
-    "section": "markdown.math"
-  },
-  {
-    "id": "/api/config#21",
-    "title": "Config API > markdown.mermaid",
-    "text": "Type: Type: Mermaid diagram configuration.",
-    "path": "/api/config",
-    "section": "markdown.mermaid"
-  },
-  {
-    "id": "/api/config#22",
-    "title": "Config API > SearchConfig",
-    "text": "Search functionality configuration:",
-    "path": "/api/config",
-    "section": "SearchConfig"
-  },
-  {
-    "id": "/api/config#23",
-    "title": "Config API > search.enabled",
-    "text": "Type: Type: Default: Default: Enable/disable search.",
-    "path": "/api/config",
-    "section": "search.enabled"
-  },
-  {
-    "id": "/api/config#24",
-    "title": "Config API > search.maxResults",
-    "text": "Type: Type: Default: Default: Maximum search results to display.",
-    "path": "/api/config",
-    "section": "search.maxResults"
-  },
-  {
-    "id": "/api/config#25",
-    "title": "Config API > search.minQueryLength",
-    "text": "Type: Type: Default: Default: Minimum query length before searching.",
-    "path": "/api/config",
-    "section": "search.minQueryLength"
-  },
-  {
-    "id": "/api/config#26",
-    "title": "Config API > search.boost",
-    "text": "Type: Type: Relevance boost for content types.",
-    "path": "/api/config",
-    "section": "search.boost"
-  },
-  {
-    "id": "/api/config#27",
-    "title": "Config API > search.exclude",
-    "text": "Type: Type: Glob patterns for pages to exclude from search.",
-    "path": "/api/config",
-    "section": "search.exclude"
-  },
-  {
-    "id": "/api/config#28",
-    "title": "Config API > Helper Functions",
-    "text": "",
-    "path": "/api/config",
-    "section": "Helper Functions"
-  },
-  {
-    "id": "/api/config#29",
-    "title": "Config API > loadConfig",
-    "text": "Load and resolve configuration: Type Signature:",
-    "path": "/api/config",
-    "section": "loadConfig"
-  },
-  {
-    "id": "/api/config#30",
-    "title": "Config API > generateSidebar",
-    "text": "Auto-generate sidebar from file structure: Type Signature:",
-    "path": "/api/config",
-    "section": "generateSidebar"
-  },
-  {
-    "id": "/api/config#31",
-    "title": "Config API > defineConfigWithTheme",
-    "text": "Type-safe config with custom theme:",
-    "path": "/api/config",
-    "section": "defineConfigWithTheme"
-  },
-  {
-    "id": "/api/config#32",
-    "title": "Config API > Plugin API",
-    "text": "Create custom plugins: Example:",
-    "path": "/api/config",
-    "section": "Plugin API"
-  },
-  {
-    "id": "/api/config#33",
-    "title": "Config API > Environment Variables",
-    "text": "Access environment variables in config:",
-    "path": "/api/config",
-    "section": "Environment Variables"
-  },
-  {
-    "id": "/api/config#34",
-    "title": "Config API > TypeScript Support",
-    "text": "Full TypeScript support with types:",
-    "path": "/api/config",
-    "section": "TypeScript Support"
-  },
-  {
-    "id": "/api/config#35",
-    "title": "Config API > Next Steps",
-    "text": "Markdown Plugins API Markdown Plugins API Theming API Theming API Configuration Guide Configuration Guide",
-    "path": "/api/config",
-    "section": "Next Steps"
-  },
-  {
-    "id": "/api/theming",
-    "title": "Theming API",
-    "text": "Complete API reference for creating and customizing Leaf themes.",
-    "path": "/api/theming"
-  },
-  {
-    "id": "/api/theming#0",
-    "title": "Theming API > Theming API",
-    "text": "Complete API reference for creating and customizing Leaf themes.",
-    "path": "/api/theming",
-    "section": "Theming API"
-  },
-  {
-    "id": "/api/theming#1",
-    "title": "Theming API > Theme Structure",
-    "text": "A Leaf theme package structure:",
-    "path": "/api/theming",
-    "section": "Theme Structure"
-  },
-  {
-    "id": "/api/theming#2",
-    "title": "Theming API > Layout Component",
-    "text": "The main layout component that wraps all pages.",
-    "path": "/api/theming",
-    "section": "Layout Component"
-  },
-  {
-    "id": "/api/theming#3",
-    "title": "Theming API > Interface",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Interface"
-  },
-  {
-    "id": "/api/theming#4",
-    "title": "Theming API > Basic Example",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Basic Example"
-  },
-  {
-    "id": "/api/theming#5",
-    "title": "Theming API > Header Component",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Header Component"
-  },
-  {
-    "id": "/api/theming#6",
-    "title": "Theming API > Props",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Props"
-  },
-  {
-    "id": "/api/theming#7",
-    "title": "Theming API > Example",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Example"
-  },
-  {
-    "id": "/api/theming#8",
-    "title": "Theming API > Sidebar Component",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Sidebar Component"
-  },
-  {
-    "id": "/api/theming#9",
-    "title": "Theming API > Props",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Props"
-  },
-  {
-    "id": "/api/theming#10",
-    "title": "Theming API > Example",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Example"
-  },
-  {
-    "id": "/api/theming#11",
-    "title": "Theming API > TOC Component",
-    "text": "Table of contents component.",
-    "path": "/api/theming",
-    "section": "TOC Component"
-  },
-  {
-    "id": "/api/theming#12",
-    "title": "Theming API > Props",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Props"
-  },
-  {
-    "id": "/api/theming#13",
-    "title": "Theming API > Example",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Example"
-  },
-  {
-    "id": "/api/theming#14",
-    "title": "Theming API > Search Component",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Search Component"
-  },
-  {
-    "id": "/api/theming#15",
-    "title": "Theming API > Props",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Props"
-  },
-  {
-    "id": "/api/theming#16",
-    "title": "Theming API > Example",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Example"
-  },
-  {
-    "id": "/api/theming#17",
-    "title": "Theming API > Theme Switcher",
-    "text": "Toggle between light and dark themes.",
-    "path": "/api/theming",
-    "section": "Theme Switcher"
-  },
-  {
-    "id": "/api/theming#18",
-    "title": "Theming API > CSS Variables",
-    "text": "Define theme variables:",
-    "path": "/api/theming",
-    "section": "CSS Variables"
-  },
-  {
-    "id": "/api/theming#19",
-    "title": "Theming API > Layout Styles",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Layout Styles"
-  },
-  {
-    "id": "/api/theming#20",
-    "title": "Theming API > Hooks",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Hooks"
-  },
-  {
-    "id": "/api/theming#21",
-    "title": "Theming API > useConfig",
-    "text": "Access Leaf config:",
-    "path": "/api/theming",
-    "section": "useConfig"
-  },
-  {
-    "id": "/api/theming#22",
-    "title": "Theming API > useTOC",
-    "text": "Extract table of contents from current page:",
-    "path": "/api/theming",
-    "section": "useTOC"
-  },
-  {
-    "id": "/api/theming#23",
-    "title": "Theming API > useActiveHash",
-    "text": "Track active heading in TOC:",
-    "path": "/api/theming",
-    "section": "useActiveHash"
-  },
-  {
-    "id": "/api/theming#24",
-    "title": "Theming API > Publishing a Theme",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Publishing a Theme"
-  },
-  {
-    "id": "/api/theming#25",
-    "title": "Theming API > Package.json",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Package.json"
-  },
-  {
-    "id": "/api/theming#26",
-    "title": "Theming API > Exports",
-    "text": "",
-    "path": "/api/theming",
-    "section": "Exports"
-  },
-  {
-    "id": "/api/theming#27",
-    "title": "Theming API > Theme Examples",
-    "text": "Full example themes: Default Theme Default Theme Minimal Theme Minimal Theme Blog Theme Blog Theme",
-    "path": "/api/theming",
-    "section": "Theme Examples"
-  },
-  {
-    "id": "/api/theming#28",
-    "title": "Theming API > Next Steps",
-    "text": "Config API Config API Markdown Plugins API Markdown Plugins API Theming Guide Theming Guide",
-    "path": "/api/theming",
-    "section": "Next Steps"
-  },
-  {
-    "id": "/api",
-    "title": "API Reference",
-    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
-    "path": "/api"
-  },
-  {
-    "id": "/api#0",
-    "title": "API Reference > API Reference",
-    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
-    "path": "/api",
-    "section": "API Reference"
-  },
-  {
-    "id": "/api#1",
-    "title": "API Reference > Overview",
-    "text": "Leaf provides a comprehensive API for building modern documentation sites. This section covers: Config API  - All configuration options Config API  - All configuration options Markdown Plugins  - Extending markdown processing Markdown Plugins  - Extending markdown processing Theming API  - Customizing the theme Theming API  - Customizing the theme",
-    "path": "/api",
-    "section": "Overview"
-  },
-  {
-    "id": "/api#2",
-    "title": "API Reference > Quick Links",
-    "text": "",
-    "path": "/api",
-    "section": "Quick Links"
-  },
-  {
-    "id": "/api#3",
-    "title": "API Reference > Configuration",
-    "text": "Learn how to configure Leaf for your project. The config file supports TypeScript and provides full intellisense. View Config API →",
-    "path": "/api",
-    "section": "Configuration"
-  },
-  {
-    "id": "/api#4",
-    "title": "API Reference > Markdown Plugins",
-    "text": "Extend Leaf's markdown processing with custom remark and rehype plugins. View Markdown Plugins →",
-    "path": "/api",
-    "section": "Markdown Plugins"
-  },
-  {
-    "id": "/api#5",
-    "title": "API Reference > Theming",
-    "text": "Customize the default theme or create your own from scratch. View Theming API →",
-    "path": "/api",
-    "section": "Theming"
-  },
-  {
-    "id": "/api#6",
-    "title": "API Reference > Type Definitions",
-    "text": "All APIs are fully typed with TypeScript. Import types from   :",
-    "path": "/api",
-    "section": "Type Definitions"
-  },
-  {
-    "id": "/api#7",
-    "title": "API Reference > Next Steps",
-    "text": "Start with the  Config API  to understand all available configuration options.",
-    "path": "/api",
-    "section": "Next Steps"
-  },
-  {
-    "id": "/api/markdown-plugins",
-    "title": "Markdown Plugins API",
-    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
-    "path": "/api/markdown-plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#0",
-    "title": "Markdown Plugins API > Markdown Plugins API",
-    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
-    "path": "/api/markdown-plugins",
-    "section": "Markdown Plugins API"
-  },
-  {
-    "id": "/api/markdown-plugins#1",
-    "title": "Markdown Plugins API > Overview",
-    "text": "Leaf uses the  unified  processor with: remark  - Markdown processor remark  - Markdown processor rehype  - HTML processor rehype  - HTML processor You can add custom plugins at either stage of the pipeline:",
-    "path": "/api/markdown-plugins",
-    "section": "Overview"
-  },
-  {
-    "id": "/api/markdown-plugins#2",
-    "title": "Markdown Plugins API > Plugin Types",
-    "text": "Leaf exports TypeScript types for better plugin development:",
-    "path": "/api/markdown-plugins",
-    "section": "Plugin Types"
-  },
-  {
-    "id": "/api/markdown-plugins#3",
-    "title": "Markdown Plugins API > RemarkPlugin",
-    "text": "Type for remark plugins that process markdown AST. Usage:",
-    "path": "/api/markdown-plugins",
-    "section": "RemarkPlugin"
-  },
-  {
-    "id": "/api/markdown-plugins#4",
-    "title": "Markdown Plugins API > RehypePlugin",
-    "text": "Type for rehype plugins that process HTML AST. Usage:",
-    "path": "/api/markdown-plugins",
-    "section": "RehypePlugin"
-  },
-  {
-    "id": "/api/markdown-plugins#5",
-    "title": "Markdown Plugins API > TocItem",
-    "text": "Type for table of contents items extracted during markdown processing.",
-    "path": "/api/markdown-plugins",
-    "section": "TocItem"
-  },
-  {
-    "id": "/api/markdown-plugins#6",
-    "title": "Markdown Plugins API > LeafPluginConfig",
-    "text": "Configuration interface for custom plugin systems.",
-    "path": "/api/markdown-plugins",
-    "section": "LeafPluginConfig"
-  },
-  {
-    "id": "/api/markdown-plugins#7",
-    "title": "Markdown Plugins API > Remark Plugins",
-    "text": "Process markdown AST before conversion to HTML. Use cases: Transform markdown syntax Transform markdown syntax Add custom markdown elements Add custom markdown elements Extract metadata Extract metadata Modify content structure Modify content structure",
-    "path": "/api/markdown-plugins",
-    "section": "Remark Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#8",
-    "title": "Markdown Plugins API > Rehype Plugins",
-    "text": "Process HTML AST after markdown conversion. Use cases: Modify HTML output Modify HTML output Add attributes to elements Add attributes to elements Wrap content in containers Wrap content in containers Post-process code blocks Post-process code blocks",
-    "path": "/api/markdown-plugins",
-    "section": "Rehype Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#9",
-    "title": "Markdown Plugins API > Creating Remark Plugins",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Creating Remark Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#10",
-    "title": "Markdown Plugins API > Basic Structure",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Basic Structure"
-  },
-  {
-    "id": "/api/markdown-plugins#11",
-    "title": "Markdown Plugins API > Example: Custom Callout",
-    "text": "Usage:",
-    "path": "/api/markdown-plugins",
-    "section": "Example: Custom Callout"
-  },
-  {
-    "id": "/api/markdown-plugins#12",
-    "title": "Markdown Plugins API > Example: Reading Time",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Example: Reading Time"
-  },
-  {
-    "id": "/api/markdown-plugins#13",
-    "title": "Markdown Plugins API > Example: Auto-Linking Headers",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Example: Auto-Linking Headers"
-  },
-  {
-    "id": "/api/markdown-plugins#14",
-    "title": "Markdown Plugins API > Creating Rehype Plugins",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Creating Rehype Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#15",
-    "title": "Markdown Plugins API > Basic Structure",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Basic Structure"
-  },
-  {
-    "id": "/api/markdown-plugins#16",
-    "title": "Markdown Plugins API > Example: Image Lazy Loading",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Example: Image Lazy Loading"
-  },
-  {
-    "id": "/api/markdown-plugins#17",
-    "title": "Markdown Plugins API > Example: External Link Icons",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Example: External Link Icons"
-  },
-  {
-    "id": "/api/markdown-plugins#18",
-    "title": "Markdown Plugins API > Example: Code Block Enhancement",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Example: Code Block Enhancement"
-  },
-  {
-    "id": "/api/markdown-plugins#19",
-    "title": "Markdown Plugins API > Plugin Configuration",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Plugin Configuration"
-  },
-  {
-    "id": "/api/markdown-plugins#20",
-    "title": "Markdown Plugins API > With Options",
-    "text": "Usage:",
-    "path": "/api/markdown-plugins",
-    "section": "With Options"
-  },
-  {
-    "id": "/api/markdown-plugins#21",
-    "title": "Markdown Plugins API > Utilities",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Utilities"
-  },
-  {
-    "id": "/api/markdown-plugins#22",
-    "title": "Markdown Plugins API > unist-util-visit",
-    "text": "Visit nodes in the tree:",
-    "path": "/api/markdown-plugins",
-    "section": "unist-util-visit"
-  },
-  {
-    "id": "/api/markdown-plugins#23",
-    "title": "Markdown Plugins API > unist-util-filter",
-    "text": "Filter nodes:",
-    "path": "/api/markdown-plugins",
-    "section": "unist-util-filter"
-  },
-  {
-    "id": "/api/markdown-plugins#24",
-    "title": "Markdown Plugins API > hast-util-to-string",
-    "text": "Extract text from nodes:",
-    "path": "/api/markdown-plugins",
-    "section": "hast-util-to-string"
-  },
-  {
-    "id": "/api/markdown-plugins#25",
-    "title": "Markdown Plugins API > mdast-util-to-string",
-    "text": "Extract text from markdown nodes:",
-    "path": "/api/markdown-plugins",
-    "section": "mdast-util-to-string"
-  },
-  {
-    "id": "/api/markdown-plugins#26",
-    "title": "Markdown Plugins API > AST Node Types",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "AST Node Types"
-  },
-  {
-    "id": "/api/markdown-plugins#27",
-    "title": "Markdown Plugins API > Markdown (mdast) Nodes",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Markdown (mdast) Nodes"
-  },
-  {
-    "id": "/api/markdown-plugins#28",
-    "title": "Markdown Plugins API > HTML (hast) Nodes",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "HTML (hast) Nodes"
-  },
-  {
-    "id": "/api/markdown-plugins#29",
-    "title": "Markdown Plugins API > Built-in Plugins",
-    "text": "Leaf includes these plugins by default:",
-    "path": "/api/markdown-plugins",
-    "section": "Built-in Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#30",
-    "title": "Markdown Plugins API > Remark Plugins",
-    "text": "remarkGfm  - GitHub Flavored Markdown remarkGfm  - GitHub Flavored Markdown remarkMath  - Math equations remarkMath  - Math equations remarkBadge  - Badge components remarkBadge  - Badge components remarkCodeGroups  - Code group tabs remarkCodeGroups  - Code group tabs remarkContainers  - Custom containers remarkContainers  - Custom containers remarkCodeMeta  - Code block metadata remarkCodeMeta  - Code block metadata",
-    "path": "/api/markdown-plugins",
-    "section": "Remark Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#31",
-    "title": "Markdown Plugins API > Rehype Plugins",
-    "text": "rehypeSlug  - Add IDs to headings rehypeSlug  - Add IDs to headings rehypeKatex  - Render math equations rehypeKatex  - Render math equations rehypeMermaid  - Mark mermaid diagrams rehypeMermaid  - Mark mermaid diagrams rehypeHighlight  - Syntax highlighting rehypeHighlight  - Syntax highlighting rehypeLineHighlight  - Line highlighting rehypeLineHighlight  - Line highlighting rehypeExternalLinks  - External link icons rehypeExternalLinks  - External link icons",
-    "path": "/api/markdown-plugins",
-    "section": "Rehype Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#32",
-    "title": "Markdown Plugins API > Advanced Patterns",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Advanced Patterns"
-  },
-  {
-    "id": "/api/markdown-plugins#33",
-    "title": "Markdown Plugins API > Accessing File Data",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Accessing File Data"
-  },
-  {
-    "id": "/api/markdown-plugins#34",
-    "title": "Markdown Plugins API > Async Transformations",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Async Transformations"
-  },
-  {
-    "id": "/api/markdown-plugins#35",
-    "title": "Markdown Plugins API > Creating Containers",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Creating Containers"
-  },
-  {
-    "id": "/api/markdown-plugins#36",
-    "title": "Markdown Plugins API > Testing Plugins",
-    "text": "",
-    "path": "/api/markdown-plugins",
-    "section": "Testing Plugins"
-  },
-  {
-    "id": "/api/markdown-plugins#37",
-    "title": "Markdown Plugins API > Resources",
-    "text": "unified documentation unified documentation remark plugins remark plugins rehype plugins rehype plugins unist utilities unist utilities",
-    "path": "/api/markdown-plugins",
-    "section": "Resources"
-  },
-  {
-    "id": "/api/markdown-plugins#38",
-    "title": "Markdown Plugins API > Next Steps",
-    "text": "Config API Config API Theming API Theming API Markdown Guide Markdown Guide",
-    "path": "/api/markdown-plugins",
-    "section": "Next Steps"
-  },
-  {
     "id": "/features/search",
     "title": "Search",
     "text": "Leaf includes a powerful, fast, and lightweight full-text search system built into every documentation site.",
@@ -4204,5 +3396,813 @@
     "text": "Make sure you're using the correct language identifier:",
     "path": "/features/code-highlighting",
     "section": "Language not highlighting?"
+  },
+  {
+    "id": "/api/config",
+    "title": "Config API",
+    "text": "Complete reference for Leaf configuration options.",
+    "path": "/api/config"
+  },
+  {
+    "id": "/api/config#0",
+    "title": "Config API > Config API",
+    "text": "Complete reference for Leaf configuration options.",
+    "path": "/api/config",
+    "section": "Config API"
+  },
+  {
+    "id": "/api/config#1",
+    "title": "Config API > defineConfig",
+    "text": "Helper function for type-safe configuration: Type Signature:",
+    "path": "/api/config",
+    "section": "defineConfig"
+  },
+  {
+    "id": "/api/config#2",
+    "title": "Config API > LeafConfig",
+    "text": "Main configuration interface:",
+    "path": "/api/config",
+    "section": "LeafConfig"
+  },
+  {
+    "id": "/api/config#3",
+    "title": "Config API > Site Metadata",
+    "text": "",
+    "path": "/api/config",
+    "section": "Site Metadata"
+  },
+  {
+    "id": "/api/config#4",
+    "title": "Config API > title",
+    "text": "Type: Type: Default: Default: Site title used in page titles and metadata. Appears as:",
+    "path": "/api/config",
+    "section": "title"
+  },
+  {
+    "id": "/api/config#5",
+    "title": "Config API > description",
+    "text": "Type: Type: Default: Default: Site description for SEO and social sharing.",
+    "path": "/api/config",
+    "section": "description"
+  },
+  {
+    "id": "/api/config#6",
+    "title": "Config API > base",
+    "text": "Type: Type: Default: Default: Base URL path for the site. Important for deployment to subdirectories. URL Resolution: → → → → → →",
+    "path": "/api/config",
+    "section": "base"
+  },
+  {
+    "id": "/api/config#7",
+    "title": "Config API > lang",
+    "text": "Type: Type: Default: Default: Site language for HTML    attribute.",
+    "path": "/api/config",
+    "section": "lang"
+  },
+  {
+    "id": "/api/config#8",
+    "title": "Config API > ThemeConfig",
+    "text": "Theme configuration options:",
+    "path": "/api/config",
+    "section": "ThemeConfig"
+  },
+  {
+    "id": "/api/config#9",
+    "title": "Config API > theme.logo",
+    "text": "Type: Type: Path to logo image.",
+    "path": "/api/config",
+    "section": "theme.logo"
+  },
+  {
+    "id": "/api/config#10",
+    "title": "Config API > theme.nav",
+    "text": "Type: Type: Navigation menu items. Example:",
+    "path": "/api/config",
+    "section": "theme.nav"
+  },
+  {
+    "id": "/api/config#11",
+    "title": "Config API > theme.sidebar",
+    "text": "Type: Type: Sidebar navigation structure. Single Sidebar: Multiple Sidebars:",
+    "path": "/api/config",
+    "section": "theme.sidebar"
+  },
+  {
+    "id": "/api/config#12",
+    "title": "Config API > theme.socialLinks",
+    "text": "Type: Type: Social media links. Example:",
+    "path": "/api/config",
+    "section": "theme.socialLinks"
+  },
+  {
+    "id": "/api/config#13",
+    "title": "Config API > theme.footer",
+    "text": "Type: Type: Footer configuration. Example:",
+    "path": "/api/config",
+    "section": "theme.footer"
+  },
+  {
+    "id": "/api/config#14",
+    "title": "Config API > theme.editLink",
+    "text": "Type: Type: \"Edit this page\" link configuration. Example: The    placeholder is replaced with the page's file path.",
+    "path": "/api/config",
+    "section": "theme.editLink"
+  },
+  {
+    "id": "/api/config#15",
+    "title": "Config API > theme.lastUpdated",
+    "text": "Type: Type: Default: Default: Display last updated timestamp for each page based on Git history. Example (simple): Example (with custom options): ::: tip\nThe lastUpdated timestamp is extracted from Git commit history. Make sure your repository has commit history for accurate timestamps.\n:::",
+    "path": "/api/config",
+    "section": "theme.lastUpdated"
+  },
+  {
+    "id": "/api/config#16",
+    "title": "Config API > MarkdownConfig",
+    "text": "Markdown processing configuration:",
+    "path": "/api/config",
+    "section": "MarkdownConfig"
+  },
+  {
+    "id": "/api/config#17",
+    "title": "Config API > markdown.remarkPlugins",
+    "text": "Type: Type: Custom  remark  plugins to process markdown AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
+    "path": "/api/config",
+    "section": "markdown.remarkPlugins"
+  },
+  {
+    "id": "/api/config#18",
+    "title": "Config API > markdown.rehypePlugins",
+    "text": "Type: Type: Custom  rehype  plugins to process HTML AST. Simple usage: With options: ::: tip Type Safety\nLeaf exports    type for better TypeScript inference: :::",
+    "path": "/api/config",
+    "section": "markdown.rehypePlugins"
+  },
+  {
+    "id": "/api/config#19",
+    "title": "Config API > markdown.highlight",
+    "text": "Type: Type: Code highlighting configuration. Example:",
+    "path": "/api/config",
+    "section": "markdown.highlight"
+  },
+  {
+    "id": "/api/config#20",
+    "title": "Config API > markdown.math",
+    "text": "Type: Type: Math equation configuration.",
+    "path": "/api/config",
+    "section": "markdown.math"
+  },
+  {
+    "id": "/api/config#21",
+    "title": "Config API > markdown.mermaid",
+    "text": "Type: Type: Mermaid diagram configuration.",
+    "path": "/api/config",
+    "section": "markdown.mermaid"
+  },
+  {
+    "id": "/api/config#22",
+    "title": "Config API > SearchConfig",
+    "text": "Search functionality configuration:",
+    "path": "/api/config",
+    "section": "SearchConfig"
+  },
+  {
+    "id": "/api/config#23",
+    "title": "Config API > search.enabled",
+    "text": "Type: Type: Default: Default: Enable/disable search.",
+    "path": "/api/config",
+    "section": "search.enabled"
+  },
+  {
+    "id": "/api/config#24",
+    "title": "Config API > search.maxResults",
+    "text": "Type: Type: Default: Default: Maximum search results to display.",
+    "path": "/api/config",
+    "section": "search.maxResults"
+  },
+  {
+    "id": "/api/config#25",
+    "title": "Config API > search.minQueryLength",
+    "text": "Type: Type: Default: Default: Minimum query length before searching.",
+    "path": "/api/config",
+    "section": "search.minQueryLength"
+  },
+  {
+    "id": "/api/config#26",
+    "title": "Config API > search.boost",
+    "text": "Type: Type: Relevance boost for content types.",
+    "path": "/api/config",
+    "section": "search.boost"
+  },
+  {
+    "id": "/api/config#27",
+    "title": "Config API > search.exclude",
+    "text": "Type: Type: Glob patterns for pages to exclude from search.",
+    "path": "/api/config",
+    "section": "search.exclude"
+  },
+  {
+    "id": "/api/config#28",
+    "title": "Config API > Helper Functions",
+    "text": "",
+    "path": "/api/config",
+    "section": "Helper Functions"
+  },
+  {
+    "id": "/api/config#29",
+    "title": "Config API > loadConfig",
+    "text": "Load and resolve configuration: Type Signature:",
+    "path": "/api/config",
+    "section": "loadConfig"
+  },
+  {
+    "id": "/api/config#30",
+    "title": "Config API > generateSidebar",
+    "text": "Auto-generate sidebar from file structure: Type Signature:",
+    "path": "/api/config",
+    "section": "generateSidebar"
+  },
+  {
+    "id": "/api/config#31",
+    "title": "Config API > defineConfigWithTheme",
+    "text": "Type-safe config with custom theme:",
+    "path": "/api/config",
+    "section": "defineConfigWithTheme"
+  },
+  {
+    "id": "/api/config#32",
+    "title": "Config API > Plugin API",
+    "text": "Create custom plugins: Example:",
+    "path": "/api/config",
+    "section": "Plugin API"
+  },
+  {
+    "id": "/api/config#33",
+    "title": "Config API > Environment Variables",
+    "text": "Access environment variables in config:",
+    "path": "/api/config",
+    "section": "Environment Variables"
+  },
+  {
+    "id": "/api/config#34",
+    "title": "Config API > TypeScript Support",
+    "text": "Full TypeScript support with types:",
+    "path": "/api/config",
+    "section": "TypeScript Support"
+  },
+  {
+    "id": "/api/config#35",
+    "title": "Config API > Next Steps",
+    "text": "Markdown Plugins API Markdown Plugins API Theming API Theming API Configuration Guide Configuration Guide",
+    "path": "/api/config",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api/theming",
+    "title": "Theming API",
+    "text": "Complete API reference for creating and customizing Leaf themes.",
+    "path": "/api/theming"
+  },
+  {
+    "id": "/api/theming#0",
+    "title": "Theming API > Theming API",
+    "text": "Complete API reference for creating and customizing Leaf themes.",
+    "path": "/api/theming",
+    "section": "Theming API"
+  },
+  {
+    "id": "/api/theming#1",
+    "title": "Theming API > Theme Structure",
+    "text": "A Leaf theme package structure:",
+    "path": "/api/theming",
+    "section": "Theme Structure"
+  },
+  {
+    "id": "/api/theming#2",
+    "title": "Theming API > Layout Component",
+    "text": "The main layout component that wraps all pages.",
+    "path": "/api/theming",
+    "section": "Layout Component"
+  },
+  {
+    "id": "/api/theming#3",
+    "title": "Theming API > Interface",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Interface"
+  },
+  {
+    "id": "/api/theming#4",
+    "title": "Theming API > Basic Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Basic Example"
+  },
+  {
+    "id": "/api/theming#5",
+    "title": "Theming API > Header Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Header Component"
+  },
+  {
+    "id": "/api/theming#6",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#7",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#8",
+    "title": "Theming API > Sidebar Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Sidebar Component"
+  },
+  {
+    "id": "/api/theming#9",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#10",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#11",
+    "title": "Theming API > TOC Component",
+    "text": "Table of contents component.",
+    "path": "/api/theming",
+    "section": "TOC Component"
+  },
+  {
+    "id": "/api/theming#12",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#13",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#14",
+    "title": "Theming API > Search Component",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Search Component"
+  },
+  {
+    "id": "/api/theming#15",
+    "title": "Theming API > Props",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Props"
+  },
+  {
+    "id": "/api/theming#16",
+    "title": "Theming API > Example",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Example"
+  },
+  {
+    "id": "/api/theming#17",
+    "title": "Theming API > Theme Switcher",
+    "text": "Toggle between light and dark themes.",
+    "path": "/api/theming",
+    "section": "Theme Switcher"
+  },
+  {
+    "id": "/api/theming#18",
+    "title": "Theming API > CSS Variables",
+    "text": "Define theme variables:",
+    "path": "/api/theming",
+    "section": "CSS Variables"
+  },
+  {
+    "id": "/api/theming#19",
+    "title": "Theming API > Layout Styles",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Layout Styles"
+  },
+  {
+    "id": "/api/theming#20",
+    "title": "Theming API > Hooks",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Hooks"
+  },
+  {
+    "id": "/api/theming#21",
+    "title": "Theming API > useConfig",
+    "text": "Access Leaf config:",
+    "path": "/api/theming",
+    "section": "useConfig"
+  },
+  {
+    "id": "/api/theming#22",
+    "title": "Theming API > useTOC",
+    "text": "Extract table of contents from current page:",
+    "path": "/api/theming",
+    "section": "useTOC"
+  },
+  {
+    "id": "/api/theming#23",
+    "title": "Theming API > useActiveHash",
+    "text": "Track active heading in TOC:",
+    "path": "/api/theming",
+    "section": "useActiveHash"
+  },
+  {
+    "id": "/api/theming#24",
+    "title": "Theming API > Publishing a Theme",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Publishing a Theme"
+  },
+  {
+    "id": "/api/theming#25",
+    "title": "Theming API > Package.json",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Package.json"
+  },
+  {
+    "id": "/api/theming#26",
+    "title": "Theming API > Exports",
+    "text": "",
+    "path": "/api/theming",
+    "section": "Exports"
+  },
+  {
+    "id": "/api/theming#27",
+    "title": "Theming API > Theme Examples",
+    "text": "Full example themes: Default Theme Default Theme Minimal Theme Minimal Theme Blog Theme Blog Theme",
+    "path": "/api/theming",
+    "section": "Theme Examples"
+  },
+  {
+    "id": "/api/theming#28",
+    "title": "Theming API > Next Steps",
+    "text": "Config API Config API Markdown Plugins API Markdown Plugins API Theming Guide Theming Guide",
+    "path": "/api/theming",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api",
+    "title": "API Reference",
+    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
+    "path": "/api"
+  },
+  {
+    "id": "/api#0",
+    "title": "API Reference > API Reference",
+    "text": "Welcome to the Leaf API documentation. Here you'll find complete reference for all configuration options, plugins, and APIs.",
+    "path": "/api",
+    "section": "API Reference"
+  },
+  {
+    "id": "/api#1",
+    "title": "API Reference > Overview",
+    "text": "Leaf provides a comprehensive API for building modern documentation sites. This section covers: Config API  - All configuration options Config API  - All configuration options Markdown Plugins  - Extending markdown processing Markdown Plugins  - Extending markdown processing Theming API  - Customizing the theme Theming API  - Customizing the theme",
+    "path": "/api",
+    "section": "Overview"
+  },
+  {
+    "id": "/api#2",
+    "title": "API Reference > Quick Links",
+    "text": "",
+    "path": "/api",
+    "section": "Quick Links"
+  },
+  {
+    "id": "/api#3",
+    "title": "API Reference > Configuration",
+    "text": "Learn how to configure Leaf for your project. The config file supports TypeScript and provides full intellisense. View Config API →",
+    "path": "/api",
+    "section": "Configuration"
+  },
+  {
+    "id": "/api#4",
+    "title": "API Reference > Markdown Plugins",
+    "text": "Extend Leaf's markdown processing with custom remark and rehype plugins. View Markdown Plugins →",
+    "path": "/api",
+    "section": "Markdown Plugins"
+  },
+  {
+    "id": "/api#5",
+    "title": "API Reference > Theming",
+    "text": "Customize the default theme or create your own from scratch. View Theming API →",
+    "path": "/api",
+    "section": "Theming"
+  },
+  {
+    "id": "/api#6",
+    "title": "API Reference > Type Definitions",
+    "text": "All APIs are fully typed with TypeScript. Import types from   :",
+    "path": "/api",
+    "section": "Type Definitions"
+  },
+  {
+    "id": "/api#7",
+    "title": "API Reference > Next Steps",
+    "text": "Start with the  Config API  to understand all available configuration options.",
+    "path": "/api",
+    "section": "Next Steps"
+  },
+  {
+    "id": "/api/markdown-plugins",
+    "title": "Markdown Plugins API",
+    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
+    "path": "/api/markdown-plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#0",
+    "title": "Markdown Plugins API > Markdown Plugins API",
+    "text": "Learn how to create custom markdown plugins for Leaf using the unified/remark/rehype ecosystem.",
+    "path": "/api/markdown-plugins",
+    "section": "Markdown Plugins API"
+  },
+  {
+    "id": "/api/markdown-plugins#1",
+    "title": "Markdown Plugins API > Overview",
+    "text": "Leaf uses the  unified  processor with: remark  - Markdown processor remark  - Markdown processor rehype  - HTML processor rehype  - HTML processor You can add custom plugins at either stage of the pipeline:",
+    "path": "/api/markdown-plugins",
+    "section": "Overview"
+  },
+  {
+    "id": "/api/markdown-plugins#2",
+    "title": "Markdown Plugins API > Plugin Types",
+    "text": "Leaf exports TypeScript types for better plugin development:",
+    "path": "/api/markdown-plugins",
+    "section": "Plugin Types"
+  },
+  {
+    "id": "/api/markdown-plugins#3",
+    "title": "Markdown Plugins API > RemarkPlugin",
+    "text": "Type for remark plugins that process markdown AST. Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "RemarkPlugin"
+  },
+  {
+    "id": "/api/markdown-plugins#4",
+    "title": "Markdown Plugins API > RehypePlugin",
+    "text": "Type for rehype plugins that process HTML AST. Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "RehypePlugin"
+  },
+  {
+    "id": "/api/markdown-plugins#5",
+    "title": "Markdown Plugins API > TocItem",
+    "text": "Type for table of contents items extracted during markdown processing.",
+    "path": "/api/markdown-plugins",
+    "section": "TocItem"
+  },
+  {
+    "id": "/api/markdown-plugins#6",
+    "title": "Markdown Plugins API > LeafPluginConfig",
+    "text": "Configuration interface for custom plugin systems.",
+    "path": "/api/markdown-plugins",
+    "section": "LeafPluginConfig"
+  },
+  {
+    "id": "/api/markdown-plugins#7",
+    "title": "Markdown Plugins API > Remark Plugins",
+    "text": "Process markdown AST before conversion to HTML. Use cases: Transform markdown syntax Transform markdown syntax Add custom markdown elements Add custom markdown elements Extract metadata Extract metadata Modify content structure Modify content structure",
+    "path": "/api/markdown-plugins",
+    "section": "Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#8",
+    "title": "Markdown Plugins API > Rehype Plugins",
+    "text": "Process HTML AST after markdown conversion. Use cases: Modify HTML output Modify HTML output Add attributes to elements Add attributes to elements Wrap content in containers Wrap content in containers Post-process code blocks Post-process code blocks",
+    "path": "/api/markdown-plugins",
+    "section": "Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#9",
+    "title": "Markdown Plugins API > Creating Remark Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#10",
+    "title": "Markdown Plugins API > Basic Structure",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Basic Structure"
+  },
+  {
+    "id": "/api/markdown-plugins#11",
+    "title": "Markdown Plugins API > Example: Custom Callout",
+    "text": "Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Custom Callout"
+  },
+  {
+    "id": "/api/markdown-plugins#12",
+    "title": "Markdown Plugins API > Example: Reading Time",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Reading Time"
+  },
+  {
+    "id": "/api/markdown-plugins#13",
+    "title": "Markdown Plugins API > Example: Auto-Linking Headers",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Auto-Linking Headers"
+  },
+  {
+    "id": "/api/markdown-plugins#14",
+    "title": "Markdown Plugins API > Creating Rehype Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#15",
+    "title": "Markdown Plugins API > Basic Structure",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Basic Structure"
+  },
+  {
+    "id": "/api/markdown-plugins#16",
+    "title": "Markdown Plugins API > Example: Image Lazy Loading",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Image Lazy Loading"
+  },
+  {
+    "id": "/api/markdown-plugins#17",
+    "title": "Markdown Plugins API > Example: External Link Icons",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: External Link Icons"
+  },
+  {
+    "id": "/api/markdown-plugins#18",
+    "title": "Markdown Plugins API > Example: Code Block Enhancement",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Example: Code Block Enhancement"
+  },
+  {
+    "id": "/api/markdown-plugins#19",
+    "title": "Markdown Plugins API > Plugin Configuration",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Plugin Configuration"
+  },
+  {
+    "id": "/api/markdown-plugins#20",
+    "title": "Markdown Plugins API > With Options",
+    "text": "Usage:",
+    "path": "/api/markdown-plugins",
+    "section": "With Options"
+  },
+  {
+    "id": "/api/markdown-plugins#21",
+    "title": "Markdown Plugins API > Utilities",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Utilities"
+  },
+  {
+    "id": "/api/markdown-plugins#22",
+    "title": "Markdown Plugins API > unist-util-visit",
+    "text": "Visit nodes in the tree:",
+    "path": "/api/markdown-plugins",
+    "section": "unist-util-visit"
+  },
+  {
+    "id": "/api/markdown-plugins#23",
+    "title": "Markdown Plugins API > unist-util-filter",
+    "text": "Filter nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "unist-util-filter"
+  },
+  {
+    "id": "/api/markdown-plugins#24",
+    "title": "Markdown Plugins API > hast-util-to-string",
+    "text": "Extract text from nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "hast-util-to-string"
+  },
+  {
+    "id": "/api/markdown-plugins#25",
+    "title": "Markdown Plugins API > mdast-util-to-string",
+    "text": "Extract text from markdown nodes:",
+    "path": "/api/markdown-plugins",
+    "section": "mdast-util-to-string"
+  },
+  {
+    "id": "/api/markdown-plugins#26",
+    "title": "Markdown Plugins API > AST Node Types",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "AST Node Types"
+  },
+  {
+    "id": "/api/markdown-plugins#27",
+    "title": "Markdown Plugins API > Markdown (mdast) Nodes",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Markdown (mdast) Nodes"
+  },
+  {
+    "id": "/api/markdown-plugins#28",
+    "title": "Markdown Plugins API > HTML (hast) Nodes",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "HTML (hast) Nodes"
+  },
+  {
+    "id": "/api/markdown-plugins#29",
+    "title": "Markdown Plugins API > Built-in Plugins",
+    "text": "Leaf includes these plugins by default:",
+    "path": "/api/markdown-plugins",
+    "section": "Built-in Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#30",
+    "title": "Markdown Plugins API > Remark Plugins",
+    "text": "remarkGfm  - GitHub Flavored Markdown remarkGfm  - GitHub Flavored Markdown remarkMath  - Math equations remarkMath  - Math equations remarkBadge  - Badge components remarkBadge  - Badge components remarkCodeGroups  - Code group tabs remarkCodeGroups  - Code group tabs remarkContainers  - Custom containers remarkContainers  - Custom containers remarkCodeMeta  - Code block metadata remarkCodeMeta  - Code block metadata",
+    "path": "/api/markdown-plugins",
+    "section": "Remark Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#31",
+    "title": "Markdown Plugins API > Rehype Plugins",
+    "text": "rehypeSlug  - Add IDs to headings rehypeSlug  - Add IDs to headings rehypeKatex  - Render math equations rehypeKatex  - Render math equations rehypeMermaid  - Mark mermaid diagrams rehypeMermaid  - Mark mermaid diagrams rehypeHighlight  - Syntax highlighting rehypeHighlight  - Syntax highlighting rehypeLineHighlight  - Line highlighting rehypeLineHighlight  - Line highlighting rehypeExternalLinks  - External link icons rehypeExternalLinks  - External link icons",
+    "path": "/api/markdown-plugins",
+    "section": "Rehype Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#32",
+    "title": "Markdown Plugins API > Advanced Patterns",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Advanced Patterns"
+  },
+  {
+    "id": "/api/markdown-plugins#33",
+    "title": "Markdown Plugins API > Accessing File Data",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Accessing File Data"
+  },
+  {
+    "id": "/api/markdown-plugins#34",
+    "title": "Markdown Plugins API > Async Transformations",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Async Transformations"
+  },
+  {
+    "id": "/api/markdown-plugins#35",
+    "title": "Markdown Plugins API > Creating Containers",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Creating Containers"
+  },
+  {
+    "id": "/api/markdown-plugins#36",
+    "title": "Markdown Plugins API > Testing Plugins",
+    "text": "",
+    "path": "/api/markdown-plugins",
+    "section": "Testing Plugins"
+  },
+  {
+    "id": "/api/markdown-plugins#37",
+    "title": "Markdown Plugins API > Resources",
+    "text": "unified documentation unified documentation remark plugins remark plugins rehype plugins rehype plugins unist utilities unist utilities",
+    "path": "/api/markdown-plugins",
+    "section": "Resources"
+  },
+  {
+    "id": "/api/markdown-plugins#38",
+    "title": "Markdown Plugins API > Next Steps",
+    "text": "Config API Config API Theming API Theming API Markdown Guide Markdown Guide",
+    "path": "/api/markdown-plugins",
+    "section": "Next Steps"
   }
 ]
