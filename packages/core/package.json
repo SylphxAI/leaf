@@ -54,7 +54,6 @@
 		"dev": "bunup 'src/**/*.ts' --watch"
 	},
 	"dependencies": {
-		"@sylphx/leaf-cli": "workspace:*",
 		"fast-glob": "^3.3.3",
 		"gray-matter": "^4.0.3",
 		"katex": "^0.16.25",
