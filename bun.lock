@@ -81,6 +81,7 @@
       "name": "@sylphx/leaf",
       "version": "1.0.0",
       "dependencies": {
+        "@sylphx/leaf-cli": "workspace:*",
         "fast-glob": "^3.3.3",
         "gray-matter": "^4.0.3",
         "katex": "^0.16.25",
