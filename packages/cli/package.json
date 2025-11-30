@@ -53,7 +53,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.19.0",
-		"bunup": "^0.15.14",
+		"bunup": "^0.16.10",
 		"typescript": "^5.9.3"
 	}
 }

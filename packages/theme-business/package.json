@@ -28,7 +28,7 @@
 		"@preact/preset-vite": "^2.10.2",
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.2",
-		"bunup": "^0.15.14",
+		"bunup": "^0.16.10",
 		"typescript": "^5.9.3"
 	},
 	"exports": {

@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@types/node": "^22.19.0",
 		"@types/prompts": "^2.4.9",
-		"bunup": "^0.15.14",
+		"bunup": "^0.16.10",
 		"typescript": "^5.9.3"
 	},
 	"engines": {
