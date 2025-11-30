@@ -25,12 +25,12 @@
       "name": "leaf-docs",
       "version": "1.0.0",
       "dependencies": {
+        "@solidjs/router": "^0.15.4",
         "@sylphx/leaf-theme-default": "workspace:*",
         "@sylphx/zen": "^1.2.1",
         "solid-js": "^1.9.3",
       },
       "devDependencies": {
-        "@changesets/cli": "^2.29.7",
         "@sylphx/leaf": "workspace:*",
         "@sylphx/leaf-cli": "workspace:*",
         "autoprefixer": "^10.4.21",
