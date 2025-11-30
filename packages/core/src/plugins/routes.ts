@@ -1,12 +1,12 @@
-import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { resolve, relative } from "node:path";
-import type { Plugin } from "vite";
+import { readFile } from "node:fs/promises";
+import { relative, resolve } from "node:path";
 import fg from "fast-glob";
 import matter from "gray-matter";
-import type { LeafConfig, SidebarConfig } from "../types.js";
-import { getPrevNext } from "../utils/navigation.js";
+import type { Plugin } from "vite";
+import type { LeafConfig } from "../types.js";
 import type { SidebarItem } from "../utils/navigation.js";
+import { getPrevNext } from "../utils/navigation.js";
 
 export interface RouteData {
 	path: string;
@@ -51,7 +51,10 @@ function getSidebarForPath(
 		const normalizedBase = basePath.replace(/\/$/, "");
 
 		// Check if current path starts with this base path
-		if (currentPath === normalizedBase || currentPath.startsWith(normalizedBase + "/")) {
+		if (
+			currentPath === normalizedBase ||
+			currentPath.startsWith(`${normalizedBase}/`)
+		) {
 			return sidebarObject[basePath];
 		}
 	}

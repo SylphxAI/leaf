@@ -1,7 +1,6 @@
 import "iconify-icon";
-import { cn } from "../lib/utils";
 import { For, Show } from "solid-js";
-
+import { cn } from "../lib/utils";
 
 export interface Feature {
 	icon?: string;
@@ -28,14 +27,12 @@ export function Features(props: FeaturesProps): JSX.Element {
 							"grid gap-8",
 							props.features.length === 2 && "md:grid-cols-2",
 							props.features.length === 3 && "md:grid-cols-3",
-							props.features.length >= 4 && "md:grid-cols-2 lg:grid-cols-3"
+							props.features.length >= 4 && "md:grid-cols-2 lg:grid-cols-3",
 						)}
 					>
 						<For each={props.features}>
 							{(feature) => (
-								<div
-									class="group relative overflow-hidden rounded-xl border border-border bg-background p-8 transition-all hover:border-primary/50 hover:shadow-lg"
-								>
+								<div class="group relative overflow-hidden rounded-xl border border-border bg-background p-8 transition-all hover:border-primary/50 hover:shadow-lg">
 									{/* Icon */}
 									<Show when={feature.icon}>
 										<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-transform group-hover:scale-110">

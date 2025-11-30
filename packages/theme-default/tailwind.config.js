@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: [
-		"./src/**/*.{ts,tsx,js,jsx}",
-		"./content/**/*.md",
-	],
+	content: ["./src/**/*.{ts,tsx,js,jsx}", "./content/**/*.md"],
 	safelist: [
 		// Classes added dynamically by markdown plugins
 		"external-link",

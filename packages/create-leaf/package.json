@@ -6,7 +6,10 @@
 	"bin": {
 		"create-leaf": "dist/index.js"
 	},
-	"files": ["dist", "template-default"],
+	"files": [
+		"dist",
+		"template-default"
+	],
 	"scripts": {
 		"build": "bunup 'src/**/*.ts' && chmod +x dist/index.js",
 		"dev": "bunup 'src/**/*.ts' --watch"

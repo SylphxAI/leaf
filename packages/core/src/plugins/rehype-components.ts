@@ -1,5 +1,5 @@
-import type { Plugin } from "unified";
 import type { Root } from "hast";
+import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
 /**
@@ -39,7 +39,7 @@ export function rehypeComponents(): Plugin<[], Root> {
 							} catch {
 								// Not valid JSON, check if it's a number
 								const num = Number(value);
-								if (!isNaN(num) && value.trim() !== "") {
+								if (!Number.isNaN(num) && value.trim() !== "") {
 									props[propName] = num;
 								} else if (value === "true" || value === "false") {
 									props[propName] = value === "true";

@@ -1,14 +1,14 @@
-import { Layout } from "@sylphx/leaf-theme-default";
-import type { TocItem } from "@sylphx/leaf-theme-default";
-import { useState, useEffect } from "react";
-import { Route, Routes, useOutletContext } from "react-router-dom";
 import { routes } from "virtual:reactpress/routes";
+import type { TocItem } from "@sylphx/leaf-theme-default";
+import { Layout } from "@sylphx/leaf-theme-default";
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import config from "./config.json";
 
 // Wrapper component to handle TOC extraction
 function PageWrapper({ Component }: { Component: any }) {
-	const [toc, setToc] = useState<TocItem[]>([]);
+	const [_toc, setToc] = useState<TocItem[]>([]);
 
 	useEffect(() => {
 		// Import TOC from the component module

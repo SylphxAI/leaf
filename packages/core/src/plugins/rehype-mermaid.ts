@@ -1,6 +1,6 @@
-import type { Root, Element, Parent } from "hast";
+import type { Element, Parent, Root } from "hast";
 import type { Plugin } from "unified";
-import { visit, SKIP } from "unist-util-visit";
+import { SKIP, visit } from "unist-util-visit";
 
 /**
  * Rehype plugin to mark mermaid code blocks for client-side rendering
@@ -8,49 +8,54 @@ import { visit, SKIP } from "unist-util-visit";
  */
 export const rehypeMermaid: Plugin<[], Root> = () => {
 	return (tree) => {
-		visit(tree, "element", (node: Element, index, parent: Parent | undefined) => {
-			if (!parent || index === undefined) return;
-			if (node.tagName !== "pre") return;
+		visit(
+			tree,
+			"element",
+			(node: Element, index, parent: Parent | undefined) => {
+				if (!parent || index === undefined) return;
+				if (node.tagName !== "pre") return;
 
-			// Find code element inside pre
-			const codeElement = node.children.find(
-				(child): child is Element =>
-					child.type === "element" && child.tagName === "code",
-			);
+				// Find code element inside pre
+				const codeElement = node.children.find(
+					(child): child is Element =>
+						child.type === "element" && child.tagName === "code",
+				);
 
-			if (!codeElement) return;
+				if (!codeElement) return;
 
-			// Check if it's a mermaid code block
-			const classNames = (codeElement.properties?.className as string[]) || [];
-			const isMermaid = classNames.some((cls) => cls === "language-mermaid");
+				// Check if it's a mermaid code block
+				const classNames =
+					(codeElement.properties?.className as string[]) || [];
+				const isMermaid = classNames.some((cls) => cls === "language-mermaid");
 
-			if (!isMermaid) return;
+				if (!isMermaid) return;
 
-			// Extract mermaid code
-			const mermaidCode = codeElement.children
-				.filter((child) => child.type === "text")
-				.map((child: any) => child.value)
-				.join("");
+				// Extract mermaid code
+				const mermaidCode = codeElement.children
+					.filter((child) => child.type === "text")
+					.map((child: any) => child.value)
+					.join("");
 
-			// Replace pre element with mermaid div
-			const mermaidDiv: Element = {
-				type: "element",
-				tagName: "div",
-				properties: {
-					className: ["mermaid"],
-				},
-				children: [
-					{
-						type: "text",
-						value: mermaidCode.trim(),
+				// Replace pre element with mermaid div
+				const mermaidDiv: Element = {
+					type: "element",
+					tagName: "div",
+					properties: {
+						className: ["mermaid"],
 					},
-				],
-			};
+					children: [
+						{
+							type: "text",
+							value: mermaidCode.trim(),
+						},
+					],
+				};
 
-			parent.children[index] = mermaidDiv;
+				parent.children[index] = mermaidDiv;
 
-			// Skip visiting children since we replaced the node
-			return [SKIP, index];
-		});
+				// Skip visiting children since we replaced the node
+				return [SKIP, index];
+			},
+		);
 	};
 };

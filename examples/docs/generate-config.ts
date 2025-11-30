@@ -1,6 +1,6 @@
-import { generateSidebar } from "@sylphx/leaf";
 import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { generateSidebar } from "@sylphx/leaf";
 
 const root = process.cwd();
 const docsDir = resolve(root, "docs");

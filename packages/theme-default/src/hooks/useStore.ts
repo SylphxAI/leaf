@@ -1,5 +1,5 @@
-import { type Zen, get, subscribe } from "@sylphx/zen";
-import { createSignal, onCleanup, onMount, createEffect } from "solid-js";
+import { get, subscribe, type Zen } from "@sylphx/zen";
+import { createEffect, createSignal, onCleanup } from "solid-js";
 
 export function useStore<T>(store: Zen<T>): () => T {
 	const [value, setValue] = createSignal<T>(get(store));

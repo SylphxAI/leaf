@@ -1,12 +1,12 @@
-import solidPlugin from "vite-plugin-solid";
+import { join } from "node:path";
 import type { Plugin } from "vite";
+import solidPlugin from "vite-plugin-solid";
+import { generateSearchIndex } from "../build/search.js";
+import type { LeafConfig } from "../types.js";
+import { generateRoutes } from "../utils/routes.js";
+import { assetsPlugin } from "./assets.js";
 import { markdownPlugin } from "./markdown.js";
 import { virtualModulesPlugin } from "./virtual-modules.js";
-import { assetsPlugin } from "./assets.js";
-import type { LeafConfig } from "../types.js";
-import { generateSearchIndex } from "../build/search.js";
-import { generateRoutes } from "../utils/routes.js";
-import { join } from "node:path";
 
 export function createLeafPlugin(config: LeafConfig): Plugin[] {
 	return [
@@ -21,7 +21,9 @@ export function createLeafPlugin(config: LeafConfig): Plugin[] {
 						__DEV__: !isProduction,
 					},
 					resolve: {
-						conditions: isProduction ? ["production", "default"] : ["development", "default"],
+						conditions: isProduction
+							? ["production", "default"]
+							: ["development", "default"],
 					},
 					optimizeDeps: {
 						include: ["solid-js", "solid-js/web", "@solidjs/router"],

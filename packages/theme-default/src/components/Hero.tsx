@@ -1,9 +1,7 @@
 import "iconify-icon";
-import { Link } from "./Link";
-import { Button } from "./Button";
-import { cn } from "../lib/utils";
 import { For, Show } from "solid-js";
-
+import { cn } from "../lib/utils";
+import { Link } from "./Link";
 
 export interface HeroAction {
 	text: string;
@@ -63,12 +61,16 @@ export function Hero(props: HeroProps): JSX.Element {
 														"inline-flex items-center gap-2 rounded-lg px-6 py-3 text-base font-semibold transition-all active:scale-95 shadow-lg hover:shadow-xl",
 														isBrand
 															? "bg-primary text-primary-foreground hover:bg-primary/90"
-															: "bg-muted text-foreground hover:bg-muted/80"
+															: "bg-muted text-foreground hover:bg-muted/80",
 													)}
 												>
 													{action.text}
 													<iconify-icon
-														icon={isBrand ? "lucide:arrow-right" : "lucide:book-open"}
+														icon={
+															isBrand
+																? "lucide:arrow-right"
+																: "lucide:book-open"
+														}
 														class="h-5 w-5"
 													/>
 												</Link>

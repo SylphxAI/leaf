@@ -1,5 +1,5 @@
+import type { Element, Root } from "hast";
 import type { Plugin } from "unified";
-import type { Root, Element } from "hast";
 import { visit } from "unist-util-visit";
 
 /**
@@ -86,7 +86,7 @@ export const rehypeLineHighlight: Plugin<[], Root> = () => {
 
 			// Get full code text to count lines
 			const fullText = nodeToText(codeElement);
-			const totalLines = fullText.split("\n").length;
+			const _totalLines = fullText.split("\n").length;
 
 			// Group children by line breaks
 			const lines: any[][] = [[]];

@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { basename, dirname, join, relative } from "node:path";
+import { basename, dirname, join } from "node:path";
 import fg from "fast-glob";
 import matter from "gray-matter";
 
@@ -25,9 +25,7 @@ interface FileInfo {
  * - Custom ordering via frontmatter.order
  * - Index files become group links
  */
-export async function generateSidebar(
-	docsDir: string,
-): Promise<SidebarItem[]> {
+export async function generateSidebar(docsDir: string): Promise<SidebarItem[]> {
 	// Find all markdown files
 	const files = await fg("**/*.{md,mdx}", {
 		cwd: docsDir,

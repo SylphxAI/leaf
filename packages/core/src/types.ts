@@ -20,7 +20,7 @@ export interface LeafConfig {
 export type HeadTag = [
 	string, // tag name
 	Record<string, any>, // attributes
-	string? // children (optional)
+	string?, // children (optional)
 ];
 
 export interface ThemeConfig {
@@ -71,7 +71,16 @@ export interface SidebarItem {
 }
 
 export interface SocialLink {
-	icon: "github" | "twitter" | "discord" | "npm" | "youtube" | "facebook" | "instagram" | "linkedin" | "slack";
+	icon:
+		| "github"
+		| "twitter"
+		| "discord"
+		| "npm"
+		| "youtube"
+		| "facebook"
+		| "instagram"
+		| "linkedin"
+		| "slack";
 	link: string;
 }
 
@@ -85,7 +94,7 @@ export interface MarkdownConfig {
 }
 
 // Re-export plugin types from plugins module
-export type { RemarkPlugin, RehypePlugin } from "./plugins/index.js";
+export type { RehypePlugin, RemarkPlugin } from "./plugins/index.js";
 
 export interface PageData {
 	/** Page title from frontmatter */

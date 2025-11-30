@@ -2,7 +2,6 @@ import { Link } from "./Link";
 import "iconify-icon";
 import { Show } from "solid-js";
 
-
 export interface DocFooterProps {
 	prev?: {
 		text: string;
@@ -39,14 +38,20 @@ export function DocFooter(props: DocFooterProps): JSX.Element {
 						<div class="flex items-center gap-2">
 							<iconify-icon icon="lucide:clock" class="h-4 w-4" />
 							<span>Last updated: </span>
-							<time id="last-updated-time" class="font-medium text-foreground" />
+							<time
+								id="last-updated-time"
+								class="font-medium text-foreground"
+							/>
 						</div>
 					</Show>
 				</div>
 			</Show>
 
 			<Show when={props.prev || props.next}>
-				<nav class="grid grid-cols-1 gap-4 md:grid-cols-2" aria-label="Page navigation">
+				<nav
+					class="grid grid-cols-1 gap-4 md:grid-cols-2"
+					aria-label="Page navigation"
+				>
 					<div>
 						<Show when={props.prev}>
 							<Link

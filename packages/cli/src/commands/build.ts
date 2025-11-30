@@ -1,12 +1,12 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
 	createLeafPlugin,
 	generateStaticSite,
 	loadConfig,
 	routesPlugin,
 } from "@sylphx/leaf";
-import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { resolve, dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { build as viteBuild } from "vite";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,11 +22,11 @@ export async function build(root: string = process.cwd()): Promise<void> {
 	// Paths to built-in templates
 	const builtInHtmlPath = resolve(
 		__dirname,
-		"../../../core/templates/index.html"
+		"../../../core/templates/index.html",
 	);
 	const builtInClientPath = resolve(
 		__dirname,
-		"../../../core/templates/client.tsx"
+		"../../../core/templates/client.tsx",
 	);
 
 	// Read built-in templates

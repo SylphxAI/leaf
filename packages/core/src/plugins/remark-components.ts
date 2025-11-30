@@ -1,5 +1,5 @@
-import type { Plugin } from "unified";
 import type { Root } from "mdast";
+import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
 /**
@@ -43,7 +43,7 @@ export function remarkComponents(): Plugin<[], Root> {
 					} catch {
 						// Not valid JSON, check if it's a number
 						const num = Number(attrValue);
-						if (!isNaN(num) && attrValue.trim() !== "") {
+						if (!Number.isNaN(num) && attrValue.trim() !== "") {
 							props[attrName] = num;
 						} else if (attrValue === "true" || attrValue === "false") {
 							props[attrName] = attrValue === "true";

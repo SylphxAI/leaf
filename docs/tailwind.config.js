@@ -15,11 +15,11 @@ export default {
 		{
 			pattern: /^code-(block|lang|copy|group)(-.*)?$/,
 		},
-		'badge',
-		'badge-tip',
-		'badge-warning',
-		'badge-danger',
-		'badge-info',
+		"badge",
+		"badge-tip",
+		"badge-warning",
+		"badge-danger",
+		"badge-info",
 	],
 	darkMode: ["class", '[data-theme="dark"]'],
 	theme: {

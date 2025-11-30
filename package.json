@@ -3,7 +3,11 @@
 	"version": "0.1.0",
 	"type": "module",
 	"private": true,
-	"workspaces": ["packages/*", "examples/*", "docs"],
+	"workspaces": [
+		"packages/*",
+		"examples/*",
+		"docs"
+	],
 	"scripts": {
 		"dev": "bun --filter examples/docs dev",
 		"build": "bun run --filter './packages/*' build",

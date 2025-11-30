@@ -1,81 +1,84 @@
 /* CSS Variables for Theme System */
 :root {
-  --font-family: Inter, system-ui, sans-serif;
-  --font-size: 16px;
-  --line-height: 1.6;
+	--font-family: Inter, system-ui, sans-serif;
+	--font-size: 16px;
+	--line-height: 1.6;
 }
 
 /* Apply CSS variables to the entire document with !important override */
 html {
-  font-family: var(--font-family) !important;
-  font-size: var(--font-size) !important;
-  line-height: var(--line-height) !important;
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
 }
 
 /* Force override for Tailwind utility classes */
 html.theme-blog,
 body.theme-blog {
-  font-family: Georgia, serif !important;
-  font-size: 18px !important;
-  line-height: 1.7 !important;
+	font-family: Georgia, serif;
+	font-size: 18px;
+	line-height: 1.7;
 }
 
 html.theme-business,
 body.theme-business {
-  font-family: Helvetica, Arial, sans-serif !important;
-  font-size: 15px !important;
-  line-height: 1.5 !important;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
 }
 
 html.theme-minimal,
 body.theme-minimal {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 16px !important;
-  line-height: 1.6 !important;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
 }
 
 /* Theme-specific styles */
 .theme-blog {
-  --font-family: Georgia, serif;
-  --font-size: 18px;
-  --line-height: 1.7;
+	--font-family: Georgia, serif;
+	--font-size: 18px;
+	--line-height: 1.7;
 }
 
 .theme-business {
-  --font-family: Helvetica, Arial, sans-serif;
-  --font-size: 15px;
-  --line-height: 1.5;
+	--font-family: Helvetica, Arial, sans-serif;
+	--font-size: 15px;
+	--line-height: 1.5;
 }
 
 .theme-minimal {
-  --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-size: 16px;
-  --line-height: 1.6;
+	--font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-size: 16px;
+	--line-height: 1.6;
 }
 
 /* Override all text elements */
 .theme-blog * {
-  font-family: Georgia, serif !important;
+	font-family: Georgia, serif;
 }
 
 .theme-business * {
-  font-family: Helvetica, Arial, sans-serif !important;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 /* Ensure smooth transitions */
 body {
-  transition: font-family 0.3s ease, font-size 0.3s ease, line-height 0.3s ease;
+	transition:
+		font-family 0.3s ease,
+		font-size 0.3s ease,
+		line-height 0.3s ease;
 }
 
 /* Additional theme-specific visual differences */
 .theme-blog .prose {
-  font-family: Georgia, serif;
+	font-family: Georgia, serif;
 }
 
 .theme-business .prose {
-  font-family: Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .theme-minimal * {
-  border-radius: 0 !important;
+	border-radius: 0;
 }

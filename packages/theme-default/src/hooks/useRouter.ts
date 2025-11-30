@@ -1,4 +1,7 @@
-import { useLocation as solidUseLocation, useNavigate as solidUseNavigate } from "@solidjs/router";
+import {
+	useLocation as solidUseLocation,
+	useNavigate as solidUseNavigate,
+} from "@solidjs/router";
 
 // Re-export SolidJS Router's useLocation
 export function useLocation(): ReturnType<typeof solidUseLocation> {

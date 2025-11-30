@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 // Get dist directory from command line argument or use default
@@ -90,7 +90,7 @@ for (const file of jsFiles) {
 	if (removed > 0) {
 		totalFixed += removed;
 		filesFixed++;
-		const relativePath = file.replace(distDir + "/", "");
+		const relativePath = file.replace(`${distDir}/`, "");
 		console.log(`  ✓ ${relativePath}: removed ${removed} duplicate(s)`);
 	}
 }

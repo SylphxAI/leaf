@@ -1,7 +1,8 @@
-import { type Zen } from "@sylphx/zen";
-
 // TEMPORARY: Import Zen functions with type assertions
+
+import type { Zen } from "@sylphx/zen";
 import * as ZenModule from "@sylphx/zen";
+
 const zen = ZenModule.zen as <T>(initialValue: T) => Zen<T>;
 const get = ZenModule.get as <T>(store: Zen<T>) => T;
 const set = ZenModule.set as <T>(store: Zen<T>, value: T) => void;

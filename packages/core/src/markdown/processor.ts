@@ -1,3 +1,4 @@
+import type { Root } from "mdast";
 import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
@@ -7,21 +8,20 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import { unified } from "unified";
-import type { Root } from "mdast";
-import { visit } from "unist-util-visit";
 import type { Processor } from "unified";
-import type { LeafConfig } from "../types.js";
-import { remarkContainers } from "../plugins/remark-containers.js";
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import { rehypeCopyCode } from "../plugins/rehype-copy-code.js";
+import { rehypeExternalLinks } from "../plugins/rehype-external-links.js";
+import { rehypeHeaderAnchors } from "../plugins/rehype-header-anchors.js";
+import { rehypeLineHighlight } from "../plugins/rehype-line-highlight.js";
+import { rehypeMermaid } from "../plugins/rehype-mermaid.js";
+import { remarkBadge } from "../plugins/remark-badge.js";
 import { remarkCodeGroups } from "../plugins/remark-code-groups.js";
 import { remarkCodeMeta } from "../plugins/remark-code-meta.js";
-import { remarkBadge } from "../plugins/remark-badge.js";
 import { remarkComponents } from "../plugins/remark-components.js";
-import { rehypeLineHighlight } from "../plugins/rehype-line-highlight.js";
-import { rehypeExternalLinks } from "../plugins/rehype-external-links.js";
-import { rehypeMermaid } from "../plugins/rehype-mermaid.js";
-import { rehypeCopyCode } from "../plugins/rehype-copy-code.js";
-import { rehypeHeaderAnchors } from "../plugins/rehype-header-anchors.js";
+import { remarkContainers } from "../plugins/remark-containers.js";
+import type { LeafConfig } from "../types.js";
 
 export interface TocItem {
 	text: string;

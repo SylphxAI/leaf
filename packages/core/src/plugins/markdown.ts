@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import matter from "gray-matter";
 import type { Plugin } from "vite";
-import type { LeafConfig } from "../types.js";
 import { createMarkdownProcessor } from "../markdown/processor.js";
+import type { LeafConfig } from "../types.js";
 import type { ComponentPlaceholder } from "./rehype-components.js";
 
 export function markdownPlugin(config: LeafConfig): Plugin {
@@ -13,7 +13,7 @@ export function markdownPlugin(config: LeafConfig): Plugin {
 		resolveId(source: string) {
 			// Transform .md imports to .md.tsx so SolidJS plugin processes them
 			if (source.endsWith(".md")) {
-				return source + ".tsx";
+				return `${source}.tsx`;
 			}
 			return null;
 		},
@@ -42,60 +42,70 @@ export function markdownPlugin(config: LeafConfig): Plugin {
 			const vfile = await processor.process(code);
 			const html = String(vfile);
 			const toc = getToc();
-			const components = (vfile.data.components as ComponentPlaceholder[]) || [];
-
+			const components =
+				(vfile.data.components as ComponentPlaceholder[]) || [];
 
 			// Generate component imports if any components were detected
-			const hasComponents = components.length > 0;
-			const uniqueComponents = Array.from(
+			const _hasComponents = components.length > 0;
+			const _uniqueComponents = Array.from(
 				new Set(components.map((c) => c.name)),
 			);
 
 			// TEMPORARY: Disable components in markdown - innerHTML + component mounting doesn't work in SolidJS
 			// TODO: Implement proper HTML-to-SolidJS conversion or use a different approach
-			let componentImports = '';
-			let componentMapping = "";
+			let componentImports = "";
+			const componentMapping = "";
 			let htmlContent = JSON.stringify(html);
 			let renderFunction = `
   const htmlContent = ${htmlContent};
   return <div class="markdown-content" innerHTML={htmlContent} />;`;
 
 			// Check if Cards component is used
-			if (components.length > 0 && components.some(c => c.name === 'Cards')) {
+			if (components.length > 0 && components.some((c) => c.name === "Cards")) {
 				componentImports = `import { Cards } from "@sylphx/leaf-theme-default";`;
 
-				const cardsComponents = components.filter(c => c.name === 'Cards');
+				const cardsComponents = components.filter((c) => c.name === "Cards");
 
 				// Remove Cards placeholders from HTML
 				let modifiedHtml = html;
 				for (const comp of cardsComponents) {
 					modifiedHtml = modifiedHtml.replace(
-						new RegExp(`<div data-leaf-component="${comp.id}"></div>`, 'g'),
-						`__CARDS_${comp.id}__`
+						new RegExp(`<div data-leaf-component="${comp.id}"></div>`, "g"),
+						`__CARDS_${comp.id}__`,
 					);
 				}
 				htmlContent = JSON.stringify(modifiedHtml);
 
 				// Generate render function with Cards components
-				const cardsRenderers = cardsComponents.map(comp => {
-					const cardsData = comp.props.cards || [];
-					const columns = comp.props.columns || 2;
-					return `<Cards cards={${JSON.stringify(cardsData)}} columns={${columns}} />`;
-				}).join('\n      ');
+				const _cardsRenderers = cardsComponents
+					.map((comp) => {
+						const cardsData = comp.props.cards || [];
+						const columns = comp.props.columns || 2;
+						return `<Cards cards={${JSON.stringify(cardsData)}} columns={${columns}} />`;
+					})
+					.join("\n      ");
 
 				renderFunction = `
   let htmlContent = ${htmlContent};
-  ${cardsComponents.map((comp, idx) => `
-  htmlContent = htmlContent.replace('__CARDS_${comp.id}__', '<!--CARDS_PLACEHOLDER_${idx}-->');`).join('')}
+  ${cardsComponents
+		.map(
+			(comp, idx) => `
+  htmlContent = htmlContent.replace('__CARDS_${comp.id}__', '<!--CARDS_PLACEHOLDER_${idx}-->');`,
+		)
+		.join("")}
 
   const parts = htmlContent.split(/<!--CARDS_PLACEHOLDER_\\d+-->/);
 
   return (
     <>
       <div class="markdown-content" innerHTML={parts[0]} />
-      ${cardsComponents.map((comp, idx) => `
+      ${cardsComponents
+				.map(
+					(comp, idx) => `
       <Cards cards={${JSON.stringify(comp.props.cards || [])}} columns={${comp.props.columns || 2}} />
-      {parts[${idx + 1}] && <div class="markdown-content" innerHTML={parts[${idx + 1}]} />}`).join('\n      ')}
+      {parts[${idx + 1}] && <div class="markdown-content" innerHTML={parts[${idx + 1}]} />}`,
+				)
+				.join("\n      ")}
     </>
   );`;
 			}

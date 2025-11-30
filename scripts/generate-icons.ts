@@ -1,30 +1,30 @@
 #!/usr/bin/env bun
-import sharp from 'sharp';
-import { readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import sharp from "sharp";
 
-const publicDir = join(import.meta.dir, '../docs/public');
+const publicDir = join(import.meta.dir, "../docs/public");
 
 // Icon configuration
 const iconSizes = [
-  { name: 'icon-192.png', size: 192 },
-  { name: 'icon-512.png', size: 512 },
-  { name: 'apple-touch-icon.png', size: 180 },
-  { name: 'favicon.png', size: 32 },
+	{ name: "icon-192.png", size: 192 },
+	{ name: "icon-512.png", size: 512 },
+	{ name: "apple-touch-icon.png", size: 180 },
+	{ name: "favicon.png", size: 32 },
 ];
 
 async function generateIcons() {
-  console.log('🎨 Generating PNG icons from SVG...\n');
+	console.log("🎨 Generating PNG icons from SVG...\n");
 
-  // Read the favicon SVG
-  const faviconSvg = await readFile(join(publicDir, 'favicon.svg'), 'utf-8');
+	// Read the favicon SVG
+	const _faviconSvg = await readFile(join(publicDir, "favicon.svg"), "utf-8");
 
-  // Create a centered icon with padding for better visibility
-  const createIconSvg = (size: number) => {
-    const padding = Math.floor(size * 0.15); // 15% padding
-    const iconSize = size - (padding * 2);
+	// Create a centered icon with padding for better visibility
+	const createIconSvg = (size: number) => {
+		const padding = Math.floor(size * 0.15); // 15% padding
+		const iconSize = size - padding * 2;
 
-    return `
+		return `
       <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
         <rect width="${size}" height="${size}" fill="#ffffff" rx="${size * 0.15}"/>
         <g transform="translate(${padding}, ${padding})">
@@ -35,31 +35,31 @@ async function generateIcons() {
         </g>
       </svg>
     `.trim();
-  };
+	};
 
-  // Generate each icon size
-  for (const { name, size } of iconSizes) {
-    const iconSvg = createIconSvg(size);
-    const outputPath = join(publicDir, name);
+	// Generate each icon size
+	for (const { name, size } of iconSizes) {
+		const iconSvg = createIconSvg(size);
+		const outputPath = join(publicDir, name);
 
-    await sharp(Buffer.from(iconSvg))
-      .png({ quality: 100, compressionLevel: 9 })
-      .toFile(outputPath);
+		await sharp(Buffer.from(iconSvg))
+			.png({ quality: 100, compressionLevel: 9 })
+			.toFile(outputPath);
 
-    console.log(`✓ Generated ${name} (${size}x${size})`);
-  }
+		console.log(`✓ Generated ${name} (${size}x${size})`);
+	}
 
-  // Generate OG image PNG from SVG
-  console.log('\n🖼️  Generating OG image PNG...\n');
-  const ogSvg = await readFile(join(publicDir, 'og-image.svg'), 'utf-8');
+	// Generate OG image PNG from SVG
+	console.log("\n🖼️  Generating OG image PNG...\n");
+	const ogSvg = await readFile(join(publicDir, "og-image.svg"), "utf-8");
 
-  await sharp(Buffer.from(ogSvg))
-    .png({ quality: 100, compressionLevel: 9 })
-    .toFile(join(publicDir, 'og-image.png'));
+	await sharp(Buffer.from(ogSvg))
+		.png({ quality: 100, compressionLevel: 9 })
+		.toFile(join(publicDir, "og-image.png"));
 
-  console.log('✓ Generated og-image.png (1200x630)');
+	console.log("✓ Generated og-image.png (1200x630)");
 
-  console.log('\n✨ All icons generated successfully!\n');
+	console.log("\n✨ All icons generated successfully!\n");
 }
 
 generateIcons().catch(console.error);

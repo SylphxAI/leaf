@@ -6,25 +6,67 @@ export default defineConfig({
 		"A modern Preact-based documentation framework with VitePress parity",
 	head: [
 		// Open Graph meta tags
-		['meta', { property: 'og:type', content: 'website' }],
-		['meta', { property: 'og:title', content: 'Leaf - Modern Documentation Framework' }],
-		['meta', { property: 'og:description', content: 'A fast, modern documentation framework built with Preact that achieves 100% feature parity with VitePress' }],
-		['meta', { property: 'og:image', content: 'https://leaf.sylphx.com/og-image.png' }],
-		['meta', { property: 'og:url', content: 'https://leaf.sylphx.com' }],
-		['meta', { property: 'og:site_name', content: 'Leaf' }],
+		["meta", { property: "og:type", content: "website" }],
+		[
+			"meta",
+			{
+				property: "og:title",
+				content: "Leaf - Modern Documentation Framework",
+			},
+		],
+		[
+			"meta",
+			{
+				property: "og:description",
+				content:
+					"A fast, modern documentation framework built with Preact that achieves 100% feature parity with VitePress",
+			},
+		],
+		[
+			"meta",
+			{ property: "og:image", content: "https://leaf.sylphx.com/og-image.png" },
+		],
+		["meta", { property: "og:url", content: "https://leaf.sylphx.com" }],
+		["meta", { property: "og:site_name", content: "Leaf" }],
 
 		// Twitter Card meta tags
-		['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-		['meta', { name: 'twitter:title', content: 'Leaf - Modern Documentation Framework' }],
-		['meta', { name: 'twitter:description', content: 'A fast, modern documentation framework built with Preact that achieves 100% feature parity with VitePress' }],
-		['meta', { name: 'twitter:image', content: 'https://leaf.sylphx.com/twitter-image.png' }],
-		['meta', { name: 'twitter:site', content: '@sylphxltd' }],
+		["meta", { name: "twitter:card", content: "summary_large_image" }],
+		[
+			"meta",
+			{
+				name: "twitter:title",
+				content: "Leaf - Modern Documentation Framework",
+			},
+		],
+		[
+			"meta",
+			{
+				name: "twitter:description",
+				content:
+					"A fast, modern documentation framework built with Preact that achieves 100% feature parity with VitePress",
+			},
+		],
+		[
+			"meta",
+			{
+				name: "twitter:image",
+				content: "https://leaf.sylphx.com/twitter-image.png",
+			},
+		],
+		["meta", { name: "twitter:site", content: "@sylphxltd" }],
 
 		// Additional SEO meta tags
-		['meta', { name: 'keywords', content: 'documentation framework, preact, vite, markdown, docs, static site generator, vitepress alternative' }],
-		['meta', { name: 'author', content: 'Sylphx' }],
-		['meta', { name: 'robots', content: 'index, follow' }],
-		['link', { rel: 'canonical', href: 'https://leaf.sylphx.com' }],
+		[
+			"meta",
+			{
+				name: "keywords",
+				content:
+					"documentation framework, preact, vite, markdown, docs, static site generator, vitepress alternative",
+			},
+		],
+		["meta", { name: "author", content: "Sylphx" }],
+		["meta", { name: "robots", content: "index, follow" }],
+		["link", { rel: "canonical", href: "https://leaf.sylphx.com" }],
 	],
 	theme: {
 		editLink: {

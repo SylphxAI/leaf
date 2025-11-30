@@ -10,9 +10,7 @@ export async function getLastModifiedTime(
 	filePath: string,
 ): Promise<Date | null> {
 	try {
-		const { stdout } = await execAsync(
-			`git log -1 --format=%at "${filePath}"`,
-		);
+		const { stdout } = await execAsync(`git log -1 --format=%at "${filePath}"`);
 		const timestamp = Number.parseInt(stdout.trim(), 10);
 
 		if (Number.isNaN(timestamp)) {

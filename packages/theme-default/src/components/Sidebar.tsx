@@ -1,10 +1,9 @@
-import { createSignal, Show, For } from "solid-js";
-import { Link } from "./Link";
-import { useLocation } from "@solidjs/router";
 import * as Collapsible from "@kobalte/core/collapsible";
+import { useLocation } from "@solidjs/router";
+import { createSignal, For, Show } from "solid-js";
+import { Link } from "./Link";
 import "iconify-icon";
 import { cn } from "../lib/utils";
-
 
 interface SidebarItem {
 	text: string;
@@ -33,7 +32,9 @@ function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 				child.items?.some((grandchild) => grandchild.link === pathname()),
 		);
 
-	const [open, setOpen] = createSignal(!props.item.collapsed || hasActiveChild());
+	const [open, setOpen] = createSignal(
+		!props.item.collapsed || hasActiveChild(),
+	);
 
 	if (!hasItems && props.item.link) {
 		return (
@@ -43,7 +44,7 @@ function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 					"block rounded-lg px-3 py-2.5 text-sm font-semibold transition-all",
 					isActive()
 						? "bg-primary/10 text-primary shadow-sm border border-primary/20"
-						: "text-muted-foreground hover:bg-muted hover:text-foreground hover:shadow-sm"
+						: "text-muted-foreground hover:bg-muted hover:text-foreground hover:shadow-sm",
 				)}
 				style={{ "padding-left": `${(props.level || 0) * 1 + 0.75}rem` }}
 			>
@@ -58,7 +59,7 @@ function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 				<Collapsible.Trigger
 					class={cn(
 						"flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-bold transition-all",
-						"text-foreground hover:bg-muted/60 hover:shadow-sm"
+						"text-foreground hover:bg-muted/60 hover:shadow-sm",
 					)}
 					style={{ "padding-left": `${(props.level || 0) * 1 + 0.75}rem` }}
 					aria-expanded={open()}
@@ -68,7 +69,7 @@ function SidebarGroup(props: { item: SidebarItem; level?: number }) {
 						icon="lucide:chevron-right"
 						class={cn(
 							"h-4 w-4 transition-all duration-200 text-muted-foreground",
-							open() && "rotate-90 text-primary"
+							open() && "rotate-90 text-primary",
 						)}
 					/>
 				</Collapsible.Trigger>
@@ -112,7 +113,7 @@ export function Sidebar(props: SidebarProps): JSX.Element {
 				class={cn(
 					"fixed top-16 bottom-0 left-0 z-40 w-80 border-r border-border bg-background",
 					"transition-transform duration-300 ease-in-out lg:translate-x-0",
-					props.open ? "translate-x-0" : "-translate-x-full"
+					props.open ? "translate-x-0" : "-translate-x-full",
 				)}
 			>
 				<div class="sidebar-scroll h-full overflow-y-auto px-6 py-10">

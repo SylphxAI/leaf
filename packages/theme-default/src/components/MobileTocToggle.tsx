@@ -1,13 +1,14 @@
-import { createSignal, createEffect, onCleanup, Show, For } from "solid-js";
+import { createEffect, createSignal, For, onCleanup, Show } from "solid-js";
 import "iconify-icon";
 import type { TocItem } from "./TableOfContents";
-
 
 interface MobileTocToggleProps {
 	toc: TocItem[];
 }
 
-export function MobileTocToggle(props: MobileTocToggleProps): JSX.Element | null {
+export function MobileTocToggle(
+	props: MobileTocToggleProps,
+): JSX.Element | null {
 	const [isOpen, setIsOpen] = createSignal(false);
 
 	// Don't render if no TOC items

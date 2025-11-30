@@ -1,11 +1,10 @@
-import { createSignal, createEffect, onCleanup } from "solid-js";
+import { createEffect, createSignal, onCleanup } from "solid-js";
 import { Button } from "./Button";
 import "iconify-icon";
 
 interface CopyPageProps {
 	title?: string;
 }
-
 
 export function CopyPage(props: CopyPageProps): JSX.Element {
 	const [copied, setCopied] = createSignal(false);
@@ -45,13 +44,18 @@ export function CopyPage(props: CopyPageProps): JSX.Element {
 						if (el.tagName === "PRE") {
 							const code = el.querySelector("code");
 							if (code) {
-								text += "\n```\n" + code.textContent + "\n```\n\n";
+								text += `\n\`\`\`\n${code.textContent}\n\`\`\`\n\n`;
 							}
-						} else if (el.tagName === "H1" || el.tagName === "H2" || el.tagName === "H3") {
-							const level = el.tagName === "H1" ? "#" : el.tagName === "H2" ? "##" : "###";
+						} else if (
+							el.tagName === "H1" ||
+							el.tagName === "H2" ||
+							el.tagName === "H3"
+						) {
+							const level =
+								el.tagName === "H1" ? "#" : el.tagName === "H2" ? "##" : "###";
 							text += `\n${level} ${el.textContent}\n\n`;
 						} else if (el.tagName === "P") {
-							text += extractContent(el) + "\n\n";
+							text += `${extractContent(el)}\n\n`;
 						} else if (el.tagName === "UL" || el.tagName === "OL") {
 							const items = el.querySelectorAll("li");
 							items.forEach((item) => {
@@ -90,11 +94,9 @@ export function CopyPage(props: CopyPageProps): JSX.Element {
 				icon={copied() ? "ph:check-bold" : "ph:copy-bold"}
 				width="14"
 				height="14"
-				class={`transition-colors duration-200 ${copied() ? 'text-success' : ''}`}
+				class={`transition-colors duration-200 ${copied() ? "text-success" : ""}`}
 			/>
-			<span class="hidden lg:inline">
-				{copied() ? "Copied!" : "Copy"}
-			</span>
+			<span class="hidden lg:inline">{copied() ? "Copied!" : "Copy"}</span>
 		</Button>
 	);
 }

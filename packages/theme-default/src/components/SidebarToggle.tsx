@@ -1,6 +1,5 @@
 import "iconify-icon";
 
-
 export interface SidebarToggleProps {
 	open: boolean;
 	onClick: () => void;
@@ -14,7 +13,10 @@ export function SidebarToggle(props: SidebarToggleProps): JSX.Element {
 			aria-label="Toggle sidebar"
 			aria-expanded={props.open}
 		>
-			<iconify-icon icon={props.open ? "lucide:x" : "lucide:menu"} class="h-6 w-6" />
+			<iconify-icon
+				icon={props.open ? "lucide:x" : "lucide:menu"}
+				class="h-6 w-6"
+			/>
 		</button>
 	);
 }

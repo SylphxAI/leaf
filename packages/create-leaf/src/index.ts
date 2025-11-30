@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { fileURLToPath } from "node:url";
-import path from "node:path";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { cyan, green, red } from "kolorist";
 import prompts from "prompts";
-import { cyan, green, red, reset } from "kolorist";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,14 +34,13 @@ async function init() {
 				{
 					type: () => (!fs.existsSync(targetDir) ? null : "confirm"),
 					name: "overwrite",
-					message: () =>
-						`${targetDir} already exists. Overwrite?`,
+					message: () => `${targetDir} already exists. Overwrite?`,
 					initial: false,
 				},
 				{
 					type: (_, { overwrite } = {}) => {
 						if (overwrite === false) {
-							throw new Error(red("✖") + " Operation cancelled");
+							throw new Error(`${red("✖")} Operation cancelled`);
 						}
 						return null;
 					},
@@ -50,9 +49,9 @@ async function init() {
 			],
 			{
 				onCancel: () => {
-					throw new Error(red("✖") + " Operation cancelled");
+					throw new Error(`${red("✖")} Operation cancelled`);
 				},
-			}
+			},
 		);
 
 		projectName = result.projectName || targetDir;
@@ -86,11 +85,11 @@ async function init() {
 	}
 
 	const pkg = JSON.parse(
-		fs.readFileSync(path.join(templateDir, "package.json"), "utf-8")
+		fs.readFileSync(path.join(templateDir, "package.json"), "utf-8"),
 	);
 	pkg.name = projectName;
 
-	write("package.json", JSON.stringify(pkg, null, "\t") + "\n");
+	write("package.json", `${JSON.stringify(pkg, null, "\t")}\n`);
 
 	const cdProjectName = path.relative(cwd, root);
 

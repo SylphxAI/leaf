@@ -1,6 +1,6 @@
-import { Link } from "./Link";
-import { cn } from "../lib/utils";
 import { For } from "solid-js";
+import { cn } from "../lib/utils";
+import { Link } from "./Link";
 
 export interface Card {
 	icon?: string;
@@ -27,7 +27,7 @@ export function Cards(props: CardsProps): JSX.Element {
 				"grid gap-4 mt-6",
 				columns() === 2 && "sm:grid-cols-2",
 				columns() === 3 && "sm:grid-cols-2 lg:grid-cols-3",
-				columns() === 4 && "sm:grid-cols-2 lg:grid-cols-4"
+				columns() === 4 && "sm:grid-cols-2 lg:grid-cols-4",
 			)}
 			style={{ "margin-left": "0", "margin-right": "0" }}
 		>
@@ -40,7 +40,10 @@ export function Cards(props: CardsProps): JSX.Element {
 					>
 						<div class="mb-2 flex items-center gap-3">
 							{card.icon && (
-								<span class="text-2xl leading-none" style={{ "margin-bottom": "0" }}>
+								<span
+									class="text-2xl leading-none"
+									style={{ "margin-bottom": "0" }}
+								>
 									{card.icon}
 								</span>
 							)}
@@ -48,7 +51,10 @@ export function Cards(props: CardsProps): JSX.Element {
 								{card.title}
 							</span>
 						</div>
-						<p class="text-sm text-muted-foreground leading-relaxed" style={{ margin: "0" }}>
+						<p
+							class="text-sm text-muted-foreground leading-relaxed"
+							style={{ margin: "0" }}
+						>
 							{card.description}
 						</p>
 					</Link>

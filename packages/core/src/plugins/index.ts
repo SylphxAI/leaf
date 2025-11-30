@@ -7,10 +7,7 @@ import type { Plugin as VitePlugin } from "vite";
  * - A plugin function
  * - A tuple of [plugin, options]
  */
-export type RemarkPlugin =
-	| UnifiedPlugin
-	| [UnifiedPlugin, ...any[]]
-	| any; // Fallback for flexibility
+export type RemarkPlugin = UnifiedPlugin | [UnifiedPlugin, ...any[]] | any; // Fallback for flexibility
 
 /**
  * Rehype plugin (processes HTML AST)
@@ -18,10 +15,7 @@ export type RemarkPlugin =
  * - A plugin function
  * - A tuple of [plugin, options]
  */
-export type RehypePlugin =
-	| UnifiedPlugin
-	| [UnifiedPlugin, ...any[]]
-	| any; // Fallback for flexibility
+export type RehypePlugin = UnifiedPlugin | [UnifiedPlugin, ...any[]] | any; // Fallback for flexibility
 
 /**
  * Configuration for Leaf markdown plugins

@@ -1,4 +1,4 @@
-import type { Root, Paragraph } from "mdast";
+import type { Root } from "mdast";
 import type { Plugin } from "unified";
 
 /**
@@ -76,10 +76,7 @@ export const remarkContainers: Plugin<[], Root> = () => {
 
 						// Trim closing ":::" from last child
 						const lastIdx = contentChildren.length - 1;
-						if (
-							lastIdx >= 0 &&
-							contentChildren[lastIdx].type === "text"
-						) {
+						if (lastIdx >= 0 && contentChildren[lastIdx].type === "text") {
 							const trimmed = contentChildren[lastIdx].value.replace(
 								/\n?:::$/,
 								"",
@@ -101,7 +98,10 @@ export const remarkContainers: Plugin<[], Root> = () => {
 
 						newChildren.push(container);
 						if (contentChildren.length > 0) {
-							newChildren.push({ type: "paragraph", children: contentChildren });
+							newChildren.push({
+								type: "paragraph",
+								children: contentChildren,
+							});
 						}
 						newChildren.push(closingDiv);
 						i++;
@@ -110,10 +110,7 @@ export const remarkContainers: Plugin<[], Root> = () => {
 				}
 
 				// Original single-text-child logic
-				if (
-					node.children.length === 1 &&
-					node.children[0].type === "text"
-				) {
+				if (node.children.length === 1 && node.children[0].type === "text") {
 					const text = node.children[0].value;
 
 					// Skip code-group entirely - handled by remarkCodeGroups plugin

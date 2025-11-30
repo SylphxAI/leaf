@@ -1,5 +1,3 @@
-import type { Route } from "./routes.js";
-
 export interface SidebarItem {
 	text: string;
 	link?: string;

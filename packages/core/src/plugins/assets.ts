@@ -1,14 +1,13 @@
-import { join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-import { dirname } from "node:path";
 import { readFile } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
 import type { LeafConfig } from "../types.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export function assetsPlugin(config: LeafConfig): Plugin {
+export function assetsPlugin(_config: LeafConfig): Plugin {
 	return {
 		name: "leaf:assets",
 		configureServer(server) {
@@ -18,27 +17,27 @@ export function assetsPlugin(config: LeafConfig): Plugin {
 					try {
 						const themeDefaultPath = resolve(
 							__dirname,
-							"../../../theme-default/src/assets"
+							"../../../theme-default/src/assets",
 						);
 						const imagePath = join(themeDefaultPath, req.url!.replace("/", ""));
 						const imageBuffer = await readFile(imagePath);
 						res.setHeader("Content-Type", "image/svg+xml");
 						res.end(imageBuffer);
 						return;
-					} catch (error) {
+					} catch (_error) {
 						next();
 					}
 				}
 				next();
 			});
 		},
-		writeBundle(options, bundle) {
+		writeBundle(options, _bundle) {
 			// Copy assets during build - using writeBundle instead of generateBundle
 			if (this.meta.watchMode) return; // Skip in dev mode
 
 			const themeDefaultAssetsPath = resolve(
 				__dirname,
-				"../../../theme-default/src/assets"
+				"../../../theme-default/src/assets",
 			);
 
 			// Copy OG images
@@ -47,7 +46,7 @@ export function assetsPlugin(config: LeafConfig): Plugin {
 			assets.forEach(async (asset) => {
 				try {
 					const sourcePath = join(themeDefaultAssetsPath, asset);
-					const targetPath = join(options.dir || "dist", asset);
+					const _targetPath = join(options.dir || "dist", asset);
 					const imageBuffer = await readFile(sourcePath);
 
 					// Emit the file using Vite's API

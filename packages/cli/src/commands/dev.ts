@@ -1,9 +1,8 @@
-import { resolve, join } from "node:path";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { dirname } from "node:path";
 import { createLeafPlugin, loadConfig, routesPlugin } from "@sylphx/leaf";
 import { createServer } from "vite";
-import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,11 +14,11 @@ export async function dev(root: string = process.cwd()): Promise<void> {
 	// Paths to built-in templates
 	const builtInHtmlPath = resolve(
 		__dirname,
-		"../../../core/templates/index.html"
+		"../../../core/templates/index.html",
 	);
 	const builtInClientPath = resolve(
 		__dirname,
-		"../../../core/templates/client.tsx"
+		"../../../core/templates/client.tsx",
 	);
 
 	// Create .leaf temp directory for dev artifacts
@@ -47,12 +46,12 @@ export async function dev(root: string = process.cwd()): Promise<void> {
 									const html = await readFile(builtInHtmlPath, "utf-8");
 									const transformed = await server.transformIndexHtml(
 										req.url,
-										html
+										html,
 									);
 									res.setHeader("Content-Type", "text/html");
 									res.end(transformed);
 									return;
-								} catch (e) {
+								} catch (_e) {
 									// Fall through to default handling
 								}
 							}

@@ -1,9 +1,8 @@
-import { createSignal, createEffect, onCleanup, Show, For } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { createEffect, createSignal, For, onCleanup, Show } from "solid-js";
 import "iconify-icon";
 import MiniSearch from "minisearch";
 import { cn } from "../lib/utils";
-
 
 interface SearchDocument {
 	id: string;
@@ -29,7 +28,7 @@ interface SearchProps {
 
 export function Search(props: SearchProps = {}): JSX.Element {
 	const [internalOpen, setInternalOpen] = createSignal(false);
-	const open = () => props.open !== undefined ? props.open : internalOpen();
+	const open = () => (props.open !== undefined ? props.open : internalOpen());
 	const setOpen = (value: boolean) => {
 		if (props.onOpenChange) {
 			props.onOpenChange(value);
@@ -121,7 +120,9 @@ export function Search(props: SearchProps = {}): JSX.Element {
 					setSelectedIndex((prev) => (prev + 1) % results().length);
 				} else if (e.key === "ArrowUp") {
 					e.preventDefault();
-					setSelectedIndex((prev) => (prev - 1 + results().length) % results().length);
+					setSelectedIndex(
+						(prev) => (prev - 1 + results().length) % results().length,
+					);
 				} else if (e.key === "Enter") {
 					e.preventDefault();
 					if (results()[selectedIndex()]) {
@@ -162,21 +163,21 @@ export function Search(props: SearchProps = {}): JSX.Element {
 		<Show when={shouldRender()}>
 			{() => (
 				<>
-						{/* Overlay */}
-						<div
-							class={`fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${
-								isVisible() ? "opacity-100" : "opacity-0"
-							}`}
-							onClick={() => setOpen(false)}
-							aria-label="Close search"
-							role="button"
-							tabIndex={0}
-							onKeyDown={(e) => {
-								if (e.key === "Enter" || e.key === " ") {
-									setOpen(false);
-								}
-							}}
-						/>
+					{/* Overlay */}
+					<div
+						class={`fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${
+							isVisible() ? "opacity-100" : "opacity-0"
+						}`}
+						onClick={() => setOpen(false)}
+						aria-label="Close search"
+						role="button"
+						tabIndex={0}
+						onKeyDown={(e) => {
+							if (e.key === "Enter" || e.key === " ") {
+								setOpen(false);
+							}
+						}}
+					/>
 
 					{/* Search Dialog */}
 					<div
@@ -187,110 +188,123 @@ export function Search(props: SearchProps = {}): JSX.Element {
 							isVisible() ? "opacity-100 scale-100" : "opacity-0 scale-95"
 						}`}
 					>
-				<div class="mx-6 overflow-hidden rounded-2xl border border-border bg-background/95 backdrop-blur-2xl shadow-2xl">
-					{/* Search Input */}
-					<div class="relative flex items-center border-b border-border px-6 py-5">
-						<iconify-icon icon="lucide:search" class="mr-4 h-6 w-6 text-primary shrink-0" />
-						<input
-							type="text"
-							placeholder="Search documentation..."
-							value={query()}
-							onInput={(e) => setQuery(e.currentTarget.value)}
-							class="flex-1 bg-transparent text-xl font-semibold text-foreground placeholder:text-muted-foreground focus:outline-none"
-							autofocus
-							aria-label="Search documentation"
-						/>
-						<kbd class="hidden sm:inline-flex h-8 select-none items-center gap-1.5 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
-							ESC
-						</kbd>
-					</div>
-
-					{/* Empty State */}
-					<Show when={query() && results().length === 0}>
-						<div class="py-20 px-8 text-center">
-							<div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/50">
-								<iconify-icon icon="lucide:search-x" class="h-10 w-10 text-muted-foreground" />
+						<div class="mx-6 overflow-hidden rounded-2xl border border-border bg-background/95 backdrop-blur-2xl shadow-2xl">
+							{/* Search Input */}
+							<div class="relative flex items-center border-b border-border px-6 py-5">
+								<iconify-icon
+									icon="lucide:search"
+									class="mr-4 h-6 w-6 text-primary shrink-0"
+								/>
+								<input
+									type="text"
+									placeholder="Search documentation..."
+									value={query()}
+									onInput={(e) => setQuery(e.currentTarget.value)}
+									class="flex-1 bg-transparent text-xl font-semibold text-foreground placeholder:text-muted-foreground focus:outline-none"
+									autofocus
+									aria-label="Search documentation"
+								/>
+								<kbd class="hidden sm:inline-flex h-8 select-none items-center gap-1.5 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
+									ESC
+								</kbd>
 							</div>
-							<p class="text-lg font-semibold text-foreground mb-2">
-								No results for "{query()}"
-							</p>
-							<p class="text-sm text-muted-foreground">
-								Try different keywords or check the spelling
-							</p>
-						</div>
-					</Show>
 
-					<Show when={results().length > 0}>
-						<div class="max-h-[600px] overflow-y-auto p-4 space-y-2">
-							<For each={results()}>
-								{(result, idx) => (
-									<button
-										onClick={() => handleSelectResult(result)}
-										onMouseEnter={() => setSelectedIndex(idx())}
-										class={cn(
-											"group w-full rounded-xl p-5 text-left transition-all duration-200 cursor-pointer",
-											idx() === selectedIndex()
-												? "bg-primary/10 shadow-sm ring-2 ring-primary/20"
-												: "hover:bg-muted/60 active:scale-[0.99]"
+							{/* Empty State */}
+							<Show when={query() && results().length === 0}>
+								<div class="py-20 px-8 text-center">
+									<div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/50">
+										<iconify-icon
+											icon="lucide:search-x"
+											class="h-10 w-10 text-muted-foreground"
+										/>
+									</div>
+									<p class="text-lg font-semibold text-foreground mb-2">
+										No results for "{query()}"
+									</p>
+									<p class="text-sm text-muted-foreground">
+										Try different keywords or check the spelling
+									</p>
+								</div>
+							</Show>
+
+							<Show when={results().length > 0}>
+								<div class="max-h-[600px] overflow-y-auto p-4 space-y-2">
+									<For each={results()}>
+										{(result, idx) => (
+											<button
+												onClick={() => handleSelectResult(result)}
+												onMouseEnter={() => setSelectedIndex(idx())}
+												class={cn(
+													"group w-full rounded-xl p-5 text-left transition-all duration-200 cursor-pointer",
+													idx() === selectedIndex()
+														? "bg-primary/10 shadow-sm ring-2 ring-primary/20"
+														: "hover:bg-muted/60 active:scale-[0.99]",
+												)}
+											>
+												<div class="flex items-center gap-4 mb-2">
+													<div
+														class={cn(
+															"flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-200",
+															idx() === selectedIndex()
+																? "bg-primary text-white"
+																: "bg-muted text-muted-foreground",
+														)}
+													>
+														<iconify-icon
+															icon="lucide:file-text"
+															class="h-5 w-5"
+														/>
+													</div>
+													<div
+														class={cn(
+															"font-semibold text-lg transition-colors flex-1",
+															idx() === selectedIndex()
+																? "text-primary"
+																: "text-foreground",
+														)}
+													>
+														{result.title}
+													</div>
+												</div>
+												<Show when={result.text}>
+													<p class="text-sm text-muted-foreground line-clamp-2 pl-14 leading-relaxed">
+														{result.text.slice(0, 150)}
+														{result.text.length > 150 ? "..." : ""}
+													</p>
+												</Show>
+											</button>
 										)}
-									>
-										<div class="flex items-center gap-4 mb-2">
-											<div
-												class={cn(
-													"flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-200",
-													idx() === selectedIndex() ? "bg-primary text-white" : "bg-muted text-muted-foreground"
-												)}
-											>
-												<iconify-icon icon="lucide:file-text" class="h-5 w-5" />
+									</For>
+								</div>
+							</Show>
+
+							<Show when={!query() || results().length === 0}>
+								<div class="border-t border-border bg-muted/30 px-6 py-5">
+									<div class="flex items-center justify-between text-sm font-medium text-muted-foreground">
+										<div class="flex items-center gap-6">
+											<div class="flex items-center gap-2.5">
+												<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
+													↑↓
+												</kbd>
+												<span>Navigate</span>
 											</div>
-											<div
-												class={cn(
-													"font-semibold text-lg transition-colors flex-1",
-													idx() === selectedIndex() ? "text-primary" : "text-foreground"
-												)}
-											>
-												{result.title}
+											<div class="flex items-center gap-2.5">
+												<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
+													↵
+												</kbd>
+												<span>Select</span>
 											</div>
 										</div>
-										<Show when={result.text}>
-											<p class="text-sm text-muted-foreground line-clamp-2 pl-14 leading-relaxed">
-												{result.text.slice(0, 150)}
-												{result.text.length > 150 ? "..." : ""}
-											</p>
-										</Show>
-									</button>
-								)}
-							</For>
-						</div>
-					</Show>
-
-					<Show when={!query() || results().length === 0}>
-						<div class="border-t border-border bg-muted/30 px-6 py-5">
-							<div class="flex items-center justify-between text-sm font-medium text-muted-foreground">
-								<div class="flex items-center gap-6">
-									<div class="flex items-center gap-2.5">
-										<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
-											↑↓
-										</kbd>
-										<span>Navigate</span>
-									</div>
-									<div class="flex items-center gap-2.5">
-										<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
-											↵
-										</kbd>
-										<span>Select</span>
+										<div class="flex items-center gap-2.5">
+											<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
+												ESC
+											</kbd>
+											<span>Close</span>
+										</div>
 									</div>
 								</div>
-								<div class="flex items-center gap-2.5">
-									<kbd class="inline-flex h-8 select-none items-center gap-1 rounded-lg border border-border bg-muted/60 px-3 font-mono text-xs font-semibold text-muted-foreground">
-										ESC
-									</kbd>
-									<span>Close</span>
-								</div>
-							</div>
+							</Show>
 						</div>
-					</Show>
-				</div>
 					</div>
 				</>
 			)}

@@ -1,7 +1,6 @@
-import { createSignal, createEffect, onCleanup, Show, For } from "solid-js";
+import { createEffect, createSignal, For, onCleanup } from "solid-js";
 import "iconify-icon";
 import { cn } from "../lib/utils";
-
 
 export interface TocItem {
 	text: string;
@@ -13,7 +12,9 @@ interface TableOfContentsProps {
 	items: TocItem[];
 }
 
-export function TableOfContents(props: TableOfContentsProps): JSX.Element | null {
+export function TableOfContents(
+	props: TableOfContentsProps,
+): JSX.Element | null {
 	const [activeId, setActiveId] = createSignal<string>("");
 
 	createEffect(() => {
@@ -44,7 +45,8 @@ export function TableOfContents(props: TableOfContentsProps): JSX.Element | null
 		return null;
 	}
 
-	const activeIndex = () => props.items.findIndex((item) => item.id === activeId());
+	const activeIndex = () =>
+		props.items.findIndex((item) => item.id === activeId());
 	const progress = () =>
 		activeIndex() >= 0 ? ((activeIndex() + 1) / props.items.length) * 100 : 0;
 
@@ -67,18 +69,14 @@ export function TableOfContents(props: TableOfContentsProps): JSX.Element | null
 								{(item) => {
 									const isActive = () => activeId() === item.id;
 									return (
-										<li
-											class={cn(
-												item.level === 3 && "ml-4"
-											)}
-										>
+										<li class={cn(item.level === 3 && "ml-4")}>
 											<a
 												href={`#${item.id}`}
 												class={cn(
 													"block text-sm py-1 transition-colors",
 													isActive()
 														? "text-primary font-medium"
-														: "text-muted-foreground hover:text-foreground"
+														: "text-muted-foreground hover:text-foreground",
 												)}
 												aria-current={isActive() ? "location" : undefined}
 											>

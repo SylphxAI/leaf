@@ -1,12 +1,11 @@
 import { Link } from "./Link";
 import "iconify-icon";
-import { ThemeToggle } from "./ThemeToggle";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import { Button } from "./Button";
-import { cn } from "../lib/utils";
-import { For } from "solid-js";
 import { useLocation } from "@solidjs/router";
-
+import { For } from "solid-js";
+import { cn } from "../lib/utils";
+import { Button } from "./Button";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface SocialLink {
 	icon: "github" | "twitter" | "discord" | "npm";
@@ -71,7 +70,7 @@ export function Header(props: HeaderProps): JSX.Element {
 										"relative inline-flex items-center px-4 py-2 text-sm font-semibold transition-all rounded-lg",
 										isActive()
 											? "text-primary-foreground bg-primary shadow-sm"
-											: "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+											: "text-muted-foreground hover:text-foreground hover:bg-muted/60",
 									)}
 									aria-current={isActive() ? "page" : undefined}
 								>
