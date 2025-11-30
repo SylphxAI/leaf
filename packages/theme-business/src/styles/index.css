@@ -4,121 +4,134 @@
 
 /* Business Theme Variables */
 :root {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-secondary: #64748b;
-  --color-accent: #f59e0b;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #0f172a;
-  --color-text-secondary: #475569;
-  --color-border: #e2e8f0;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
+	--color-primary: #2563eb;
+	--color-primary-dark: #1d4ed8;
+	--color-secondary: #64748b;
+	--color-accent: #f59e0b;
+	--color-background: #ffffff;
+	--color-surface: #f8fafc;
+	--color-text: #0f172a;
+	--color-text-secondary: #475569;
+	--color-border: #e2e8f0;
+	--color-success: #10b981;
+	--color-warning: #f59e0b;
+	--color-error: #ef4444;
 }
 
 [data-theme="dark"] {
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-secondary: #94a3b8;
-  --color-accent: #fbbf24;
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
-  --color-text: #f1f5f9;
-  --color-text-secondary: #cbd5e1;
-  --color-border: #334155;
-  --color-success: #34d399;
-  --color-warning: #fbbf24;
-  --color-error: #f87171;
+	--color-primary: #3b82f6;
+	--color-primary-dark: #2563eb;
+	--color-secondary: #94a3b8;
+	--color-accent: #fbbf24;
+	--color-background: #0f172a;
+	--color-surface: #1e293b;
+	--color-text: #f1f5f9;
+	--color-text-secondary: #cbd5e1;
+	--color-border: #334155;
+	--color-success: #34d399;
+	--color-warning: #fbbf24;
+	--color-error: #f87171;
 }
 
 /* Custom Business Styles */
 @layer base {
-  body {
-    @apply bg-[var(--color-background)] text-[var(--color-text)];
-  }
+	body {
+		@apply bg-[var(--color-background)] text-[var(--color-text)];
+	}
 
-  .prose {
-    @apply text-[var(--color-text)];
-  }
+	.prose {
+		@apply text-[var(--color-text)];
+	}
 
-  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    @apply text-[var(--color-text)] font-bold;
-  }
+	.prose h1,
+	.prose h2,
+	.prose h3,
+	.prose h4,
+	.prose h5,
+	.prose h6 {
+		@apply text-[var(--color-text)] font-bold;
+	}
 
-  .prose a {
-    @apply text-[var(--color-primary)] no-underline hover:underline;
-  }
+	.prose a {
+		@apply text-[var(--color-primary)] no-underline hover:underline;
+	}
 
-  .prose code {
-    @apply bg-[var(--color-surface)] text-[var(--color-text)] px-1 py-0.5 rounded text-sm font-mono;
-  }
+	.prose code {
+		@apply bg-[var(--color-surface)] text-[var(--color-text)] px-1 py-0.5 rounded text-sm font-mono;
+	}
 
-  .prose pre {
-    @apply bg-[var(--color-surface)] rounded-lg border border-[var(--color-border)];
-  }
+	.prose pre {
+		@apply bg-[var(--color-surface)] rounded-lg border border-[var(--color-border)];
+	}
 
-  .prose blockquote {
-    @apply border-l-4 border-[var(--color-primary)] bg-[var(--color-surface)] text-[var(--color-text-secondary)] italic;
-  }
+	.prose blockquote {
+		@apply border-l-4 border-[var(--color-primary)] bg-[var(--color-surface)] text-[var(--color-text-secondary)] italic;
+	}
 }
 
 @layer components {
-  .business-card {
-    @apply bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm;
-  }
+	.business-card {
+		@apply bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm;
+	}
 
-  .business-button {
-    @apply px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors;
-  }
+	.business-button {
+		@apply px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors;
+	}
 
-  .business-button-secondary {
-    @apply px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 rounded-md font-medium transition-colors;
-  }
+	.business-button-secondary {
+		@apply px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 rounded-md font-medium transition-colors;
+	}
 
-  .business-header {
-    @apply bg-white border-b-2 border-blue-600 shadow-sm;
-  }
+	.business-header {
+		@apply bg-white border-b-2 border-blue-600 shadow-sm;
+	}
 
-  .business-footer {
-    @apply bg-gray-800 text-white;
-  }
+	.business-footer {
+		@apply bg-gray-800 text-white;
+	}
 
-  .prose-business {
-    @apply prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-code:text-gray-800 prose-pre:bg-gray-50 prose-pre:text-gray-800 dark:prose-invert dark:prose-code:text-gray-200 dark:prose-pre:bg-gray-800 dark:prose-pre:text-gray-200;
-  }
+	.prose-business {
+		@apply prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-code:text-gray-800 prose-pre:bg-gray-50 prose-pre:text-gray-800 dark:prose-invert dark:prose-code:text-gray-200 dark:prose-pre:bg-gray-800 dark:prose-pre:text-gray-200;
+	}
 
-  .business-alert {
-    @apply p-4 rounded-lg border-l-4;
-  }
+	.business-alert {
+		@apply p-4 rounded-lg border-l-4;
+	}
 
-  .business-alert-info {
-    @apply business-alert bg-blue-50 border-blue-500 text-blue-800 dark:bg-blue-900/20 dark:text-blue-200;
-  }
+	.business-alert-info {
+		@apply business-alert bg-blue-50 border-blue-500 text-blue-800 dark:bg-blue-900/20 dark:text-blue-200;
+	}
 
-  .business-alert-success {
-    @apply business-alert bg-green-50 border-green-500 text-green-800 dark:bg-green-900/20 dark:text-green-200;
-  }
+	.business-alert-success {
+		@apply business-alert bg-green-50 border-green-500 text-green-800 dark:bg-green-900/20 dark:text-green-200;
+	}
 
-  .business-alert-warning {
-    @apply business-alert bg-yellow-50 border-yellow-500 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-200;
-  }
+	.business-alert-warning {
+		@apply business-alert bg-yellow-50 border-yellow-500 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-200;
+	}
 
-  .business-alert-error {
-    @apply business-alert bg-red-50 border-red-500 text-red-800 dark:bg-red-900/20 dark:text-red-200;
-  }
+	.business-alert-error {
+		@apply business-alert bg-red-50 border-red-500 text-red-800 dark:bg-red-900/20 dark:text-red-200;
+	}
 }
 
 @layer utilities {
-  .text-gradient-business {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+	.text-gradient-business {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary),
+			var(--color-secondary)
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
 
-  .bg-gradient-business {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  }
+	.bg-gradient-business {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary),
+			var(--color-primary-dark)
+		);
+	}
 }

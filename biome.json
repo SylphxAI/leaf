@@ -35,15 +35,23 @@
 				"useNodejsImportProtocol": "warn"
 			},
 			"complexity": {
-				"noForEach": "off"
+				"noForEach": "off",
+				"noUselessFragments": "off"
 			},
 			"suspicious": {
 				"noExplicitAny": "off",
 				"noAssignInExpressions": "off",
-				"noImplicitAnyLet": "off"
+				"noImplicitAnyLet": "off",
+				"noUnknownAtRules": "off",
+				"useIterableCallbackReturn": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "warn"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"useButtonType": "off",
+				"useSemanticElements": "off"
 			}
 		}
 	},
@@ -63,6 +71,10 @@
 		}
 	},
 	"css": {
+		"parser": {
+			"cssModules": true,
+			"tailwindDirectives": true
+		},
 		"formatter": {
 			"enabled": true,
 			"indentStyle": "tab",
