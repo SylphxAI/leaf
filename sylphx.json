@@ -1,0 +1,5 @@
+{
+  "buildDir": "docs",
+  "framework": "static",
+  "buildCommand": "bun ../packages/cli/dist/cli.js build"
+}
