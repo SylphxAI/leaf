@@ -1,6 +1,6 @@
 {
 	"name": "@sylphx/leaf-theme-default",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "🎨 Default theme for Leaf documentation framework with responsive design, dark mode, and search",
 	"main": "./dist/src/index.js",
 	"dependencies": {
